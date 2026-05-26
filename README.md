@@ -1,6 +1,6 @@
 # HumanizerBench
 
-Public audit record for [HumanizerBench](https://github.com/HumanizerBench/humanizerbench) — an independent benchmark that scores AI humanizer tools on how well they evade commercial AI detectors while preserving the meaning and readability of the source text.
+Public audit record for [HumanizerBench](https://github.com/HumanizerBench/humanizerbench) — a benchmark that scores AI humanizer tools on how well they evade commercial AI detectors while preserving the meaning and readability of the source text.
 
 This repository contains:
 
