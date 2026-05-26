@@ -289,6 +289,19 @@
         "academic_essay": 0.9871,
         "application_essay": 0.9182
       }
+    },
+    {
+      "cycle": "test9",
+      "composite": 67.72,
+      "bypass_rate": 0.4999,
+      "detector_breakdown": {
+        "gptzero": 0.4998,
+        "winston": 0.5
+      },
+      "category_breakdown": {
+        "academic_essay": 0.9998,
+        "application_essay": 0
+      }
     }
   ]
 }
