@@ -1,9 +1,13 @@
 ---
 import Base from "@/layouts/Base.astro";
 import FreshnessSignals from "@/components/FreshnessSignals.astro";
-import ScoreBar from "@/components/ScoreBar.astro";
-import { loadLatestCycle } from "@/lib/data";
+import Favicon from "@/components/Favicon.astro";
+import PenaltyChip from "@/components/PenaltyChip.astro";
+import TrendSparkline from "@/components/TrendSparkline.astro";
+import ColumnHeaderTooltip from "@/components/ColumnHeaderTooltip.astro";
+import { loadLatestCycle, loadHumanizerHistory } from "@/lib/data";
 import { applyUseCaseSort } from "@/lib/scoring";
+import { fmtComposite } from "@/lib/format";
 import {
   BEST_FOR_USE_CASES,
   BRAND_NAME,
@@ -12,7 +16,7 @@ import {
   type BestForUseCase,
 } from "@/lib/config";
 import { itemListSchema, breadcrumbListSchema } from "@/lib/schema";
-import Favicon from "@/components/Favicon.astro";
+import type { Humanizer } from "@/lib/types";
 
 export async function getStaticPaths() {
   return BEST_FOR_USE_CASES.map((useCase) => ({
@@ -31,6 +35,16 @@ const cycle = await loadLatestCycle();
 const ranked = applyUseCaseSort(cycle.humanizers, useCase.slug);
 const top10 = ranked.slice(0, 10);
 
+const historyEntries = await Promise.all(
+  top10.map(async (h) => {
+    const hist = await loadHumanizerHistory(h.slug);
+    return [h.slug, hist?.points.map((p) => p.composite) ?? null] as const;
+  }),
+);
+const historyBySlug: Record<string, number[] | null> = Object.fromEntries(
+  historyEntries,
+);
+
 const title = `${useCase.label} — ${BRAND_NAME}`;
 const description = `Top AI humanizers for ${useCase.targetQuery}. ${useCase.displayedSortLogic}. Independent monthly benchmark from ${BRAND_NAME}.`;
 const canonical = `${SITE_URL}/best-for/${useCase.slug}`;
@@ -48,21 +62,63 @@ const lastTested =
   cycle.humanizers[0]?.last_tested_at ?? cycle.generated_at;
 const topConfidence = cycle.humanizers[0]?.confidence ?? "high";
 
-function fmtPct(n: number): string {
-  return (n * 100).toFixed(1);
+function fmtScore(v: number | null | undefined): string {
+  if (typeof v !== "number" || !Number.isFinite(v)) return "—";
+  return (v * 100).toFixed(1);
 }
-function fmtMonthly(
-  monthlyUsd: number | null | undefined,
-  freeTier: boolean,
-): string {
-  if (monthlyUsd == null) return freeTier ? "Free" : "—";
-  if (monthlyUsd === 0) return "Free";
-  return `$${monthlyUsd.toFixed(2)}`;
+
+function formatRelative(iso: string): string {
+  const then = new Date(iso).getTime();
+  if (!Number.isFinite(then)) return "—";
+  const now = Date.now();
+  const diffMs = now - then;
+  const day = 24 * 60 * 60 * 1000;
+  const days = Math.floor(diffMs / day);
+  if (days < 1) {
+    const hours = Math.max(1, Math.floor(diffMs / (60 * 60 * 1000)));
+    return `${hours}h ago`;
+  }
+  if (days < 30) return `${days}d ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months}mo ago`;
+  const years = Math.floor(days / 365);
+  return `${years}y ago`;
 }
-function fmtSeconds(s: number | null | undefined): string {
-  if (s == null) return "—";
-  return `${s.toFixed(1)}s`;
+
+type Medal = "gold" | "silver" | "bronze";
+const MEDAL_BY_RANK: Medal[] = ["gold", "silver", "bronze"];
+const MEDAL_EMOJI: Record<Medal, string> = {
+  gold: "🥇",
+  silver: "🥈",
+  bronze: "🥉",
+};
+
+function buildMedals(
+  rows: Humanizer[],
+  pick: (h: Humanizer) => number | null | undefined,
+): Map<string, Medal> {
+  const m = new Map<string, Medal>();
+  const entries = rows
+    .map((h) => ({ slug: h.slug, v: pick(h) }))
+    .filter((e): e is { slug: string; v: number } => typeof e.v === "number");
+  entries.sort((a, b) => b.v - a.v);
+  let medalIdx = 0;
+  let prevValue: number | null = null;
+  for (const e of entries) {
+    if (prevValue !== null && e.v !== prevValue) medalIdx++;
+    if (medalIdx > 2) break;
+    m.set(e.slug, MEDAL_BY_RANK[medalIdx]!);
+    prevValue = e.v;
+  }
+  return m;
 }
+
+const medals = {
+  composite: buildMedals(top10, (h) => h.scores.composite),
+  bypass_rate: buildMedals(top10, (h) => h.scores.bypass_rate),
+  meaning: buildMedals(top10, (h) => h.scores.meaning_preservation),
+  readability: buildMedals(top10, (h) => h.scores.readability),
+};
 
 const otherUseCases = BEST_FOR_USE_CASES.filter(
   (uc) => uc.slug !== useCase.slug,
@@ -76,7 +132,7 @@ const otherUseCases = BEST_FOR_USE_CASES.filter(
   ogImage={`${SITE_URL}/og/best-for-${useCase.slug}.png`}
   jsonLd={jsonLd}
 >
-  <section class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+  <section class="max-w-7xl mx-auto px-4 py-12 md:py-16">
     <nav
       class="text-xs text-[var(--color-text-secondary)] mb-4 flex items-center gap-2"
     >
@@ -127,51 +183,108 @@ const otherUseCases = BEST_FOR_USE_CASES.filter(
           No humanizers matched this use case's filter.
         </div>
       ) : (
-        <div
-          class="mt-8 overflow-x-auto rounded-xl border border-[var(--color-border)]"
-        >
-          <table class="w-full text-sm">
+        <div class="mt-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] overflow-x-auto">
+          <table class="w-full caption-bottom text-sm">
             <thead
-              class="sticky top-0 bg-[var(--color-surface)] z-10 border-b border-[var(--color-border)]"
+              class="sticky top-0 z-10 bg-[var(--color-bg)] border-b border-[var(--color-border)]"
             >
-              <tr class="text-left text-[var(--color-text-secondary)]">
-                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs w-12">
-                  Rank
+              <tr>
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-left"
+                >
+                  <ColumnHeaderTooltip
+                    label="Rank"
+                    description="Position in this use-case ranking."
+                    align="start"
+                  />
                 </th>
-                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs">
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-left"
+                >
                   Humanizer
                 </th>
-                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
-                  Overall
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right"
+                >
+                  <ColumnHeaderTooltip
+                    label="Overall"
+                    description="Weighted blend of bypass rate, meaning preservation, readability, consistency, and speed. Penalties may reduce this score."
+                  />
                 </th>
-                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
-                  Bypass Rate
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right"
+                >
+                  <ColumnHeaderTooltip
+                    label="Bypass Rate"
+                    description="Fraction of detector tests where the humanized output was classified as human, across all 6 detectors."
+                  />
                 </th>
-                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
-                  Speed
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right"
+                >
+                  <ColumnHeaderTooltip
+                    label="Meaning"
+                    description="Semantic similarity (embedding cosine) between input and humanized output. Higher = output preserves the input's meaning."
+                  />
                 </th>
-                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
-                  Pricing
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right"
+                >
+                  <ColumnHeaderTooltip
+                    label="Readability"
+                    description="Inverse of reading-level drift between input and output. Higher = closer to the input's reading level."
+                  />
+                </th>
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right"
+                >
+                  <ColumnHeaderTooltip
+                    label="Penalties"
+                    description="Total points deducted from the overall score when output-quality issues were detected. Hover a row's chip to see why."
+                  />
+                </th>
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-center"
+                >
+                  Trend
+                </th>
+                <th
+                  scope="col"
+                  class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right"
+                >
+                  Last Tested
                 </th>
               </tr>
             </thead>
             <tbody>
               {top10.map((h) => {
+                const compositePct = fmtComposite(h.scores.composite);
+                const history = historyBySlug[h.slug] ?? null;
                 return (
-                  <tr
-                    class="border-t border-[var(--color-border)] hover:bg-[var(--color-surface)]/50"
-                    style="height: 72px;"
-                  >
-                    <td class="px-4 align-middle font-mono tabnum text-[var(--color-text-secondary)]">
-                      {h.rank}
+                  <tr class="h-[72px] border-b border-[var(--color-border)] last:border-0 hover:bg-[var(--color-surface)]/50 transition-colors">
+                    <td class="px-3 align-middle whitespace-nowrap text-left">
+                      <span
+                        class="font-mono tabnum font-medium text-[var(--color-text-primary)]"
+                        style="font-size: 28px; line-height: 1;"
+                      >
+                        {h.rank}
+                      </span>
                     </td>
-                    <td class="px-4 align-middle">
+                    <td class="px-3 align-middle whitespace-nowrap text-left">
                       <div class="flex items-center gap-3">
                         <Favicon url={h.url} name={h.name} size={24} />
-                        <div class="min-w-0">
+                        <div class="flex flex-col leading-tight min-w-0">
                           <a
                             href={`/humanizers/${h.slug}`}
-                            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] font-medium"
+                            class="font-medium text-[var(--color-text-primary)] hover:text-[var(--color-accent)]"
                           >
                             {h.name}
                           </a>
@@ -179,24 +292,74 @@ const otherUseCases = BEST_FOR_USE_CASES.filter(
                             href={h.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="block text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] truncate"
+                            class="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] truncate"
                           >
                             {h.url.replace(/^https?:\/\//, "")}
                           </a>
                         </div>
                       </div>
                     </td>
-                    <td class="px-4 align-middle text-right">
-                      <ScoreBar score={h.scores.composite} />
+                    <td
+                      class:list={[
+                        "px-3 align-middle whitespace-nowrap text-right",
+                        medals.composite.has(h.slug) &&
+                          `medal-${medals.composite.get(h.slug)}`,
+                      ]}
+                    >
+                      {medals.composite.has(h.slug) && (
+                        <span class="mr-1.5" aria-hidden="true">
+                          {MEDAL_EMOJI[medals.composite.get(h.slug)!]}
+                        </span>
+                      )}
+                      <span class="font-mono tabnum font-medium">
+                        {compositePct}
+                      </span>
                     </td>
-                    <td class="px-4 align-middle text-right">
-                      <ScoreBar score={h.scores.bypass_rate} />
+                    <td
+                      class:list={[
+                        "px-3 align-middle whitespace-nowrap text-right",
+                        medals.bypass_rate.has(h.slug) &&
+                          `medal-${medals.bypass_rate.get(h.slug)}`,
+                      ]}
+                    >
+                      <span class="font-mono tabnum font-medium">
+                        {fmtScore(h.scores.bypass_rate)}
+                      </span>
                     </td>
-                    <td class="px-4 align-middle text-right font-mono tabnum text-[var(--color-text-primary)]">
-                      {fmtSeconds(h.scores.speed_seconds)}
+                    <td
+                      class:list={[
+                        "px-3 align-middle whitespace-nowrap text-right",
+                        medals.meaning.has(h.slug) &&
+                          `medal-${medals.meaning.get(h.slug)}`,
+                      ]}
+                    >
+                      <span class="font-mono tabnum font-medium">
+                        {fmtScore(h.scores.meaning_preservation)}
+                      </span>
                     </td>
-                    <td class="px-4 align-middle text-right font-mono tabnum text-[var(--color-text-primary)]">
-                      {fmtMonthly(h.pricing.monthly_usd, h.pricing.free_tier)}
+                    <td
+                      class:list={[
+                        "px-3 align-middle whitespace-nowrap text-right",
+                        medals.readability.has(h.slug) &&
+                          `medal-${medals.readability.get(h.slug)}`,
+                      ]}
+                    >
+                      <span class="font-mono tabnum font-medium">
+                        {fmtScore(h.scores.readability)}
+                      </span>
+                    </td>
+                    <td class="px-3 align-middle whitespace-nowrap text-right">
+                      <PenaltyChip penalties={h.penalties_applied ?? []} />
+                    </td>
+                    <td class="px-3 align-middle whitespace-nowrap">
+                      <div class="flex justify-center">
+                        <TrendSparkline points={history} />
+                      </div>
+                    </td>
+                    <td class="px-3 align-middle whitespace-nowrap text-right">
+                      <span class="text-xs text-[var(--color-text-secondary)] tabnum">
+                        {formatRelative(h.last_tested_at)}
+                      </span>
                     </td>
                   </tr>
                 );
