@@ -16,8 +16,19 @@ interface RuntimeEnv {
   TURNSTILE_SECRET_KEY?: string;
 }
 
-function getEnv(locals: App.Locals): RuntimeEnv {
-  const cf = (locals as { runtime?: { env?: RuntimeEnv } }).runtime?.env;
+// Astro 6 + @astrojs/cloudflare removed `Astro.locals.runtime.env` in favor of
+// the `cloudflare:workers` module's `env` binding. That module only exists at
+// runtime inside a Worker — `astro dev` resolves it to undefined, in which
+// case we fall back to process.env for local development.
+async function getEnv(): Promise<RuntimeEnv> {
+  let cf: RuntimeEnv | undefined;
+  try {
+    // @ts-expect-error — virtual module provided by the Workers runtime
+    const mod = await import("cloudflare:workers");
+    cf = mod.env as RuntimeEnv;
+  } catch {
+    // Not running inside a Worker (astro dev, tsx, etc).
+  }
   return {
     SUPABASE_URL: cf?.SUPABASE_URL ?? process.env.SUPABASE_URL,
     SUPABASE_ANON_KEY: cf?.SUPABASE_ANON_KEY ?? process.env.SUPABASE_ANON_KEY,
@@ -51,7 +62,7 @@ function json(status: number, body: Record<string, unknown>): Response {
   });
 }
 
-export const POST: APIRoute = async ({ request, locals, clientAddress }) => {
+export const POST: APIRoute = async ({ request, clientAddress }) => {
   let body: SubscribeBody;
   try {
     body = (await request.json()) as SubscribeBody;
@@ -72,7 +83,7 @@ export const POST: APIRoute = async ({ request, locals, clientAddress }) => {
     return json(400, { error: "Invalid email" });
   }
 
-  const env = getEnv(locals);
+  const env = await getEnv();
   if (!env.SUPABASE_URL || !env.SUPABASE_ANON_KEY) {
     return json(500, { error: "Subscriber store not configured" });
   }
