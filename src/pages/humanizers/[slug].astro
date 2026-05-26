@@ -132,7 +132,7 @@ const confidenceColor =
       ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
       : "bg-red-500/15 text-red-400 border-red-500/30";
 
-const pageTitle = `${fresh.name} Review — Bypass Scores, Pricing, Trends — ${BRAND_NAME}`;
+const pageTitle = `${fresh.name} Review | Bypass Scores, Pricing, Trends | ${BRAND_NAME}`;
 const pageDescription = `${fresh.name} ranked #${fresh.rank} this cycle. Overall score ${composite}/100. Tested against 6 detectors. See full data.`;
 const canonical = `${SITE_URL}/humanizers/${fresh.slug}`;
 
@@ -344,7 +344,7 @@ const jsonLd = [
               Monthly
             </dt>
             <dd class="mt-1 font-mono tabnum text-[var(--color-text-primary)]">
-              {fresh.pricing.monthly_usd == null ? "—" : `$${fresh.pricing.monthly_usd.toFixed(2)}/mo`}
+              {fresh.pricing.monthly_usd == null ? "N/A" : `$${fresh.pricing.monthly_usd.toFixed(2)}/mo`}
             </dd>
           </div>
           <div>
@@ -363,7 +363,7 @@ const jsonLd = [
               {
                 fresh.pricing.free_tier && fresh.pricing.free_tier_word_limit
                   ? `${fresh.pricing.free_tier_word_limit} words/day`
-                  : "—"
+                  : "N/A"
               }
             </dd>
           </div>

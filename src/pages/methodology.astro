@@ -21,7 +21,7 @@ const jsonLd = breadcrumbListSchema([
 ---
 
 <Base
-  title={`Methodology — ${BRAND_NAME}`}
+  title={`Methodology | ${BRAND_NAME}`}
   description="How HumanizerBench tests AI humanizers: sample selection, scoring formula, versioning, full reproducibility."
   canonical={canonical}
   ogImage={`${SITE_URL}/og/methodology.png`}
@@ -56,14 +56,14 @@ const jsonLd = breadcrumbListSchema([
       categories:
     </p>
     <ul>
-      <li><code>academic_essay</code> — argumentative essays, lit-review intros</li>
-      <li><code>application_essay</code> — personal statements, cover letters</li>
-      <li><code>blog_post</code> — listicles, how-to guides</li>
-      <li><code>marketing_copy</code> — product descriptions, landing pages</li>
-      <li><code>business_email</code> — internal team announcements</li>
-      <li><code>discussion_board</code> — discussion-board responses</li>
-      <li><code>technical_doc</code> — API documentation</li>
-      <li><code>news_article</code> — news article writing</li>
+      <li><code>academic_essay</code>: argumentative essays, lit-review intros</li>
+      <li><code>application_essay</code>: personal statements, cover letters</li>
+      <li><code>blog_post</code>: listicles, how-to guides</li>
+      <li><code>marketing_copy</code>: product descriptions, landing pages</li>
+      <li><code>business_email</code>: internal team announcements</li>
+      <li><code>discussion_board</code>: discussion-board responses</li>
+      <li><code>technical_doc</code>: API documentation</li>
+      <li><code>news_article</code>: news article writing</li>
     </ul>
     <p>
       The full template set, with target word counts and the placeholder tokens
@@ -180,7 +180,7 @@ composite = max(0, composite_raw - sum_of_penalty_deltas)</code></pre>
       For each test, compute the <strong>median</strong> of all
       <code>raw_score</code> values across the six detectors in
       <code>detector-scores.json</code> (median, not mean, because some
-      detectors binarize their output near 0 or 1 — a single outlier would
+      detectors binarize their output near 0 or 1, and a single outlier would
       otherwise swing the mean by 0.25). The humanizer's
       <code>bypass_rate</code> is the <strong>mean</strong> of those per-test
       medians.
@@ -200,14 +200,14 @@ composite = max(0, composite_raw - sum_of_penalty_deltas)</code></pre>
     <h3 id="readability"><code>readability</code></h3>
     <p>
       For each text we count grammar errors via LanguageTool (with
-      proper-noun false positives filtered out — see <code
+      proper-noun false positives filtered out; see <code
         >src/lib/scoring/lt-filter.ts</code
       > in the admin repo). The rate is <code
         >grammar_error_count / grammar_word_count</code
       >. The per-test readability is
       <code
         >max(0, min(1, 1 - max(0, output_rate - input_rate) * 50))</code
-      > — i.e. <code>1</code> when the output is at least as clean as the
+      >, i.e. <code>1</code> when the output is at least as clean as the
       input, falling to <code>0</code> when the output rate exceeds the input
       by <code>0.02</code> or more. Published in
       <code>tests[i].readability</code>; humanizer aggregate is the mean.
@@ -377,15 +377,15 @@ composite = max(0, composite_raw - sum_of_penalty_deltas)</code></pre>
     <p>Each humanizer carries a confidence label:</p>
     <ul>
       <li>
-        <strong>high</strong> — at least 60 complete tests in the cycle AND
+        <strong>high</strong>: at least 60 complete tests in the cycle AND
         <code>stddev(category_means) &lt; 0.1</code>.
       </li>
       <li>
-        <strong>medium</strong> — at least 30 complete tests, but does not
+        <strong>medium</strong>: at least 30 complete tests, but does not
         meet the high-confidence variance bar.
       </li>
       <li>
-        <strong>low</strong> — fewer than 30 complete tests.
+        <strong>low</strong>: fewer than 30 complete tests.
       </li>
     </ul>
 
@@ -460,7 +460,7 @@ console.log(result.humanizers[0]); // top-ranked humanizer for the cycle</code><
       <tbody>
         <tr>
           <td><code>methodology_version</code></td>
-          <td>Anything on this page changes — formula weights, sub-score definitions, penalty rules, confidence thresholds.</td>
+          <td>Anything on this page changes: formula weights, sub-score definitions, penalty rules, confidence thresholds.</td>
         </tr>
         <tr>
           <td><code>scoring_version</code></td>
@@ -472,11 +472,11 @@ console.log(result.humanizers[0]); // top-ranked humanizer for the cycle</code><
         </tr>
         <tr>
           <td><code>detector_config_version</code></td>
-          <td>A detector's endpoint, parser, or normalization changes — or a detector is added or removed.</td>
+          <td>A detector's endpoint, parser, or normalization changes, or a detector is added or removed.</td>
         </tr>
         <tr>
           <td><code>humanizer_config_version</code></td>
-          <td>A humanizer's endpoint, parameters, or pricing tier we tested against changes — or a humanizer is added or removed.</td>
+          <td>A humanizer's endpoint, parameters, or pricing tier we tested against changes, or a humanizer is added or removed.</td>
         </tr>
       </tbody>
     </table>
@@ -484,7 +484,7 @@ console.log(result.humanizers[0]); // top-ranked humanizer for the cycle</code><
       Past cycles are immutable. Each cycle bundle (templates, banks,
       algorithm, scoring code, raw data, leaderboard) is frozen at publish
       time, so a methodology change today never alters a cycle that ran
-      yesterday — it just changes the version stamps on the next cycle.
+      yesterday; it just changes the version stamps on the next cycle.
     </p>
 
     <h2>Methodology integrity</h2>

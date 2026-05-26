@@ -52,7 +52,7 @@ const winner =
       ? "b"
       : null;
 
-const title = `${a.name} vs ${b.name} — AI Humanizer Comparison — ${BRAND_NAME}`;
+const title = `${a.name} vs ${b.name} | AI Humanizer Comparison | ${BRAND_NAME}`;
 const description = `Compare ${a.name} and ${b.name}: overall scores, detector bypass rates, pricing. Independent monthly benchmark data.`;
 const canonical = `${SITE_URL}/vs/${comparison}`;
 
@@ -78,11 +78,11 @@ const lowerConfidence: "high" | "medium" | "low" =
 const detectorSlugs = Object.keys(a.detector_breakdown);
 
 function fmtPct(n: number | null | undefined): string {
-  if (typeof n !== "number" || !Number.isFinite(n)) return "—";
+  if (typeof n !== "number" || !Number.isFinite(n)) return "N/A";
   return (n * 100).toFixed(1);
 }
 function fmtMonthly(p: Humanizer["pricing"]): string {
-  if (p.monthly_usd == null) return "—";
+  if (p.monthly_usd == null) return "N/A";
   if (p.monthly_usd === 0) return "Free";
   return `$${p.monthly_usd.toFixed(2)}/mo`;
 }
@@ -324,7 +324,7 @@ const displayOrder: Humanizer[] =
                   Free word limit
                 </dt>
                 <dd class="font-mono tabnum text-[var(--color-text-primary)]">
-                  {h.pricing.free_tier_word_limit ?? "—"}
+                  {h.pricing.free_tier_word_limit ?? "N/A"}
                 </dd>
               </div>
             </dl>
@@ -343,7 +343,7 @@ const displayOrder: Humanizer[] =
             href={`/humanizers/${a.slug}`}
             class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)]"
           >
-            {a.name} — full review →
+            {a.name}: full review →
           </a>
         </li>
         <li>
@@ -351,7 +351,7 @@ const displayOrder: Humanizer[] =
             href={`/humanizers/${b.slug}`}
             class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)]"
           >
-            {b.name} — full review →
+            {b.name}: full review →
           </a>
         </li>
         <li>

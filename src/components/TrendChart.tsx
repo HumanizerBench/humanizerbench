@@ -27,7 +27,7 @@ export default function TrendChart({ history, class: className }: Props) {
         }
         style={{ minHeight: 280 }}
       >
-        Insufficient history yet — first full cycle.
+        Insufficient history yet: first full cycle.
       </div>
     );
   }

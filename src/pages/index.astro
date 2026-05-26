@@ -55,7 +55,7 @@ const faqItems = [
   {
     question: "How does this benchmark test AI humanizers?",
     answer:
-      "Each monthly cycle, every humanizer in the list processes 72 prompts across 8 writing categories — academic essays, application essays, blog posts, marketing copy, business emails, literature reviews, landing copy, and product descriptions. The output is submitted to 6 detectors. We record raw responses, compute bypass rate per detector, score meaning preservation against the source, and combine the results into an overall score. Every input, output, detector response, and the scoring script are published in our public repository.",
+      "Each monthly cycle, every humanizer in the list processes 72 prompts across 8 writing categories: academic essays, application essays, blog posts, marketing copy, business emails, literature reviews, landing copy, and product descriptions. The output is submitted to 6 detectors. We record raw responses, compute bypass rate per detector, score meaning preservation against the source, and combine the results into an overall score. Every input, output, detector response, and the scoring script are published in our public repository.",
   },
   {
     question: "What does the overall score mean?",
@@ -73,7 +73,7 @@ const faqItems = [
       "No. We don't accept payment for placement, removal, or score adjustment. The fairness policy spells out exactly what we will and won't do, and because the scoring script and raw data are public, any vendor or third party can independently reproduce the rankings.",
   },
   {
-    question: "WriteHuman operates this benchmark — how is bias handled?",
+    question: "WriteHuman operates this benchmark. How is bias handled?",
     answer:
       "WriteHuman is tested with the same prompt set, methodology, and scoring as every other humanizer. The scoring script is deterministic and open source. If a vendor disputes a result, the published raw data lets anyone re-run the calculation. The fairness policy covers disputes and retesting requests.",
   },
@@ -81,7 +81,7 @@ const faqItems = [
     question:
       "Which AI humanizer is best at bypassing GPTZero, Originality, or other specific detectors?",
     answer:
-      "Each detector has its own page (for example /detectors/gptzero) showing humanizers re-ranked by that detector's bypass rate. A high single-detector score does not necessarily mean the humanizer is the best — see the overall ranking for the balanced view.",
+      "Each detector has its own page (for example /detectors/gptzero) showing humanizers re-ranked by that detector's bypass rate. A high single-detector score does not necessarily mean the humanizer is the best; see the overall ranking for the balanced view.",
   },
   {
     question: "Why do you publish all the raw test data?",
@@ -103,7 +103,7 @@ const jsonLd = [
 ---
 
 <Base
-  title={`${BRAND_NAME} — Monthly AI humanizer rankings`}
+  title={`${BRAND_NAME} | Monthly AI humanizer rankings`}
   description={`Monthly rankings of ${cycle.humanizers.length} AI humanizers across 6 detectors. Every input, output, and score published. Operated by WriteHuman.`}
   canonical={canonical}
   ogImage={`${SITE_URL}/og/home.png`}
@@ -360,7 +360,7 @@ const jsonLd = [
             customers can decide based on data, not marketing.
           </p>
           <p class="mt-5 text-[var(--color-text-secondary)] leading-relaxed">
-            We're {PARENT_ORG} — one of the products being tested. We know
+            We're {PARENT_ORG}, one of the products being tested. We know
             that's the obvious objection, and we've designed the benchmark
             specifically to be auditable around it. Every input, output,
             detector response, and the scoring script are public. Anyone
@@ -399,7 +399,7 @@ const jsonLd = [
           > rewrites machine-generated text so it's less likely to be flagged by
           AI-content detectors. Most use a language model with a paraphrasing
           prompt and post-processing to alter perplexity, burstiness, and the
-          other statistical patterns detectors look for — while trying to
+          other statistical patterns detectors look for, while trying to
           preserve the original meaning.
         </p>
         <p>
@@ -426,7 +426,7 @@ const jsonLd = [
             class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
             >public GitHub repository</a
           >. Vendors and third parties can independently reproduce the
-          rankings — see the <a
+          rankings; see the <a
             href="/fairness"
             class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
             >fairness policy</a
@@ -453,8 +453,8 @@ const jsonLd = [
     </div>
     <p class="max-w-2xl text-[var(--color-text-secondary)] leading-relaxed mb-8">
       The overall ranking is balanced across categories. If you need a
-      humanizer for a specific job — academic essays, marketing copy, free
-      use, or bypassing a particular detector — the rankings below re-weight
+      humanizer for a specific job (academic essays, marketing copy, free
+      use, or bypassing a particular detector), the rankings below re-weight
       the same data for that goal. The reweighting logic is disclosed on
       every page.
     </p>

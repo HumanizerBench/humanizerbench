@@ -15,7 +15,7 @@ const { humanizers, detectorSlug, detectorName } = Astro.props;
 
 function formatRelative(iso: string): string {
   const then = new Date(iso).getTime();
-  if (!Number.isFinite(then)) return "—";
+  if (!Number.isFinite(then)) return "-";
   const now = Date.now();
   const diffMs = now - then;
   const day = 24 * 60 * 60 * 1000;
@@ -32,7 +32,7 @@ function formatRelative(iso: string): string {
 }
 
 function fmtScore(v: number | null | undefined): string {
-  if (typeof v !== "number" || !Number.isFinite(v)) return "—";
+  if (typeof v !== "number" || !Number.isFinite(v)) return "-";
   return (v * 100).toFixed(1);
 }
 

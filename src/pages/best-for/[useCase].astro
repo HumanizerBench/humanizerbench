@@ -45,7 +45,7 @@ const historyBySlug: Record<string, number[] | null> = Object.fromEntries(
   historyEntries,
 );
 
-const title = `${useCase.label} — ${BRAND_NAME}`;
+const title = `${useCase.label} | ${BRAND_NAME}`;
 const description = `Top AI humanizers for ${useCase.targetQuery}. ${useCase.displayedSortLogic}. Independent monthly benchmark from ${BRAND_NAME}.`;
 const canonical = `${SITE_URL}/best-for/${useCase.slug}`;
 
@@ -63,13 +63,13 @@ const lastTested =
 const topConfidence = cycle.humanizers[0]?.confidence ?? "high";
 
 function fmtScore(v: number | null | undefined): string {
-  if (typeof v !== "number" || !Number.isFinite(v)) return "—";
+  if (typeof v !== "number" || !Number.isFinite(v)) return "N/A";
   return (v * 100).toFixed(1);
 }
 
 function formatRelative(iso: string): string {
   const then = new Date(iso).getTime();
-  if (!Number.isFinite(then)) return "—";
+  if (!Number.isFinite(then)) return "N/A";
   const now = Date.now();
   const diffMs = now - then;
   const day = 24 * 60 * 60 * 1000;

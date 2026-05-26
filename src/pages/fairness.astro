@@ -16,7 +16,7 @@ const jsonLd = breadcrumbListSchema([
 ---
 
 <Base
-  title={`Fairness & Corrections — ${BRAND_NAME}`}
+  title={`Fairness & Corrections | ${BRAND_NAME}`}
   description="How vendors can dispute results, request retesting, submit API access, and audit our benchmark."
   canonical={canonical}
   ogImage={`${SITE_URL}/og/fairness.png`}
@@ -40,8 +40,8 @@ const jsonLd = breadcrumbListSchema([
       <li>All input prompts and their <code>prompt_set_version</code>.</li>
       <li>All humanized outputs, per humanizer, per sample.</li>
       <li>
-        All detector responses — both raw API payloads and our parsed
-        classification — for every humanized output.
+        All detector responses (both raw API payloads and our parsed
+        classification) for every humanized output.
       </li>
       <li>The scoring script (Python) in our public repository.</li>
       <li>
@@ -64,12 +64,12 @@ const jsonLd = breadcrumbListSchema([
       Email <a href="mailto:disputes@humanizerbench.example"
         >disputes@humanizerbench.example</a
       > with the subject line
-      <code>Dispute — [Cycle] — [Humanizer]</code>. Include:
+      <code>Dispute: [Cycle], [Humanizer]</code>. Include:
     </p>
     <ol>
       <li>Which result you dispute (cycle ID, humanizer, sample ID).</li>
       <li>
-        Reproducible evidence — the exact input, your expected output, and how
+        Reproducible evidence: the exact input, your expected output, and how
         the published output differs.
       </li>
       <li>

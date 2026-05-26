@@ -83,7 +83,7 @@ export default function SubscribeForm({
       })
       .catch(() => {
         // If Turnstile fails to load, the form will still submit but the
-        // server will reject — surface a generic error then.
+        // server will reject; surface a generic error then.
       });
     return () => {
       cancelled = true;
@@ -126,7 +126,7 @@ export default function SubscribeForm({
   if (status.kind === "ok") {
     return (
       <p className={cn("text-xs text-[var(--color-text-secondary)]", className)}>
-        Thanks — you’re on the list.
+        Thanks, you’re on the list.
       </p>
     );
   }

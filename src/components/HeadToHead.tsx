@@ -43,7 +43,7 @@ export default function HeadToHead({ humanizerA, humanizerB }: Props) {
     [humanizerB.name]: toPct(key, humanizerB.scores[key]),
   }));
 
-  // Zoom Y-axis to [50, 100] when every value is at least 50 — makes
+  // Zoom Y-axis to [50, 100] when every value is at least 50; makes
   // differences readable when humanizers cluster high. Drop to [0, 100]
   // the moment anything falls below 50.
   const allValues = data.flatMap((d) => [

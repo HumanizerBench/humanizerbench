@@ -5,7 +5,7 @@ import {
   MAX_TOTAL_PENALTY,
 } from "@/lib/penalties";
 
-// Grayscale ramp — biggest weight is darkest. Color has no semantic meaning
+// Grayscale ramp: biggest weight is darkest. Color has no semantic meaning
 // here; the proportion is the signal.
 const weights = [
   {
@@ -89,7 +89,7 @@ const hiddenPenalties = penaltyRows.slice(VISIBLE_PENALTIES);
           weights.map((w) => (
             <div
               style={`width: ${w.pct}%; background-color: color-mix(in srgb, var(--color-text-primary) ${Math.round(w.shade * 100)}%, transparent);`}
-              title={`${w.label} — ${w.pct}%`}
+              title={`${w.label}: ${w.pct}%`}
             />
           ))
         }
