@@ -52,7 +52,8 @@ const mergedJsonLd: Record<string, unknown>[] = [
       ))
     }
     <script is:inline>
-      {`const t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);`}
+      const t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
     </script>
   </head>
   <body
