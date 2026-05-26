@@ -39,7 +39,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_ROOT = path.resolve(__dirname, "../data");
 const CYCLES_DIR = path.join(DATA_ROOT, "cycles");
-const EPSILON = 1e-4;
+const EPSILON = 1e-9;
+
+/**
+ * Mirror of `round()` in admin's src/lib/export/buildExport.ts. Admin
+ * rounds composite + score_delta to 2 places, and everything else
+ * (bypass_rate, meaning_preservation, readability, consistency,
+ * detector_breakdown, category_breakdown, score_intervals) to 4 places
+ * before publishing. We apply the same rounding to the replay output so
+ * the comparison is apples-to-apples; the remaining `1e-9` epsilon is
+ * just float-equality slop after rounding.
+ */
+function round(n: number, places: number): number {
+  const f = 10 ** places;
+  return Math.round(n * f) / f;
+}
 
 interface CommitJson {
   cycle: string;
@@ -344,37 +358,37 @@ async function verifyReproducibility(
       continue;
     }
     const ctx = `${cycleName} ${published.slug}`;
-    diffNumeric(`${ctx} composite`, published.scores.composite, r.composite, errors);
-    diffNumeric(`${ctx} bypass_rate`, published.scores.bypass_rate, r.bypass_rate, errors);
+    diffNumeric(`${ctx} composite`, published.scores.composite, round(r.composite, 2), errors);
+    diffNumeric(`${ctx} bypass_rate`, published.scores.bypass_rate, round(r.bypass_rate, 4), errors);
     diffNumeric(
       `${ctx} meaning_preservation`,
       published.scores.meaning_preservation,
-      r.meaning_preservation,
+      round(r.meaning_preservation, 4),
       errors,
     );
-    diffNumeric(`${ctx} readability`, published.scores.readability, r.readability, errors);
+    diffNumeric(`${ctx} readability`, published.scores.readability, round(r.readability, 4), errors);
     diffNumeric(
       `${ctx} consistency_across_categories`,
       published.scores.consistency_across_categories,
-      r.consistency_across_categories,
+      round(r.consistency_across_categories, 4),
       errors,
     );
-    // Detector breakdown
+    // Detector breakdown (published at 4 decimals)
     for (const [k, v] of Object.entries(published.detector_breakdown)) {
       const rv = r.detector_breakdown[k];
       if (rv == null) {
         errors.push(`${ctx} detector_breakdown[${k}] missing in replay`);
       } else {
-        diffNumeric(`${ctx} detector_breakdown[${k}]`, v, rv, errors);
+        diffNumeric(`${ctx} detector_breakdown[${k}]`, v, round(rv, 4), errors);
       }
     }
-    // Category breakdown
+    // Category breakdown (published at 4 decimals)
     for (const [k, v] of Object.entries(published.category_breakdown)) {
       const rv = r.category_breakdown[k];
       if (rv == null) {
         errors.push(`${ctx} category_breakdown[${k}] missing in replay`);
       } else {
-        diffNumeric(`${ctx} category_breakdown[${k}]`, v, rv, errors);
+        diffNumeric(`${ctx} category_breakdown[${k}]`, v, round(rv, 4), errors);
       }
     }
     // Penalties — compare by code + count (score_delta will follow from those).
