@@ -13,22 +13,23 @@ import type { Cycle, Humanizer, HumanizerHistory } from "./types";
 //      `astro build`. They import this module directly and `import.meta.glob`
 //      is undefined there, so we fall back to fs.
 
-interface ViteImportMeta {
-  glob?: <T>(
-    pattern: string,
-    opts: { eager: true; import: "default" },
-  ) => Record<string, T>;
+// Vite statically rewrites `import.meta.glob(...)` calls at build time into
+// an inlined object literal. The match is AST-pattern-based — wrapping the
+// call in a TypeScript cast or a ternary hides it from the matcher and the
+// transform is skipped, leaving a runtime call to undefined. So the call
+// MUST be a direct top-level expression. The @ts-expect-error keeps tsc
+// happy when this file is parsed by tsx in Node (where `glob` doesn't
+// exist on import.meta) — the try/catch handles the runtime throw there.
+let viteCycleModules: Record<string, Cycle> | null = null;
+try {
+  // @ts-expect-error — Vite-only property, throws TypeError in plain Node.
+  viteCycleModules = import.meta.glob(
+    "../../data/cycles/*/leaderboard.json",
+    { eager: true, import: "default" },
+  ) as Record<string, Cycle>;
+} catch {
+  // Plain Node (e.g. tsx scripts/generate-og.ts) — use fs fallback below.
 }
-
-// In Vite, the call is transformed at compile time to an inlined object.
-// In Node, `glob` is undefined and the call is never made.
-const viteCycleModules: Record<string, Cycle> | null =
-  typeof (import.meta as unknown as ViteImportMeta).glob === "function"
-    ? (import.meta as unknown as ViteImportMeta).glob!<Cycle>(
-        "../../data/cycles/*/leaderboard.json",
-        { eager: true, import: "default" },
-      )
-    : null;
 
 /**
  * Build an in-memory map of cycle_id → Cycle. Populated once at module load
