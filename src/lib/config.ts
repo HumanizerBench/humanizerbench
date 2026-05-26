@@ -20,6 +20,7 @@ export const GITHUB_REPO_URL =
 
 export const PARENT_ORG = "WriteHuman";
 export const PARENT_ORG_URL = "https://writehuman.ai";
+export const PARENT_PRIVACY_URL = "https://writehuman.ai/privacy";
 
 export interface BestForUseCase {
   slug: string;
