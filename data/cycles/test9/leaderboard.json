@@ -1,0 +1,163 @@
+{
+  "cycle": "test9",
+  "generated_at": "2026-05-26T20:09:27.586Z",
+  "methodology_version": "1.2.0",
+  "scoring_version": "1.2.0",
+  "prompt_set_version": "1.0.0",
+  "detector_config_version": "1.0.0",
+  "humanizer_config_version": "1.0.0",
+  "source_model_versions": {
+    "anthropic": "claude-opus-4-7"
+  },
+  "placeholders_used": {
+    "cover_letter": {
+      "ROLE": "supply-chain logistics coordinator"
+    },
+    "argumentative_essay": {
+      "TOPIC": "remote work and the future of office culture"
+    }
+  },
+  "cycle_sample_count": 2,
+  "recording_sessions": [
+    {
+      "id": "e821e8dc-3241-4e7f-80d1-a95fc5e072b7",
+      "started_at": "2026-05-26T19:32:26.906086+00:00",
+      "ended_at": "2026-05-26T19:34:24.746+00:00",
+      "total_duration_ms": 117892,
+      "segment_count": 0,
+      "segment_urls": [],
+      "test_markers": [
+        {
+          "test_id": "50ce3527-5541-4f5d-8e8a-a646374cb9e8",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 96970
+        },
+        {
+          "test_id": "8601cb85-446c-422a-b8e2-8cd8a1f266bd",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 117107
+        }
+      ]
+    },
+    {
+      "id": "e5668a8b-3cf1-4465-b004-2440de74efa7",
+      "started_at": "2026-05-26T19:34:24.799329+00:00",
+      "ended_at": "2026-05-26T19:35:16.374+00:00",
+      "total_duration_ms": 51629,
+      "segment_count": 0,
+      "segment_urls": [],
+      "test_markers": [
+        {
+          "test_id": "a06c03c1-61a8-4a33-86a9-5369201572d6",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 24572
+        },
+        {
+          "test_id": "f6248939-1aea-4c1a-b05a-5d71ba6cf06a",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 51108
+        }
+      ]
+    }
+  ],
+  "humanizers": [
+    {
+      "slug": "stealth-writer",
+      "name": "Stealth Writer",
+      "url": "https://stealthwriter.ai/",
+      "rank": 1,
+      "rank_change": 1,
+      "last_tested_at": "2026-05-26T19:35:16.16+00:00",
+      "scores": {
+        "composite": 75.15,
+        "bypass_rate": 0.6653,
+        "meaning_preservation": 0.9342,
+        "readability": 0.6684,
+        "consistency_across_categories": 0.6613
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4259,
+          0.9048
+        ],
+        "meaning_preservation_ci_95": [
+          0.9083,
+          0.96
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.4053,
+        "winston": 0.9254
+      },
+      "category_breakdown": {
+        "academic_essay": 0.9048,
+        "application_essay": 0.4259
+      },
+      "pricing": {
+        "monthly_usd": null,
+        "free_tier": false,
+        "free_tier_word_limit": null
+      },
+      "plan_tier_used": "Starter",
+      "settings_used": null,
+      "sample_count": 2,
+      "successful_test_count": 2,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "writehuman",
+      "name": "WriteHuman",
+      "url": "https://writehuman.ai",
+      "rank": 2,
+      "rank_change": -1,
+      "last_tested_at": "2026-05-26T19:34:24.286+00:00",
+      "scores": {
+        "composite": 67.72,
+        "bypass_rate": 0.4999,
+        "meaning_preservation": 0.9264,
+        "readability": 0.8845,
+        "consistency_across_categories": 0.2931
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0,
+          0.9998
+        ],
+        "meaning_preservation_ci_95": [
+          0.9017,
+          0.9512
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.4998,
+        "winston": 0.5
+      },
+      "category_breakdown": {
+        "academic_essay": 0.9998,
+        "application_essay": 0
+      },
+      "pricing": {
+        "monthly_usd": null,
+        "free_tier": false,
+        "free_tier_word_limit": null
+      },
+      "plan_tier_used": null,
+      "settings_used": null,
+      "sample_count": 2,
+      "successful_test_count": 2,
+      "flagged_test_count": 0
+    }
+  ]
+}
