@@ -1,0 +1,207 @@
+---
+import Base from "@/layouts/Base.astro";
+import {
+  BRAND_NAME,
+  SITE_URL,
+  PARENT_ORG,
+  PARENT_ORG_URL,
+  PARENT_PRIVACY_URL,
+} from "@/lib/config";
+import { breadcrumbListSchema } from "@/lib/schema";
+
+const canonical = `${SITE_URL}/terms`;
+const jsonLd = breadcrumbListSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Terms", url: canonical },
+]);
+
+const effectiveDate = "May 26, 2026";
+---
+
+<Base
+  title={`Terms of Use — ${BRAND_NAME}`}
+  description={`Terms governing use of ${BRAND_NAME}, the public AI humanizer benchmark operated by ${PARENT_ORG}.`}
+  canonical={canonical}
+  jsonLd={jsonLd}
+>
+  <article
+    class="max-w-3xl mx-auto py-16 px-6 text-[var(--color-text-primary)] [&_h1]:text-4xl [&_h1]:font-semibold [&_h1]:tracking-tight [&_h1]:mb-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4 [&_p]:mt-4 [&_p]:leading-relaxed [&_p]:text-[var(--color-text-secondary)] [&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:list-disc [&_ul]:text-[var(--color-text-secondary)] [&_a]:text-[var(--color-accent)] [&_a:hover]:underline [&_strong]:font-semibold [&_strong]:text-[var(--color-text-primary)]"
+  >
+    <h1>Terms of Use</h1>
+
+    <p>
+      <strong>Effective date:</strong>
+      {effectiveDate}
+    </p>
+
+    <p>
+      These terms govern your use of <strong>{BRAND_NAME}</strong> at <a
+        href={SITE_URL}>humanizerbench.com</a
+      > (the "Site"). The Site is operated by <a
+        href={PARENT_ORG_URL}
+        rel="noopener noreferrer"
+        target="_blank">{PARENT_ORG}</a
+      >. By accessing or using the Site, you agree to these terms. If you do
+      not agree, do not use the Site.
+    </p>
+
+    <h2>What HumanizerBench is</h2>
+    <p>
+      {BRAND_NAME} is a public, auditable benchmark of commercial AI
+      humanizers. Each cycle, the same prompts are run through every tested
+      humanizer, each output is submitted to a fixed set of commercial AI
+      detectors, and the results are scored by a published deterministic
+      formula. The Site publishes the leaderboard, the underlying data, the
+      scoring script, and a description of the methodology.
+    </p>
+    <p>
+      The Site does not provide an AI humanization service. It is an
+      information resource. Visiting the Site does not create any account,
+      contract for services, or vendor relationship with you.
+    </p>
+
+    <h2>Operator disclosure</h2>
+    <p>
+      {PARENT_ORG} sells one of the humanizers ranked on the leaderboard. That
+      relationship is disclosed on the homepage, the <a href="/about">About</a
+      > page, and the <a href="/fairness">Fairness</a> page. {PARENT_ORG} is
+      held to the same methodology, scoring, and penalty rules as every other
+      tested humanizer. Editorial control of the benchmark — what is tested,
+      how it is scored, what is published — is independent of {PARENT_ORG}'s
+      commercial product team. No payment for placement is accepted from any
+      vendor, including {PARENT_ORG}.
+    </p>
+
+    <h2>Use of the benchmark data</h2>
+    <p>
+      You may read, cite, quote, and reference the leaderboard and the
+      published data for journalistic, academic, research, comparative, and
+      commercial purposes, provided that you attribute the source to "{BRAND_NAME}"
+      and link to the relevant page on the Site. You may not present the data
+      in a way that materially misrepresents the methodology, the scoring, or
+      a specific humanizer's results.
+    </p>
+    <p>
+      The raw cycle bundles published under <code>/data/cycles/</code> in the
+      public repository linked from the footer are intended to be downloaded
+      and re-run; re-running the published scoring script against the
+      published inputs is expressly permitted and encouraged.
+    </p>
+
+    <h2>Trademarks and third-party names</h2>
+    <p>
+      Product names, trademarks, and logos referenced on the Site belong to
+      their respective owners. The use of those names on the Site is for
+      factual identification of the humanizers and detectors that are tested
+      and does not imply any endorsement of, affiliation with, or sponsorship
+      by the named parties.
+    </p>
+
+    <h2>Newsletter</h2>
+    <p>
+      If you submit your email address to the Site's newsletter form, your
+      email will be stored and used to send periodic updates about the
+      benchmark. You can unsubscribe at any time using the link in any
+      newsletter email. Email handling is described in the <a
+        href={PARENT_PRIVACY_URL}
+        rel="noopener noreferrer"
+        target="_blank">{PARENT_ORG} Privacy Policy</a
+      >.
+    </p>
+
+    <h2>No warranties</h2>
+    <p>
+      The Site, the leaderboard, the underlying data, and the scoring outputs
+      are provided "as is" and "as available." {BRAND_NAME} and {PARENT_ORG}
+      make no warranties, express or implied, including warranties of
+      merchantability, fitness for a particular purpose, accuracy, or
+      non-infringement. The benchmark reflects the behavior of third-party
+      humanizers and detectors at a specific point in time; those products
+      change frequently, and the published results may not reflect current
+      vendor behavior.
+    </p>
+    <p>
+      The leaderboard is an informational comparison and should not be relied
+      on as the sole basis for any purchasing, academic, legal, or business
+      decision. Detector outputs reflect the verdicts of third-party
+      commercial detectors as observed during a specific cycle and are not
+      determinations of authorship, originality, or academic integrity.
+    </p>
+
+    <h2>Limitation of liability</h2>
+    <p>
+      To the maximum extent permitted by law, {BRAND_NAME} and {PARENT_ORG},
+      and their respective officers, employees, and agents, will not be
+      liable for any indirect, incidental, special, consequential, or
+      punitive damages, or any loss of profits, revenues, data, or goodwill,
+      arising out of or in connection with your use of, or inability to use,
+      the Site, the leaderboard, or the published data. Aggregate liability
+      for any direct damages will not exceed one hundred U.S. dollars
+      (USD $100).
+    </p>
+
+    <h2>Vendor concerns and corrections</h2>
+    <p>
+      If you are a humanizer or detector vendor and you believe the
+      methodology was misapplied to your product, contact the operator (see
+      below). Submissions will be reviewed against the published methodology
+      and scoring script. Corrections, if warranted, will be made
+      transparently and disclosed in the next cycle. Disagreement with the
+      methodology itself is not, on its own, grounds for an adjustment to
+      published results.
+    </p>
+
+    <h2>Privacy</h2>
+    <p>
+      Information collected by the Site, including newsletter signups and
+      server-side request logs, is handled in accordance with the <a
+        href={PARENT_PRIVACY_URL}
+        rel="noopener noreferrer"
+        target="_blank">{PARENT_ORG} Privacy Policy</a
+      >, which is incorporated into these terms by reference.
+    </p>
+
+    <h2>Acceptable use</h2>
+    <ul>
+      <li>
+        Do not attempt to disrupt the Site, scrape it in a way that imposes
+        unreasonable load, or interfere with other users.
+      </li>
+      <li>
+        Do not submit other people's email addresses to the newsletter form.
+      </li>
+      <li>
+        Do not misrepresent the published methodology, scoring, or
+        per-humanizer results.
+      </li>
+    </ul>
+
+    <h2>Changes to these terms</h2>
+    <p>
+      These terms may be updated from time to time. Material changes will be
+      reflected in the effective date at the top of this page. Continued use
+      of the Site after a change constitutes acceptance of the updated terms.
+    </p>
+
+    <h2>Governing law</h2>
+    <p>
+      These terms are governed by the laws applicable to {PARENT_ORG}'s
+      operating jurisdiction, without regard to conflict-of-laws principles.
+      The specific jurisdiction is described in the <a
+        href={PARENT_PRIVACY_URL}
+        rel="noopener noreferrer"
+        target="_blank">{PARENT_ORG} Privacy Policy</a
+      > and supporting policies.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about these terms, methodology disputes, and correction
+      requests can be directed to the operator via <a
+        href={PARENT_ORG_URL}
+        rel="noopener noreferrer"
+        target="_blank">{PARENT_ORG_URL}</a
+      >.
+    </p>
+  </article>
+</Base>

@@ -1,5 +1,10 @@
 ---
-import { GITHUB_REPO_URL, PARENT_ORG, PARENT_ORG_URL } from "@/lib/config";
+import {
+  GITHUB_REPO_URL,
+  PARENT_ORG,
+  PARENT_ORG_URL,
+  PARENT_PRIVACY_URL,
+} from "@/lib/config";
 import SubscribeForm from "@/components/SubscribeForm";
 
 const year = new Date().getFullYear();
@@ -10,6 +15,8 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/methodology", label: "Methodology" },
   { href: "/fairness", label: "Fairness" },
+  { href: "/terms", label: "Terms" },
+  { href: PARENT_PRIVACY_URL, label: "Privacy", external: true },
   { href: "/rss.xml", label: "RSS" },
   { href: GITHUB_REPO_URL, label: "GitHub", external: true },
   { href: PARENT_ORG_URL, label: PARENT_ORG, external: true },
