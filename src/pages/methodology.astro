@@ -22,13 +22,13 @@ const jsonLd = breadcrumbListSchema([
 
 <Base
   title={`Methodology — ${BRAND_NAME}`}
-  description="How HumanizerBench tests AI humanizers: sample selection, scoring formula, versioning, reproducibility."
+  description="How HumanizerBench tests AI humanizers: sample selection, scoring formula, versioning, full reproducibility."
   canonical={canonical}
   ogImage={`${SITE_URL}/og/methodology.png`}
   jsonLd={jsonLd}
 >
   <article
-    class="max-w-3xl mx-auto py-16 px-6 text-[var(--color-text-primary)] [&_h1]:text-4xl [&_h1]:font-semibold [&_h1]:tracking-tight [&_h1]:mb-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4 [&_p]:mt-4 [&_p]:leading-relaxed [&_p]:text-[var(--color-text-secondary)] [&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:list-disc [&_ul]:text-[var(--color-text-secondary)] [&_ol]:mt-4 [&_ol]:space-y-2 [&_ol]:pl-6 [&_ol]:list-decimal [&_ol]:text-[var(--color-text-secondary)] [&_a]:text-[var(--color-accent)] [&_a:hover]:underline [&_code]:font-mono [&_code]:text-[0.9em] [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded [&_code]:bg-[var(--color-surface)] [&_code]:border [&_code]:border-[var(--color-border)] [&_strong]:font-semibold [&_strong]:text-[var(--color-text-primary)]"
+    class="max-w-3xl mx-auto py-16 px-6 text-[var(--color-text-primary)] [&_h1]:text-4xl [&_h1]:font-semibold [&_h1]:tracking-tight [&_h1]:mb-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:mt-8 [&_h3]:mb-2 [&_p]:mt-4 [&_p]:leading-relaxed [&_p]:text-[var(--color-text-secondary)] [&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:list-disc [&_ul]:text-[var(--color-text-secondary)] [&_ol]:mt-4 [&_ol]:space-y-2 [&_ol]:pl-6 [&_ol]:list-decimal [&_ol]:text-[var(--color-text-secondary)] [&_a]:text-[var(--color-accent)] [&_a:hover]:underline [&_code]:font-mono [&_code]:text-[0.9em] [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded [&_code]:bg-[var(--color-surface)] [&_code]:border [&_code]:border-[var(--color-border)] [&_strong]:font-semibold [&_strong]:text-[var(--color-text-primary)] [&_table]:mt-4 [&_table]:w-full [&_table]:text-sm [&_th]:text-left [&_th]:font-semibold [&_th]:px-3 [&_th]:py-2 [&_th]:border-b [&_th]:border-[var(--color-border)] [&_td]:px-3 [&_td]:py-2 [&_td]:border-b [&_td]:border-[var(--color-border)] [&_td]:text-[var(--color-text-secondary)] [&_td]:align-top"
   >
     <h1>Methodology</h1>
 
@@ -38,12 +38,13 @@ const jsonLd = breadcrumbListSchema([
       HumanizerBench is operated by WriteHuman (<a href={PARENT_ORG_URL}
         rel="noopener noreferrer"
         target="_blank">writehuman.ai</a
-      >). We disclose this openly.
-      <strong class="text-[var(--color-text-primary)]"
-        >Methodology and raw data:
-        <a href={GITHUB_REPO_URL} rel="noopener noreferrer" target="_blank"
-          >GitHub repo</a
-        >. Read our <a href="/fairness">fairness policy</a> or <a href="/why"
+      >). We disclose this openly. The benchmark is fully reproducible: every
+      input, every humanized output, every detector verdict, and the scoring
+      algorithm itself are published per cycle in our
+      <a href={GITHUB_REPO_URL} rel="noopener noreferrer" target="_blank"
+        >public repository</a
+      >. <strong class="text-[var(--color-text-primary)]"
+        >Read our <a href="/fairness">fairness policy</a> or <a href="/why"
           >why we built this</a
         >.</strong
       >
@@ -51,27 +52,35 @@ const jsonLd = breadcrumbListSchema([
 
     <h2>Sample selection</h2>
     <p>
-      Each cycle uses a curated set of test prompts spanning eight writing
-      categories: <code>academic_essay</code>, <code>application_essay</code>,
-      <code>blog_post</code>, <code>marketing_copy</code>, <code
-        >business_email</code
-      >, <code>lit_review</code>, <code>landing_copy</code>, and <code
-        >product_desc</code
-      >. Prompts are versioned via <code>prompt_set_version</code> so any
-      change to the inputs produces a new, distinguishable cycle. The target
-      sample count per humanizer is <strong>72 samples per cycle</strong> (nine
-      prompts per category), balanced across the eight categories so no single
-      genre dominates the overall score.
+      Each cycle tests humanizers against samples spanning eight writing
+      categories:
+    </p>
+    <ul>
+      <li><code>academic_essay</code> — argumentative essays, lit-review intros</li>
+      <li><code>application_essay</code> — personal statements, cover letters</li>
+      <li><code>blog_post</code> — listicles, how-to guides</li>
+      <li><code>marketing_copy</code> — product descriptions, landing pages</li>
+      <li><code>business_email</code> — internal team announcements</li>
+      <li><code>discussion_board</code> — discussion-board responses</li>
+      <li><code>technical_doc</code> — API documentation</li>
+      <li><code>news_article</code> — news article writing</li>
+    </ul>
+    <p>
+      The full template set, with target word counts and the placeholder tokens
+      each contains, is published per cycle as <code
+        >data/cycles/&lt;cycle&gt;/templates.json</code
+      >. Source-LLM outputs (the texts each humanizer is asked to rewrite) are
+      published as <code>samples.json</code>. Per-cycle sample counts are
+      recorded in <code>cycle.json</code> and on <code>leaderboard.json</code>.
     </p>
     <p>
-      Each prompt is a template containing <code>[BRACKETED]</code> tokens
-      (e.g. <code>[TOPIC]</code>, <code>[ROLE]</code>). At cycle creation we
-      fill every token from a curated value bank using a deterministic hash
-      seeded by a per-cycle secret nonce. Selecting from banks — not
-      free-typed by us each month — means there is no founder discretion in
-      what gets tested, and the seeded hash means anyone with the published
-      banks and algorithm can re-derive the exact prompts after the cycle
-      closes.
+      Each template contains <code>[BRACKETED]</code> placeholder tokens
+      (<code>[TOPIC]</code>, <code>[ROLE]</code>, <code>[FIELD]</code>, etc.).
+      At cycle creation we fill every token from a curated value bank using a
+      deterministic hash seeded by a per-cycle secret nonce. Banks (not
+      free-typed values) eliminate founder discretion in what gets tested;
+      the seeded hash means anyone with the published banks and algorithm can
+      re-derive the exact prompts after the cycle closes.
     </p>
 
     <h2>Transparency &amp; verification</h2>
@@ -84,215 +93,417 @@ const jsonLd = breadcrumbListSchema([
     <ul>
       <li>
         <strong>At cycle creation</strong>, we generate a random 32-byte
-        <code>nonce</code> and publish only its SHA-256 to this repo as
+        <code>nonce</code> and publish only its SHA-256 to the public repo as
         <code>data/cycles/&lt;cycle&gt;/commit.json</code>. The nonce itself
         stays private.
       </li>
       <li>
-        <strong>At cycle close</strong>, after all humanizers have been
-        scored, we publish the nonce as
-        <code>data/cycles/&lt;cycle&gt;/nonce.txt</code> alongside a frozen
-        snapshot of the templates (<code>templates.json</code>), the value
+        <strong>At cycle close</strong>, after all humanizers have been scored,
+        we publish the nonce as <code>nonce.txt</code> alongside frozen
+        snapshots of the templates (<code>templates.json</code>), the value
         banks (<code>banks.json</code>), the selection algorithm
         (<code>select-placeholders.js</code>), and the resolved prompts
         (<code>prompts.json</code>).
       </li>
     </ul>
     <p>
-      The <code>scripts/verify-cycle.ts</code> script in <a
-        href={GITHUB_REPO_URL}
-        rel="noopener noreferrer"
-        target="_blank">this repo</a
-      > re-runs the frozen algorithm against the published nonce, banks, and
+      The <code>scripts/verify-cycle.ts</code> script in the public repo
+      re-runs the frozen algorithm against the published nonce, banks, and
       templates, then asserts that the resulting prompts match
       <code>prompts.json</code> exactly and that <code>sha256(nonce)</code>
-      matches the committed hash from cycle start. Run it locally:
+      matches the committed hash from cycle start. It also runs the full
+      score replay described below. Run it locally:
     </p>
     <pre
-      class="mt-4 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-4 font-mono text-sm overflow-x-auto text-[var(--color-text-primary)]"><code>npm run verify              # verify every cycle
+      class="mt-4 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-4 font-mono text-sm overflow-x-auto text-[var(--color-text-primary)]"><code>git clone {GITHUB_REPO_URL}
+cd humanizerbench
+npm install
+npm run verify              # verify every cycle
 npm run verify -- 2026-06   # verify one cycle</code></pre>
-    <p>
-      Anyone — researchers, humanizer vendors, journalists — can prove the
-      prompts for a closed cycle weren't tampered with after the fact, while
-      still being unable to predict prompts for cycles that haven't yet been
-      revealed.
-    </p>
 
     <h2>Tested humanizers</h2>
     <p>
-      The current cycle tests <strong>8 humanizers</strong>. Slugs and display
-      names are listed on the <a href="/leaderboard">leaderboard</a>, and each
-      humanizer has a dedicated detail page under <code>/humanizers/[slug]</code
-      >. WriteHuman is included on the leaderboard and is held to exactly the
-      same methodology, scoring, and penalty rules as every other humanizer.
+      The active humanizer set is listed on the <a href="/leaderboard"
+        >leaderboard</a
+      >. Each humanizer has a dedicated detail page under
+      <code>/humanizers/[slug]</code>. WriteHuman is included on the
+      leaderboard and is held to exactly the same methodology, scoring, and
+      penalty rules as every other humanizer.
     </p>
 
     <h2>Detectors</h2>
     <p>
       We test every humanized output against six independent commercial AI
-      detectors:
-    </p>
-    <ul>
-      <li><strong>GPTZero</strong></li>
-      <li><strong>Originality.ai</strong></li>
-      <li><strong>Copyleaks</strong></li>
-      <li><strong>Winston AI</strong></li>
-      <li><strong>Sapling</strong></li>
-      <li><strong>ZeroGPT</strong></li>
-    </ul>
-    <p>
-      Detector results are independent third-party submissions — we do not
-      operate, fine-tune, or coordinate with the detectors. For each
-      humanizer-output sample we submit the same text to all six detectors and
-      record the raw responses, the parsed classification (human / AI), and the
-      detector's reported confidence.
+      detectors: GPTZero, Originality.ai, Copyleaks, Winston AI, Sapling, and
+      ZeroGPT. We do not operate, fine-tune, or coordinate with the detectors.
+      For each humanizer output we submit the same text to all six and record
+      a normalized score in <code>[0, 1]</code> where <code>1</code> means
+      "human" (the humanizer evaded the detector) and <code>0</code> means
+      "AI" (the detector caught it). The full per-test verdicts are published
+      per cycle as <code>detector-scores.json</code>.
     </p>
 
     <h2>Scoring formula</h2>
     <p>
-      The overall score is a weighted blend of five sub-scores, each
-      normalized to the 0–1 range:
+      The composite score for each humanizer is computed from four sub-scores,
+      each in <code>[0, 1]</code>. The base composite is bounded
+      <code>[0, 100]</code>; per-test penalties (defined below) are then
+      subtracted and the result clamped to a final
+      <code>composite</code> ∈ <code>[0, 100]</code>:
     </p>
     <pre
-      class="mt-4 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-4 font-mono text-sm overflow-x-auto text-[var(--color-text-primary)]"><code>overall = 0.40 * bypass_rate
-        + 0.25 * meaning_preservation
-        + 0.20 * readability
-        + 0.10 * consistency_across_categories
-        + 0.05 * speed_score</code></pre>
-    <ul>
-      <li>
-        <strong>bypass_rate</strong> — share of detector tests where the output
-        was classified as human (across all six detectors and all samples).
-      </li>
-      <li>
-        <strong>meaning_preservation</strong> — how well the humanized output
-        preserves the original meaning, scored 0–1.
-      </li>
-      <li>
-        <strong>readability</strong> — how close the humanized output stays to
-        the input's reading level.
-      </li>
-      <li>
-        <strong>consistency_across_categories</strong> — how evenly the
-        humanizer performs across the eight writing categories.
-      </li>
-      <li>
-        <strong>speed_score</strong> — how fast the humanizer responds, per
-        request.
-      </li>
-    </ul>
+      class="mt-4 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-4 font-mono text-sm overflow-x-auto text-[var(--color-text-primary)]"><code>composite_raw =
+    42 * bypass_rate
+  + 32 * meaning_preservation
+  + 16 * readability
+  + 10 * consistency_across_categories
+
+composite = max(0, composite_raw - sum_of_penalty_deltas)</code></pre>
+    <p>
+      Weights and penalty rules are inlined verbatim into the published
+      <code>scoring.js</code> file every cycle, so the methodology version on a
+      given <code>leaderboard.json</code> pins the exact constants that ran.
+      The current weights come from <code>methodology_version 1.2.0</code>;
+      earlier versions are documented inline in the scoring code.
+    </p>
+    <p>
+      Each sub-score has a precise algorithmic definition, given below.
+      <em>Aggregate per humanizer</em> always means "over the humanizer's set
+      of tests in this cycle with <code>status = "complete"</code>"; flagged
+      and failed tests feed only the penalty rules. Tests reference the
+      published row shapes in <code>tests.json</code> and
+      <code>detector-scores.json</code>.
+    </p>
+
+    <h3 id="bypass-rate"><code>bypass_rate</code></h3>
+    <p>
+      For each test, compute the <strong>median</strong> of all
+      <code>raw_score</code> values across the six detectors in
+      <code>detector-scores.json</code> (median, not mean, because some
+      detectors binarize their output near 0 or 1 — a single outlier would
+      otherwise swing the mean by 0.25). The humanizer's
+      <code>bypass_rate</code> is the <strong>mean</strong> of those per-test
+      medians.
+    </p>
+
+    <h3 id="meaning-preservation"><code>meaning_preservation</code></h3>
+    <p>
+      For each test, the cosine similarity of the OpenAI
+      <code>text-embedding-3-large</code> embeddings of
+      <code>input_text</code> and <code>output_text</code>, clamped to
+      <code>[0, 1]</code>. We publish the per-test value in
+      <code>tests.json</code> as
+      <code>tests[i].meaning_preservation</code>. The humanizer aggregate is
+      the mean across that humanizer's complete tests.
+    </p>
+
+    <h3 id="readability"><code>readability</code></h3>
+    <p>
+      For each text we count grammar errors via LanguageTool (with
+      proper-noun false positives filtered out — see <code
+        >src/lib/scoring/lt-filter.ts</code
+      > in the admin repo). The rate is <code
+        >grammar_error_count / grammar_word_count</code
+      >. The per-test readability is
+      <code
+        >max(0, min(1, 1 - max(0, output_rate - input_rate) * 50))</code
+      > — i.e. <code>1</code> when the output is at least as clean as the
+      input, falling to <code>0</code> when the output rate exceeds the input
+      by <code>0.02</code> or more. Published in
+      <code>tests[i].readability</code>; humanizer aggregate is the mean.
+    </p>
+
+    <h3 id="consistency"><code>consistency_across_categories</code></h3>
+    <p>
+      For each writing category present in the humanizer's tests, compute the
+      mean of per-test bypass medians within that category. The humanizer's
+      consistency score is
+      <code>max(0, 1 - stddev(category_means))</code>, defaulting to
+      <code>1</code> when fewer than two categories are present. A humanizer
+      with identical category means scores <code>1</code>; a humanizer that
+      crushes blog posts but flunks academic essays sees its consistency
+      score dragged down.
+    </p>
+
+    <h2>Penalties</h2>
+    <p>
+      A humanizer's composite score is reduced by one or more penalties when
+      its output exhibits known quality issues. Penalties deduct from
+      <code>composite_raw</code>; the final composite is clamped to
+      <code>[0, 100]</code>. Per-humanizer penalty deltas are published in
+      <code>leaderboard.json</code> under
+      <code>humanizers[i].penalties_applied</code>, so every deduction is
+      auditable.
+    </p>
+    <p>
+      Each penalty has a fixed deduction per occurrence and a cap on its
+      total impact, so no single category can dominate the final score. The
+      maximum possible total penalty across all codes is <strong
+        class="font-mono tabnum">−{MAX_TOTAL_PENALTY.toFixed(1)}</strong
+      > (out of <code>100</code>).
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Penalty</th>
+          <th>Trigger</th>
+          <th class="text-right tabnum whitespace-nowrap">Per / Cap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>{PENALTY_META.severe_meaning_drift.label}</strong>
+            (<code>severe_meaning_drift</code>)
+            <div class="text-xs mt-1 opacity-75">
+              {PENALTY_META.severe_meaning_drift.description}
+            </div>
+          </td>
+          <td>
+            Per test where
+            <code>tests[i].meaning_preservation &lt; 0.85</code>.
+          </td>
+          <td class="text-right font-mono tabnum whitespace-nowrap">
+            −{PENALTY_META.severe_meaning_drift.per.toFixed(1)} / −{PENALTY_META.severe_meaning_drift.cap.toFixed(1)}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{PENALTY_META.severe_grammar_degradation.label}</strong>
+            (<code>severe_grammar_degradation</code>)
+            <div class="text-xs mt-1 opacity-75">
+              {PENALTY_META.severe_grammar_degradation.description}
+            </div>
+          </td>
+          <td>
+            Per test where <code>tests[i].readability &lt; 0.5</code>.
+          </td>
+          <td class="text-right font-mono tabnum whitespace-nowrap">
+            −{PENALTY_META.severe_grammar_degradation.per.toFixed(1)} / −{PENALTY_META.severe_grammar_degradation.cap.toFixed(1)}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{PENALTY_META.length_inflation.label}</strong>
+            (<code>length_inflation</code>)
+            <div class="text-xs mt-1 opacity-75">
+              {PENALTY_META.length_inflation.description}
+            </div>
+          </td>
+          <td>
+            Per test where
+            <code
+              >word_count(output_text) / word_count(input_text) &gt; 1.4</code
+            >.
+          </td>
+          <td class="text-right font-mono tabnum whitespace-nowrap">
+            −{PENALTY_META.length_inflation.per.toFixed(1)} / −{PENALTY_META.length_inflation.cap.toFixed(1)}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{PENALTY_META.identical_to_input.label}</strong>
+            (<code>identical_to_input</code>)
+            <div class="text-xs mt-1 opacity-75">
+              {PENALTY_META.identical_to_input.description}
+            </div>
+          </td>
+          <td>
+            Per flagged test with
+            <code>failure_reason_code = "identical_to_input"</code>.
+          </td>
+          <td class="text-right font-mono tabnum whitespace-nowrap">
+            −{PENALTY_META.identical_to_input.per.toFixed(1)} / −{PENALTY_META.identical_to_input.cap.toFixed(1)}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{PENALTY_META.refusal_in_output.label}</strong>
+            (<code>refusal_in_output</code>)
+            <div class="text-xs mt-1 opacity-75">
+              {PENALTY_META.refusal_in_output.description}
+            </div>
+          </td>
+          <td>
+            Per flagged test with
+            <code>failure_reason_code ∈ &#123;"refusal_in_output", "refused_input"&#125;</code>.
+          </td>
+          <td class="text-right font-mono tabnum whitespace-nowrap">
+            −{PENALTY_META.refusal_in_output.per.toFixed(1)} / −{PENALTY_META.refusal_in_output.cap.toFixed(1)}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{PENALTY_META.short_output.label}</strong>
+            (<code>short_output</code>)
+            <div class="text-xs mt-1 opacity-75">
+              {PENALTY_META.short_output.description}
+            </div>
+          </td>
+          <td>
+            Per flagged test with
+            <code>failure_reason_code ∈ &#123;"short_output", "output_too_short"&#125;</code>.
+          </td>
+          <td class="text-right font-mono tabnum whitespace-nowrap">
+            −{PENALTY_META.short_output.per.toFixed(1)} / −{PENALTY_META.short_output.cap.toFixed(1)}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{PENALTY_META.tool_unavailable_run.label}</strong>
+            (<code>tool_unavailable_run</code>)
+            <div class="text-xs mt-1 opacity-75">
+              {PENALTY_META.tool_unavailable_run.description}
+            </div>
+          </td>
+          <td>
+            Once if
+            <code
+              >flagged_test_count / (complete_test_count + flagged_test_count)
+              &gt; 0.25</code
+            >.
+          </td>
+          <td class="text-right font-mono tabnum whitespace-nowrap">
+            −{PENALTY_META.tool_unavailable_run.per.toFixed(1)} / −{PENALTY_META.tool_unavailable_run.cap.toFixed(1)}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    {
+      PENALTY_CODE_ORDER.length > 0 && null /* PENALTY_META reference kept to satisfy unused-warning checks */
+    }
 
     <h2>Confidence levels</h2>
     <p>Each humanizer carries a confidence label:</p>
     <ul>
       <li>
-        <strong>high</strong> — ≥ 60 successful tests in the cycle and low
-        variance across categories.
+        <strong>high</strong> — at least 60 complete tests in the cycle AND
+        <code>stddev(category_means) &lt; 0.1</code>.
       </li>
       <li>
-        <strong>medium</strong> — 30–59 successful tests, OR high variance
-        across categories.
+        <strong>medium</strong> — at least 30 complete tests, but does not
+        meet the high-confidence variance bar.
       </li>
       <li>
-        <strong>low</strong> — fewer than 30 successful tests, OR severe
-        inconsistency between categories or detectors.
+        <strong>low</strong> — fewer than 30 complete tests.
       </li>
     </ul>
 
-    <h2>Penalties</h2>
+    <h2 id="reproducing">Reproducing the leaderboard from raw data</h2>
     <p>
-      A humanizer's overall score can be reduced by one or more penalties when
-      its output exhibits known quality issues. Penalties are deducted from the
-      raw overall score; the final score is clamped at 0. Per-humanizer penalty
-      deltas are published alongside the cycle data so every deduction is
-      auditable.
+      Anyone can re-derive every score on the leaderboard from the published
+      cycle bundle. The shortest path:
     </p>
+    <ol>
+      <li>
+        <code>git clone {GITHUB_REPO_URL}</code> and <code>cd</code> in.
+      </li>
+      <li><code>npm install</code> (only dev deps are needed).</li>
+      <li>
+        <code>npm run verify -- &lt;cycle&gt;</code>. Under the hood this
+        loads <code>scoring.js</code> from the cycle bundle, runs it against
+        <code>samples.json</code>, <code>tests.json</code>, and
+        <code>detector-scores.json</code>, and asserts that the per-humanizer
+        results match <code>leaderboard.json</code> within <code>1e-4</code>.
+      </li>
+    </ol>
     <p>
-      Each penalty has a fixed deduction per occurrence and a cap on its total
-      impact, so no single category can dominate the final score. The maximum
-      possible total penalty across all codes is <strong
-        class="font-mono tabnum">−{MAX_TOTAL_PENALTY.toFixed(1)}</strong
-      > (off 100).
+      The published <code>scoring.js</code> is a self-contained ESM module
+      with no external dependencies. To verify by hand without our script,
+      import it and pass the three JSON arrays:
     </p>
-    <ul>
-      {
-        PENALTY_CODE_ORDER.map((code) => {
-          const m = PENALTY_META[code];
-          return (
-            <li>
-              <strong>{m.label}</strong> (<code>{code}</code>) — {m.description}{" "}
-              <span class="font-mono tabnum">
-                −{m.per.toFixed(1)} penalty / −{m.cap.toFixed(1)} max.
-              </span>
-            </li>
-          );
-        })
-      }
-    </ul>
+    <pre
+      class="mt-4 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-4 font-mono text-sm overflow-x-auto text-[var(--color-text-primary)]"><code>import {`{ computeLeaderboard }`} from "./data/cycles/2026-06/scoring.js";
+import samples from "./data/cycles/2026-06/samples.json" with {`{ type: "json" }`};
+import tests from "./data/cycles/2026-06/tests.json" with {`{ type: "json" }`};
+import detectorScores from "./data/cycles/2026-06/detector-scores.json" with {`{ type: "json" }`};
+
+const result = computeLeaderboard({`{ samples, tests, detectorScores }`});
+console.log(result.humanizers[0]); // top-ranked humanizer for the cycle</code></pre>
+    <p>
+      Re-deriving a single sub-score by hand also works. To check one
+      humanizer's <code>bypass_rate</code>:
+    </p>
+    <ol>
+      <li>
+        From <code>tests.json</code>, keep rows where
+        <code>humanizer_slug = h</code> and <code>status = "complete"</code>.
+        Call this list <code>T_h</code>.
+      </li>
+      <li>
+        For each test in <code>T_h</code>, gather every
+        <code>raw_score</code> in <code>detector-scores.json</code> with that
+        <code>test_id</code>. Take the median.
+      </li>
+      <li>
+        The humanizer's <code>bypass_rate</code> is the arithmetic mean of
+        those medians.
+      </li>
+      <li>
+        Compare to <code>leaderboard.json.humanizers[?].scores.bypass_rate</code>.
+      </li>
+    </ol>
+    <p>
+      Floating-point comparisons should use an absolute tolerance of
+      <code>1e-4</code>; <code>verify-cycle.ts</code> uses the same.
+    </p>
 
     <h2>Versioning</h2>
-    <p>Every cycle records five version stamps:</p>
-    <ul>
-      <li>
-        <code>methodology_version</code> — bumped on any change to the formula
-        above or to how sub-scores are computed.
-      </li>
-      <li>
-        <code>scoring_version</code> — bumped alongside
-        <code>methodology_version</code>; identifies the exact scoring script
-        revision used.
-      </li>
-      <li>
-        <code>prompt_set_version</code> — bumped whenever any input prompt is
-        added, removed, or edited.
-      </li>
-      <li>
-        <code>detector_config_version</code> — bumped when a detector's
-        endpoint, parser, or threshold configuration changes.
-      </li>
-      <li>
-        <code>humanizer_config_version</code> — bumped when a humanizer's
-        endpoint, parameters, or pricing tier we tested against changes.
-      </li>
-    </ul>
+    <p>Every cycle's <code>leaderboard.json</code> records five version stamps:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Stamp</th>
+          <th>Bumped when</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>methodology_version</code></td>
+          <td>Anything on this page changes — formula weights, sub-score definitions, penalty rules, confidence thresholds.</td>
+        </tr>
+        <tr>
+          <td><code>scoring_version</code></td>
+          <td>The scoring script changes (typically alongside <code>methodology_version</code>).</td>
+        </tr>
+        <tr>
+          <td><code>prompt_set_version</code></td>
+          <td>A template is added/removed/edited, OR a value bank is changed, OR the placeholder-selection algorithm changes.</td>
+        </tr>
+        <tr>
+          <td><code>detector_config_version</code></td>
+          <td>A detector's endpoint, parser, or normalization changes — or a detector is added or removed.</td>
+        </tr>
+        <tr>
+          <td><code>humanizer_config_version</code></td>
+          <td>A humanizer's endpoint, parameters, or pricing tier we tested against changes — or a humanizer is added or removed.</td>
+        </tr>
+      </tbody>
+    </table>
     <p>
-      Bump rules: any change to the formula → both <code
-        >methodology_version</code
-      > and <code>scoring_version</code>. Prompt changes → <code
-        >prompt_set_version</code
-      >. Detector config changes → <code>detector_config_version</code>.
-    </p>
-
-    <h2>Reproducibility</h2>
-    <p>
-      Everything you need to reproduce a cycle is public: <a
-        href={GITHUB_REPO_URL}
-        rel="noopener noreferrer"
-        target="_blank">{GITHUB_REPO_URL}</a
-      >. Every input, every humanized output, every detector response, every
-      scoring script — public. The prompts themselves are bound to a public
-      hash commitment at cycle start and revealed at cycle close (see
-      <em>Transparency &amp; verification</em> above); <code>npm run verify</code>
-      re-derives them from the published banks and algorithm.
+      Past cycles are immutable. Each cycle bundle (templates, banks,
+      algorithm, scoring code, raw data, leaderboard) is frozen at publish
+      time, so a methodology change today never alters a cycle that ran
+      yesterday — it just changes the version stamps on the next cycle.
     </p>
 
     <h2>Methodology integrity</h2>
     <p>
-      WriteHuman does not manually adjust rankings. Rankings are generated from
-      the published benchmark data using the scoring formula on this page. The
-      scoring script is in our public repository: <a
-        href={GITHUB_REPO_URL}
-        rel="noopener noreferrer"
-        target="_blank">{GITHUB_REPO_URL}</a
-      >.
+      WriteHuman does not manually adjust rankings. Rankings are computed
+      mechanically from the published raw data using the published
+      <code>scoring.js</code>. The integrity argument is structural rather
+      than reputational: if a ranking didn't come from the published
+      algorithm running on the published data, <code>npm run verify</code>
+      would catch it, and anyone in the world can run that script.
     </p>
 
     <h2>How to contribute or dispute</h2>
     <p>
-      If you've found an error, want to dispute a score, request a retest, or
-      submit API access so we can test your humanizer programmatically, see
-      <a href="/fairness">our fairness &amp; corrections policy</a> for the
-      contact addresses and the response-time commitment.
+      If you've found an error, want to dispute a score, request a retest,
+      or submit API access so we can test your humanizer programmatically,
+      see <a href="/fairness"
+        >our fairness &amp; corrections policy</a
+      > for the contact addresses and the response-time commitment.
     </p>
   </article>
 </Base>
