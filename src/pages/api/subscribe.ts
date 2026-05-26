@@ -98,26 +98,37 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     if (!ok) return json(400, { error: "Captcha failed" });
   }
 
-  // Insert via Supabase REST. RLS allows anon INSERT only; duplicates are
-  // collapsed by `on_conflict=email` with `resolution=ignore-duplicates` so
-  // re-submitting the same address looks the same as a fresh subscribe.
+  // Plain INSERT via Supabase REST. RLS allows anon INSERT only — using
+  // `on_conflict=email` + `Prefer: resolution=ignore-duplicates` triggers
+  // an UPSERT path that PostgREST treats as needing UPDATE permission too,
+  // which we intentionally don't grant. So instead: plain INSERT, and a
+  // 23505 (unique_violation) on a duplicate email is treated as success.
   const res = await fetch(
-    `${env.SUPABASE_URL}/rest/v1/newsletter_subscribers?on_conflict=email`,
+    `${env.SUPABASE_URL}/rest/v1/newsletter_subscribers`,
     {
       method: "POST",
       headers: {
         apikey: env.SUPABASE_ANON_KEY,
         Authorization: `Bearer ${env.SUPABASE_ANON_KEY}`,
         "Content-Type": "application/json",
-        Prefer: "resolution=ignore-duplicates,return=minimal",
+        Prefer: "return=minimal",
       },
       body: JSON.stringify({ email, source }),
     },
   );
 
-  if (!res.ok) {
-    return json(502, { error: "Could not save subscription" });
+  if (res.ok) return json(200, { ok: true });
+
+  // Already subscribed → idempotent success.
+  if (res.status === 409) return json(200, { ok: true });
+
+  // Some Postgres errors come back with non-409 statuses but a 23505 code.
+  try {
+    const errBody = (await res.json()) as { code?: string };
+    if (errBody?.code === "23505") return json(200, { ok: true });
+  } catch {
+    // fallthrough to generic error
   }
 
-  return json(200, { ok: true });
+  return json(502, { error: "Could not save subscription" });
 };
