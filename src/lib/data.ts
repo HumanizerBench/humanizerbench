@@ -1,24 +1,83 @@
-import fs from "node:fs/promises";
-import path from "node:path";
 import type { Cycle, Humanizer, HumanizerHistory } from "./types";
 
-// Resolve from the working directory so this works regardless of where Vite
-// places the bundled chunk during `astro build`.
-const DATA_ROOT = path.resolve(process.cwd(), "data");
+// Cycle JSON is loaded at build time — never from the filesystem at request
+// time — so this module works inside the Cloudflare Workers prerender
+// sandbox (which has no fs).
+//
+// Two environments hit this file:
+//   1. The Astro build (Vite): `import.meta.glob` is statically transformed
+//      into an object literal containing every matching JSON file inlined.
+//      No fs at runtime.
+//   2. Build-time scripts run via `tsx` (Node): scripts/generate-og.ts and
+//      scripts/generate-redirects.ts pre-generate static assets BEFORE
+//      `astro build`. They import this module directly and `import.meta.glob`
+//      is undefined there, so we fall back to fs.
+
+interface ViteImportMeta {
+  glob?: <T>(
+    pattern: string,
+    opts: { eager: true; import: "default" },
+  ) => Record<string, T>;
+}
+
+// In Vite, the call is transformed at compile time to an inlined object.
+// In Node, `glob` is undefined and the call is never made.
+const viteCycleModules: Record<string, Cycle> | null =
+  typeof (import.meta as unknown as ViteImportMeta).glob === "function"
+    ? (import.meta as unknown as ViteImportMeta).glob!<Cycle>(
+        "../../data/cycles/*/leaderboard.json",
+        { eager: true, import: "default" },
+      )
+    : null;
+
+/**
+ * Build an in-memory map of cycle_id → Cycle. Populated once at module load
+ * in Vite; lazily in Node (the scripts use it briefly, then exit).
+ */
+let CYCLES_PROMISE: Promise<Map<string, Cycle>> | null = null;
+
+function getCycles(): Promise<Map<string, Cycle>> {
+  if (CYCLES_PROMISE) return CYCLES_PROMISE;
+  CYCLES_PROMISE = (async () => {
+    const map = new Map<string, Cycle>();
+    if (viteCycleModules) {
+      // Path looks like: ../../data/cycles/2026-05/leaderboard.json
+      for (const [filePath, cycle] of Object.entries(viteCycleModules)) {
+        const match = filePath.match(/\/cycles\/([^/]+)\/leaderboard\.json$/);
+        if (!match) continue;
+        map.set(match[1]!, cycle);
+      }
+      return map;
+    }
+    // Node fallback for tsx-run scripts.
+    const fs = await import("node:fs/promises");
+    const path = await import("node:path");
+    const dataRoot = path.resolve(process.cwd(), "data");
+    const cyclesDir = path.join(dataRoot, "cycles");
+    const entries = await fs.readdir(cyclesDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      const file = path.join(cyclesDir, entry.name, "leaderboard.json");
+      const raw = await fs.readFile(file, "utf8");
+      map.set(entry.name, JSON.parse(raw) as Cycle);
+    }
+    return map;
+  })();
+  return CYCLES_PROMISE;
+}
 
 export async function loadCycle(cycle: string): Promise<Cycle> {
-  const filePath = path.join(DATA_ROOT, "cycles", cycle, "leaderboard.json");
-  const raw = await fs.readFile(filePath, "utf8");
-  return JSON.parse(raw) as Cycle;
+  const cycles = await getCycles();
+  const found = cycles.get(cycle);
+  if (!found) throw new Error(`Cycle not found: ${cycle}`);
+  return found;
 }
 
 export async function listCycles(): Promise<string[]> {
-  const cyclesDir = path.join(DATA_ROOT, "cycles");
-  const entries = await fs.readdir(cyclesDir, { withFileTypes: true });
-  return entries
-    .filter((e) => e.isDirectory())
-    .map((e) => e.name)
-    .sort((a, b) => (a < b ? 1 : a > b ? -1 : 0));
+  const cycles = await getCycles();
+  return Array.from(cycles.keys()).sort((a, b) =>
+    a < b ? 1 : a > b ? -1 : 0,
+  );
 }
 
 export async function loadLatestCycle(): Promise<Cycle> {
