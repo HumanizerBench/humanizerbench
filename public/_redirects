@@ -2,6 +2,7 @@
 # Sourced from every /vs/* pair that has appeared in any cycle.
 
 # Vs-page inverse → canonical (alphabetical) redirects
+/vs/writehuman-vs-stealth-writer /vs/stealth-writer-vs-writehuman 301
 /vs/writehuman-vs-ai-humanize-io /vs/ai-humanize-io-vs-writehuman 301
 /vs/super-humanizer-vs-ai-humanize-io /vs/ai-humanize-io-vs-super-humanizer 301
 /vs/humanize-ai-pro-vs-ai-humanize-io /vs/ai-humanize-io-vs-humanize-ai-pro 301
