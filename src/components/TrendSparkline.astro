@@ -1,0 +1,62 @@
+---
+interface Props {
+  points: number[] | null | undefined;
+  width?: number;
+  height?: number;
+  class?: string;
+}
+
+const { points, width = 80, height = 28, class: className } = Astro.props;
+
+const PAD_Y = 2;
+const innerH = height - PAD_Y * 2;
+const hasData = Array.isArray(points) && points.length >= 2;
+
+let polyline = "";
+if (hasData) {
+  const arr = points as number[];
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  const range = max - min || 1;
+  const step = arr.length > 1 ? width / (arr.length - 1) : 0;
+  polyline = arr
+    .map((v, i) => {
+      const x = i * step;
+      // Higher value => lower y (top of svg is 0)
+      const y = PAD_Y + innerH - ((v - min) / range) * innerH;
+      return `${x.toFixed(2)},${y.toFixed(2)}`;
+    })
+    .join(" ");
+}
+---
+
+<svg
+  width={width}
+  height={height}
+  viewBox={`0 0 ${width} ${height}`}
+  class={className}
+  aria-hidden="true"
+>
+  {
+    hasData ? (
+      <polyline
+        points={polyline}
+        fill="none"
+        stroke="var(--color-accent)"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+      />
+    ) : (
+      <line
+        x1="0"
+        x2={width}
+        y1={height / 2}
+        y2={height / 2}
+        stroke="var(--color-text-secondary)"
+        stroke-dasharray="2 2"
+        opacity="0.4"
+      />
+    )
+  }
+</svg>

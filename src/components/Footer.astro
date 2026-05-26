@@ -1,0 +1,52 @@
+---
+import { GITHUB_REPO_URL, PARENT_ORG, PARENT_ORG_URL } from "@/lib/config";
+import SubscribeForm from "@/components/SubscribeForm";
+
+const year = new Date().getFullYear();
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/fairness", label: "Fairness" },
+  { href: "/rss.xml", label: "RSS" },
+  { href: GITHUB_REPO_URL, label: "GitHub", external: true },
+  { href: PARENT_ORG_URL, label: PARENT_ORG, external: true },
+];
+---
+
+<footer
+  class="border-t border-[var(--color-border)] py-12 text-sm text-[var(--color-text-secondary)]"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 flex flex-col gap-8 md:flex-row md:items-start md:justify-between"
+  >
+    <div class="flex flex-col gap-6">
+      <nav class="flex flex-wrap items-center gap-x-6 gap-y-2">
+        {
+          links.map((l) => (
+            <a
+              href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener" : undefined}
+              class="hover:text-[var(--color-text-primary)] transition-colors"
+            >
+              {l.label}
+            </a>
+          ))
+        }
+      </nav>
+      <p class="text-xs">
+        &copy; {year} HumanizerBench. Operated by WriteHuman.
+      </p>
+    </div>
+    <div class="w-full max-w-sm">
+      <SubscribeForm
+        client:idle
+        source="footer"
+        turnstileSiteKey={turnstileSiteKey}
+      />
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,331 @@
+{
+  "cycle": "test3",
+  "humanizers": [
+    {
+      "url": "https://walterwrites.ai",
+      "name": "Walter Writes",
+      "rank": 1,
+      "slug": "walter-writes",
+      "scores": {
+        "composite": 92.33,
+        "bypass_rate": 0.9247,
+        "readability": 0.9824,
+        "speed_seconds": 55.71,
+        "meaning_preservation": 0.9379,
+        "cost_per_1k_words_usd": null,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": true,
+        "monthly_usd": 8,
+        "free_tier_word_limit": 300
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-24T18:40:01.975+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.9005,
+          0.9568
+        ],
+        "meaning_preservation_ci_95": [
+          0.9145,
+          0.9576
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.9247
+      },
+      "detector_breakdown": {
+        "gptzero": 0.9792,
+        "zerogpt": 0.8702
+      },
+      "flagged_test_count": 1,
+      "successful_test_count": 5
+    },
+    {
+      "url": "https://writehuman.ai",
+      "name": "WriteHuman",
+      "rank": 2,
+      "slug": "writehuman",
+      "scores": {
+        "composite": 92.05,
+        "bypass_rate": 0.9527,
+        "readability": 0.963,
+        "speed_seconds": 79.06,
+        "meaning_preservation": 0.9415,
+        "cost_per_1k_words_usd": null,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-24T18:39:36.169+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.9262,
+          0.9774
+        ],
+        "meaning_preservation_ci_95": [
+          0.9167,
+          0.9602
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.9527
+      },
+      "detector_breakdown": {
+        "gptzero": 0.96,
+        "zerogpt": 0.9455
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 6
+    },
+    {
+      "url": "https://phrasly.ai",
+      "name": "Phrasly",
+      "rank": 3,
+      "slug": "phrasly",
+      "scores": {
+        "composite": 84.12,
+        "bypass_rate": 0.8799,
+        "readability": 0.6854,
+        "speed_seconds": 31.4,
+        "meaning_preservation": 0.8963,
+        "cost_per_1k_words_usd": null,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-24T18:39:20.718+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.7851,
+          0.9592
+        ],
+        "meaning_preservation_ci_95": [
+          0.8512,
+          0.9391
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_grammar_degradation",
+          "count": 2,
+          "score_delta": -2
+        }
+      ],
+      "category_breakdown": {
+        "academic_essay": 0.8799
+      },
+      "detector_breakdown": {
+        "gptzero": 0.9576,
+        "zerogpt": 0.8022
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 6
+    }
+  ],
+  "generated_at": "2026-05-24T18:43:27.063Z",
+  "scoring_version": "1.0.0",
+  "placeholders_used": {
+    "lit_review": {
+      "TOPIC": "the impact of generative AI on knowledge work"
+    },
+    "argumentative_essay": {
+      "TOPIC": "the limits of digital privacy law"
+    }
+  },
+  "cycle_sample_count": 6,
+  "prompt_set_version": "1.0.0",
+  "recording_sessions": [
+    {
+      "id": "25854532-788f-4f6c-9eb1-dbc56b2a4f7d",
+      "ended_at": "2026-05-24T18:28:39.349+00:00",
+      "started_at": "2026-05-24T18:28:01.579201+00:00",
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/25854532-788f-4f6c-9eb1-dbc56b2a4f7d/seg-001.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC8yNTg1NDUzMi03ODhmLTRmNmMtOWViMS1kYmM1NmIyYTRmN2Qvc2VnLTAwMS53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA2LCJleHAiOjE4MTExODQyMDZ9.c2jsG8I4BVsNOs0awsXkOiLlcfgH1NbTIF4kuYwwpcE"
+      ],
+      "test_markers": [],
+      "segment_count": 1,
+      "total_duration_ms": 37755
+    },
+    {
+      "id": "56fe277a-ef0b-4538-ad67-9a6d2706af2d",
+      "ended_at": "2026-05-24T18:41:35.319+00:00",
+      "started_at": "2026-05-24T18:30:01.143173+00:00",
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-001.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwMS53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.7PvmF6xfjTp3stRZifKOV3U8g4C8nmarEEaAFWdFPt8",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-002.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwMi53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.QS5vDlwE9_LIl2bswSG4wOcdGEwLRbmAqh4SZ-TRU3k",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-003.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwMy53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.vojpfQvPwWxhQA_9fiXuLmf-dJsYbNX2mm1FtYvCZKw",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-004.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwNC53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9._d5xqMLWE-zUs9aE4dFTLBFcsrfbDO0sE4nRGBkT1qE",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-005.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwNS53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.oeGRBL0rQt1V6KslDSKtmau-yhRufMKsEkZtDjQOu7Q",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-006.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwNi53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.DjPSQdOjDfWcYFIGj29rmhuhYFLL9sLgYcvf1LctMNQ",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-007.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwNy53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.Y_7HBAsjO0GuKiQm1ncHIGaUrYyFW4UTPeCyNXEys9g",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-008.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwOC53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.ZyFT1_SRMtxoXBl7kZnthFTy3npoMNvbf0MfwHwCyM8",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-009.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAwOS53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.sHGdxs3vf0hqQRT-jQI-K_LOV8ZkuN6LZ_5JjzKr6Qc",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-010.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAxMC53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.NYYevmZGeIzw6WMbA0CYooTNqKSPpYZbjwAk5IZ6O0s",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-011.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAxMS53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.hi79OtKeXY4PuwE2XarWy1hPh7lJLY5pEPhYwr3i_-w",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test3/3a288ff1-7dbf-4fec-9b69-310f940b6d58/56fe277a-ef0b-4538-ad67-9a6d2706af2d/seg-012.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3QzLzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81NmZlMjc3YS1lZjBiLTQ1MzgtYWQ2Ny05YTZkMjcwNmFmMmQvc2VnLTAxMi53ZWJtIiwiaWF0IjoxNzc5NjQ4MjA3LCJleHAiOjE4MTExODQyMDd9.kMXiSkwjBNgjb487KqkBecOeF35UNxwGG9uwXGgGx84"
+      ],
+      "test_markers": [
+        {
+          "test_id": "c8d984ea-a07d-40ef-90ed-73e39723fd98",
+          "category": "academic_essay",
+          "offset_ms": 23357,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "ec0cf6ba-bb41-48eb-87fe-e9945ba6fc4a",
+          "category": "academic_essay",
+          "offset_ms": 57840,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "17bb2fdd-e1ff-448a-9a52-0935018708f7",
+          "category": "academic_essay",
+          "offset_ms": 115199,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "4b270cbd-a93f-4729-b3f6-dda036f9c52f",
+          "category": "academic_essay",
+          "offset_ms": 167130,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "27888d36-4fc6-47ca-ab22-5de7380b1061",
+          "category": "academic_essay",
+          "offset_ms": 212822,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "dad6f81d-8be3-4a2b-8673-4ca212aeaddb",
+          "category": "academic_essay",
+          "offset_ms": 256081,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "8ae01d7a-32bb-4df0-a5ec-2cf237391086",
+          "category": "academic_essay",
+          "offset_ms": 291216,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "d75eec0b-ede3-4835-9720-a5efb8827a6b",
+          "category": "academic_essay",
+          "offset_ms": 332795,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "ec8adcd2-5723-4f2a-afd1-41c00b078c20",
+          "category": "academic_essay",
+          "offset_ms": 377291,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "13787d20-44b3-4150-bc6a-0f907ba8fecd",
+          "category": "academic_essay",
+          "offset_ms": 414394,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "424e2fee-57ae-4d84-bb0d-68ccd7e6f15c",
+          "category": "academic_essay",
+          "offset_ms": 444379,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "cabd785b-4fc2-45fc-a8d8-7bbbd7755fe6",
+          "category": "academic_essay",
+          "offset_ms": 482922,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "568b4970-420a-46f3-90b6-6d8284911520",
+          "category": "academic_essay",
+          "offset_ms": 504230,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "b67db9aa-eb91-44df-827f-0f8c302353c8",
+          "category": "academic_essay",
+          "offset_ms": 516618,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "02bf651b-fa52-4a69-9aef-38fcea6ed737",
+          "category": "academic_essay",
+          "offset_ms": 539582,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "49a426b0-4154-449e-b7e3-6dfaa12a4395",
+          "category": "academic_essay",
+          "offset_ms": 559324,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "6ec7d727-6de2-481b-a423-4c2df22436e1",
+          "category": "academic_essay",
+          "offset_ms": 574668,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "4ff60e10-9ed0-4a32-b8ba-597e7d67ffcc",
+          "category": "academic_essay",
+          "offset_ms": 600497,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "walter-writes"
+        }
+      ],
+      "segment_count": 12,
+      "total_duration_ms": 694170
+    }
+  ],
+  "methodology_version": "1.0.0",
+  "source_model_versions": {
+    "google": "gemini-3.1-pro-preview",
+    "openai": "gpt-5.5",
+    "anthropic": "claude-opus-4-7"
+  },
+  "detector_config_version": "1.0.0",
+  "humanizer_config_version": "1.0.0"
+}

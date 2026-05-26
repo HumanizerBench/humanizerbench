@@ -1,0 +1,46 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+import { BRAND_NAME } from "@/lib/config";
+
+const navLinks = [
+  { href: "/why", label: "Why" },
+  { href: "/leaderboard", label: "Leaderboard" },
+  { href: "/humanizers", label: "Humanizers" },
+  { href: "/detectors", label: "Detectors" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/blog", label: "Blog" },
+];
+---
+
+<header class="border-b border-[var(--color-border)]">
+  <div
+    class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-6"
+  >
+    <a
+      href="/"
+      class="flex items-center hover:opacity-80 transition-opacity"
+      aria-label={BRAND_NAME}
+    >
+      <img
+        src="/logo.png"
+        alt={BRAND_NAME}
+        width="1998"
+        height="236"
+        class="h-6 md:h-8 w-auto dark:invert dark:hue-rotate-180"
+      />
+    </a>
+    <nav class="flex items-center gap-6 text-sm">
+      {
+        navLinks.map((l) => (
+          <a
+            href={l.href}
+            class="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+      <ThemeToggle />
+    </nav>
+  </div>
+</header>

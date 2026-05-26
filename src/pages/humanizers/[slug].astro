@@ -1,0 +1,443 @@
+---
+import Base from "@/layouts/Base.astro";
+import FreshnessSignals from "@/components/FreshnessSignals.astro";
+import RankChange from "@/components/RankChange.astro";
+import DetectorBreakdownChart from "@/components/DetectorBreakdownChart.tsx";
+import CategoryRadar from "@/components/CategoryRadar.tsx";
+import TrendChart from "@/components/TrendChart.tsx";
+import {
+  listAllHumanizersAcrossCycles,
+  loadLatestCycle,
+  loadHumanizerHistory,
+} from "@/lib/data";
+import { BRAND_NAME, SITE_URL } from "@/lib/config";
+import { fmtComposite } from "@/lib/format";
+import {
+  getPenaltyMeta,
+  summarizePenalties,
+  fmtPenaltyDelta,
+} from "@/lib/penalties";
+import type { Humanizer } from "@/lib/types";
+import Favicon from "@/components/Favicon.astro";
+import {
+  softwareApplicationSchema,
+  breadcrumbListSchema,
+} from "@/lib/schema";
+import {
+  listAllVsPairs,
+  comparisonSlug,
+} from "@/lib/comparisons";
+
+export async function getStaticPaths() {
+  const entries = await listAllHumanizersAcrossCycles();
+  return entries.map(({ slug, humanizer, latestCycle, isCurrent }) => ({
+    params: { slug },
+    props: { humanizer, latestCycle, isCurrent },
+  }));
+}
+
+interface Props {
+  humanizer: Humanizer;
+  latestCycle: string;
+  isCurrent: boolean;
+}
+
+const { humanizer, latestCycle, isCurrent } = Astro.props;
+const cycle = await loadLatestCycle();
+// `fresh` is current-cycle data when available, otherwise the most recent
+// snapshot we have (passed via the static prop from getStaticPaths).
+const fresh = cycle.humanizers.find((h) => h.slug === humanizer.slug) ?? humanizer;
+const history = await loadHumanizerHistory(fresh.slug);
+
+// Build a lookup of every comparison slug we actually render so the
+// "Compare with" links never 404 on a route that wasn't statically generated.
+const vsPairs = await listAllVsPairs();
+const validComparisonSlugs = new Set<string>(
+  vsPairs.map((p) => comparisonSlug([p.a, p.b])),
+);
+function findExistingVsSlug(a: string, b: string): string | null {
+  const canonical = comparisonSlug([a, b]);
+  return validComparisonSlugs.has(canonical) ? canonical : null;
+}
+
+const competitors = cycle.humanizers
+  .filter((h) => h.slug !== fresh.slug)
+  .map((h) => ({
+    humanizer: h,
+    distance: Math.abs(h.scores.composite - fresh.scores.composite),
+    vsSlug: findExistingVsSlug(fresh.slug, h.slug),
+  }))
+  // Only show competitors that have a real /vs/ page for this humanizer.
+  .filter((c) => c.vsSlug !== null)
+  .sort((a, b) => a.distance - b.distance)
+  .slice(0, 3);
+
+const bestForLinks: Array<{ slug: string; label: string }> = [];
+const cat = fresh.category_breakdown;
+if ((cat.academic_essay ?? 0) > 0.85) {
+  bestForLinks.push({ slug: "students", label: "Best for Students" });
+  bestForLinks.push({ slug: "essays", label: "Best for Essays" });
+}
+if ((cat.academic_essay ?? 0) > 0.85 && (cat.lit_review ?? 0) > 0.8) {
+  bestForLinks.push({
+    slug: "academic-writing",
+    label: "Best for Academic Writing",
+  });
+}
+if ((cat.blog_post ?? 0) > 0.85 && (cat.marketing_copy ?? 0) > 0.85) {
+  bestForLinks.push({ slug: "seo", label: "Best for SEO" });
+  bestForLinks.push({ slug: "marketing", label: "Best for Marketing" });
+}
+if (fresh.pricing.free_tier) {
+  bestForLinks.push({
+    slug: "essays-no-signup",
+    label: "Free Humanizer for Essays",
+  });
+}
+// Fallbacks so every humanizer page links to at least 2 best-for pages.
+// Detector-only sorts are use-case-agnostic and always relevant.
+if (bestForLinks.length < 2) {
+  bestForLinks.push({ slug: "gptzero", label: "Best for GPTZero" });
+}
+if (bestForLinks.length < 2) {
+  bestForLinks.push({
+    slug: "originality-ai",
+    label: "Best for Originality.ai",
+  });
+}
+const seen = new Set<string>();
+const uniqueBestFor = bestForLinks.filter((l) =>
+  seen.has(l.slug) ? false : (seen.add(l.slug), true),
+).slice(0, 4);
+
+const composite = fmtComposite(fresh.scores.composite);
+const bypassRate = (fresh.scores.bypass_rate * 100).toFixed(1);
+const appliedPenalties = fresh.penalties_applied ?? [];
+const penaltyTotal = summarizePenalties(appliedPenalties).totalDelta;
+const ciLow = (fresh.score_intervals.bypass_rate_ci_95[0] * 100).toFixed(1);
+const ciHigh = (fresh.score_intervals.bypass_rate_ci_95[1] * 100).toFixed(1);
+
+const host = (() => {
+  try {
+    return new URL(fresh.url).host.replace(/^www\./, "");
+  } catch {
+    return fresh.url;
+  }
+})();
+
+const confidenceColor =
+  fresh.confidence === "high"
+    ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+    : fresh.confidence === "medium"
+      ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
+      : "bg-red-500/15 text-red-400 border-red-500/30";
+
+const pageTitle = `${fresh.name} Review — Bypass Scores, Pricing, Trends — ${BRAND_NAME}`;
+const pageDescription = `${fresh.name} ranked #${fresh.rank} this cycle. Overall score ${composite}/100. Tested against 6 detectors. See full data.`;
+const canonical = `${SITE_URL}/humanizers/${fresh.slug}`;
+
+const jsonLd = [
+  softwareApplicationSchema(fresh),
+  breadcrumbListSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Humanizers", url: `${SITE_URL}/humanizers` },
+    { name: fresh.name, url: canonical },
+  ]),
+];
+---
+
+<Base
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonical}
+  ogImage={`${SITE_URL}/og/humanizer-${fresh.slug}.png`}
+  jsonLd={jsonLd}
+>
+  <section class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    {!isCurrent && (
+      <div class="mb-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-text-secondary)] flex flex-wrap items-baseline gap-x-2">
+        <span class="text-[var(--color-text-primary)] font-medium">Not in the current cycle.</span>
+        <span>Data shown is from <a href={`/leaderboard/${latestCycle}`} class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]">cycle {latestCycle}</a>, the most recent cycle where {fresh.name} was tested.</span>
+      </div>
+    )}
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+      <div class="flex items-center gap-4">
+        <Favicon url={fresh.url} name={fresh.name} size={48} />
+        <div>
+          <h1 class="text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]">
+            {fresh.name}
+          </h1>
+          <div class="text-sm text-[var(--color-text-secondary)]">{host}</div>
+        </div>
+      </div>
+      <a
+        href={fresh.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+      >
+        Visit site →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <div class="flex items-baseline gap-3">
+          <span class="font-mono tabnum text-5xl text-[var(--color-text-primary)]">
+            {composite}
+          </span>
+          <RankChange change={fresh.rank_change} />
+        </div>
+        <div class="mt-2 text-sm text-[var(--color-text-secondary)]">
+          overall score · rank #{fresh.rank} this cycle
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <div class="font-mono tabnum text-5xl text-[var(--color-text-primary)]">
+          {bypassRate}
+        </div>
+        <div class="mt-2 text-sm text-[var(--color-text-secondary)]">
+          average detector bypass rate
+        </div>
+        <div class="mt-1 text-xs font-mono tabnum text-[var(--color-text-secondary)]">
+          95% CI: {ciLow} – {ciHigh}
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <div class="font-mono tabnum text-5xl text-[var(--color-text-primary)]">
+          {fresh.successful_test_count}<span class="text-2xl text-[var(--color-text-secondary)]">/{fresh.sample_count}</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <span class="text-sm text-[var(--color-text-secondary)]">
+            successful tests
+          </span>
+          <span
+            class={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ${confidenceColor}`}
+          >
+            {fresh.confidence}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <FreshnessSignals
+        lastTested={fresh.last_tested_at}
+        sampleCount={fresh.sample_count}
+        confidence={fresh.confidence}
+        methodologyVersion={cycle.methodology_version}
+      />
+    </div>
+
+    {
+      appliedPenalties.length > 0 && (
+        <div class="mb-10 rounded-xl border border-red-500/30 bg-red-500/5 p-6">
+          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-4">
+            <h2 class="text-lg font-medium text-[var(--color-text-primary)]">
+              Penalties applied this cycle
+            </h2>
+            <a
+              href="/methodology"
+              class="text-xs text-[var(--color-accent)] hover:underline"
+            >
+              How penalties work →
+            </a>
+          </div>
+          <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+            The overall score shown above already reflects these deductions.
+          </p>
+          <ul class="space-y-3">
+            {appliedPenalties.map((p) => {
+              const meta = getPenaltyMeta(p.code);
+              return (
+                <li class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+                  <div class="flex items-baseline justify-between gap-3">
+                    <div>
+                      <span class="font-medium text-[var(--color-text-primary)]">
+                        {meta?.label ?? p.code}
+                      </span>
+                      {p.count > 1 && (
+                        <span class="ml-2 text-xs text-[var(--color-text-secondary)] font-mono tabnum">
+                          ×{p.count}
+                        </span>
+                      )}
+                    </div>
+                    <span class="font-mono tabnum text-[rgb(248,113,113)]">
+                      {fmtPenaltyDelta(p.score_delta)}
+                    </span>
+                  </div>
+                  {meta && (
+                    <p class="mt-1.5 text-sm text-[var(--color-text-secondary)]">
+                      {meta.description}
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          <div class="mt-4 pt-4 border-t border-[var(--color-border)] flex items-baseline justify-between">
+            <span class="text-sm text-[var(--color-text-secondary)]">
+              Total deducted from overall score
+            </span>
+            <span class="font-mono tabnum text-base text-[rgb(248,113,113)]">
+              {fmtPenaltyDelta(penaltyTotal)}
+            </span>
+          </div>
+        </div>
+      )
+    }
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="md:col-span-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <h2 class="text-lg font-medium text-[var(--color-text-primary)]">
+          Detector Bypass Rates
+        </h2>
+        <p class="mt-1 text-sm text-[var(--color-text-secondary)]">
+          Percentage of samples classified as human-written by each detector.
+        </p>
+        <div class="mt-4">
+          <DetectorBreakdownChart
+            client:visible
+            detectorScores={fresh.detector_breakdown}
+          />
+        </div>
+      </div>
+
+      <div class="md:col-span-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <h2 class="text-lg font-medium text-[var(--color-text-primary)]">
+          Performance by Category
+        </h2>
+        <p class="mt-1 text-sm text-[var(--color-text-secondary)]">
+          Bypass rate across writing contexts.
+        </p>
+        <div class="mt-4">
+          <CategoryRadar
+            client:visible
+            categoryScores={fresh.category_breakdown}
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-10 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+      <h2 class="text-lg font-medium text-[var(--color-text-primary)]">
+        12-Month Trend
+      </h2>
+      <p class="mt-1 text-sm text-[var(--color-text-secondary)]">
+        Overall score across the past year of testing cycles.
+      </p>
+      <div class="mt-4">
+        <TrendChart client:visible history={history} />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <div class="rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] p-6">
+        <h2 class="text-lg font-medium text-[var(--color-text-primary)]">
+          Pricing
+        </h2>
+        <dl class="mt-4 grid grid-cols-3 gap-4 text-sm">
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]">
+              Monthly
+            </dt>
+            <dd class="mt-1 font-mono tabnum text-[var(--color-text-primary)]">
+              {fresh.pricing.monthly_usd == null ? "—" : `$${fresh.pricing.monthly_usd.toFixed(2)}/mo`}
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]">
+              Free tier
+            </dt>
+            <dd class="mt-1 text-[var(--color-text-primary)]">
+              {fresh.pricing.free_tier ? "Yes" : "No"}
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]">
+              Free limit
+            </dt>
+            <dd class="mt-1 font-mono tabnum text-[var(--color-text-primary)]">
+              {
+                fresh.pricing.free_tier && fresh.pricing.free_tier_word_limit
+                  ? `${fresh.pricing.free_tier_word_limit} words/day`
+                  : "—"
+              }
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] p-6">
+        <h2 class="text-lg font-medium text-[var(--color-text-primary)]">
+          How we tested
+        </h2>
+        <p class="mt-2 text-sm text-[var(--color-text-secondary)]">
+          {fresh.sample_count} prompts across 8 writing categories, scored by 6 independent AI detectors. Every score is reproducible from the public methodology.
+        </p>
+        <div class="mt-3 flex gap-4 text-sm">
+          <a
+            href="/methodology"
+            class="text-[var(--color-accent)] hover:underline"
+          >
+            Methodology →
+          </a>
+          <a
+            href="/fairness"
+            class="text-[var(--color-accent)] hover:underline"
+          >
+            Fairness policy →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <h2 class="text-lg font-medium text-[var(--color-text-primary)] mb-4">
+        Compare with
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {
+          competitors.map(({ humanizer: c, vsSlug }) => (
+            <a
+              href={`/vs/${vsSlug}`}
+              class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 p-4 hover:bg-[var(--color-surface)] transition-colors"
+            >
+              <div class="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]">
+                {fresh.name} vs
+              </div>
+              <div class="mt-1 text-base font-medium text-[var(--color-text-primary)]">
+                {c.name}
+              </div>
+              <div class="mt-2 font-mono tabnum text-sm text-[var(--color-text-secondary)]">
+                {fmtComposite(c.scores.composite)} · rank #{c.rank}
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    {
+      uniqueBestFor.length > 0 && (
+        <div class="mb-6">
+          <h2 class="text-lg font-medium text-[var(--color-text-primary)] mb-4">
+            Featured in
+          </h2>
+          <div class="flex flex-wrap gap-2">
+            {uniqueBestFor.map((link) => (
+              <a
+                href={`/best-for/${link.slug}`}
+                class="inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/50 px-3 py-1.5 text-sm text-[var(--color-text-primary)] hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                {link.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </section>
+</Base>

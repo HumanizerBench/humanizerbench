@@ -1,0 +1,542 @@
+{
+  "cycle": "test4",
+  "humanizers": [
+    {
+      "url": "https://writehuman.ai",
+      "name": "WriteHuman",
+      "rank": 1,
+      "slug": "writehuman",
+      "scores": {
+        "composite": 91.41,
+        "bypass_rate": 0.869,
+        "readability": 0.9157,
+        "meaning_preservation": 0.9457,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T18:47:26.667+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.729,
+          0.9906
+        ],
+        "meaning_preservation_ci_95": [
+          0.9286,
+          0.9627
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.869
+      },
+      "detector_breakdown": {
+        "gptzero": 0.964,
+        "zerogpt": 0.8582,
+        "copyleaks": 0.827,
+        "originality": 0.4512
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 6
+    },
+    {
+      "url": "https://phrasly.ai",
+      "name": "Phrasly",
+      "rank": 2,
+      "slug": "phrasly",
+      "scores": {
+        "composite": 90.66,
+        "bypass_rate": 0.928,
+        "readability": 0.8628,
+        "meaning_preservation": 0.8869,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T18:42:09.338+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.7956,
+          0.9974
+        ],
+        "meaning_preservation_ci_95": [
+          0.8642,
+          0.9121
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_meaning_drift",
+          "count": 1,
+          "score_delta": -0.5
+        }
+      ],
+      "category_breakdown": {
+        "academic_essay": 0.928
+      },
+      "detector_breakdown": {
+        "gptzero": 0.9612,
+        "zerogpt": 0.5895,
+        "copyleaks": 1,
+        "originality": 0.843
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 6
+    },
+    {
+      "url": "https://undetectable.ai",
+      "name": "Undetectable.ai",
+      "rank": 3,
+      "slug": "undetectable",
+      "scores": {
+        "composite": 89.29,
+        "bypass_rate": 0.9308,
+        "readability": 0.9029,
+        "meaning_preservation": 0.9173,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T18:46:31.627+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.8927,
+          0.9749
+        ],
+        "meaning_preservation_ci_95": [
+          0.901,
+          0.9298
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 6,
+          "score_delta": -3.6
+        }
+      ],
+      "category_breakdown": {
+        "academic_essay": 0.9308
+      },
+      "detector_breakdown": {
+        "gptzero": 0.9866,
+        "zerogpt": 0.8513,
+        "copyleaks": 0.8061,
+        "originality": 0.8903
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 6
+    },
+    {
+      "url": "https://walterwrites.ai",
+      "name": "Walter Writes",
+      "rank": 4,
+      "slug": "walter-writes",
+      "scores": {
+        "composite": 82.06,
+        "bypass_rate": 0.7333,
+        "readability": 0.7805,
+        "meaning_preservation": 0.9304,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": true,
+        "monthly_usd": 8,
+        "free_tier_word_limit": 300
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T18:46:02.537+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4798,
+          0.9544
+        ],
+        "meaning_preservation_ci_95": [
+          0.9035,
+          0.9549
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_grammar_degradation",
+          "count": 1,
+          "score_delta": -1
+        }
+      ],
+      "category_breakdown": {
+        "academic_essay": 0.7333
+      },
+      "detector_breakdown": {
+        "gptzero": 0.7774,
+        "zerogpt": 0.6842,
+        "copyleaks": 0.7221,
+        "originality": 0.6999
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 6
+    },
+    {
+      "url": "https://stealthgpt.ai",
+      "name": "StealthGPT",
+      "rank": 5,
+      "slug": "stealthgpt",
+      "scores": {
+        "composite": 81.01,
+        "bypass_rate": 0.6918,
+        "readability": 0.85,
+        "meaning_preservation": 0.9235,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 6,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T18:45:21.39+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4918,
+          0.8848
+        ],
+        "meaning_preservation_ci_95": [
+          0.8982,
+          0.9438
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 2,
+          "score_delta": -1.2
+        }
+      ],
+      "category_breakdown": {
+        "academic_essay": 0.6918
+      },
+      "detector_breakdown": {
+        "gptzero": 0.7907,
+        "zerogpt": 0.6195,
+        "copyleaks": 0.7517,
+        "originality": 0.5471
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 6
+    }
+  ],
+  "generated_at": "2026-05-25T21:32:27.939Z",
+  "scoring_version": "1.1.0",
+  "placeholders_used": {
+    "lit_review": {
+      "TOPIC": "youth screen-time and adolescent mental health"
+    },
+    "argumentative_essay": {
+      "TOPIC": "remote work and the future of office culture"
+    }
+  },
+  "cycle_sample_count": 6,
+  "prompt_set_version": "1.0.0",
+  "recording_sessions": [
+    {
+      "id": "4fe711bf-d2ce-40ab-b676-fa53dce62226",
+      "ended_at": "2026-05-25T18:21:52.44+00:00",
+      "started_at": "2026-05-25T18:21:51.370058+00:00",
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/4fe711bf-d2ce-40ab-b676-fa53dce62226/seg-001.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC80ZmU3MTFiZi1kMmNlLTQwYWItYjY3Ni1mYTUzZGNlNjIyMjYvc2VnLTAwMS53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.c11J99POilM0ju5wepfNnpfScKofek8girAo_ZzPgUU"
+      ],
+      "test_markers": [],
+      "segment_count": 1,
+      "total_duration_ms": 1045
+    },
+    {
+      "id": "1824cfae-ed7b-482b-a899-4ec4e27941bc",
+      "ended_at": "2026-05-25T18:22:30.268+00:00",
+      "started_at": "2026-05-25T18:22:29.486129+00:00",
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/1824cfae-ed7b-482b-a899-4ec4e27941bc/seg-001.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC8xODI0Y2ZhZS1lZDdiLTQ4MmItYTg5OS00ZWM0ZTI3OTQxYmMvc2VnLTAwMS53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.ojglvmkaoMIcK4j9eharWaQ5YEEuJfT2vdjN4uADeN4"
+      ],
+      "test_markers": [],
+      "segment_count": 1,
+      "total_duration_ms": 800
+    },
+    {
+      "id": "5c375036-1706-4ffc-983c-64559043702a",
+      "ended_at": "2026-05-25T18:47:27.504+00:00",
+      "started_at": "2026-05-25T18:30:08.245838+00:00",
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-001.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwMS53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.UDh-od7l_MUApmMnC_uCzphhQ01pIZsD1VW25fduGmQ",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-002.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwMi53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.EInTjV2VhOTcTfeJzrjzAuLs8lpUFrys08_is7bNE68",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-003.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwMy53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.4HhC-estIBCrCitgI1zTbckSufdoQa8jQnPdQpTtIyI",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-004.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwNC53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.MsFgcwTvGbMPjS6nNV5DXM5Ld3JorjV2BVDY4JSXKM4",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-005.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwNS53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.8JTLHKWN_5gjkROQgRuvQHZc0U6pNStWjerBJUeey80",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-006.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwNi53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.JG19nW9D4lw2u9uip-ubiZKc_shcsdWrb43xNN5wcqA",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-007.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwNy53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.UZxYQUcN7TqDkbp2b8cbPzIZHrpILCofRjZoCfd3Xq4",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-008.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwOC53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.z1eSDUMaMqDXI6rP5ox-ZYQvygDMzXOQrbKKjG8r6S8",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-009.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAwOS53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.UYmF32lZfdp9VaAvBz_oc0x86315BQ_H9gr52WW8RX8",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-010.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxMC53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.ALXfDOWdLPmRsFOfkEw0yqVoOGsEWVqdcejXJmdAvMM",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-011.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxMS53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.9tKSPYdTSHb7D2SoRGCxqUtG2rmEsJ5BmpQtNN88Yrc",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-012.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxMi53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.up1gctwt3dkmCAdybwSbQmO8tkXGbVQfrJArYlcYKQs",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-013.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxMy53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.g2qx0qXNAL0w5ZEOpXFnyY-cscjdYecihoznaIIvpe4",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-014.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxNC53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.W27nPaJiCZNsY-63AI5UoyaXjVeilVlJ8SWTI1wHjWg",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-015.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxNS53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.arM5Y0Z88PodGPPaEWA80WDMKIZcvREZhj7mC59MLy4",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-016.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxNi53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.nI-fwNPvvmXmgbIEJQq032O34J-WlJ9TOLFe6LoYd6o",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-017.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxNy53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.2AuQGRje0k6pjU-t5EkGJMG3tXSjaQcY3VZ9X4qKwqs",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test4/3a288ff1-7dbf-4fec-9b69-310f940b6d58/5c375036-1706-4ffc-983c-64559043702a/seg-018.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q0LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC81YzM3NTAzNi0xNzA2LTRmZmMtOTgzYy02NDU1OTA0MzcwMmEvc2VnLTAxOC53ZWJtIiwiaWF0IjoxNzc5NzQ0NzQ3LCJleHAiOjE4MTEyODA3NDd9.sjg4aU_3tQYw-GNKTueAigmqh_9zoKAvsxFTzapkrEw"
+      ],
+      "test_markers": [
+        {
+          "test_id": "0636d119-8fed-4b52-9d6f-c28e375eb50b",
+          "category": "academic_essay",
+          "offset_ms": 61716,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "030a387c-111e-450f-a340-03711095a0a6",
+          "category": "academic_essay",
+          "offset_ms": 100075,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "undetectable"
+        },
+        {
+          "test_id": "062a20a3-6dc4-414d-a035-020082265912",
+          "category": "academic_essay",
+          "offset_ms": 142565,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "stealthgpt"
+        },
+        {
+          "test_id": "13bc86ed-514c-454e-8e43-06eaa39727d6",
+          "category": "academic_essay",
+          "offset_ms": 169073,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "stealthgpt"
+        },
+        {
+          "test_id": "2c8d793a-cd48-4b18-a9e4-9af1f92c4027",
+          "category": "academic_essay",
+          "offset_ms": 202661,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "stealthgpt"
+        },
+        {
+          "test_id": "480910a5-d979-41d7-9cc8-d13c13ee7710",
+          "category": "academic_essay",
+          "offset_ms": 235495,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "undetectable"
+        },
+        {
+          "test_id": "460caf4d-8071-43b7-bab6-4f2002cfc95c",
+          "category": "academic_essay",
+          "offset_ms": 278804,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "6c1bd68e-5def-4f62-9113-468614378023",
+          "category": "academic_essay",
+          "offset_ms": 313778,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "613f6a1a-5113-4b30-bd10-d27f118fadcd",
+          "category": "academic_essay",
+          "offset_ms": 357046,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "6d2dab67-4e13-4a62-a0a6-0357dda52347",
+          "category": "academic_essay",
+          "offset_ms": 391599,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "6d4ff88f-8d1f-4d19-b341-59656eaeae25",
+          "category": "academic_essay",
+          "offset_ms": 421754,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "7e71d529-f8fc-49ad-a086-00aeb279e930",
+          "category": "academic_essay",
+          "offset_ms": 452182,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "7ae8cb79-f140-4ba6-b4ef-ee528b6bb60b",
+          "category": "academic_essay",
+          "offset_ms": 484084,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "84559dd9-82f7-41f0-91c1-d60df526b7cd",
+          "category": "academic_essay",
+          "offset_ms": 512823,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "stealthgpt"
+        },
+        {
+          "test_id": "8225fa4d-09ea-458b-b38a-4c605b19ff63",
+          "category": "academic_essay",
+          "offset_ms": 559719,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "9dbba085-6961-4be0-9ca1-89e804ffda60",
+          "category": "academic_essay",
+          "offset_ms": 594631,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "undetectable"
+        },
+        {
+          "test_id": "98dfa7a0-a63d-41ba-8fd9-5ea35b7808a7",
+          "category": "academic_essay",
+          "offset_ms": 632175,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "stealthgpt"
+        },
+        {
+          "test_id": "a91d3d36-f5fb-443f-871a-8e0fc5538bb5",
+          "category": "academic_essay",
+          "offset_ms": 655214,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "undetectable"
+        },
+        {
+          "test_id": "bad8a284-6990-46e1-9611-6f6f7a9b9b4c",
+          "category": "academic_essay",
+          "offset_ms": 681782,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "c40aeb42-5db9-4c38-bcfd-f5b217edd7cb",
+          "category": "academic_essay",
+          "offset_ms": 720741,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "phrasly"
+        },
+        {
+          "test_id": "be4f8398-93d5-4b2d-a36a-d6ae9f8178fc",
+          "category": "academic_essay",
+          "offset_ms": 753513,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "undetectable"
+        },
+        {
+          "test_id": "dc404990-0f5a-4679-ab94-a51d076eeb02",
+          "category": "academic_essay",
+          "offset_ms": 777972,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "cda78e9a-24c9-4d85-8b0a-53157189e4e3",
+          "category": "academic_essay",
+          "offset_ms": 802632,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "e4a28274-51eb-4e36-8c02-4efe33623a95",
+          "category": "academic_essay",
+          "offset_ms": 847483,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "dea0995b-b9a4-459c-8a4d-f8ab734b0887",
+          "category": "academic_essay",
+          "offset_ms": 879326,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "f3f30391-35a2-4f37-9329-ad32d66679e9",
+          "category": "academic_essay",
+          "offset_ms": 912868,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "stealthgpt"
+        },
+        {
+          "test_id": "ee41f106-a326-4bae-a260-1d95ec20de89",
+          "category": "academic_essay",
+          "offset_ms": 953886,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "walter-writes"
+        },
+        {
+          "test_id": "fa6b141b-39d7-4608-9c3a-cb7584d2b4bd",
+          "category": "academic_essay",
+          "offset_ms": 983043,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "undetectable"
+        },
+        {
+          "test_id": "f7b162f6-3c9d-47b2-968d-469756d91c4f",
+          "category": "academic_essay",
+          "offset_ms": 1011462,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "fb552a77-7b7d-4c15-8789-01671548b5a2",
+          "category": "academic_essay",
+          "offset_ms": 1038095,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "writehuman"
+        }
+      ],
+      "segment_count": 18,
+      "total_duration_ms": 1039279
+    }
+  ],
+  "methodology_version": "1.1.0",
+  "source_model_versions": {
+    "google": "gemini-3.5-flash",
+    "openai": "gpt-5.5",
+    "anthropic": "claude-opus-4-7"
+  },
+  "detector_config_version": "1.0.0",
+  "humanizer_config_version": "1.0.0"
+}

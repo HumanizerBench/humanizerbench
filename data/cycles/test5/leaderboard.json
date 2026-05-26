@@ -1,0 +1,273 @@
+{
+  "cycle": "test5",
+  "humanizers": [
+    {
+      "url": "https://aihumanize.io/",
+      "name": "AI Humanize io",
+      "rank": 1,
+      "slug": "ai-humanize-io",
+      "scores": {
+        "composite": 93.18,
+        "bypass_rate": 0.9573,
+        "readability": 0.8035,
+        "meaning_preservation": 0.9413,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 2,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T23:18:31.537+00:00",
+      "plan_tier_used": "Basic",
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.9172,
+          0.9974
+        ],
+        "meaning_preservation_ci_95": [
+          0.928,
+          0.9546
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.9573
+      },
+      "detector_breakdown": {
+        "gptzero": 0.9151,
+        "zerogpt": 0.92,
+        "copyleaks": 1,
+        "originality": 0.5318
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 2
+    },
+    {
+      "url": "https://writehuman.ai",
+      "name": "WriteHuman",
+      "rank": 2,
+      "slug": "writehuman",
+      "scores": {
+        "composite": 91.8,
+        "bypass_rate": 0.8516,
+        "readability": 0.9593,
+        "meaning_preservation": 0.9588,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 2,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T23:17:48.131+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.8451,
+          0.8581
+        ],
+        "meaning_preservation_ci_95": [
+          0.9577,
+          0.96
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.8516
+      },
+      "detector_breakdown": {
+        "gptzero": 0.8754,
+        "zerogpt": 0.8055,
+        "copyleaks": 1,
+        "originality": 0.7654
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 2
+    },
+    {
+      "url": "https://superhumanizer.ai/",
+      "name": "Super Humanizer",
+      "rank": 3,
+      "slug": "super-humanizer",
+      "scores": {
+        "composite": 80.66,
+        "bypass_rate": 0.6826,
+        "readability": 0.7656,
+        "meaning_preservation": 0.9295,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 2,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T23:18:05.777+00:00",
+      "plan_tier_used": "Basic",
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4209,
+          0.9442
+        ],
+        "meaning_preservation_ci_95": [
+          0.9079,
+          0.9511
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.6826
+      },
+      "detector_breakdown": {
+        "gptzero": 0.8067,
+        "zerogpt": 0.241,
+        "copyleaks": 0.5,
+        "originality": 0.8675
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 2
+    },
+    {
+      "url": "https://www.humanizeai.pro/",
+      "name": "Humanize AI Pro",
+      "rank": 4,
+      "slug": "humanize-ai-pro",
+      "scores": {
+        "composite": 78.21,
+        "bypass_rate": 0.5325,
+        "readability": 1,
+        "meaning_preservation": 0.9327,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 1,
+      "settings_used": null,
+      "last_tested_at": "2026-05-25T23:16:37.474+00:00",
+      "plan_tier_used": "Lite",
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.5325,
+          0.5325
+        ],
+        "meaning_preservation_ci_95": [
+          0.9327,
+          0.9327
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.5325
+      },
+      "detector_breakdown": {
+        "gptzero": 0.9947,
+        "zerogpt": 0.627,
+        "copyleaks": 0.438,
+        "originality": 0.1702
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 1
+    }
+  ],
+  "generated_at": "2026-05-25T23:19:29.715Z",
+  "scoring_version": "1.2.0",
+  "placeholders_used": {
+    "lit_review": {
+      "TOPIC": "the four-day work week as a productivity strategy"
+    },
+    "argumentative_essay": {
+      "TOPIC": "renewable energy adoption in mid-sized cities"
+    }
+  },
+  "cycle_sample_count": 2,
+  "prompt_set_version": "1.0.0",
+  "recording_sessions": [
+    {
+      "id": "bf9711a8-13ec-4aef-9b44-f0191c520fbb",
+      "ended_at": "2026-05-25T23:18:33.27+00:00",
+      "started_at": "2026-05-25T23:14:36.388431+00:00",
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test5/3a288ff1-7dbf-4fec-9b69-310f940b6d58/bf9711a8-13ec-4aef-9b44-f0191c520fbb/seg-001.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q1LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9iZjk3MTFhOC0xM2VjLTRhZWYtOWI0NC1mMDE5MWM1MjBmYmIvc2VnLTAwMS53ZWJtIiwiaWF0IjoxNzc5NzUxMTY5LCJleHAiOjE4MTEyODcxNjl9.CuIWU9RhEegpYlFFOhM1wzOzyUxJoiJLkBnmYeFVxaE",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test5/3a288ff1-7dbf-4fec-9b69-310f940b6d58/bf9711a8-13ec-4aef-9b44-f0191c520fbb/seg-002.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q1LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9iZjk3MTFhOC0xM2VjLTRhZWYtOWI0NC1mMDE5MWM1MjBmYmIvc2VnLTAwMi53ZWJtIiwiaWF0IjoxNzc5NzUxMTY5LCJleHAiOjE4MTEyODcxNjl9.lExecnq2ZPuGr8cBkaEesc1PQIe5jmf7aywTn5sT0A8",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test5/3a288ff1-7dbf-4fec-9b69-310f940b6d58/bf9711a8-13ec-4aef-9b44-f0191c520fbb/seg-003.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q1LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9iZjk3MTFhOC0xM2VjLTRhZWYtOWI0NC1mMDE5MWM1MjBmYmIvc2VnLTAwMy53ZWJtIiwiaWF0IjoxNzc5NzUxMTY5LCJleHAiOjE4MTEyODcxNjl9.stheL35S1PKQb7slHiSx9w2O8vM9sbllvT-qrCG_Za0",
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/test5/3a288ff1-7dbf-4fec-9b69-310f940b6d58/bf9711a8-13ec-4aef-9b44-f0191c520fbb/seg-004.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL3Rlc3Q1LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9iZjk3MTFhOC0xM2VjLTRhZWYtOWI0NC1mMDE5MWM1MjBmYmIvc2VnLTAwNC53ZWJtIiwiaWF0IjoxNzc5NzUxMTY5LCJleHAiOjE4MTEyODcxNjl9.kF4XNObEngT2oS7PfseyrHveDppM_HYFe7WvDSTt8Dc"
+      ],
+      "test_markers": [
+        {
+          "test_id": "4e479e4e-352e-4667-b6c3-939f372b72a8",
+          "category": "academic_essay",
+          "offset_ms": 86504,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "ai-humanize-io"
+        },
+        {
+          "test_id": "81d6a1ef-da42-4d84-a934-4472f22e3748",
+          "category": "academic_essay",
+          "offset_ms": 120725,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "humanize-ai-pro"
+        },
+        {
+          "test_id": "77b5ae2e-44aa-43c5-9843-208333fae702",
+          "category": "academic_essay",
+          "offset_ms": 143157,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "b90710f5-4b08-4433-bc45-50b4a7f9bd2c",
+          "category": "academic_essay",
+          "offset_ms": 163264,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "super-humanizer"
+        },
+        {
+          "test_id": "b8e0d590-b707-4141-91fc-36b636d174cb",
+          "category": "academic_essay",
+          "offset_ms": 191434,
+          "prompt_slug": "lit_review",
+          "humanizer_slug": "writehuman"
+        },
+        {
+          "test_id": "c0ab9f9e-7156-4f4f-9f70-7ff3ff33a359",
+          "category": "academic_essay",
+          "offset_ms": 209105,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "super-humanizer"
+        },
+        {
+          "test_id": "b9ef2ae2-ca67-4e70-b642-b61856ef329b",
+          "category": "academic_essay",
+          "offset_ms": 234873,
+          "prompt_slug": "argumentative_essay",
+          "humanizer_slug": "ai-humanize-io"
+        }
+      ],
+      "segment_count": 4,
+      "total_duration_ms": 236917
+    }
+  ],
+  "methodology_version": "1.2.0",
+  "source_model_versions": {
+    "openai": "gpt-5.5"
+  },
+  "detector_config_version": "1.0.0",
+  "humanizer_config_version": "1.0.0"
+}

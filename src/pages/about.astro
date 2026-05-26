@@ -1,0 +1,120 @@
+---
+import Base from "@/layouts/Base.astro";
+import {
+  BRAND_NAME,
+  SITE_URL,
+  PARENT_ORG,
+  PARENT_ORG_URL,
+  GITHUB_REPO_URL,
+} from "@/lib/config";
+import { breadcrumbListSchema } from "@/lib/schema";
+
+const canonical = `${SITE_URL}/about`;
+const jsonLd = breadcrumbListSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "About", url: canonical },
+]);
+---
+
+<Base
+  title={`About — ${BRAND_NAME}`}
+  description="An independent monthly benchmark of every major AI humanizer. Operated transparently by WriteHuman."
+  canonical={canonical}
+  ogImage={`${SITE_URL}/og/about.png`}
+  jsonLd={jsonLd}
+>
+  <article
+    class="max-w-3xl mx-auto py-16 px-6 text-[var(--color-text-primary)] [&_h1]:text-4xl [&_h1]:font-semibold [&_h1]:tracking-tight [&_h1]:mb-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4 [&_p]:mt-4 [&_p]:leading-relaxed [&_p]:text-[var(--color-text-secondary)] [&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:list-disc [&_ul]:text-[var(--color-text-secondary)] [&_a]:text-[var(--color-accent)] [&_a:hover]:underline [&_code]:font-mono [&_code]:text-[0.9em] [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded [&_code]:bg-[var(--color-surface)] [&_code]:border [&_code]:border-[var(--color-border)] [&_strong]:font-semibold [&_strong]:text-[var(--color-text-primary)]"
+  >
+    <h1>About HumanizerBench</h1>
+
+    <p>
+      <strong>HumanizerBench</strong> is an independent monthly benchmark of
+      every major AI humanizer on the market. Each cycle, we run the same set
+      of prompts through every tested humanizer, submit each humanized output
+      to six commercial AI detectors, score the results with a published
+      deterministic formula, and ship the raw data — inputs, outputs, detector
+      responses, scoring script — alongside the leaderboard.
+    </p>
+    <p>
+      The market for AI humanizers is noisy. Every vendor claims the highest
+      bypass rate against the most detectors with the best meaning
+      preservation. We exist to give that market one credible, auditable
+      reference: the same inputs, the same detectors, the same scoring, every
+      month. If we say a humanizer ranks third, you can download the cycle and
+      reproduce the rank yourself. The longer version of <a href="/why"
+        >why we built this</a
+      > goes into more depth.
+    </p>
+    <p>
+      We're operated by {PARENT_ORG}, which sells one of the humanizers on
+      this leaderboard. We disclose that on every page and we hold WriteHuman
+      to exactly the same methodology, scoring, and penalty rules as every
+      other tested humanizer. Total transparency is the only credibility play
+      that works when the operator is also a competitor.
+    </p>
+
+    <h2>Operator</h2>
+    <p>
+      HumanizerBench is operated by <a
+        href={PARENT_ORG_URL}
+        rel="noopener noreferrer"
+        target="_blank">{PARENT_ORG} ({PARENT_ORG_URL})</a
+      >. {PARENT_ORG} builds an AI humanizer for writers, students, and
+      marketing teams. Editorial control of the benchmark — what we test, how
+      we score, what we publish — is independent of WriteHuman's commercial
+      product team.
+    </p>
+
+    <h2>Anti-bias commitments</h2>
+    <ul>
+      <li>
+        WriteHuman is tested using the same methodology and scoring as every
+        other humanizer.
+      </li>
+      <li>The scoring script is public and deterministic.</li>
+      <li>We do not adjust rankings outside the published methodology.</li>
+      <li>We do not accept payment for placement.</li>
+      <li>
+        We do not exclude tools because they outperform WriteHuman, and we do
+        not run private tests off the record.
+      </li>
+    </ul>
+    <p>
+      The full version of these commitments — and how to dispute, retest, or
+      submit API access — is on the <a href="/fairness"
+        >fairness &amp; corrections page</a
+      >.
+    </p>
+
+    <h2>Contact</h2>
+    <ul>
+      <li>
+        Press: <a href="mailto:press@humanizerbench.example"
+          >press@humanizerbench.example</a
+        >
+      </li>
+      <li>
+        Partnerships: <a href="mailto:partnerships@humanizerbench.example"
+          >partnerships@humanizerbench.example</a
+        >
+      </li>
+      <li>
+        Disputes &amp; corrections: <a
+          href="mailto:disputes@humanizerbench.example"
+          >disputes@humanizerbench.example</a
+        > (see <a href="/fairness">fairness</a> for the full process)
+      </li>
+    </ul>
+
+    <h2>Open source</h2>
+    <p>
+      All inputs, outputs, detector responses, and the scoring script live in
+      our public repository: <a
+        href={GITHUB_REPO_URL}
+        rel="noopener noreferrer"
+        target="_blank">{GITHUB_REPO_URL}</a
+      >.
+    </p>
+  </article>
+</Base>

@@ -1,0 +1,512 @@
+---
+import TrendSparkline from "@/components/TrendSparkline.astro";
+import Favicon from "@/components/Favicon.astro";
+import PenaltyChip from "@/components/PenaltyChip.astro";
+import ColumnHeaderTooltip from "@/components/ColumnHeaderTooltip.astro";
+import { summarizePenalties } from "@/lib/penalties";
+import type { Humanizer } from "@/lib/types";
+import { fmtComposite } from "@/lib/format";
+
+interface Props {
+  data: Humanizer[];
+  historyBySlug: Record<string, number[] | null>;
+}
+
+const { data, historyBySlug } = Astro.props;
+
+const CATEGORY_OPTIONS = [
+  { value: "all", label: "All Categories", key: null },
+  { value: "academic_essay", label: "Academic Essay", key: "academic_essay" },
+  {
+    value: "application_essay",
+    label: "Application Essay",
+    key: "application_essay",
+  },
+  { value: "blog_post", label: "Blog Post", key: "blog_post" },
+  { value: "marketing_copy", label: "Marketing Copy", key: "marketing_copy" },
+  { value: "business_email", label: "Business Email", key: "business_email" },
+  { value: "lit_review", label: "Lit Review", key: "lit_review" },
+  { value: "landing_copy", label: "Landing Copy", key: "landing_copy" },
+  { value: "product_desc", label: "Product Desc", key: "product_desc" },
+] as const;
+
+function formatRelative(iso: string): string {
+  const then = new Date(iso).getTime();
+  if (!Number.isFinite(then)) return "—";
+  const now = Date.now();
+  const diffMs = now - then;
+  const day = 24 * 60 * 60 * 1000;
+  const days = Math.floor(diffMs / day);
+  if (days < 1) {
+    const hours = Math.max(1, Math.floor(diffMs / (60 * 60 * 1000)));
+    return `${hours}h ago`;
+  }
+  if (days < 30) return `${days}d ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months}mo ago`;
+  const years = Math.floor(days / 365);
+  return `${years}y ago`;
+}
+
+function fmtScore(v: number | null | undefined): string {
+  if (typeof v !== "number" || !Number.isFinite(v)) return "—";
+  return (v * 100).toFixed(1);
+}
+
+// Pre-rank by composite descending (initial sort)
+const rows = [...data].sort((a, b) => b.scores.composite - a.scores.composite);
+
+const sorted = rows.map((h) => ({
+  h,
+  history: historyBySlug[h.slug] ?? null,
+}));
+
+// Compute per-column gold/silver/bronze. Each column is ranked independently;
+// "lower is better" applies to speed and cost. Tied scores share the same medal.
+type Medal = "gold" | "silver" | "bronze";
+const MEDAL_BY_RANK: Medal[] = ["gold", "silver", "bronze"];
+const MEDAL_EMOJI: Record<Medal, string> = {
+  gold: "🥇",
+  silver: "🥈",
+  bronze: "🥉",
+};
+
+function buildMedals(
+  pick: (h: Humanizer) => number | null | undefined,
+  lowerIsBetter = false,
+): Map<string, Medal> {
+  const m = new Map<string, Medal>();
+  const entries = data
+    .map((h) => ({ slug: h.slug, v: pick(h) }))
+    .filter((e): e is { slug: string; v: number } => typeof e.v === "number");
+  entries.sort((a, b) => (lowerIsBetter ? a.v - b.v : b.v - a.v));
+  // Group by score for tie-handling: equal values share the same medal.
+  let medalIdx = 0;
+  let prevValue: number | null = null;
+  for (const e of entries) {
+    if (prevValue !== null && e.v !== prevValue) medalIdx++;
+    if (medalIdx > 2) break;
+    m.set(e.slug, MEDAL_BY_RANK[medalIdx]!);
+    prevValue = e.v;
+  }
+  return m;
+}
+
+const medals = {
+  composite: buildMedals((h) => h.scores.composite),
+  bypass_rate: buildMedals((h) => h.scores.bypass_rate),
+  meaning: buildMedals((h) => h.scores.meaning_preservation),
+  readability: buildMedals((h) => h.scores.readability),
+};
+
+function medalClass(map: Map<string, Medal>, slug: string): string {
+  const m = map.get(slug);
+  return m ? `medal medal-${m}` : "font-mono tabnum";
+}
+---
+
+<div class="w-full" data-leaderboard>
+  <div class="flex items-center justify-between mb-4">
+    <div class="text-sm text-[var(--color-text-secondary)]">
+      {data.length} humanizers
+    </div>
+    <div class="flex items-center gap-2">
+      <label
+        for="category-filter"
+        class="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]"
+      >
+        Category lens
+      </label>
+      <select
+        id="category-filter"
+        data-category-filter
+        aria-label="Filter overall score by category"
+        class="h-8 min-w-[180px] rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 text-sm text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/50"
+      >
+        {CATEGORY_OPTIONS.map((opt) => (
+          <option value={opt.value} data-category-key={opt.key ?? ""}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  </div>
+
+  <div
+    class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]"
+  >
+    <table class="w-full caption-bottom text-sm" data-lb-table>
+        <thead
+          class="sticky top-0 z-10 bg-[var(--color-bg)] border-b border-[var(--color-border)]"
+        >
+          <tr>
+            <th
+              scope="col"
+              data-sort-key="rank"
+              data-sort-type="number"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-left cursor-pointer select-none"
+            >
+              <span class="inline-flex items-center gap-1 justify-start">
+                <ColumnHeaderTooltip
+                  label="Rank"
+                  description="Position in this cycle by overall score."
+                  align="start"
+                />
+                <span class="sort-indicator text-[var(--color-text-secondary)] text-xs"></span>
+              </span>
+            </th>
+            <th
+              scope="col"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-left"
+            >
+              <span>Humanizer</span>
+            </th>
+            <th
+              scope="col"
+              data-sort-key="composite"
+              data-sort-type="number"
+              data-default-desc="true"
+              aria-sort="descending"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right cursor-pointer select-none"
+            >
+              <span class="inline-flex items-center gap-1 justify-end">
+                <ColumnHeaderTooltip
+                  label="Overall"
+                  description="Weighted blend of bypass rate, meaning preservation, readability, consistency, and speed. Penalties may reduce this score."
+                >
+                  <span data-composite-label>Overall</span>
+                </ColumnHeaderTooltip>
+                <span class="sort-indicator text-[var(--color-text-secondary)] text-xs">↓</span>
+              </span>
+            </th>
+            <th
+              scope="col"
+              data-sort-key="bypass_rate"
+              data-sort-type="number"
+              data-default-desc="true"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right cursor-pointer select-none"
+            >
+              <span class="inline-flex items-center gap-1 justify-end">
+                <ColumnHeaderTooltip
+                  label="Bypass Rate"
+                  description="Fraction of detector tests where the humanized output was classified as human, across all 6 detectors."
+                />
+                <span class="sort-indicator text-[var(--color-text-secondary)] text-xs"></span>
+              </span>
+            </th>
+            <th
+              scope="col"
+              data-sort-key="meaning"
+              data-sort-type="number"
+              data-default-desc="true"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right cursor-pointer select-none"
+            >
+              <span class="inline-flex items-center gap-1 justify-end">
+                <ColumnHeaderTooltip
+                  label="Meaning"
+                  description="Semantic similarity (embedding cosine) between input and humanized output. Higher = output preserves the input's meaning."
+                />
+                <span class="sort-indicator text-[var(--color-text-secondary)] text-xs"></span>
+              </span>
+            </th>
+            <th
+              scope="col"
+              data-sort-key="readability"
+              data-sort-type="number"
+              data-default-desc="true"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right cursor-pointer select-none"
+            >
+              <span class="inline-flex items-center gap-1 justify-end">
+                <ColumnHeaderTooltip
+                  label="Readability"
+                  description="Inverse of reading-level drift between input and output. Higher = closer to the input's reading level."
+                />
+                <span class="sort-indicator text-[var(--color-text-secondary)] text-xs"></span>
+              </span>
+            </th>
+            <th
+              scope="col"
+              data-sort-key="penalty"
+              data-sort-type="number"
+              data-default-desc="true"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right cursor-pointer select-none"
+            >
+              <span class="inline-flex items-center gap-1 justify-end">
+                <ColumnHeaderTooltip
+                  label="Penalties"
+                  description="Total points deducted from the overall score when output-quality issues were detected. Hover a row's chip to see why."
+                />
+                <span class="sort-indicator text-[var(--color-text-secondary)] text-xs"></span>
+              </span>
+            </th>
+            <th
+              scope="col"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-center"
+            >
+              Trend
+            </th>
+            <th
+              scope="col"
+              data-sort-key="last_tested"
+              data-sort-type="number"
+              class="h-10 px-3 align-middle text-xs font-medium uppercase tracking-wider text-[var(--color-text-secondary)] whitespace-nowrap text-right cursor-pointer select-none"
+            >
+              <span class="inline-flex items-center gap-1 justify-end">
+                Last Tested
+                <span class="sort-indicator text-[var(--color-text-secondary)] text-xs"></span>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map(({ h, history }, index) => {
+            const delay = Math.min(index, 11) * 50;
+            const compositePct = fmtComposite(h.scores.composite);
+            const catData = h.category_breakdown ?? {};
+            const composite = h.scores.composite;
+            const penaltySummary = summarizePenalties(h.penalties_applied ?? []);
+            const penaltyMag = Math.abs(penaltySummary.totalDelta);
+            return (
+              <tr
+                class="lb-row h-[72px] border-b border-[var(--color-border)] last:border-0 hover:bg-[var(--color-surface)]/50 transition-colors"
+                style={`animation-delay: ${delay}ms`}
+                data-rank={h.rank}
+                data-composite={composite}
+                data-bypass_rate={h.scores.bypass_rate}
+                data-meaning={h.scores.meaning_preservation}
+                data-readability={h.scores.readability}
+                data-penalty={penaltyMag}
+                data-last_tested={new Date(h.last_tested_at).getTime()}
+                data-cat-academic_essay={catData.academic_essay ?? composite}
+                data-cat-application_essay={catData.application_essay ?? composite}
+                data-cat-blog_post={catData.blog_post ?? composite}
+                data-cat-marketing_copy={catData.marketing_copy ?? composite}
+                data-cat-business_email={catData.business_email ?? composite}
+                data-cat-lit_review={catData.lit_review ?? composite}
+                data-cat-landing_copy={catData.landing_copy ?? composite}
+                data-cat-product_desc={catData.product_desc ?? composite}
+              >
+                <td class="px-3 align-middle whitespace-nowrap text-left">
+                  <div class="flex flex-col items-start leading-none">
+                    <span
+                      class="font-mono tabnum font-medium text-[var(--color-text-primary)]"
+                      style="font-size: 28px; line-height: 1;"
+                    >
+                      {h.rank}
+                    </span>
+                    <span class="mt-1">
+                      {h.rank_change > 0 ? (
+                        <span class="font-mono tabnum text-xs font-medium text-[var(--color-accent)]">
+                          ▲ {Math.abs(h.rank_change)}
+                        </span>
+                      ) : h.rank_change < 0 ? (
+                        <span class="font-mono tabnum text-xs font-medium text-red-400">
+                          ▼ {Math.abs(h.rank_change)}
+                        </span>
+                      ) : (
+                        <span class="font-mono tabnum text-xs font-medium text-[var(--color-text-secondary)]">
+                          —
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                </td>
+                <td class="px-3 align-middle whitespace-nowrap text-left">
+                  <div class="flex items-center gap-3">
+                    <Favicon url={h.url} name={h.name} size={24} />
+                    <div class="flex flex-col leading-tight">
+                      <span class="font-medium text-[var(--color-text-primary)]">
+                        {h.name}
+                      </span>
+                      <a
+                        href={h.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]"
+                      >
+                        {h.url.replace(/^https?:\/\//, "")}
+                      </a>
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class:list={["px-3 align-middle whitespace-nowrap text-right", medals.composite.has(h.slug) && `medal-${medals.composite.get(h.slug)}`]}
+                  data-composite-cell
+                >
+                  {medals.composite.has(h.slug) && (
+                    <span class="mr-1.5" aria-hidden="true">
+                      {MEDAL_EMOJI[medals.composite.get(h.slug)!]}
+                    </span>
+                  )}
+                  <span class="font-mono tabnum font-medium" data-composite-text>{compositePct}</span>
+                </td>
+                <td class:list={["px-3 align-middle whitespace-nowrap text-right", medals.bypass_rate.has(h.slug) && `medal-${medals.bypass_rate.get(h.slug)}`]}>
+                  <span class="font-mono tabnum font-medium">
+                    {fmtScore(h.scores.bypass_rate)}
+                  </span>
+                </td>
+                <td class:list={["px-3 align-middle whitespace-nowrap text-right", medals.meaning.has(h.slug) && `medal-${medals.meaning.get(h.slug)}`]}>
+                  <span class="font-mono tabnum font-medium">
+                    {fmtScore(h.scores.meaning_preservation)}
+                  </span>
+                </td>
+                <td class:list={["px-3 align-middle whitespace-nowrap text-right", medals.readability.has(h.slug) && `medal-${medals.readability.get(h.slug)}`]}>
+                  <span class="font-mono tabnum font-medium">
+                    {fmtScore(h.scores.readability)}
+                  </span>
+                </td>
+                <td class="px-3 align-middle whitespace-nowrap text-right">
+                  <PenaltyChip penalties={h.penalties_applied ?? []} />
+                </td>
+                <td class="px-3 align-middle whitespace-nowrap">
+                  <div class="flex justify-center">
+                    <TrendSparkline points={history} />
+                  </div>
+                </td>
+                <td class="px-3 align-middle whitespace-nowrap text-right">
+                  <span class="text-xs text-[var(--color-text-secondary)] tabnum">
+                    {formatRelative(h.last_tested_at)}
+                  </span>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+  </div>
+
+  <p
+    class="mt-3 text-xs text-[var(--color-text-secondary)]"
+    data-category-note
+    hidden
+  >
+    Showing <span data-category-note-label></span> scores in overall column.
+  </p>
+</div>
+
+<script>
+  type Dir = "asc" | "desc";
+
+  function initLeaderboard(root: HTMLElement) {
+    const table = root.querySelector<HTMLTableElement>("[data-lb-table]");
+    const tbody = table?.querySelector<HTMLTableSectionElement>("tbody");
+    const select = root.querySelector<HTMLSelectElement>(
+      "[data-category-filter]",
+    );
+    const compositeLabel = root.querySelector<HTMLElement>(
+      "[data-composite-label]",
+    );
+    const note = root.querySelector<HTMLElement>("[data-category-note]");
+    const noteLabel = root.querySelector<HTMLElement>(
+      "[data-category-note-label]",
+    );
+    if (!table || !tbody) return;
+
+    let currentSort: { key: string; dir: Dir } = {
+      key: "composite",
+      dir: "desc",
+    };
+
+    function clearIndicators() {
+      table!
+        .querySelectorAll<HTMLElement>("th[data-sort-key]")
+        .forEach((th) => {
+          th.removeAttribute("aria-sort");
+          const ind = th.querySelector(".sort-indicator");
+          if (ind) ind.textContent = "";
+        });
+    }
+
+    function setIndicator(key: string, dir: Dir) {
+      const th = table!.querySelector<HTMLElement>(
+        `th[data-sort-key="${key}"]`,
+      );
+      if (!th) return;
+      th.setAttribute("aria-sort", dir === "asc" ? "ascending" : "descending");
+      const ind = th.querySelector(".sort-indicator");
+      if (ind) ind.textContent = dir === "asc" ? "↑" : "↓";
+    }
+
+    function sortRows(key: string, dir: Dir) {
+      const rows = Array.from(tbody!.querySelectorAll("tr"));
+      rows.sort((a, b) => {
+        const av = parseFloat(a.dataset[key] ?? "0");
+        const bv = parseFloat(b.dataset[key] ?? "0");
+        const cmp = av - bv;
+        return dir === "asc" ? cmp : -cmp;
+      });
+      const frag = document.createDocumentFragment();
+      rows.forEach((r) => frag.appendChild(r));
+      tbody!.appendChild(frag);
+    }
+
+    function applyCategory(categoryKey: string | null, label: string) {
+      const rows = tbody!.querySelectorAll<HTMLTableRowElement>("tr");
+      rows.forEach((row) => {
+        let val: number;
+        if (!categoryKey) {
+          val = parseFloat(row.dataset.composite ?? "0");
+        } else {
+          const ds = row.dataset as Record<string, string>;
+          val = parseFloat(ds[`cat${capitalize(categoryKey)}`] ?? row.dataset.composite ?? "0");
+        }
+        // Update the composite-related data and visible cell
+        row.dataset.composite = String(val);
+        const bar = row.querySelector<HTMLElement>("[data-composite-bar]");
+        const text = row.querySelector<HTMLElement>("[data-composite-text]");
+        if (bar) bar.style.width = `${Math.min(100, Math.max(0, val * 100))}%`;
+        if (text) text.textContent = (val * 100).toFixed(1);
+      });
+      if (compositeLabel) compositeLabel.textContent = label;
+      if (note && noteLabel) {
+        if (categoryKey) {
+          noteLabel.textContent = label;
+          note.removeAttribute("hidden");
+        } else {
+          note.setAttribute("hidden", "");
+        }
+      }
+    }
+
+    function capitalize(s: string): string {
+      // dataset converts data-cat-foo_bar to catFoo_bar (single hyphen splits camelCase)
+      // We named attrs data-cat-academic_essay -> dataset.catAcademic_essay
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    table
+      .querySelectorAll<HTMLElement>("th[data-sort-key]")
+      .forEach((th) => {
+        th.addEventListener("click", () => {
+          const key = th.dataset.sortKey!;
+          const descFirst = th.dataset.defaultDesc === "true";
+          let dir: Dir;
+          if (currentSort.key === key) {
+            dir = currentSort.dir === "asc" ? "desc" : "asc";
+          } else {
+            dir = descFirst ? "desc" : "asc";
+          }
+          currentSort = { key, dir };
+          clearIndicators();
+          setIndicator(key, dir);
+          sortRows(key, dir);
+        });
+      });
+
+    if (select) {
+      select.addEventListener("change", () => {
+        const opt = select.options[select.selectedIndex];
+        const key = opt.getAttribute("data-category-key") || null;
+        const label =
+          opt.textContent?.trim() || (key ? "Category" : "Overall");
+        applyCategory(key, key ? label : "Overall");
+        // Re-apply current sort to reflect new composite values
+        sortRows(currentSort.key, currentSort.dir);
+      });
+    }
+  }
+
+  document
+    .querySelectorAll<HTMLElement>("[data-leaderboard]")
+    .forEach((el) => initLeaderboard(el));
+</script>

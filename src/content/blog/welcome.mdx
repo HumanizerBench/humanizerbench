@@ -1,0 +1,43 @@
+---
+title: "Introducing HumanizerBench"
+description: "An independent monthly benchmark of every AI humanizer on the market."
+pubDate: 2026-05-15
+tags: ["announcements"]
+---
+
+# Why we built this
+
+The market for AI humanizers is loud. Every landing page promises the highest
+bypass rate against the most detectors with the best meaning preservation, and
+almost none of them publish the data behind the claim. If you're a student
+trying to pick a tool, a marketer evaluating a stack, or a vendor trying to
+benchmark your own roadmap, "trust me" is not enough.
+
+**HumanizerBench** is our attempt to fix that. Every cycle we run the same
+prompts through every major humanizer, submit each output to six commercial AI
+detectors, and score the results with a deterministic formula. Then we publish
+*everything* — the input prompts, the humanized outputs, the raw detector
+responses, the scoring script. If we say a humanizer ranks third, you can
+download the cycle and reproduce the rank yourself.
+
+We don't think credibility is a marketing problem; we think it's a publishing
+problem. So we ship the raw data.
+
+## Who runs this
+
+HumanizerBench is operated by [WriteHuman](https://writehuman.ai), which sells
+one of the humanizers on this leaderboard. We disclose this on every page.
+WriteHuman is tested using the same methodology, scoring, and penalty rules as
+every other humanizer — and the scoring script is public, so you can verify
+that. The full anti-bias commitments are on the [fairness page](/fairness).
+
+## What to read first
+
+- The [methodology](/methodology) page — formula, weights, penalties,
+  versioning, reproducibility.
+- The [fairness &amp; corrections](/fairness) page — how to dispute a result,
+  request a retest, or submit API access.
+- The [public repository](https://github.com/writehuman/humanizer-benchmark) —
+  every input, every output, every detector response, every scoring script.
+
+More posts to follow alongside each cycle.

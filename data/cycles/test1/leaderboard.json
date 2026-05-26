@@ -1,0 +1,158 @@
+{
+  "cycle": "test1",
+  "humanizers": [
+    {
+      "url": "https://writehuman.ai",
+      "name": "WriteHuman",
+      "rank": 1,
+      "slug": "writehuman",
+      "scores": {
+        "composite": 93.36,
+        "bypass_rate": 1,
+        "readability": 0.8779,
+        "speed_seconds": 131.31,
+        "meaning_preservation": 0.9127,
+        "cost_per_1k_words_usd": null,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 2,
+      "settings_used": null,
+      "last_tested_at": "2026-05-23T22:05:17.444+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          1,
+          1
+        ],
+        "meaning_preservation_ci_95": [
+          0.8882,
+          0.9372
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 1
+      },
+      "detector_breakdown": {
+        "zerogpt": 1
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 2
+    },
+    {
+      "url": "https://walterwrites.ai",
+      "name": "Walter Writes",
+      "rank": 2,
+      "slug": "walter-writes",
+      "scores": {
+        "composite": 88.83,
+        "bypass_rate": 0.8305,
+        "readability": 0.9564,
+        "speed_seconds": 99.83,
+        "meaning_preservation": 0.9173,
+        "cost_per_1k_words_usd": null,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": true,
+        "monthly_usd": 8,
+        "free_tier_word_limit": 300
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 2,
+      "settings_used": null,
+      "last_tested_at": "2026-05-23T22:06:39.786+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.828,
+          0.833
+        ],
+        "meaning_preservation_ci_95": [
+          0.8919,
+          0.9427
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.8305
+      },
+      "detector_breakdown": {
+        "zerogpt": 0.8305
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 2
+    },
+    {
+      "url": "https://phrasly.ai",
+      "name": "Phrasly",
+      "rank": 3,
+      "slug": "phrasly",
+      "scores": {
+        "composite": 84.7,
+        "bypass_rate": 0.8505,
+        "readability": 0.9049,
+        "speed_seconds": 183.62,
+        "meaning_preservation": 0.8619,
+        "cost_per_1k_words_usd": null,
+        "consistency_across_categories": 1
+      },
+      "pricing": {
+        "free_tier": false,
+        "monthly_usd": null,
+        "free_tier_word_limit": null
+      },
+      "confidence": "low",
+      "rank_change": null,
+      "sample_count": 2,
+      "settings_used": null,
+      "last_tested_at": "2026-05-23T22:04:49.783+00:00",
+      "plan_tier_used": null,
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.828,
+          0.873
+        ],
+        "meaning_preservation_ci_95": [
+          0.8582,
+          0.8656
+        ]
+      },
+      "penalties_applied": [],
+      "category_breakdown": {
+        "academic_essay": 0.8505
+      },
+      "detector_breakdown": {
+        "zerogpt": 0.8505
+      },
+      "flagged_test_count": 0,
+      "successful_test_count": 2
+    }
+  ],
+  "generated_at": "2026-05-23T22:24:02.091Z",
+  "scoring_version": "1.0.0",
+  "placeholders_used": {
+    "lit_review": {
+      "TOPIC": "the limits of digital privacy law"
+    },
+    "argumentative_essay": {
+      "TOPIC": "the impact of generative AI on knowledge work"
+    }
+  },
+  "cycle_sample_count": 2,
+  "prompt_set_version": "1.0.0",
+  "methodology_version": "1.0.0",
+  "source_model_versions": {
+    "openai": "gpt-5.5"
+  },
+  "detector_config_version": "1.0.0",
+  "humanizer_config_version": "1.0.0"
+}

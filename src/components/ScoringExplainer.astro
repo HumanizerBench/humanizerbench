@@ -1,0 +1,263 @@
+---
+import {
+  PENALTY_CODE_ORDER,
+  PENALTY_META,
+  MAX_TOTAL_PENALTY,
+} from "@/lib/penalties";
+
+// Grayscale ramp — biggest weight is darkest. Color has no semantic meaning
+// here; the proportion is the signal.
+const weights = [
+  {
+    key: "bypass",
+    label: "Bypass",
+    pct: 40,
+    desc: "Share of detector tests where the output was classified as human.",
+    shade: 0.85,
+  },
+  {
+    key: "meaning",
+    label: "Meaning",
+    pct: 25,
+    desc: "How well the output preserves the original meaning.",
+    shade: 0.6,
+  },
+  {
+    key: "readability",
+    label: "Readability",
+    pct: 20,
+    desc: "How close the output stays to the input's reading level.",
+    shade: 0.45,
+  },
+  {
+    key: "consistency",
+    label: "Consistency",
+    pct: 10,
+    desc: "How evenly the humanizer performs across writing categories.",
+    shade: 0.3,
+  },
+  {
+    key: "speed",
+    label: "Speed",
+    pct: 5,
+    desc: "How fast the humanizer responds.",
+    shade: 0.2,
+  },
+];
+
+const penaltyRows = PENALTY_CODE_ORDER.map((code) => ({
+  code,
+  meta: PENALTY_META[code],
+}));
+const VISIBLE_PENALTIES = 4;
+const visiblePenalties = penaltyRows.slice(0, VISIBLE_PENALTIES);
+const hiddenPenalties = penaltyRows.slice(VISIBLE_PENALTIES);
+---
+
+<section
+  class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 md:p-8"
+  aria-labelledby="scoring-explainer-title"
+>
+  <div class="flex flex-wrap items-baseline justify-between gap-2 mb-6">
+    <h2
+      id="scoring-explainer-title"
+      class="text-lg font-medium text-[var(--color-text-primary)]"
+    >
+      How scores are computed
+    </h2>
+    <a
+      href="/methodology"
+      class="text-sm text-[var(--color-accent)] hover:underline"
+    >
+      See the full methodology →
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <h3
+        class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)] mb-3"
+      >
+        Overall score formula
+      </h3>
+
+      <div
+        class="flex w-full h-6 rounded-md overflow-hidden border border-[var(--color-border)]"
+        role="presentation"
+      >
+        {
+          weights.map((w) => (
+            <div
+              style={`width: ${w.pct}%; background-color: color-mix(in srgb, var(--color-text-primary) ${Math.round(w.shade * 100)}%, transparent);`}
+              title={`${w.label} — ${w.pct}%`}
+            />
+          ))
+        }
+      </div>
+
+      <ul class="mt-4 space-y-3 text-sm">
+        {
+          weights.map((w) => (
+            <li class="flex items-start gap-3">
+              <span
+                class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-sm"
+                style={`background-color: color-mix(in srgb, var(--color-text-primary) ${Math.round(w.shade * 100)}%, transparent);`}
+                aria-hidden="true"
+              />
+              <span>
+                <span class="font-medium text-[var(--color-text-primary)]">
+                  {w.label}
+                </span>
+                <span class="font-mono tabnum text-[var(--color-text-secondary)] ml-2">
+                  {w.pct}%
+                </span>
+                <span class="block text-xs text-[var(--color-text-secondary)] mt-0.5 leading-relaxed">
+                  {w.desc}
+                </span>
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="mt-4 text-xs text-[var(--color-text-secondary)]">
+        Penalties (right) are deducted from the overall score. Final score
+        is clamped at 0.
+      </p>
+    </div>
+
+    <div>
+      <h3
+        class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)] mb-3"
+      >
+        Possible penalties
+      </h3>
+
+      <div class="overflow-x-auto" data-penalties-table>
+        <table class="w-full text-sm">
+          <thead>
+            <tr
+              class="text-left text-[10px] uppercase tracking-wider text-[var(--color-text-secondary)]"
+            >
+              <th class="font-medium py-2 pr-3">Code</th>
+              <th class="font-medium py-2 px-3 text-right whitespace-nowrap">
+                Penalty
+              </th>
+              <th class="font-medium py-2 px-3 text-right whitespace-nowrap">
+                Max
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              visiblePenalties.map(({ code, meta }) => (
+                <tr class="border-t border-[var(--color-border)] align-top">
+                  <td class="py-2 pr-3">
+                    <div class="font-medium text-[var(--color-text-primary)]">
+                      {meta.label}
+                    </div>
+                    <div class="text-xs text-[var(--color-text-secondary)] mt-0.5">
+                      {meta.description}
+                    </div>
+                  </td>
+                  <td class="py-2 px-3 text-right font-mono tabnum text-[var(--color-text-primary)] whitespace-nowrap">
+                    −{meta.per.toFixed(1)}
+                  </td>
+                  <td class="py-2 px-3 text-right font-mono tabnum text-[var(--color-text-secondary)] whitespace-nowrap">
+                    −{meta.cap.toFixed(1)}
+                  </td>
+                </tr>
+              ))
+            }
+            {
+              hiddenPenalties.map(({ code, meta }) => (
+                <tr
+                  class="border-t border-[var(--color-border)] align-top"
+                  data-extra-penalty
+                  hidden
+                >
+                  <td class="py-2 pr-3">
+                    <div class="font-medium text-[var(--color-text-primary)]">
+                      {meta.label}
+                    </div>
+                    <div class="text-xs text-[var(--color-text-secondary)] mt-0.5">
+                      {meta.description}
+                    </div>
+                  </td>
+                  <td class="py-2 px-3 text-right font-mono tabnum text-[var(--color-text-primary)] whitespace-nowrap">
+                    −{meta.per.toFixed(1)}
+                  </td>
+                  <td class="py-2 px-3 text-right font-mono tabnum text-[var(--color-text-secondary)] whitespace-nowrap">
+                    −{meta.cap.toFixed(1)}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      {
+        hiddenPenalties.length > 0 && (
+          <button
+            type="button"
+            data-show-all-penalties
+            data-expanded="false"
+            class="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+          >
+            <span data-label-collapsed>
+              Show {hiddenPenalties.length} more
+            </span>
+            <span data-label-expanded hidden>Show fewer</span>
+            <span aria-hidden="true" data-icon>
+              ↓
+            </span>
+          </button>
+        )
+      }
+
+      <p class="mt-3 text-xs text-[var(--color-text-secondary)]">
+        Maximum possible total penalty:
+        <span class="font-mono tabnum text-[var(--color-text-primary)]">
+          −{MAX_TOTAL_PENALTY.toFixed(1)}
+        </span>
+        (off 100).
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-show-all-penalties]")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.dataset.expanded === "true";
+        const next = !expanded;
+        btn.dataset.expanded = String(next);
+        const root = btn.parentElement;
+        const rows =
+          root?.querySelectorAll<HTMLElement>("[data-extra-penalty]") ?? [];
+        rows.forEach((r) => {
+          if (next) r.removeAttribute("hidden");
+          else r.setAttribute("hidden", "");
+        });
+        const collapsed = btn.querySelector<HTMLElement>(
+          "[data-label-collapsed]",
+        );
+        const expandedLabel = btn.querySelector<HTMLElement>(
+          "[data-label-expanded]",
+        );
+        const icon = btn.querySelector<HTMLElement>("[data-icon]");
+        if (collapsed)
+          next
+            ? collapsed.setAttribute("hidden", "")
+            : collapsed.removeAttribute("hidden");
+        if (expandedLabel)
+          next
+            ? expandedLabel.removeAttribute("hidden")
+            : expandedLabel.setAttribute("hidden", "");
+        if (icon) icon.textContent = next ? "↑" : "↓";
+      });
+    });
+</script>

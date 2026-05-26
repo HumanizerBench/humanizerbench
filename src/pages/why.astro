@@ -1,0 +1,256 @@
+---
+import Base from "@/layouts/Base.astro";
+import {
+  BRAND_NAME,
+  SITE_URL,
+  GITHUB_REPO_URL,
+  PARENT_ORG,
+  PARENT_ORG_URL,
+} from "@/lib/config";
+import { breadcrumbListSchema } from "@/lib/schema";
+
+const canonical = `${SITE_URL}/why`;
+
+const jsonLd = [
+  breadcrumbListSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Why this exists", url: canonical },
+  ]),
+];
+---
+
+<Base
+  title={`Why we built ${BRAND_NAME}`}
+  description={`Why ${BRAND_NAME} exists: the AI humanizer market is full of overpromising tools, paid placements, and seeded reviews. We built a public benchmark so customers can decide based on data instead of marketing.`}
+  canonical={canonical}
+  ogImage={`${SITE_URL}/og/why.png`}
+  jsonLd={jsonLd}
+>
+  <article class="max-w-3xl mx-auto px-4 pt-16 pb-20 md:pt-24">
+    <p
+      class="text-xs uppercase tracking-[0.18em] text-[var(--color-text-secondary)] font-medium"
+    >
+      Why this exists
+    </p>
+    <h1
+      class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-[var(--color-text-primary)] leading-[1.05]"
+    >
+      The AI humanizer market is hard to navigate honestly.
+    </h1>
+    <p
+      class="mt-6 text-lg text-[var(--color-text-secondary)] leading-relaxed"
+    >
+      So we built a benchmark anyone can audit, run by the same people who
+      ship one of the products being tested — openly, and with all the data
+      published.
+    </p>
+
+    <div
+      class="mt-10 space-y-5 text-[var(--color-text-primary)] leading-relaxed text-[17px]"
+    >
+      <p>
+        A wave of AI humanizers launched quickly over the last two years,
+        leaned hard on paid advertising, and made bypass-rate claims that
+        aren't backed by repeatable evidence. The comparison sites that rank
+        for "best AI humanizer" are mostly affiliate funnels. Reddit threads
+        are seeded. AI Overviews and ChatGPT summaries cite whichever page
+        ranks highest — which means they cite the affiliate funnels.
+      </p>
+      <p>
+        The result is a market where it's nearly impossible for a real
+        customer to make a real decision. You try one tool, it underdelivers.
+        You try another, it underdelivers differently. Eventually you settle,
+        or you give up. None of that should be necessary.
+      </p>
+
+      <h2
+        class="pt-6 text-2xl md:text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]"
+      >
+        Why we're the ones building it
+      </h2>
+      <p>
+        {BRAND_NAME} is operated by <a
+          href={PARENT_ORG_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)] transition-colors"
+          >{PARENT_ORG}</a
+        >, which has shipped an AI humanizer in this market for years. We
+        talk to customers every day who arrived after trying three other
+        tools that didn't work. We've watched competitors run paid ads
+        claiming "99.9% bypass" on products that fail when tested. We've
+        seen our own product compared against others using cherry-picked
+        examples and undisclosed scoring.
+      </p>
+      <p>
+        We're the ones building this because we know the market well enough
+        to design a fair test, and we have the most to lose if the test is
+        sloppy. A benchmark that gets called out for being rigged hurts us
+        more than it hurts any competitor.
+      </p>
+
+      <h2
+        class="pt-6 text-2xl md:text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]"
+      >
+        How we handle the obvious conflict
+      </h2>
+      <p>
+        We're testing ourselves. That's the obvious objection, and it
+        deserves a real answer.
+      </p>
+      <ul class="space-y-3 list-none pl-0">
+        <li class="flex gap-3">
+          <span
+            class="mt-2.5 inline-block h-1 w-1 rounded-full bg-[var(--color-accent)] shrink-0"
+            aria-hidden="true"></span>
+          <span>
+            <strong class="font-medium"
+              >Our product gets the same treatment as every other product.</strong
+            > Same prompt set. Same detector list. Same scoring formula. No special
+            preprocessing, no exceptions, no manual adjustments.
+          </span>
+        </li>
+        <li class="flex gap-3">
+          <span
+            class="mt-2.5 inline-block h-1 w-1 rounded-full bg-[var(--color-accent)] shrink-0"
+            aria-hidden="true"></span>
+          <span>
+            <strong class="font-medium">Anyone can re-run it.</strong> Every
+            input, every humanized output, every detector response, and the scoring
+            script itself are in our <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)] transition-colors"
+              >public repository</a
+            >. If you think we're rigging it, fork the repo, rerun the
+            scoring, and tell us what you find. The disagreement should
+            resolve in code, not in argument.
+          </span>
+        </li>
+        <li class="flex gap-3">
+          <span
+            class="mt-2.5 inline-block h-1 w-1 rounded-full bg-[var(--color-accent)] shrink-0"
+            aria-hidden="true"></span>
+          <span>
+            <strong class="font-medium">Vendors can dispute results.</strong>
+            The <a
+              href="/fairness"
+              class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)] transition-colors"
+              >fairness policy</a
+            > covers disputes, retesting, and API access requests. We respond
+            within 14 business days.
+          </span>
+        </li>
+      </ul>
+      <p>
+        We considered outsourcing this to a "neutral" third party, but the
+        third parties writing about this market are mostly the same
+        affiliate publishers that created the credibility problem. We'd
+        rather operate it openly and accept the conflict-of-interest
+        scrutiny than launder it through a party that has its own
+        incentives.
+      </p>
+
+      <h2
+        class="pt-6 text-2xl md:text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]"
+      >
+        What this is
+      </h2>
+      <p>
+        A monthly benchmark of every major AI humanizer against the
+        detectors most people actually use. Fixed prompt set. Deterministic
+        scoring. All raw data published. Cycles are archived under their own
+        URLs so historical rankings stay accessible.
+      </p>
+
+      <h2
+        class="pt-6 text-2xl md:text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]"
+      >
+        What this isn't
+      </h2>
+      <ul class="space-y-3 list-none pl-0">
+        <li class="flex gap-3">
+          <span
+            class="mt-2.5 inline-block h-1 w-1 rounded-full bg-[var(--color-accent)] shrink-0"
+            aria-hidden="true"></span>
+          <span>Not an affiliate funnel. We don't take payment for placement, removal, or score adjustment.</span>
+        </li>
+        <li class="flex gap-3">
+          <span
+            class="mt-2.5 inline-block h-1 w-1 rounded-full bg-[var(--color-accent)] shrink-0"
+            aria-hidden="true"></span>
+          <span>Not editorial reviews. There is no opinion in the rankings — just the data and the scoring formula.</span>
+        </li>
+        <li class="flex gap-3">
+          <span
+            class="mt-2.5 inline-block h-1 w-1 rounded-full bg-[var(--color-accent)] shrink-0"
+            aria-hidden="true"></span>
+          <span>Not a comparison generator. The methodology is fixed and versioned. When it changes, the change is visible in the version history.</span>
+        </li>
+      </ul>
+
+      <h2
+        class="pt-6 text-2xl md:text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]"
+      >
+        What we hope changes
+      </h2>
+      <p>
+        Customers stop being asked to trust marketing claims. Vendors
+        compete on results that can be independently measured, not on
+        results that can be advertised. The next time someone searches "best
+        AI humanizer," they find data instead of a paid placement.
+      </p>
+      <p>
+        If that takes some pressure off our own marketing too, even better.
+      </p>
+    </div>
+
+    <div
+      class="mt-14 pt-10 border-t border-[var(--color-border)] grid grid-cols-1 sm:grid-cols-3 gap-3"
+    >
+      <a
+        href="/"
+        class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 hover:border-[var(--color-text-secondary)] transition-colors"
+      >
+        <span
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+          >See the data</span
+        >
+        <p
+          class="mt-2 text-sm font-medium text-[var(--color-text-primary)]"
+        >
+          This cycle's leaderboard →
+        </p>
+      </a>
+      <a
+        href="/methodology"
+        class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 hover:border-[var(--color-text-secondary)] transition-colors"
+      >
+        <span
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+          >How it works</span
+        >
+        <p
+          class="mt-2 text-sm font-medium text-[var(--color-text-primary)]"
+        >
+          Methodology + scoring →
+        </p>
+      </a>
+      <a
+        href="/fairness"
+        class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 hover:border-[var(--color-text-secondary)] transition-colors"
+      >
+        <span
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+          >Disagree?</span
+        >
+        <p
+          class="mt-2 text-sm font-medium text-[var(--color-text-primary)]"
+        >
+          Disputes + retesting →
+        </p>
+      </a>
+    </div>
+  </article>
+</Base>

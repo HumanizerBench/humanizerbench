@@ -1,0 +1,589 @@
+---
+import Base from "@/layouts/Base.astro";
+import FreshnessSignals from "@/components/FreshnessSignals.astro";
+import LeaderboardTable from "@/components/LeaderboardTable.astro";
+import ScoringExplainer from "@/components/ScoringExplainer.astro";
+import { loadLatestCycle, loadHumanizerHistory } from "@/lib/data";
+import {
+  BRAND_NAME,
+  SITE_URL,
+  GITHUB_REPO_URL,
+  PARENT_ORG,
+  BEST_FOR_USE_CASES,
+} from "@/lib/config";
+import { DETECTORS } from "@/lib/detectors";
+import { fmtComposite, compositePct } from "@/lib/format";
+import Favicon from "@/components/Favicon.astro";
+import {
+  datasetSchema,
+  itemListSchema,
+  breadcrumbListSchema,
+  faqPageSchema,
+} from "@/lib/schema";
+
+const cycle = await loadLatestCycle();
+const canonical = `${SITE_URL}/`;
+
+const top3 = cycle.humanizers.slice(0, 3);
+const topConfidence = cycle.humanizers[0]?.confidence ?? "high";
+const lastTested =
+  cycle.humanizers[0]?.last_tested_at ?? cycle.generated_at;
+
+const updatedLabel = new Date(lastTested).toLocaleString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const historyEntries = await Promise.all(
+  cycle.humanizers.map(async (h) => {
+    const hist = await loadHumanizerHistory(h.slug);
+    return [h.slug, hist?.points.map((p) => p.composite) ?? null] as const;
+  }),
+);
+const historyBySlug: Record<string, number[] | null> = Object.fromEntries(
+  historyEntries,
+);
+
+const faqItems = [
+  {
+    question: "What is an AI humanizer?",
+    answer:
+      "An AI humanizer rewrites machine-generated text so it's less likely to be flagged by AI-content detectors. Most use a language model with a paraphrasing prompt and post-processing to alter perplexity, burstiness, and other statistical patterns detectors look for, while trying to preserve the original meaning.",
+  },
+  {
+    question: "How does this benchmark test AI humanizers?",
+    answer:
+      "Each monthly cycle, every humanizer in the list processes 72 prompts across 8 writing categories — academic essays, application essays, blog posts, marketing copy, business emails, literature reviews, landing copy, and product descriptions. The output is submitted to 6 detectors. We record raw responses, compute bypass rate per detector, score meaning preservation against the source, and combine the results into an overall score. Every input, output, detector response, and the scoring script are published in our public repository.",
+  },
+  {
+    question: "What does the overall score mean?",
+    answer:
+      "The overall score blends bypass rate (40%), meaning preservation (25%), readability (20%), category consistency (10%), and speed (5%). Higher is better. The full formula and the scoring script are on the methodology page and in the public repository.",
+  },
+  {
+    question: "How often is the leaderboard updated?",
+    answer:
+      "Monthly. Each cycle's results are archived under its own URL (for example /leaderboard/2026-05) so historical rankings remain accessible alongside the latest cycle.",
+  },
+  {
+    question: "Are these rankings paid placements?",
+    answer:
+      "No. We don't accept payment for placement, removal, or score adjustment. The fairness policy spells out exactly what we will and won't do, and because the scoring script and raw data are public, any vendor or third party can independently reproduce the rankings.",
+  },
+  {
+    question: "WriteHuman operates this benchmark — how is bias handled?",
+    answer:
+      "WriteHuman is tested with the same prompt set, methodology, and scoring as every other humanizer. The scoring script is deterministic and open source. If a vendor disputes a result, the published raw data lets anyone re-run the calculation. The fairness policy covers disputes and retesting requests.",
+  },
+  {
+    question:
+      "Which AI humanizer is best at bypassing GPTZero, Originality, or other specific detectors?",
+    answer:
+      "Each detector has its own page (for example /detectors/gptzero) showing humanizers re-ranked by that detector's bypass rate. A high single-detector score does not necessarily mean the humanizer is the best — see the overall ranking for the balanced view.",
+  },
+  {
+    question: "Why do you publish all the raw test data?",
+    answer:
+      "Because the alternative is asking readers to trust us. Every input, every humanized output, every detector response, and every scoring run is in the GitHub repository. That's the credibility play that doesn't depend on our reputation.",
+  },
+];
+
+const detectorEntries = Object.entries(DETECTORS) as Array<
+  [string, { name: string; url: string; blurb: string }]
+>;
+
+const jsonLd = [
+  datasetSchema(cycle),
+  itemListSchema(cycle.humanizers, canonical),
+  breadcrumbListSchema([{ name: "Home", url: canonical }]),
+  faqPageSchema(faqItems),
+];
+---
+
+<Base
+  title={`${BRAND_NAME} — Monthly AI humanizer rankings`}
+  description={`Monthly rankings of ${cycle.humanizers.length} AI humanizers across 6 detectors. Every input, output, and score published. Operated by WriteHuman.`}
+  canonical={canonical}
+  ogImage={`${SITE_URL}/og/home.png`}
+  jsonLd={jsonLd}
+>
+  <section class="max-w-7xl mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-start">
+      <div class="md:col-span-7">
+        <p class="text-xs uppercase tracking-[0.18em] text-[var(--color-text-secondary)] font-medium">
+          Cycle <span class="font-mono tabnum text-[var(--color-text-primary)]"
+            >{cycle.cycle}</span
+          >
+          <span class="text-[var(--color-border)] mx-2">/</span>
+          Updated <time datetime={lastTested}>{updatedLabel}</time>
+        </p>
+
+        <h1
+          class="mt-5 text-[2.5rem] md:text-[4.25rem] font-semibold tracking-tight text-[var(--color-text-primary)] leading-[1.02]"
+        >
+          The benchmark for AI humanizers.
+        </h1>
+        <p
+          class="mt-6 max-w-xl text-lg text-[var(--color-text-secondary)] leading-relaxed"
+        >
+          Every major AI humanizer, tested every month against the detectors
+          that matter. Methodology, raw inputs and outputs, and scoring
+          scripts are published openly. Operated by <a
+            href="https://writehuman.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)] transition-colors"
+            >WriteHuman</a
+          >.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="#leaderboard"
+            class="inline-flex items-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+          >
+            Jump to ranking
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a
+            href="/methodology"
+            class="inline-flex items-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-primary)] hover:border-[var(--color-text-secondary)] transition-colors"
+          >
+            Read methodology
+          </a>
+        </div>
+      </div>
+
+      <aside class="md:col-span-5">
+        <div
+          class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[0_1px_0_rgba(0,0,0,0.02)]"
+        >
+          <div class="flex items-baseline justify-between">
+            <span
+              class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+            >
+              Currently leading
+            </span>
+            <span
+              class="text-[11px] font-mono tabnum text-[var(--color-text-secondary)]"
+            >
+              {cycle.cycle}
+            </span>
+          </div>
+
+          <ol class="mt-5 space-y-4">
+            {
+              top3.map((h, i) => (
+                <li class="flex items-center gap-3">
+                  <span
+                    class="font-mono tabnum text-[var(--color-text-secondary)] text-sm w-4 text-right"
+                    aria-hidden="true"
+                  >
+                    {i + 1}
+                  </span>
+                  <div class="flex flex-col min-w-0 flex-1">
+                    <div class="flex items-center gap-2 min-w-0">
+                      <Favicon url={h.url} name={h.name} size={18} />
+                      <a
+                        href={`/humanizers/${h.slug}`}
+                        class="text-sm font-medium text-[var(--color-text-primary)] truncate hover:text-[var(--color-accent)] transition-colors"
+                      >
+                        {h.name}
+                      </a>
+                    </div>
+                    <div class="relative mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-bg)] border border-[var(--color-border)]">
+                      <div
+                        class="absolute inset-y-0 left-0 rounded-full bg-[var(--color-accent)]"
+                        style={`width: ${compositePct(h.scores.composite)}%`}
+                      />
+                    </div>
+                  </div>
+                  <span class="font-mono tabnum text-sm font-medium text-[var(--color-text-primary)] w-12 text-right">
+                    {fmtComposite(h.scores.composite)}
+                  </span>
+                </li>
+              ))
+            }
+          </ol>
+
+          <div
+            class="mt-6 pt-5 border-t border-[var(--color-border)] flex items-center justify-between text-xs"
+          >
+            <span class="text-[var(--color-text-secondary)]">
+              All {cycle.humanizers.length} ranked below
+            </span>
+            <a
+              href="#leaderboard"
+              class="font-medium text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              See full ranking ↓
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section
+    id="leaderboard"
+    class="max-w-7xl mx-auto px-4 pb-12 scroll-mt-16"
+  >
+    <div
+      class="mb-6 flex flex-wrap items-end justify-between gap-4 border-t border-[var(--color-border)] pt-10"
+    >
+      <div>
+        <h2
+          class="text-2xl md:text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]"
+        >
+          This cycle's ranking
+        </h2>
+        <p class="mt-1.5 text-sm text-[var(--color-text-secondary)]">
+          {cycle.humanizers.length} humanizers · {cycle.cycle_sample_count} samples
+          per humanizer · 6 detectors
+        </p>
+      </div>
+      <div class="text-right">
+        <FreshnessSignals
+          lastTested={lastTested}
+          sampleCount={cycle.cycle_sample_count}
+          confidence={topConfidence}
+          methodologyVersion={cycle.methodology_version}
+        />
+      </div>
+    </div>
+
+    <LeaderboardTable data={cycle.humanizers} historyBySlug={historyBySlug} />
+
+    <div class="mt-10">
+      <ScoringExplainer />
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div
+        class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6"
+      >
+        <h3
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+        >
+          Archives
+        </h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li>
+            <a
+              href={`/leaderboard/${cycle.cycle}`}
+              class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              {cycle.cycle} →
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6"
+      >
+        <h3
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+        >
+          How we score
+        </h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li>
+            <a
+              href="/methodology"
+              class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              Methodology →
+            </a>
+          </li>
+          <li>
+            <a
+              href="/fairness"
+              class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              Fairness policy →
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6"
+      >
+        <h3
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+        >
+          Raw data
+        </h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li>
+            <a
+              href="/api/leaderboard.json"
+              class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              /api/leaderboard.json →
+            </a>
+          </li>
+          <li>
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              GitHub repo →
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-12 md:py-16 border-t border-[var(--color-border)]">
+    <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="md:col-span-3">
+          <span
+            class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+          >
+            Why this exists
+          </span>
+        </div>
+        <div class="md:col-span-9">
+          <p class="text-xl md:text-2xl font-medium tracking-tight text-[var(--color-text-primary)] leading-snug">
+            The AI humanizer market is full of overpromising tools, paid
+            placements, and seeded reviews. We built {BRAND_NAME} so
+            customers can decide based on data, not marketing.
+          </p>
+          <p class="mt-5 text-[var(--color-text-secondary)] leading-relaxed">
+            We're {PARENT_ORG} — one of the products being tested. We know
+            that's the obvious objection, and we've designed the benchmark
+            specifically to be auditable around it. Every input, output,
+            detector response, and the scoring script are public. Anyone
+            can re-run the numbers.
+          </p>
+          <a
+            href="/why"
+            class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+          >
+            Read the full story
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-12 md:py-16 border-t border-[var(--color-border)]">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-4">
+        <span
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+        >
+          How it works
+        </span>
+        <h2
+          class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text-primary)] leading-tight"
+        >
+          How we benchmark AI humanizers.
+        </h2>
+      </div>
+      <div class="md:col-span-8 space-y-5 text-[var(--color-text-secondary)] leading-relaxed">
+        <p>
+          An <strong class="text-[var(--color-text-primary)] font-medium"
+            >AI humanizer</strong
+          > rewrites machine-generated text so it's less likely to be flagged by
+          AI-content detectors. Most use a language model with a paraphrasing
+          prompt and post-processing to alter perplexity, burstiness, and the
+          other statistical patterns detectors look for — while trying to
+          preserve the original meaning.
+        </p>
+        <p>
+          {BRAND_NAME} runs a fixed prompt set through every humanizer in the
+          list, then submits the rewritten output to <a
+            href="/detectors"
+            class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
+            >6 leading detectors</a
+          >. We score bypass rate per detector, meaning preservation against
+          the source, readability, and consistency across writing categories,
+          then combine those into an overall score. The full formula and the
+          scoring script are on the <a
+            href="/methodology"
+            class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
+            >methodology page</a
+          >.
+        </p>
+        <p>
+          Every input, every humanized output, every detector response, and
+          every scoring run is published in our <a
+            href={GITHUB_REPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
+            >public GitHub repository</a
+          >. Vendors and third parties can independently reproduce the
+          rankings — see the <a
+            href="/fairness"
+            class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
+            >fairness policy</a
+          > for disputes and retesting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-12 md:py-16 border-t border-[var(--color-border)]">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+      <div>
+        <span
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+        >
+          By use case
+        </span>
+        <h2
+          class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text-primary)] leading-tight"
+        >
+          Pick the best AI humanizer for your use case.
+        </h2>
+      </div>
+    </div>
+    <p class="max-w-2xl text-[var(--color-text-secondary)] leading-relaxed mb-8">
+      The overall ranking is balanced across categories. If you need a
+      humanizer for a specific job — academic essays, marketing copy, free
+      use, or bypassing a particular detector — the rankings below re-weight
+      the same data for that goal. The reweighting logic is disclosed on
+      every page.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {
+        BEST_FOR_USE_CASES.map((u) => (
+          <a
+            href={`/best-for/${u.slug}`}
+            class="group rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 hover:border-[var(--color-text-secondary)] transition-colors"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="text-base font-medium text-[var(--color-text-primary)] leading-snug">
+                {u.label}
+              </h3>
+              <span
+                class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-accent)] transition-colors shrink-0"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </div>
+            <p class="mt-2 text-xs text-[var(--color-text-secondary)]">
+              {u.displayedSortLogic}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-12 md:py-16 border-t border-[var(--color-border)]">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-4">
+        <span
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+        >
+          The detectors
+        </span>
+        <h2
+          class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text-primary)] leading-tight"
+        >
+          What we test against.
+        </h2>
+        <p class="mt-4 text-[var(--color-text-secondary)] leading-relaxed">
+          We test every humanizer against the detectors most likely to be
+          used by educators, publishers, and platforms. Each detector page
+          re-ranks the leaderboard by bypass rate against that single
+          detector.
+        </p>
+      </div>
+      <ul class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {
+          detectorEntries.map(([slug, d]) => (
+            <li>
+              <a
+                href={`/detectors/${slug}`}
+                class="group flex items-start gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 hover:border-[var(--color-text-secondary)] transition-colors"
+              >
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-baseline justify-between gap-2">
+                    <span class="text-base font-medium text-[var(--color-text-primary)]">
+                      {d.name}
+                    </span>
+                    <span
+                      class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-accent)] transition-colors text-sm"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </div>
+                  <p class="mt-1 text-xs text-[var(--color-text-secondary)] leading-snug">
+                    {d.blurb}
+                  </p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-12 md:py-16 border-t border-[var(--color-border)]">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-4">
+        <span
+          class="text-[11px] uppercase tracking-[0.14em] font-medium text-[var(--color-text-secondary)]"
+        >
+          Questions
+        </span>
+        <h2
+          class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text-primary)] leading-tight"
+        >
+          Frequently asked.
+        </h2>
+        <p class="mt-4 text-[var(--color-text-secondary)] leading-relaxed">
+          More detail on the <a
+            href="/methodology"
+            class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
+            >methodology</a
+          > and <a
+            href="/fairness"
+            class="text-[var(--color-text-primary)] underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
+            >fairness</a
+          > pages.
+        </p>
+      </div>
+      <div class="md:col-span-8 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
+        {
+          faqItems.map((item) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-start justify-between gap-4 list-none">
+                <h3 class="text-base md:text-lg font-medium text-[var(--color-text-primary)] leading-snug">
+                  {item.question}
+                </h3>
+                <span
+                  class="shrink-0 mt-1 text-[var(--color-text-secondary)] group-open:rotate-45 transition-transform text-xl leading-none select-none"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </summary>
+              <p class="mt-3 text-[var(--color-text-secondary)] leading-relaxed">
+                {item.answer}
+              </p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

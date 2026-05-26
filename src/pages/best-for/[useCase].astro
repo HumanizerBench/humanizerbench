@@ -1,0 +1,272 @@
+---
+import Base from "@/layouts/Base.astro";
+import FreshnessSignals from "@/components/FreshnessSignals.astro";
+import ScoreBar from "@/components/ScoreBar.astro";
+import { loadLatestCycle } from "@/lib/data";
+import { applyUseCaseSort } from "@/lib/scoring";
+import {
+  BEST_FOR_USE_CASES,
+  BRAND_NAME,
+  SITE_URL,
+  GITHUB_REPO_URL,
+  type BestForUseCase,
+} from "@/lib/config";
+import { itemListSchema, breadcrumbListSchema } from "@/lib/schema";
+import Favicon from "@/components/Favicon.astro";
+
+export async function getStaticPaths() {
+  return BEST_FOR_USE_CASES.map((useCase) => ({
+    params: { useCase: useCase.slug },
+    props: { useCase },
+  }));
+}
+
+interface Props {
+  useCase: BestForUseCase;
+}
+
+const { useCase } = Astro.props as Props;
+
+const cycle = await loadLatestCycle();
+const ranked = applyUseCaseSort(cycle.humanizers, useCase.slug);
+const top10 = ranked.slice(0, 10);
+
+const title = `${useCase.label} — ${BRAND_NAME}`;
+const description = `Top AI humanizers for ${useCase.targetQuery}. ${useCase.displayedSortLogic}. Independent monthly benchmark from ${BRAND_NAME}.`;
+const canonical = `${SITE_URL}/best-for/${useCase.slug}`;
+
+const jsonLd = [
+  ...(top10.length > 0 ? [itemListSchema(top10, canonical)] : []),
+  breadcrumbListSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Leaderboard", url: `${SITE_URL}/leaderboard` },
+    { name: useCase.label, url: canonical },
+  ]),
+];
+
+const lastTested =
+  cycle.humanizers[0]?.last_tested_at ?? cycle.generated_at;
+const topConfidence = cycle.humanizers[0]?.confidence ?? "high";
+
+function fmtPct(n: number): string {
+  return (n * 100).toFixed(1);
+}
+function fmtMonthly(
+  monthlyUsd: number | null | undefined,
+  freeTier: boolean,
+): string {
+  if (monthlyUsd == null) return freeTier ? "Free" : "—";
+  if (monthlyUsd === 0) return "Free";
+  return `$${monthlyUsd.toFixed(2)}`;
+}
+function fmtSeconds(s: number | null | undefined): string {
+  if (s == null) return "—";
+  return `${s.toFixed(1)}s`;
+}
+
+const otherUseCases = BEST_FOR_USE_CASES.filter(
+  (uc) => uc.slug !== useCase.slug,
+);
+---
+
+<Base
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={`${SITE_URL}/og/best-for-${useCase.slug}.png`}
+  jsonLd={jsonLd}
+>
+  <section class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <nav
+      class="text-xs text-[var(--color-text-secondary)] mb-4 flex items-center gap-2"
+    >
+      <a href="/leaderboard" class="hover:text-[var(--color-text-primary)]">
+        Leaderboard
+      </a>
+      <span>/</span>
+      <span class="text-[var(--color-text-primary)]">{useCase.label}</span>
+    </nav>
+
+    <h1
+      class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-text-primary)]"
+    >
+      {useCase.label}
+    </h1>
+    <p class="mt-2 text-[var(--color-text-secondary)]">
+      Cycle <span class="font-mono tabnum">{cycle.cycle}</span> • re-ranked for
+      this use case
+    </p>
+
+    <div
+      class="mt-6 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-4 text-sm"
+    >
+      <div
+        class="text-[10px] uppercase tracking-wider text-[var(--color-text-secondary)] mb-1"
+      >
+        How we ranked these
+      </div>
+      <div class="text-[var(--color-text-primary)]">
+        {useCase.displayedSortLogic}
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <FreshnessSignals
+        lastTested={lastTested}
+        sampleCount={cycle.cycle_sample_count}
+        confidence={topConfidence}
+        methodologyVersion={cycle.methodology_version}
+      />
+    </div>
+
+    {
+      top10.length === 0 ? (
+        <div
+          class="mt-10 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 p-8 text-center text-[var(--color-text-secondary)]"
+        >
+          No humanizers matched this use case's filter.
+        </div>
+      ) : (
+        <div
+          class="mt-8 overflow-x-auto rounded-xl border border-[var(--color-border)]"
+        >
+          <table class="w-full text-sm">
+            <thead
+              class="sticky top-0 bg-[var(--color-surface)] z-10 border-b border-[var(--color-border)]"
+            >
+              <tr class="text-left text-[var(--color-text-secondary)]">
+                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs w-12">
+                  Rank
+                </th>
+                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs">
+                  Humanizer
+                </th>
+                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
+                  Overall
+                </th>
+                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
+                  Bypass Rate
+                </th>
+                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
+                  Speed
+                </th>
+                <th class="px-4 py-3 font-medium uppercase tracking-wider text-xs text-right">
+                  Pricing
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {top10.map((h) => {
+                return (
+                  <tr
+                    class="border-t border-[var(--color-border)] hover:bg-[var(--color-surface)]/50"
+                    style="height: 72px;"
+                  >
+                    <td class="px-4 align-middle font-mono tabnum text-[var(--color-text-secondary)]">
+                      {h.rank}
+                    </td>
+                    <td class="px-4 align-middle">
+                      <div class="flex items-center gap-3">
+                        <Favicon url={h.url} name={h.name} size={24} />
+                        <div class="min-w-0">
+                          <a
+                            href={`/humanizers/${h.slug}`}
+                            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] font-medium"
+                          >
+                            {h.name}
+                          </a>
+                          <a
+                            href={h.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="block text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] truncate"
+                          >
+                            {h.url.replace(/^https?:\/\//, "")}
+                          </a>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-4 align-middle text-right">
+                      <ScoreBar score={h.scores.composite} />
+                    </td>
+                    <td class="px-4 align-middle text-right">
+                      <ScoreBar score={h.scores.bypass_rate} />
+                    </td>
+                    <td class="px-4 align-middle text-right font-mono tabnum text-[var(--color-text-primary)]">
+                      {fmtSeconds(h.scores.speed_seconds)}
+                    </td>
+                    <td class="px-4 align-middle text-right font-mono tabnum text-[var(--color-text-primary)]">
+                      {fmtMonthly(h.pricing.monthly_usd, h.pricing.free_tier)}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )
+    }
+
+    <div
+      class="mt-10 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/40 p-6 text-sm"
+    >
+      <div class="text-[var(--color-text-secondary)] mb-3">Dig deeper</div>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <li>
+          <a
+            href="/leaderboard"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)]"
+          >
+            See full data on /leaderboard →
+          </a>
+        </li>
+        <li>
+          <a
+            href="/methodology"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)]"
+          >
+            Read methodology →
+          </a>
+        </li>
+        <li>
+          <a
+            href="/api/leaderboard.json"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)]"
+          >
+            Raw data: /api/leaderboard.json →
+          </a>
+        </li>
+        <li>
+          <a
+            href={GITHUB_REPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)]"
+          >
+            Scoring scripts on GitHub →
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <h2
+        class="text-sm font-medium uppercase tracking-wider text-[var(--color-text-secondary)] mb-3"
+      >
+        Other use cases
+      </h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+        {otherUseCases.map((uc) => (
+          <li>
+            <a
+              href={`/best-for/${uc.slug}`}
+              class="block rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/40 px-4 py-3 text-sm text-[var(--color-text-primary)] hover:border-[var(--color-accent)]/50 hover:text-[var(--color-accent)]"
+            >
+              {uc.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>
