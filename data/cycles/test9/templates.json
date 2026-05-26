@@ -1,0 +1,14 @@
+[
+  {
+    "id": "119183b4-12fb-4feb-ab64-82ef35e911ad",
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "prompt_text": "Write a 400-word argumentative essay arguing that [TOPIC]."
+  },
+  {
+    "id": "94430ad3-a42e-4387-bbfb-e469b1b3cf73",
+    "slug": "cover_letter",
+    "category": "application_essay",
+    "prompt_text": "Write a 400-word cover letter for a [ROLE] position."
+  }
+]
