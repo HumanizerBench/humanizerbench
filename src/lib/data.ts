@@ -59,7 +59,23 @@ function getCycles(): Promise<Map<string, Cycle>> {
     for (const entry of entries) {
       if (!entry.isDirectory()) continue;
       const file = path.join(cyclesDir, entry.name, "leaderboard.json");
-      const raw = await fs.readFile(file, "utf8");
+      // In-flight cycles publish commit.json at creation but only get a
+      // leaderboard.json once they're scored and marked complete. Treat
+      // those as not-yet-listable rather than crashing the build.
+      let raw: string;
+      try {
+        raw = await fs.readFile(file, "utf8");
+      } catch (err: unknown) {
+        if (
+          err &&
+          typeof err === "object" &&
+          "code" in err &&
+          (err as { code: string }).code === "ENOENT"
+        ) {
+          continue;
+        }
+        throw err;
+      }
       map.set(entry.name, JSON.parse(raw) as Cycle);
     }
     return map;
