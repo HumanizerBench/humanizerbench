@@ -1,0 +1,13 @@
+{
+  // Wrangler config for the @astrojs/cloudflare adapter. Used both at build
+  // time (the prerender sandbox where every static page is rendered) and at
+  // runtime for the /api/subscribe edge function.
+  //
+  // `nodejs_compat` is required because src/lib/data.ts reads cycle JSON
+  // files via node:fs/promises + node:path during prerendering. Without
+  // this flag, build fails with `No such module "node:fs/promises"`.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "publicbenchmark",
+  "compatibility_date": "2024-11-06",
+  "compatibility_flags": ["nodejs_compat"]
+}
