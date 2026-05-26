@@ -1,0 +1,18 @@
+{
+  "slug": "stealth-writer",
+  "points": [
+    {
+      "cycle": "test8",
+      "composite": 59.26,
+      "bypass_rate": 0.3774,
+      "detector_breakdown": {
+        "gptzero": 0.2544,
+        "winston": 0.5005
+      },
+      "category_breakdown": {
+        "academic_essay": 0.7544,
+        "application_essay": 0.0005
+      }
+    }
+  ]
+}
