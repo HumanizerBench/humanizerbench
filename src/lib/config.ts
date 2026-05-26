@@ -16,7 +16,7 @@ function resolveSiteUrl(): string {
 export const SITE_URL: string = resolveSiteUrl();
 
 export const GITHUB_REPO_URL =
-  "https://github.com/writehuman/humanizer-benchmark";
+  "https://github.com/HumanizerBench/humanizerbench";
 
 export const PARENT_ORG = "WriteHuman";
 export const PARENT_ORG_URL = "https://writehuman.ai";

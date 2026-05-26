@@ -63,6 +63,60 @@ const jsonLd = breadcrumbListSchema([
       prompts per category), balanced across the eight categories so no single
       genre dominates the overall score.
     </p>
+    <p>
+      Each prompt is a template containing <code>[BRACKETED]</code> tokens
+      (e.g. <code>[TOPIC]</code>, <code>[ROLE]</code>). At cycle creation we
+      fill every token from a curated value bank using a deterministic hash
+      seeded by a per-cycle secret nonce. Selecting from banks — not
+      free-typed by us each month — means there is no founder discretion in
+      what gets tested, and the seeded hash means anyone with the published
+      banks and algorithm can re-derive the exact prompts after the cycle
+      closes.
+    </p>
+
+    <h2>Transparency &amp; verification</h2>
+    <p>
+      Because cycle names are predictable (e.g. <code>2026-06</code>, then
+      <code>2026-07</code>), seeding placeholder selection on the cycle name
+      would let a humanizer pre-compute next month's prompts and tune against
+      them. We use a <strong>commit-reveal</strong> scheme instead:
+    </p>
+    <ul>
+      <li>
+        <strong>At cycle creation</strong>, we generate a random 32-byte
+        <code>nonce</code> and publish only its SHA-256 to this repo as
+        <code>data/cycles/&lt;cycle&gt;/commit.json</code>. The nonce itself
+        stays private.
+      </li>
+      <li>
+        <strong>At cycle close</strong>, after all humanizers have been
+        scored, we publish the nonce as
+        <code>data/cycles/&lt;cycle&gt;/nonce.txt</code> alongside a frozen
+        snapshot of the templates (<code>templates.json</code>), the value
+        banks (<code>banks.json</code>), the selection algorithm
+        (<code>select-placeholders.js</code>), and the resolved prompts
+        (<code>prompts.json</code>).
+      </li>
+    </ul>
+    <p>
+      The <code>scripts/verify-cycle.ts</code> script in <a
+        href={GITHUB_REPO_URL}
+        rel="noopener noreferrer"
+        target="_blank">this repo</a
+      > re-runs the frozen algorithm against the published nonce, banks, and
+      templates, then asserts that the resulting prompts match
+      <code>prompts.json</code> exactly and that <code>sha256(nonce)</code>
+      matches the committed hash from cycle start. Run it locally:
+    </p>
+    <pre
+      class="mt-4 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-4 font-mono text-sm overflow-x-auto text-[var(--color-text-primary)]"><code>npm run verify              # verify every cycle
+npm run verify -- 2026-06   # verify one cycle</code></pre>
+    <p>
+      Anyone — researchers, humanizer vendors, journalists — can prove the
+      prompts for a closed cycle weren't tampered with after the fact, while
+      still being unable to predict prompts for cycles that haven't yet been
+      revealed.
+    </p>
 
     <h2>Tested humanizers</h2>
     <p>
@@ -216,7 +270,10 @@ const jsonLd = breadcrumbListSchema([
         rel="noopener noreferrer"
         target="_blank">{GITHUB_REPO_URL}</a
       >. Every input, every humanized output, every detector response, every
-      scoring script — public.
+      scoring script — public. The prompts themselves are bound to a public
+      hash commitment at cycle start and revealed at cycle close (see
+      <em>Transparency &amp; verification</em> above); <code>npm run verify</code>
+      re-derives them from the published banks and algorithm.
     </p>
 
     <h2>Methodology integrity</h2>

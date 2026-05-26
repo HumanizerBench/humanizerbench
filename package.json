@@ -12,7 +12,8 @@
     "build:og": "tsx scripts/generate-og.ts",
     "build:redirects": "tsx scripts/generate-redirects.ts",
     "astro": "astro",
-    "validate-data": "tsx scripts/validate-data.ts"
+    "validate-data": "tsx scripts/validate-data.ts",
+    "verify": "tsx scripts/verify-cycle.ts --all"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.5.4",
