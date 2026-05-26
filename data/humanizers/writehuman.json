@@ -10,7 +10,7 @@
         "originality": 0.76,
         "copyleaks": 0.77,
         "winston": 0.74,
-        "sapling": 0.80,
+        "sapling": 0.8,
         "zerogpt": 0.77
       },
       "category_breakdown": {
@@ -53,7 +53,7 @@
       "bypass_rate": 0.81,
       "detector_breakdown": {
         "gptzero": 0.83,
-        "originality": 0.80,
+        "originality": 0.8,
         "copyleaks": 0.81,
         "winston": 0.78,
         "sapling": 0.84,
@@ -67,7 +67,7 @@
         "business_email": 0.76,
         "lit_review": 0.74,
         "landing_copy": 0.79,
-        "product_desc": 0.80
+        "product_desc": 0.8
       }
     },
     {
@@ -83,13 +83,13 @@
         "zerogpt": 0.82
       },
       "category_breakdown": {
-        "academic_essay": 0.80,
+        "academic_essay": 0.8,
         "application_essay": 0.78,
-        "blog_post": 0.80,
+        "blog_post": 0.8,
         "marketing_copy": 0.79,
         "business_email": 0.77,
         "lit_review": 0.76,
-        "landing_copy": 0.80,
+        "landing_copy": 0.8,
         "product_desc": 0.81
       }
     },
@@ -107,9 +107,9 @@
       },
       "category_breakdown": {
         "academic_essay": 0.81,
-        "application_essay": 0.80,
+        "application_essay": 0.8,
         "blog_post": 0.81,
-        "marketing_copy": 0.80,
+        "marketing_copy": 0.8,
         "business_email": 0.78,
         "lit_review": 0.77,
         "landing_copy": 0.81,
@@ -133,7 +133,7 @@
         "application_essay": 0.81,
         "blog_post": 0.82,
         "marketing_copy": 0.81,
-        "business_email": 0.80,
+        "business_email": 0.8,
         "lit_review": 0.78,
         "landing_copy": 0.82,
         "product_desc": 0.83
@@ -157,7 +157,7 @@
         "blog_post": 0.83,
         "marketing_copy": 0.82,
         "business_email": 0.81,
-        "lit_review": 0.80,
+        "lit_review": 0.8,
         "landing_copy": 0.83,
         "product_desc": 0.84
       }
@@ -180,7 +180,7 @@
         "blog_post": 0.84,
         "marketing_copy": 0.83,
         "business_email": 0.82,
-        "lit_review": 0.80,
+        "lit_review": 0.8,
         "landing_copy": 0.84,
         "product_desc": 0.85
       }
@@ -194,7 +194,7 @@
         "originality": 0.87,
         "copyleaks": 0.88,
         "winston": 0.85,
-        "sapling": 0.90,
+        "sapling": 0.9,
         "zerogpt": 0.88
       },
       "category_breakdown": {
@@ -236,7 +236,7 @@
       "composite": 0.864,
       "bypass_rate": 0.89,
       "detector_breakdown": {
-        "gptzero": 0.90,
+        "gptzero": 0.9,
         "originality": 0.88,
         "copyleaks": 0.89,
         "winston": 0.87,
@@ -257,14 +257,14 @@
     {
       "cycle": "2026-05",
       "composite": 0.874,
-      "bypass_rate": 0.90,
+      "bypass_rate": 0.9,
       "detector_breakdown": {
         "gptzero": 0.91,
         "originality": 0.89,
-        "copyleaks": 0.90,
+        "copyleaks": 0.9,
         "winston": 0.88,
         "sapling": 0.92,
-        "zerogpt": 0.90
+        "zerogpt": 0.9
       },
       "category_breakdown": {
         "academic_essay": 0.89,
@@ -275,6 +275,19 @@
         "lit_review": 0.85,
         "landing_copy": 0.88,
         "product_desc": 0.89
+      }
+    },
+    {
+      "cycle": "test8",
+      "composite": 88.58,
+      "bypass_rate": 0.9527,
+      "detector_breakdown": {
+        "gptzero": 0.9624,
+        "winston": 0.943
+      },
+      "category_breakdown": {
+        "academic_essay": 0.9871,
+        "application_essay": 0.9182
       }
     }
   ]
