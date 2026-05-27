@@ -451,15 +451,24 @@ async function main() {
   let targets: string[];
 
   if (all || args.length === 0) {
-    const entries = await fs.readdir(CYCLES_DIR, { withFileTypes: true });
-    targets = entries.filter((d) => d.isDirectory()).map((d) => d.name);
+    try {
+      const entries = await fs.readdir(CYCLES_DIR, { withFileTypes: true });
+      targets = entries.filter((d) => d.isDirectory()).map((d) => d.name);
+    } catch (err) {
+      // Missing data/cycles/ is a legitimate empty-repo state (pre-launch,
+      // freshly initialized) — pass CI rather than crash.
+      if ((err as NodeJS.ErrnoException).code === "ENOENT") {
+        targets = [];
+      } else {
+        throw err;
+      }
+    }
+    if (targets.length === 0) {
+      console.log("no cycles published yet — nothing to verify");
+      return;
+    }
   } else {
     targets = positional;
-  }
-
-  if (targets.length === 0) {
-    console.error("no cycles to verify");
-    process.exit(1);
   }
 
   const errors: string[] = [];
