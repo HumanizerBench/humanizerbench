@@ -1,76 +1,38 @@
-# HumanizerBench
+# HumanizerBench — public audit record
 
-Public audit record for [HumanizerBench](https://github.com/HumanizerBench/humanizerbench) — a benchmark that scores AI humanizer tools on how well they evade commercial AI detectors while preserving the meaning and readability of the source text.
+This repository is the **public audit record** for [HumanizerBench](https://humanizerbench.com) — a benchmark that scores AI humanizer tools on how well they evade commercial AI detectors while preserving the meaning and readability of the source text.
 
-This repository contains:
+The live site at [humanizerbench.com](https://humanizerbench.com) is rendered from the data here. This repo contains **no site code** — only the data, the verifier, and the changelog. That separation is intentional: anyone can clone this repo and prove every cycle wasn't tampered with, without dragging along the presentation layer.
 
-- The **leaderboard data** for every published cycle, under `data/cycles/`.
-- The **per-cycle transparency bundle** for every published cycle (prompts, banks, algorithm, nonce, hash commitment) — see [Per-cycle audit bundle](#per-cycle-audit-bundle) below.
-- The **methodology**, rendered at `/methodology` on the live site and authored in [`src/pages/methodology.astro`](src/pages/methodology.astro).
-- The **verifier** at [`scripts/verify-cycle.ts`](scripts/verify-cycle.ts) — an independent script anyone can run to prove a cycle wasn't tampered with after the fact.
-
-The benchmark itself runs from a separate private repo (corpus generation, detector integrations, humanizer adapters, API keys). This public repo receives every input, every output, every detector verdict, and a frozen copy of the scoring algorithm each cycle produces — enough that anyone can **re-derive the leaderboard from scratch**, not just spot-check it. Detector adapter code, source-LLM corpus prompts, and API keys are not published here.
-
-## Repository layout
+## What's in here
 
 ```
 data/
   cycles/
-    <cycle>/
-      # — Transparency bundle (proves prompts weren't predictable or swapped) —
+    <cycle>/                   # one directory per published cycle
+      # Transparency bundle (proves prompts weren't predictable or swapped)
       commit.json              # sha256(nonce) — published at cycle start
       nonce.txt                # the nonce — published at cycle close
       prompts.json             # resolved prompts (templates with placeholders filled)
       templates.json           # the prompt templates (with [BRACKETED] tokens)
       banks.json               # the value banks the placeholders are drawn from
       select-placeholders.js   # the frozen selection algorithm
-      # — Reproducibility bundle (lets you re-derive the leaderboard) —
-      samples.json             # the 72 source samples (input texts)
+      # Reproducibility bundle (lets you re-derive the leaderboard)
+      samples.json             # the source samples (input texts)
       tests.json               # every humanizer's output + per-test metrics
       detector-scores.json     # every detector verdict on every output
       scoring.js               # the frozen scoring aggregator
       cycle.json               # SHA-256 manifest of the four files above
-      # — Final result —
+      # Final result
       leaderboard.json         # composite + sub-scores per humanizer
   humanizers/
     <slug>.json                # per-humanizer history across all cycles
 scripts/
   verify-cycle.ts              # the audit script (see below)
-src/
-  pages/methodology.astro      # methodology page rendered on the live site
-  ...                          # the rest of the Astro site
+CHANGES.md                     # cycle-to-cycle methodology changelog
 ```
 
-## Per-cycle audit bundle
-
-Every published cycle ships twelve files under `data/cycles/<cycle>/`, split into a **transparency bundle** that proves the prompts weren't predictable or swapped, and a **reproducibility bundle** that lets you re-derive every score from the raw data.
-
-### Transparency bundle
-
-| File | Purpose |
-|---|---|
-| `commit.json` | Hash commitment — published **at cycle start**, before any humanizer is scored. Contains `sha256(nonce)` and the cycle's start timestamp. The nonce itself stays private during the cycle. |
-| `nonce.txt` | The 32-byte hex nonce — published **at cycle close**, after all humanizers have been scored. Hashing this produces `commit.json.committed_hash`. |
-| `templates.json` | The raw prompt templates active at cycle creation, each containing `[BRACKETED]` placeholder tokens. |
-| `banks.json` | The curated value bank for every placeholder token (e.g. a list of topics for `[TOPIC]`). |
-| `select-placeholders.js` | A self-contained ESM module — the frozen selection algorithm at the time the cycle ran. Takes `(nonce, templates, banks)` and returns the per-prompt placeholder map. |
-| `prompts.json` | The resolved final prompts (templates with placeholders substituted) — what every humanizer was actually tested against. |
-
-### Reproducibility bundle
-
-| File | Purpose |
-|---|---|
-| `samples.json` | The 72 source samples generated by the source LLMs — what each humanizer was given as input. Each entry: `id`, `prompt_slug`, `category`, `source_model_slug`, `input_text`, `word_count`, `generated_at`. |
-| `tests.json` | Every (sample × humanizer) test. Each entry: `id`, `sample_id`, `humanizer_slug`, `input_text`, `output_text`, `status`, plus pre-computed `meaning_preservation` and `readability` for that test. ~720 rows per cycle. |
-| `detector-scores.json` | Every detector verdict on every humanizer output. Each entry: `test_id`, `detector_slug`, `raw_score` (0..1, 1 = "human"), and `raw_response` *if* the detector's ToS allows republishing it (most do not — that field is `null` by default). ~4,320 rows per cycle. |
-| `scoring.js` | A self-contained ESM module — the frozen scoring aggregator at the time the cycle ran. `computeLeaderboard({ samples, tests, detectorScores })` returns the per-humanizer composite + sub-scores. |
-| `cycle.json` | A manifest listing row counts and SHA-256s of the four files above. Catches partial publishes. |
-
-### Final result
-
-| File | Purpose |
-|---|---|
-| `leaderboard.json` | Composite scores, sub-scores, detector breakdowns, penalties, confidence levels, and per-humanizer metadata. The output of running `scoring.js` against the reproducibility bundle. |
+The benchmark itself runs from a separate private repo (corpus generation, detector integrations, humanizer adapters, API keys). This public repo receives every input, every output, every detector verdict, and a frozen copy of the scoring algorithm each cycle produces — enough that anyone can **re-derive the leaderboard from scratch**, not just spot-check it.
 
 ## How to verify a cycle
 
@@ -79,13 +41,13 @@ git clone https://github.com/HumanizerBench/humanizerbench.git
 cd humanizerbench
 npm install
 npm run verify              # verify every published cycle
-npm run verify -- <cycle>   # verify one cycle, e.g. 2026-06
+npx tsx scripts/verify-cycle.ts <cycle>   # verify one cycle, e.g. 2026-06
 ```
 
 A successful verification looks like:
 
 ```
-[ok] 2026-06: 72 prompts verified
+[ok] 2026-06: 72 prompts verified, 6 humanizers replayed
 verify-cycle OK
 ```
 
@@ -107,10 +69,16 @@ The script runs five independent checks for each cycle:
 
 If all five pass for every cycle, no one — including the benchmark operator — could have altered the prompts, inputs, outputs, detector verdicts, or scoring math after the cycle started without breaking the chain.
 
+The verifier is also wired into CI on this repo — every push to `main` runs `npm run verify` and fails the build if any cycle's chain has broken.
+
 ## The commit-reveal scheme in one paragraph
 
-Cycle names are predictable (`2026-06`, then `2026-07`, …). If placeholder selection were seeded on the cycle name, a humanizer with access to the public banks and algorithm could pre-compute next month's prompts and fine-tune against them. Instead, each cycle is seeded by a random 32-byte nonce that is generated at cycle creation and kept private during the cycle. Only `sha256(nonce)` is published at start. At cycle close, after every humanizer has been scored against the prompts derived from that nonce, the nonce itself is published — and anyone can re-derive the prompts and check the hash. Vendors get auditability; they don't get predictability. The full version of this argument is on the [methodology page](src/pages/methodology.astro).
+Cycle names are predictable (`2026-06`, then `2026-07`, …). If placeholder selection were seeded on the cycle name, a humanizer with access to the public banks and algorithm could pre-compute next month's prompts and fine-tune against them. Instead, each cycle is seeded by a random 32-byte nonce that is generated at cycle creation and kept private during the cycle. Only `sha256(nonce)` is published at start. At cycle close, after every humanizer has been scored against the prompts derived from that nonce, the nonce itself is published — and anyone can re-derive the prompts and check the hash. Vendors get auditability; they don't get predictability. The full version of this argument is on the [methodology page](https://humanizerbench.com/methodology).
 
 ## Corrections and disputes
 
 If you spot an error in a cycle — a bad score, a stale humanizer record, a verifier failure on a cycle that should be clean — open an issue in this repo or follow the contact path on the live site's `/fairness` page. We aim to respond within one cycle.
+
+## License
+
+The data in this repo is published for verification and audit. Reproduction of the data with attribution is welcome. The benchmark name "HumanizerBench" and associated branding are not licensed for reuse on competing services.

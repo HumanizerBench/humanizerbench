@@ -1,11 +1,3 @@
-# build output
-dist/
-# generated types
-.astro/
-# Cloudflare Workers / miniflare local state (created by astro dev with the
-# Cloudflare adapter — local-only KV/cache emulation, never commit)
-.wrangler/
-
 # dependencies
 node_modules/
 
@@ -15,16 +7,16 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
-.env.production
+.env.local
 
-# macOS-specific files
+# macOS
 .DS_Store
 
-# jetbrains setting folder
+# editor
 .idea/
+.vscode/
 
 # Agent rules (stays local; not for public surface)
 CLAUDE.md

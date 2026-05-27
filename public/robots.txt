@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://humanizerbench.example.com/sitemap-index.xml
