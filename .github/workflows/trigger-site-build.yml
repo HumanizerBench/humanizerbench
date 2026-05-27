@@ -1,0 +1,28 @@
+name: trigger-site-build
+
+# On every push to main (i.e. after an admin publish-cycle), POST to the
+# Cloudflare Pages deploy hook so humanizerbench.com rebuilds with the
+# latest audit data. The deploy hook URL is created in the CF Pages
+# dashboard for the humanizerbench-site project's `main` branch and
+# stored in this repo's secrets as `CF_PAGES_DEPLOY_HOOK`.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST to Cloudflare Pages deploy hook
+        env:
+          DEPLOY_HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$DEPLOY_HOOK" ]; then
+            echo "CF_PAGES_DEPLOY_HOOK secret not set — skipping site rebuild."
+            echo "Set the secret in repo Settings → Secrets and variables → Actions"
+            echo "to enable automatic site rebuilds on audit pushes."
+            exit 0
+          fi
+          curl -sS -X POST -f "$DEPLOY_HOOK"
+          echo "Site rebuild triggered."
