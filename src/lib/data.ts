@@ -55,7 +55,23 @@ function getCycles(): Promise<Map<string, Cycle>> {
     const path = await import("node:path");
     const dataRoot = path.resolve(process.cwd(), "data");
     const cyclesDir = path.join(dataRoot, "cycles");
-    const entries = await fs.readdir(cyclesDir, { withFileTypes: true });
+    let entries: Awaited<ReturnType<typeof fs.readdir>>;
+    try {
+      entries = await fs.readdir(cyclesDir, { withFileTypes: true });
+    } catch (err: unknown) {
+      // Pre-launch / freshly-wiped state: data/cycles doesn't exist yet.
+      // Return empty map so build scripts and pages render an empty state
+      // instead of crashing.
+      if (
+        err &&
+        typeof err === "object" &&
+        "code" in err &&
+        (err as { code: string }).code === "ENOENT"
+      ) {
+        return map;
+      }
+      throw err;
+    }
     for (const entry of entries) {
       if (!entry.isDirectory()) continue;
       const file = path.join(cyclesDir, entry.name, "leaderboard.json");
@@ -97,11 +113,42 @@ export async function listCycles(): Promise<string[]> {
   );
 }
 
+/**
+ * Empty placeholder cycle returned during the pre-launch / freshly-wiped
+ * window when no real cycle has been published yet. Lets every page render
+ * without crashing — the leaderboard table receives an empty array, the
+ * "0 humanizers" surface is ugly but acceptable behind Cloudflare Access
+ * until the first real cycle lands.
+ */
+function placeholderCycle(): Cycle {
+  return {
+    cycle: "pre-launch",
+    generated_at: new Date().toISOString(),
+    methodology_version: "1.2.0",
+    scoring_version: "1.2.0",
+    prompt_set_version: "1.0.0",
+    detector_config_version: "1.0.0",
+    humanizer_config_version: "1.0.0",
+    source_model_versions: {},
+    cycle_sample_count: 0,
+    humanizers: [],
+  };
+}
+
 export async function loadLatestCycle(): Promise<Cycle> {
   const cycles = await listCycles();
-  if (cycles.length === 0) {
-    throw new Error("No cycles found in /data/cycles/");
-  }
+  if (cycles.length === 0) return placeholderCycle();
+  return loadCycle(cycles[0]!);
+}
+
+/**
+ * Like loadLatestCycle but returns null when no cycles exist. Prefer this
+ * in pages that want to render an explicit "no cycles yet" banner instead
+ * of an empty leaderboard.
+ */
+export async function loadLatestCycleOrNull(): Promise<Cycle | null> {
+  const cycles = await listCycles();
+  if (cycles.length === 0) return null;
   return loadCycle(cycles[0]!);
 }
 

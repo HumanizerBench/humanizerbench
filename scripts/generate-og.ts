@@ -163,6 +163,14 @@ async function ensureOgDir(): Promise<void> {
 
 async function main() {
   await ensureOgDir();
+  const cycleIds = await listCycles();
+  if (cycleIds.length === 0) {
+    // Pre-launch / freshly-wiped state: no cycles published yet. Skip
+    // cycle-bound OG generation entirely. The next publish will trigger
+    // a rebuild that generates everything.
+    console.log("[og] no cycles published yet — skipping OG generation");
+    return;
+  }
   const fonts = await loadFonts();
 
   if (!fonts) {
