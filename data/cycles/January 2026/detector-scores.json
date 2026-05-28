@@ -1,0 +1,30 @@
+[
+  {
+    "test_id": "110d48c5-df35-4161-96e1-0dceb6b49953",
+    "detector_slug": "gptzero",
+    "raw_score": 0.6204470406218529,
+    "raw_response": null,
+    "scored_at": "2026-05-28T03:44:48.80149+00:00"
+  },
+  {
+    "test_id": "110d48c5-df35-4161-96e1-0dceb6b49953",
+    "detector_slug": "winston",
+    "raw_score": 1,
+    "raw_response": null,
+    "scored_at": "2026-05-28T03:44:48.777154+00:00"
+  },
+  {
+    "test_id": "9c8be690-a0ed-4df7-8465-a7b7c05ef15c",
+    "detector_slug": "gptzero",
+    "raw_score": 0.9907652645352295,
+    "raw_response": null,
+    "scored_at": "2026-05-28T03:44:50.022142+00:00"
+  },
+  {
+    "test_id": "9c8be690-a0ed-4df7-8465-a7b7c05ef15c",
+    "detector_slug": "winston",
+    "raw_score": 0.5468999999999999,
+    "raw_response": null,
+    "scored_at": "2026-05-28T03:44:49.842924+00:00"
+  }
+]
