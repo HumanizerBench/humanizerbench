@@ -18,5 +18,6 @@ pnpm-debug.log*
 .idea/
 .vscode/
 
-# Agent rules (stays local; not for public surface)
+# Agent rules + harness state (stays local; not for public surface)
 CLAUDE.md
+.claude/
