@@ -12,7 +12,7 @@
   "devDependencies": {
     "tsx": "^4.22.3"
   },
-  "license": "SEE LICENSE IN README.md",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/HumanizerBench/humanizerbench.git"
