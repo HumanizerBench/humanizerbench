@@ -14,7 +14,12 @@
  *
  *   Reproducibility checks (require cycle.json, samples.json, tests.json,
  *   detector-scores.json, scoring.js):
- *     4. cycle.json SHA-256 manifest matches each sibling file.
+ *     4. cycle.json SHA-256 manifest matches each sibling file. Every
+ *        entry in cycle.json.files is validated; references to unknown
+ *        files are rejected. The four reproducibility data files are
+ *        required-minimum keys; additional keys (transparency artifacts
+ *        + leaderboard, introduced when the manifest grew) are validated
+ *        when present so old cycles still pass.
  *     5. Run scoring.js against samples + tests + detector-scores.
  *        Assert per-humanizer composite, sub-scores, breakdowns, and
  *        penalty counts match leaderboard.json within 1e-4.
@@ -310,25 +315,71 @@ async function verifyReproducibility(
     return { errors, humanizerCount: 0, skipped: false };
   }
 
-  // 1. Manifest integrity: every sibling file's SHA-256 matches.
+  // 1. Manifest integrity: every entry in cycle.json.files maps to a real
+  //    sibling file whose SHA-256 matches. Required-minimum keys must be
+  //    present in the manifest (so a publisher can't drop one and have the
+  //    verifier shrug). Additional keys (introduced when the manifest grew
+  //    to cover the transparency bundle as well) are validated when
+  //    present — old cycles that pre-date the expanded manifest still pass.
   const manifest = await readJson<CycleManifest>(paths.manifest);
   const sha256OfFile = async (p: string) =>
     createHash("sha256")
       .update(await fs.readFile(p, "utf8"), "utf8")
       .digest("hex");
-  const checks: Array<[string, string]> = [
-    ["samples.json", paths.samples],
-    ["tests.json", paths.tests],
-    ["detector-scores.json", paths.detectorScores],
-    ["scoring.js", paths.scoring],
+
+  // Map every manifest filename to its on-disk path. Anything not in this
+  // map is considered an unknown reference and rejected — that way a
+  // doctored cycle.json can't smuggle in extra "passes my SHA" entries
+  // pointing at files the verifier doesn't otherwise inspect.
+  const filePathByName: Record<string, string> = {
+    "samples.json": paths.samples,
+    "tests.json": paths.tests,
+    "detector-scores.json": paths.detectorScores,
+    "scoring.js": paths.scoring,
+    "leaderboard.json": paths.leaderboard,
+    "commit.json": path.join(dir, "commit.json"),
+    "nonce.txt": path.join(dir, "nonce.txt"),
+    "prompts.json": path.join(dir, "prompts.json"),
+    "templates.json": path.join(dir, "templates.json"),
+    "banks.json": path.join(dir, "banks.json"),
+    "select-placeholders.js": path.join(dir, "select-placeholders.js"),
+  };
+
+  // cycle.json can't SHA itself; reject if a publisher misimplements this.
+  if (Object.prototype.hasOwnProperty.call(manifest.files, "cycle.json")) {
+    errors.push(
+      `${cycleName}: cycle.json must not appear in its own files manifest`,
+    );
+  }
+
+  // Required-minimum: the four reproducibility data files must be in the
+  // manifest of every cycle that has a reproducibility bundle.
+  const requiredKeys = [
+    "samples.json",
+    "tests.json",
+    "detector-scores.json",
+    "scoring.js",
   ];
-  for (const [name, p] of checks) {
-    const expected = manifest.files[name];
-    if (!expected) {
-      errors.push(`${cycleName}: cycle.json has no SHA for ${name}`);
+  for (const key of requiredKeys) {
+    if (!manifest.files[key]) {
+      errors.push(`${cycleName}: cycle.json has no SHA for ${key}`);
+    }
+  }
+
+  // Validate every entry in the manifest against its on-disk file.
+  for (const [name, expected] of Object.entries(manifest.files)) {
+    const filePath = filePathByName[name];
+    if (!filePath) {
+      errors.push(`${cycleName}: cycle.json references unknown file "${name}"`);
       continue;
     }
-    const actual = await sha256OfFile(p);
+    if (!(await fileExists(filePath))) {
+      errors.push(
+        `${cycleName}: cycle.json lists ${name} but the file is missing on disk`,
+      );
+      continue;
+    }
+    const actual = await sha256OfFile(filePath);
     if (expected !== actual) {
       errors.push(
         `${cycleName}: ${name} SHA mismatch — manifest ${expected}, actual ${actual}`,
