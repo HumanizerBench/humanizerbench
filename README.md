@@ -81,4 +81,10 @@ If you spot an error in a cycle — a bad score, a stale humanizer record, a ver
 
 ## License
 
-The data in this repo is published for verification and audit. Reproduction of the data with attribution is welcome. The benchmark name "HumanizerBench" and associated branding are not licensed for reuse on competing services.
+- Verifier code, workflows, and configuration: [MIT](LICENSE).
+- Cycle data under `data/`: [CC BY 4.0](LICENSE-data) — reproduction with attribution is welcome.
+- The name "HumanizerBench" and associated branding are not licensed for reuse on competing benchmark services or AI-detector-evasion products.
+
+## Reporting issues
+
+Found a verifier bug, a tampered cycle, or a security issue with this repo? See [SECURITY.md](SECURITY.md). For non-security audit findings, open a regular GitHub issue.
