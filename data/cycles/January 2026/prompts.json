@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "template": "Write a 400-word argumentative essay arguing that [TOPIC].",
+    "resolved": "Write a 400-word argumentative essay arguing that youth screen-time and adolescent mental health.",
+    "placeholders": {
+      "TOPIC": "youth screen-time and adolescent mental health"
+    }
+  },
+  {
+    "slug": "cover_letter",
+    "category": "application_essay",
+    "template": "Write a 400-word cover letter for a [ROLE] position.",
+    "resolved": "Write a 400-word cover letter for a regional sales manager position.",
+    "placeholders": {
+      "ROLE": "regional sales manager"
+    }
+  }
+]
