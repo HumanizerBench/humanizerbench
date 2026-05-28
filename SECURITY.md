@@ -16,8 +16,8 @@ issue belong in this file's reporting path:
 
 ## How to report
 
-Please email **ivan@writehuman.ai** with the subject line `[HumanizerBench
-security]`. Include:
+Please email **contact@humanizerbench.com** with the subject line
+`[HumanizerBench security]`. Include:
 
 - The cycle (or cycles) affected, if applicable
 - A minimal reproduction or chain of evidence
