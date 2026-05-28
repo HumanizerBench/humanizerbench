@@ -1,0 +1,98 @@
+{
+  "cycle": "January 2026",
+  "generated_at": "2026-05-28T03:45:02.381Z",
+  "methodology_version": "1.2.0",
+  "scoring_version": "1.2.0",
+  "prompt_set_version": "1.0.0",
+  "source_model_versions": {
+    "anthropic": "claude-opus-4-7"
+  },
+  "placeholders_used": {
+    "cover_letter": {
+      "ROLE": "regional sales manager"
+    },
+    "argumentative_essay": {
+      "TOPIC": "youth screen-time and adolescent mental health"
+    }
+  },
+  "cycle_sample_count": 2,
+  "recording_sessions": [
+    {
+      "id": "353ab232-0dc7-4de5-b7b5-823749609980",
+      "started_at": "2026-05-28T03:43:52.418995+00:00",
+      "ended_at": "2026-05-28T03:44:32.963+00:00",
+      "total_duration_ms": 40578,
+      "segment_count": 0,
+      "segment_urls": [],
+      "test_markers": [
+        {
+          "test_id": "110d48c5-df35-4161-96e1-0dceb6b49953",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 21131
+        },
+        {
+          "test_id": "9c8be690-a0ed-4df7-8465-a7b7c05ef15c",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 39957
+        }
+      ]
+    }
+  ],
+  "humanizers": [
+    {
+      "slug": "writehuman",
+      "name": "WriteHuman",
+      "url": "https://writehuman.ai",
+      "rank": 1,
+      "rank_change": 0,
+      "last_tested_at": "2026-05-28T03:44:32.67+00:00",
+      "scores": {
+        "composite": 82.53,
+        "bypass_rate": 0.7895,
+        "meaning_preservation": 0.9275,
+        "readability": 0.6861,
+        "consistency_across_categories": 0.9707
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.7688,
+          0.8102
+        ],
+        "meaning_preservation_ci_95": [
+          0.9075,
+          0.9475
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_grammar_degradation",
+          "count": 1,
+          "score_delta": -1
+        }
+      ],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.8056,
+        "winston": 0.7735
+      },
+      "category_breakdown": {
+        "academic_essay": 0.8102,
+        "application_essay": 0.7688
+      },
+      "pricing": {
+        "monthly_usd": null,
+        "free_tier": false,
+        "free_tier_word_limit": null
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 2,
+      "successful_test_count": 2,
+      "flagged_test_count": 0
+    }
+  ]
+}
