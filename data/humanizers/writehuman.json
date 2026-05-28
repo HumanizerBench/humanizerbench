@@ -1,0 +1,18 @@
+{
+  "slug": "writehuman",
+  "points": [
+    {
+      "cycle": "January 2026",
+      "composite": 82.53,
+      "bypass_rate": 0.7895,
+      "detector_breakdown": {
+        "gptzero": 0.8056,
+        "winston": 0.7735
+      },
+      "category_breakdown": {
+        "academic_essay": 0.8102,
+        "application_essay": 0.7688
+      }
+    }
+  ]
+}
