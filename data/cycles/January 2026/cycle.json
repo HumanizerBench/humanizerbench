@@ -1,0 +1,16 @@
+{
+  "cycle": "January 2026",
+  "counts": {
+    "samples": 2,
+    "tests": 2,
+    "detector_scores": 4,
+    "humanizers": 18,
+    "detectors": 6
+  },
+  "files": {
+    "samples.json": "6cfcc63f0391aff4ef468f16198b3969a750da7fd9130597d2d9c56162fc5394",
+    "tests.json": "5fdf196f952359a376928d88ebf48409b350d7d53b67347012c0a92142d3699e",
+    "detector-scores.json": "dd747f8068e8f048427a33fd4b37a43eb4f8e37452777ac714c355328340b6f4",
+    "scoring.js": "b1eb96fa30e1783764ddc62d3696b782a9f3d9641ccb86c539cd8c4f3f46b4c9"
+  }
+}
