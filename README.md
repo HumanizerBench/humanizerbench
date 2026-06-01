@@ -1,8 +1,16 @@
-# HumanizerBench public audit record
+# HumanizerBench — Independent AI Humanizer Rankings & Public Audit Record
 
-This repository is the **public audit record** for [HumanizerBench](https://humanizerbench.com), a benchmark that scores AI humanizer tools on how well they bypass AI detectors while preserving the meaning and readability of the source text.
+**The best AI humanizers, ranked by an independent monthly benchmark.** HumanizerBench measures how well each AI humanizer bypasses the major AI detectors — GPTZero, Originality.ai, Copyleaks, Winston AI, and ZeroGPT — while preserving the original meaning and readability. Every input, every humanized output, every detector verdict, and the scoring code itself is published in this repository, so anyone can reproduce the rankings from scratch.
 
-The live site at [humanizerbench.com](https://humanizerbench.com) is rendered from the data here. Anyone can clone this repo and prove every published cycle wasn't tampered with.
+<!-- RANKINGS:START -->
+_The latest cycle's rankings are published here automatically. Until the next cycle lands, see the always-current leaderboard at **[humanizerbench.com/leaderboard](https://humanizerbench.com/leaderboard)**._
+<!-- RANKINGS:END -->
+
+### [See the full leaderboard at humanizerbench.com →](https://humanizerbench.com/leaderboard)
+
+Per-detector breakdowns, meaning & readability sub-scores, penalties, pricing, and 12-month trends for every humanizer.
+
+This repository is the **public audit record**: the live site at [humanizerbench.com](https://humanizerbench.com) is rendered from the data here, and anyone can clone this repo and prove every published cycle wasn't tampered with.
 
 ## What's in here
 
