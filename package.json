@@ -1,0 +1,20 @@
+{
+  "name": "humanizerbench-audit",
+  "version": "1.0.0",
+  "description": "Public audit record for HumanizerBench. Run `npm run verify` to independently re-derive every published leaderboard from the raw inputs.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "verify": "tsx scripts/verify-cycle.ts --all"
+  },
+  "devDependencies": {
+    "tsx": "^4.22.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HumanizerBench/humanizerbench.git"
+  }
+}
