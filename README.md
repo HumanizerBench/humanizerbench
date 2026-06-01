@@ -22,7 +22,7 @@ data/
       tests.json               # every humanizer's output + per-test metrics
       detector-scores.json     # every detector verdict on every output
       scoring.js               # the frozen scoring aggregator
-      cycle.json               # SHA-256 manifest of the four files above
+      cycle.json               # SHA-256 manifest of every per-cycle file above
       # Final result
       leaderboard.json         # composite + sub-scores per humanizer
   humanizers/
