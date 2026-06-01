@@ -148,7 +148,10 @@ interface PublishedLeaderboard {
   // appear in the scoring.js replay — checked below.
   unavailable_humanizers?: Array<{
     slug: string;
-    name: string;
+    // Optional: newer (slim) bundles omit name — the site resolves display
+    // names from slug. Older bundles still carry it. verify never reads it
+    // (it matches on slug only), so this stays purely descriptive.
+    name?: string;
     reason: string;
     attempted_test_count: number;
     successful_test_count: number;
