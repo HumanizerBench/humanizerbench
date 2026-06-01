@@ -3,7 +3,25 @@
 **The best AI humanizers, ranked by a monthly benchmark.** HumanizerBench measures how well each AI humanizer bypasses the major AI detectors (GPTZero, Originality.ai, Copyleaks, Winston AI, and ZeroGPT) while preserving the original meaning and readability. Every input, every humanized output, every detector verdict, and the scoring code itself is published in this repository, so anyone can reproduce the rankings from scratch.
 
 <!-- RANKINGS:START -->
-_The latest cycle's rankings are published here automatically. Until the next cycle lands, see the always-current leaderboard at **[humanizerbench.com/leaderboard](https://humanizerbench.com/leaderboard)**._
+## 🏆 Best AI humanizers: b 2026
+
+| # | AI humanizer | Score / 100 |
+|--:|--------------|:-----------:|
+| 1 | [HIX Bypass](https://humanizerbench.com/humanizers/hix-bypass) | 85.3 |
+| 2 | [Super Humanizer](https://humanizerbench.com/humanizers/super-humanizer) | 84.7 |
+| 3 | [Phrasly](https://humanizerbench.com/humanizers/phrasly) | 84.5 |
+| 4 | [Humbot](https://humanizerbench.com/humanizers/humbot) | 84.1 |
+| 5 | [Walter Writes](https://humanizerbench.com/humanizers/walter-writes) | 83.4 |
+| 6 | [Undetectable.ai](https://humanizerbench.com/humanizers/undetectable) | 82.0 |
+| 7 | [Stealth Writer](https://humanizerbench.com/humanizers/stealth-writer) | 80.5 |
+| 8 | [AI Humanize io](https://humanizerbench.com/humanizers/ai-humanize-io) | 80.3 |
+| 9 | [WriteHuman](https://humanizerbench.com/humanizers/writehuman) | 79.6 |
+| 10 | [Humanize AI Pro](https://humanizerbench.com/humanizers/humanize-ai-pro) | 78.0 |
+| 11 | [BypassGPT](https://humanizerbench.com/humanizers/bypassgpt) | 54.1 |
+| 12 | [Grammarly](https://humanizerbench.com/humanizers/grammarly) | 51.2 |
+| 13 | [NoteGPT](https://humanizerbench.com/humanizers/notegpt) | 41.4 |
+
+_Monthly benchmark · scored against 5 AI detectors for detector bypass, meaning preservation, and readability · every score is reproducible from the data in this repo. See the full leaderboard with per-detector breakdowns and trends at [humanizerbench.com/leaderboard](https://humanizerbench.com/leaderboard)._
 <!-- RANKINGS:END -->
 
 ### [See the full leaderboard at humanizerbench.com →](https://humanizerbench.com/leaderboard)
