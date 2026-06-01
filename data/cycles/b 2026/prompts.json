@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "template": "Write a 400-word argumentative essay arguing that [TOPIC].",
+    "resolved": "Write a 400-word argumentative essay arguing that the four-day work week as a productivity strategy.",
+    "placeholders": {
+      "TOPIC": "the four-day work week as a productivity strategy"
+    }
+  }
+]
