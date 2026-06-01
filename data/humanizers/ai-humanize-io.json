@@ -1,0 +1,20 @@
+{
+  "slug": "ai-humanize-io",
+  "points": [
+    {
+      "cycle": "b 2026",
+      "composite": 80.25,
+      "bypass_rate": 1,
+      "detector_breakdown": {
+        "gptzero": 1,
+        "winston": 1,
+        "zerogpt": 0.906,
+        "copyleaks": 1,
+        "originality": 0.9967
+      },
+      "category_breakdown": {
+        "academic_essay": 1
+      }
+    }
+  ]
+}
