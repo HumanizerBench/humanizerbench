@@ -1,0 +1,20 @@
+{
+  "slug": "hix-bypass",
+  "points": [
+    {
+      "cycle": "b 2026",
+      "composite": 85.35,
+      "bypass_rate": 0.972,
+      "detector_breakdown": {
+        "gptzero": 0.305,
+        "winston": 1,
+        "zerogpt": 0.972,
+        "copyleaks": 1,
+        "originality": 0.1532
+      },
+      "category_breakdown": {
+        "academic_essay": 0.972
+      }
+    }
+  ]
+}
