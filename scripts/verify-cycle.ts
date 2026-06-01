@@ -141,6 +141,19 @@ interface PublishedLeaderboard {
     successful_test_count: number;
     flagged_test_count: number;
   }>;
+  // Humanizers attempted but excluded from the ranking because the tool was
+  // unavailable (site down, paywall, captcha, no output, ToS). Introduced with
+  // methodology_version 1.4.0; absent on older cycles. By design their raw
+  // tests are NOT published in the reproducibility bundle, so they must never
+  // appear in the scoring.js replay — checked below.
+  unavailable_humanizers?: Array<{
+    slug: string;
+    name: string;
+    reason: string;
+    attempted_test_count: number;
+    successful_test_count: number;
+    unavailable_test_count: number;
+  }>;
 }
 
 async function fileExists(p: string): Promise<boolean> {
@@ -194,6 +207,20 @@ async function verifyTransparency(
   };
   const anyPresent = Object.values(presence).some(Boolean);
   if (!anyPresent) return { errors, promptsCount: 0, skipped: true };
+
+  // A cycle at start publishes only commit.json (the sha256(nonce) commitment);
+  // the nonce and the prompt/template/bank/algorithm reveal land at cycle close.
+  // A commit-only cycle is in-flight and legitimately unverifiable until then,
+  // so skip it rather than flag a partial bundle.
+  const revealPresent =
+    presence.nonce ||
+    presence.prompts ||
+    presence.templates ||
+    presence.banks ||
+    presence.algo;
+  if (presence.commit && !revealPresent) {
+    return { errors, promptsCount: 0, skipped: true };
+  }
 
   const missing = Object.entries(presence)
     .filter(([, v]) => !v)
@@ -466,6 +493,29 @@ async function verifyReproducibility(
     }
   }
 
+  // 3. Unavailable humanizers (methodology 1.4.0+). These are excluded from
+  //    the ranking, and by design their raw tests are NOT in the published
+  //    bundle. Verify the published list is internally consistent and that
+  //    no excluded tool sneaked into the scoring replay as a shadow rank.
+  const rankedSlugs = new Set(leaderboard.humanizers.map((h) => h.slug));
+  for (const u of leaderboard.unavailable_humanizers ?? []) {
+    if (rankedSlugs.has(u.slug)) {
+      errors.push(
+        `${cycleName}: "${u.slug}" appears in both the ranking and unavailable_humanizers`,
+      );
+    }
+    if (replayBySlug.has(u.slug)) {
+      errors.push(
+        `${cycleName}: unavailable humanizer "${u.slug}" appears in the scoring replay — its tests should not be published`,
+      );
+    }
+    if (u.unavailable_test_count > u.attempted_test_count) {
+      errors.push(
+        `${cycleName}: "${u.slug}" reports more unavailable (${u.unavailable_test_count}) than attempted (${u.attempted_test_count}) tests`,
+      );
+    }
+  }
+
   return { errors, humanizerCount: replay.humanizers.length, skipped: false };
 }
 
@@ -477,7 +527,9 @@ async function verifyCycle(cycleName: string): Promise<string[]> {
   errors.push(...transparency.errors);
 
   if (transparency.skipped) {
-    console.warn(`[skip] ${cycleName}: no transparency artifacts present`);
+    console.warn(
+      `[skip] ${cycleName}: no revealed transparency bundle yet (in-flight or pre-transparency cycle)`,
+    );
     return errors;
   }
 
