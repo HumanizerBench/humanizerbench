@@ -1,0 +1,20 @@
+{
+  "slug": "bypassgpt",
+  "points": [
+    {
+      "cycle": "b 2026",
+      "composite": 54.11,
+      "bypass_rate": 0.2347,
+      "detector_breakdown": {
+        "gptzero": 0.2347,
+        "winston": 0.0005,
+        "zerogpt": 0.522,
+        "copyleaks": 0.5843,
+        "originality": 0.0612
+      },
+      "category_breakdown": {
+        "academic_essay": 0.2347
+      }
+    }
+  ]
+}
