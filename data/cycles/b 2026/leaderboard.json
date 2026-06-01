@@ -1,0 +1,833 @@
+{
+  "cycle": "b 2026",
+  "generated_at": "2026-06-01T23:03:30.368Z",
+  "methodology_version": "1.0.0",
+  "scoring_version": "1.0.0",
+  "prompt_set_version": "1.0.0",
+  "source_model_versions": {
+    "openai": "gpt-5.5"
+  },
+  "placeholders_used": {
+    "argumentative_essay": {
+      "TOPIC": "the four-day work week as a productivity strategy"
+    }
+  },
+  "cycle_sample_count": 1,
+  "recording_sessions": [
+    {
+      "id": "ca07a883-a5c2-4ffb-9534-b7f02823d45b",
+      "humanizer_slug": "writehuman",
+      "started_at": "2026-06-01T22:49:08.0127+00:00",
+      "ended_at": "2026-06-01T22:49:26.333+00:00",
+      "total_duration_ms": 18348,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/writehuman/ca07a883-a5c2-4ffb-9534-b7f02823d45b/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvd3JpdGVodW1hbi9jYTA3YTg4My1hNWMyLTRmZmItOTUzNC1iN2YwMjgyM2Q0NWIvcmVjb3JkaW5nLndlYm0iLCJpYXQiOjE3ODAzNTUwMDgsImV4cCI6MTgxMTg5MTAwOH0.2mzTsoVWAG16gnEDF4xpDfj1nXv3B3KGRNh_fuqS0dI"
+      ],
+      "test_markers": [
+        {
+          "test_id": "af88b2b7-652a-4fe0-96fe-c7a8efb7122f",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 17629
+        }
+      ]
+    },
+    {
+      "id": "33fffd86-73d5-4e36-ac7e-d243bedf90c0",
+      "humanizer_slug": "undetectable",
+      "started_at": "2026-06-01T22:49:28.52814+00:00",
+      "ended_at": "2026-06-01T22:49:54.822+00:00",
+      "total_duration_ms": 26324,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/undetectable/33fffd86-73d5-4e36-ac7e-d243bedf90c0/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvdW5kZXRlY3RhYmxlLzMzZmZmZDg2LTczZDUtNGUzNi1hYzdlLWQyNDNiZWRmOTBjMC9yZWNvcmRpbmcud2VibSIsImlhdCI6MTc4MDM1NTAwOSwiZXhwIjoxODExODkxMDA5fQ.3fv9U6-c49xtrPSPf5ZEvZeOsWlrhFULPWFvVspRwRQ"
+      ],
+      "test_markers": [
+        {
+          "test_id": "d1511e7d-16b4-4635-88f1-6786b15e0ce5",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 25680
+        }
+      ]
+    },
+    {
+      "id": "dd0b4ebc-d65c-42f3-9b45-10500cc60b3e",
+      "humanizer_slug": "stealthgpt",
+      "started_at": "2026-06-01T22:49:59.504001+00:00",
+      "ended_at": "2026-06-01T22:50:08.823+00:00",
+      "total_duration_ms": 9352,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/stealthgpt/dd0b4ebc-d65c-42f3-9b45-10500cc60b3e/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvc3RlYWx0aGdwdC9kZDBiNGViYy1kNjVjLTQyZjMtOWI0NS0xMDUwMGNjNjBiM2UvcmVjb3JkaW5nLndlYm0iLCJpYXQiOjE3ODAzNTUwMDksImV4cCI6MTgxMTg5MTAwOX0.rsTLEu84TtZf6jnsilXhSnjttm_fXwCoB9-5s__Rhl4"
+      ],
+      "test_markers": [
+        {
+          "test_id": "702ef403-6883-426e-a9de-b93f07bbd7ec",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 8912
+        }
+      ]
+    },
+    {
+      "id": "989b27b1-5087-4b10-aa3d-1b9e0b3dedf0",
+      "humanizer_slug": "hix-bypass",
+      "started_at": "2026-06-01T22:50:10.333266+00:00",
+      "ended_at": "2026-06-01T22:50:52.187+00:00",
+      "total_duration_ms": 41879,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/hix-bypass/989b27b1-5087-4b10-aa3d-1b9e0b3dedf0/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvaGl4LWJ5cGFzcy85ODliMjdiMS01MDg3LTRiMTAtYWEzZC0xYjllMGIzZGVkZjAvcmVjb3JkaW5nLndlYm0iLCJpYXQiOjE3ODAzNTUwMDksImV4cCI6MTgxMTg5MTAwOX0.GhHGhztRNArRRAT5rbFJqft84LalSeKBk8PBIKWNS1k"
+      ],
+      "test_markers": [
+        {
+          "test_id": "93f9635f-e008-4bf6-a278-a1992101d295",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 41158
+        }
+      ]
+    },
+    {
+      "id": "4fb37d9d-1a37-4115-93c9-760c82294963",
+      "humanizer_slug": "phrasly",
+      "started_at": "2026-06-01T22:50:56.462523+00:00",
+      "ended_at": "2026-06-01T22:51:19.223+00:00",
+      "total_duration_ms": 22790,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/phrasly/4fb37d9d-1a37-4115-93c9-760c82294963/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvcGhyYXNseS80ZmIzN2Q5ZC0xYTM3LTQxMTUtOTNjOS03NjBjODIyOTQ5NjMvcmVjb3JkaW5nLndlYm0iLCJpYXQiOjE3ODAzNTUwMDksImV4cCI6MTgxMTg5MTAwOX0.MUjJj8MQWKnIdgoYDjoPx0845yauj_7QfEsO-xmQHAY"
+      ],
+      "test_markers": [
+        {
+          "test_id": "806bd31c-533f-403d-8a06-6ec1225fe8de",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 22134
+        }
+      ]
+    },
+    {
+      "id": "a97518dd-ba37-46e0-aeff-81778a48f388",
+      "humanizer_slug": "humbot",
+      "started_at": "2026-06-01T22:51:24.597358+00:00",
+      "ended_at": "2026-06-01T22:51:58.003+00:00",
+      "total_duration_ms": 33431,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/humbot/a97518dd-ba37-46e0-aeff-81778a48f388/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvaHVtYm90L2E5NzUxOGRkLWJhMzctNDZlMC1hZWZmLTgxNzc4YTQ4ZjM4OC9yZWNvcmRpbmcud2VibSIsImlhdCI6MTc4MDM1NTAwOSwiZXhwIjoxODExODkxMDA5fQ.Q55X7Xa1xcwSV17xweJ3WHSYiiBV8aiORx4kQ7WBk5A"
+      ],
+      "test_markers": [
+        {
+          "test_id": "0498b517-2e99-4bf1-97b1-7618090b3fbb",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 32658
+        }
+      ]
+    },
+    {
+      "id": "db285175-9160-4af5-91aa-4b6821842aee",
+      "humanizer_slug": "bypassgpt",
+      "started_at": "2026-06-01T22:52:03.062804+00:00",
+      "ended_at": "2026-06-01T22:53:45.313+00:00",
+      "total_duration_ms": 102276,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/bypassgpt/db285175-9160-4af5-91aa-4b6821842aee/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvYnlwYXNzZ3B0L2RiMjg1MTc1LTkxNjAtNGFmNS05MWFhLTRiNjgyMTg0MmFlZS9yZWNvcmRpbmcud2VibSIsImlhdCI6MTc4MDM1NTAwOSwiZXhwIjoxODExODkxMDA5fQ.OYcSukzpe9IGCbFCbvz4XTAom25LvfG-Iap9heKgTa4"
+      ],
+      "test_markers": [
+        {
+          "test_id": "9b6edaa7-4cd6-432c-b7b9-f0559b8523ee",
+          "humanizer_slug": "bypassgpt",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 101285
+        }
+      ]
+    },
+    {
+      "id": "a38a9b9c-e04d-41f1-aab3-1a541948d2e8",
+      "humanizer_slug": "walter-writes",
+      "started_at": "2026-06-01T22:53:53.315343+00:00",
+      "ended_at": "2026-06-01T22:54:42.402+00:00",
+      "total_duration_ms": 49062,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/walter-writes/a38a9b9c-e04d-41f1-aab3-1a541948d2e8/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvd2FsdGVyLXdyaXRlcy9hMzhhOWI5Yy1lMDRkLTQxZjEtYWFiMy0xYTU0MTk0OGQyZTgvcmVjb3JkaW5nLndlYm0iLCJpYXQiOjE3ODAzNTUwMDksImV4cCI6MTgxMTg5MTAwOX0.kpsWBNXERAWxOhSxY7ZrXNB_WN1Km8FozEiJrBjuW1M"
+      ],
+      "test_markers": [
+        {
+          "test_id": "d61aef02-b1a5-43eb-aa8b-0fdf2584c0fb",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 48286
+        }
+      ]
+    },
+    {
+      "id": "0c7f5102-c99d-49c6-aa31-42fec3b47644",
+      "humanizer_slug": "ai-humanize-io",
+      "started_at": "2026-06-01T22:54:48.235281+00:00",
+      "ended_at": "2026-06-01T22:55:19.856+00:00",
+      "total_duration_ms": 31651,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/ai-humanize-io/0c7f5102-c99d-49c6-aa31-42fec3b47644/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvYWktaHVtYW5pemUtaW8vMGM3ZjUxMDItYzk5ZC00OWM2LWFhMzEtNDJmZWMzYjQ3NjQ0L3JlY29yZGluZy53ZWJtIiwiaWF0IjoxNzgwMzU1MDA5LCJleHAiOjE4MTE4OTEwMDl9._Md8qlTBfdgRfvmNxTG_rHNgjR1XEsSu6Rfp5K5Tdlk"
+      ],
+      "test_markers": [
+        {
+          "test_id": "38a2167d-dc3a-4a77-b6ca-86a8340a68ba",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 30953
+        }
+      ]
+    },
+    {
+      "id": "c87af608-1375-4806-b5d7-a0759d707b48",
+      "humanizer_slug": "grammarly",
+      "started_at": "2026-06-01T22:55:33.056964+00:00",
+      "ended_at": "2026-06-01T22:59:18.972+00:00",
+      "total_duration_ms": 225935,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/grammarly/c87af608-1375-4806-b5d7-a0759d707b48/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvZ3JhbW1hcmx5L2M4N2FmNjA4LTEzNzUtNDgwNi1iNWQ3LWEwNzU5ZDcwN2I0OC9yZWNvcmRpbmcud2VibSIsImlhdCI6MTc4MDM1NTAwOSwiZXhwIjoxODExODkxMDA5fQ.BsRSKAqOGInKdjm2mCqdr3SfbATSeuR679LoGIuJ0N8"
+      ],
+      "test_markers": [
+        {
+          "test_id": "21600925-8cbe-4ba1-81d9-29cfcd4a16cf",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 225015
+        }
+      ]
+    },
+    {
+      "id": "923fa22b-7abf-46e0-97dd-71b663a189b3",
+      "humanizer_slug": "humanize-ai-pro",
+      "started_at": "2026-06-01T22:59:20.98353+00:00",
+      "ended_at": "2026-06-01T23:00:51.222+00:00",
+      "total_duration_ms": 90271,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/humanize-ai-pro/923fa22b-7abf-46e0-97dd-71b663a189b3/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvaHVtYW5pemUtYWktcHJvLzkyM2ZhMjJiLTdhYmYtNDZlMC05N2RkLTcxYjY2M2ExODliMy9yZWNvcmRpbmcud2VibSIsImlhdCI6MTc4MDM1NTAxMCwiZXhwIjoxODExODkxMDEwfQ.4Zglz4ylAw2CnHpQDVrGQUrt2VO3ZGXBebXxvClJ9O0"
+      ],
+      "test_markers": [
+        {
+          "test_id": "3f2ff3a6-7e26-4e15-8956-44e4d3261c7e",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 89558
+        }
+      ]
+    },
+    {
+      "id": "aebdf9f4-6d5e-48d6-9c07-3874a019f237",
+      "humanizer_slug": "notegpt",
+      "started_at": "2026-06-01T23:00:57.0062+00:00",
+      "ended_at": "2026-06-01T23:01:18.408+00:00",
+      "total_duration_ms": 21433,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/notegpt/aebdf9f4-6d5e-48d6-9c07-3874a019f237/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvbm90ZWdwdC9hZWJkZjlmNC02ZDVlLTQ4ZDYtOWMwNy0zODc0YTAxOWYyMzcvcmVjb3JkaW5nLndlYm0iLCJpYXQiOjE3ODAzNTUwMTAsImV4cCI6MTgxMTg5MTAxMH0.SEkw98VjkZvgu-a8HcDPA2ObsJxriq0AIsXfX_fV3tc"
+      ],
+      "test_markers": [
+        {
+          "test_id": "c81af440-b10c-482e-95ec-37cc61beff60",
+          "humanizer_slug": "notegpt",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 20692
+        }
+      ]
+    },
+    {
+      "id": "4bbd2177-7e44-4589-a114-cbba8a5bbc02",
+      "humanizer_slug": "stealth-writer",
+      "started_at": "2026-06-01T23:01:23.543162+00:00",
+      "ended_at": "2026-06-01T23:01:36.874+00:00",
+      "total_duration_ms": 13358,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/stealth-writer/4bbd2177-7e44-4589-a114-cbba8a5bbc02/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvc3RlYWx0aC13cml0ZXIvNGJiZDIxNzctN2U0NC00NTg5LWExMTQtY2JiYThhNWJiYzAyL3JlY29yZGluZy53ZWJtIiwiaWF0IjoxNzgwMzU1MDEwLCJleHAiOjE4MTE4OTEwMTB9.R5rLG7KgTUNdMdLPHYjHuRdXiUNzEz1YNaSzlSuPXHk"
+      ],
+      "test_markers": [
+        {
+          "test_id": "a54b1200-bb73-4645-89ce-f30b27f27423",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 12675
+        }
+      ]
+    },
+    {
+      "id": "61aa494d-29cd-4cf9-8589-ef45d1e13c64",
+      "humanizer_slug": "super-humanizer",
+      "started_at": "2026-06-01T23:01:40.459402+00:00",
+      "ended_at": "2026-06-01T23:01:53.92+00:00",
+      "total_duration_ms": 13493,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/b%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/super-humanizer/61aa494d-29cd-4cf9-8589-ef45d1e13c64/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL2IgMjAyNi8zYTI4OGZmMS03ZGJmLTRmZWMtOWI2OS0zMTBmOTQwYjZkNTgvc3VwZXItaHVtYW5pemVyLzYxYWE0OTRkLTI5Y2QtNGNmOS04NTg5LWVmNDVkMWUxM2M2NC9yZWNvcmRpbmcud2VibSIsImlhdCI6MTc4MDM1NTAxMCwiZXhwIjoxODExODkxMDEwfQ.r50SDH_-zw0fIee8zyn3sLVjXGuqOVIRx7P9RxfVgWg"
+      ],
+      "test_markers": [
+        {
+          "test_id": "f749aba8-2641-48d4-a84e-2066ce7241fe",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 12782
+        }
+      ]
+    }
+  ],
+  "humanizers": [
+    {
+      "slug": "hix-bypass",
+      "rank": 1,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:50:51.812+00:00",
+      "scores": {
+        "composite": 85.35,
+        "bypass_rate": 0.972,
+        "meaning_preservation": 0.7351,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.972,
+          0.972
+        ],
+        "meaning_preservation_ci_95": [
+          0.7351,
+          0.7351
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.305,
+        "winston": 1,
+        "zerogpt": 0.972,
+        "copyleaks": 1,
+        "originality": 0.1532
+      },
+      "category_breakdown": {
+        "academic_essay": 0.972
+      },
+      "plan_tier_used": "Standard",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "super-humanizer",
+      "rank": 2,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T23:01:53.488+00:00",
+      "scores": {
+        "composite": 84.74,
+        "bypass_rate": 0.9904,
+        "meaning_preservation": 0.692,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.9904,
+          0.9904
+        ],
+        "meaning_preservation_ci_95": [
+          0.692,
+          0.692
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.3124,
+        "winston": 0.9904,
+        "zerogpt": 0.954,
+        "copyleaks": 1,
+        "originality": 0.999
+      },
+      "category_breakdown": {
+        "academic_essay": 0.9904
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "phrasly",
+      "rank": 3,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:51:18.846+00:00",
+      "scores": {
+        "composite": 84.52,
+        "bypass_rate": 0.996,
+        "meaning_preservation": 0.6777,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.996,
+          0.996
+        ],
+        "meaning_preservation_ci_95": [
+          0.6777,
+          0.6777
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.996,
+        "winston": 1,
+        "zerogpt": 0.683,
+        "copyleaks": 1,
+        "originality": 0.996
+      },
+      "category_breakdown": {
+        "academic_essay": 0.996
+      },
+      "plan_tier_used": null,
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "humbot",
+      "rank": 4,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:51:57.563+00:00",
+      "scores": {
+        "composite": 84.08,
+        "bypass_rate": 0.913,
+        "meaning_preservation": 0.7731,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.913,
+          0.913
+        ],
+        "meaning_preservation_ci_95": [
+          0.7731,
+          0.7731
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 1,
+        "zerogpt": 0.913,
+        "copyleaks": 1,
+        "originality": 0.0122
+      },
+      "category_breakdown": {
+        "academic_essay": 0.913
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "walter-writes",
+      "rank": 5,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:54:41.988+00:00",
+      "scores": {
+        "composite": 83.36,
+        "bypass_rate": 0.9963,
+        "meaning_preservation": 0.6409,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.9963,
+          0.9963
+        ],
+        "meaning_preservation_ci_95": [
+          0.6409,
+          0.6409
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.9963,
+        "winston": 0.985,
+        "zerogpt": 0.794,
+        "copyleaks": 1,
+        "originality": 0.9972
+      },
+      "category_breakdown": {
+        "academic_essay": 0.9963
+      },
+      "plan_tier_used": "Starter",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "undetectable",
+      "rank": 6,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:49:54.473+00:00",
+      "scores": {
+        "composite": 82.02,
+        "bypass_rate": 0.997,
+        "meaning_preservation": 0.6169,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.997,
+          0.997
+        ],
+        "meaning_preservation_ci_95": [
+          0.6169,
+          0.6169
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 1,
+          "score_delta": -0.6
+        }
+      ],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.9894,
+        "winston": 1,
+        "zerogpt": 0.807,
+        "copyleaks": 1,
+        "originality": 0.997
+      },
+      "category_breakdown": {
+        "academic_essay": 0.997
+      },
+      "plan_tier_used": "20K words/month",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "stealth-writer",
+      "rank": 7,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T23:01:36.478+00:00",
+      "scores": {
+        "composite": 80.51,
+        "bypass_rate": 0.888,
+        "meaning_preservation": 0.6941,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.888,
+          0.888
+        ],
+        "meaning_preservation_ci_95": [
+          0.6941,
+          0.6941
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 0.9998,
+        "zerogpt": 0.888,
+        "copyleaks": 1,
+        "originality": 0.2495
+      },
+      "category_breakdown": {
+        "academic_essay": 0.888
+      },
+      "plan_tier_used": "Starter",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "ai-humanize-io",
+      "rank": 8,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:55:19.479+00:00",
+      "scores": {
+        "composite": 80.25,
+        "bypass_rate": 1,
+        "meaning_preservation": 0.5579,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          1,
+          1
+        ],
+        "meaning_preservation_ci_95": [
+          0.5579,
+          0.5579
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 1,
+          "score_delta": -0.6
+        }
+      ],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 1,
+        "winston": 1,
+        "zerogpt": 0.906,
+        "copyleaks": 1,
+        "originality": 0.9967
+      },
+      "category_breakdown": {
+        "academic_essay": 1
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "writehuman",
+      "rank": 9,
+      "rank_change": -8,
+      "last_tested_at": "2026-06-01T22:49:25.945+00:00",
+      "scores": {
+        "composite": 79.59,
+        "bypass_rate": 0.9133,
+        "meaning_preservation": 0.6322,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.9133,
+          0.9133
+        ],
+        "meaning_preservation_ci_95": [
+          0.6322,
+          0.6322
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.8472,
+        "winston": 1,
+        "zerogpt": 0.769,
+        "copyleaks": 1,
+        "originality": 0.9133
+      },
+      "category_breakdown": {
+        "academic_essay": 0.9133
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "humanize-ai-pro",
+      "rank": 10,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T23:00:50.853+00:00",
+      "scores": {
+        "composite": 77.95,
+        "bypass_rate": 0.8631,
+        "meaning_preservation": 0.647,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.8631,
+          0.8631
+        ],
+        "meaning_preservation_ci_95": [
+          0.647,
+          0.647
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.9996,
+        "winston": 0.9658,
+        "zerogpt": 0.729,
+        "copyleaks": 0.5362,
+        "originality": 0.8631
+      },
+      "category_breakdown": {
+        "academic_essay": 0.8631
+      },
+      "plan_tier_used": "Lite",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "bypassgpt",
+      "rank": 11,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:53:44.706+00:00",
+      "scores": {
+        "composite": 54.11,
+        "bypass_rate": 0.2347,
+        "meaning_preservation": 0.7266,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.2347,
+          0.2347
+        ],
+        "meaning_preservation_ci_95": [
+          0.7266,
+          0.7266
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0.2347,
+        "winston": 0.0005,
+        "zerogpt": 0.522,
+        "copyleaks": 0.5843,
+        "originality": 0.0612
+      },
+      "category_breakdown": {
+        "academic_essay": 0.2347
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "grammarly",
+      "rank": 12,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T22:59:18.567+00:00",
+      "scores": {
+        "composite": 51.17,
+        "bypass_rate": 0,
+        "meaning_preservation": 0.9428,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0,
+          0
+        ],
+        "meaning_preservation_ci_95": [
+          0.9428,
+          0.9428
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 0.001,
+        "zerogpt": 0.054,
+        "copyleaks": 0,
+        "originality": 0
+      },
+      "category_breakdown": {
+        "academic_essay": 0
+      },
+      "plan_tier_used": "Pro",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "notegpt",
+      "rank": 13,
+      "rank_change": null,
+      "last_tested_at": "2026-06-01T23:01:17.97+00:00",
+      "scores": {
+        "composite": 41.44,
+        "bypass_rate": 0,
+        "meaning_preservation": 0.6387,
+        "readability": 1,
+        "consistency_across_categories": 0.5
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0,
+          0
+        ],
+        "meaning_preservation_ci_95": [
+          0.6387,
+          0.6387
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "low",
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 0.0015,
+        "zerogpt": 0.223,
+        "copyleaks": 0,
+        "originality": 0
+      },
+      "category_breakdown": {
+        "academic_essay": 0
+      },
+      "plan_tier_used": "Pro",
+      "settings_used": null,
+      "sample_count": 1,
+      "successful_test_count": 1,
+      "flagged_test_count": 0
+    }
+  ],
+  "unavailable_humanizers": []
+}
