@@ -1,6 +1,6 @@
-# HumanizerBench — Independent AI Humanizer Rankings & Public Audit Record
+# HumanizerBench: AI Humanizer Rankings & Public Audit Record
 
-**The best AI humanizers, ranked by an independent monthly benchmark.** HumanizerBench measures how well each AI humanizer bypasses the major AI detectors — GPTZero, Originality.ai, Copyleaks, Winston AI, and ZeroGPT — while preserving the original meaning and readability. Every input, every humanized output, every detector verdict, and the scoring code itself is published in this repository, so anyone can reproduce the rankings from scratch.
+**The best AI humanizers, ranked by a monthly benchmark.** HumanizerBench measures how well each AI humanizer bypasses the major AI detectors (GPTZero, Originality.ai, Copyleaks, Winston AI, and ZeroGPT) while preserving the original meaning and readability. Every input, every humanized output, every detector verdict, and the scoring code itself is published in this repository, so anyone can reproduce the rankings from scratch.
 
 <!-- RANKINGS:START -->
 _The latest cycle's rankings are published here automatically. Until the next cycle lands, see the always-current leaderboard at **[humanizerbench.com/leaderboard](https://humanizerbench.com/leaderboard)**._
@@ -67,7 +67,7 @@ verify-cycle FAILED:
   - January 2026: resolved text for "academic_essay_1" differs from published
 ```
 
-The script runs five independent checks for each cycle:
+The script runs five separate checks for each cycle:
 
 1. **Hash commitment.** `sha256(nonce.txt) === commit.json.committed_hash`. Proves the nonce revealed at cycle close is the same one whose hash was published at cycle start.
 2. **Algorithm replay.** Re-runs the frozen `select-placeholders.js` against `nonce.txt`, `templates.json`, and `banks.json` to re-derive the placeholder map.
