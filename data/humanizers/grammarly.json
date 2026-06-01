@@ -1,0 +1,20 @@
+{
+  "slug": "grammarly",
+  "points": [
+    {
+      "cycle": "b 2026",
+      "composite": 51.17,
+      "bypass_rate": 0,
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 0.001,
+        "zerogpt": 0.054,
+        "copyleaks": 0,
+        "originality": 0
+      },
+      "category_breakdown": {
+        "academic_essay": 0
+      }
+    }
+  ]
+}
