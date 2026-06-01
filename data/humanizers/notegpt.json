@@ -1,0 +1,20 @@
+{
+  "slug": "notegpt",
+  "points": [
+    {
+      "cycle": "b 2026",
+      "composite": 41.44,
+      "bypass_rate": 0,
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 0.0015,
+        "zerogpt": 0.223,
+        "copyleaks": 0,
+        "originality": 0
+      },
+      "category_breakdown": {
+        "academic_essay": 0
+      }
+    }
+  ]
+}
