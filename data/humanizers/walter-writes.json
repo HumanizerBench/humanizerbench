@@ -1,0 +1,25 @@
+{
+  "slug": "walter-writes",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 67.24,
+      "bypass_rate": 0.73,
+      "detector_breakdown": {
+        "gptzero": 0.667,
+        "winston": 0.7696,
+        "zerogpt": 0.7149,
+        "copyleaks": 0.6211,
+        "originality": 0.6637
+      },
+      "category_breakdown": {
+        "blog_post": 0.8473,
+        "news_article": 0.6068,
+        "academic_essay": 0.8437,
+        "marketing_copy": 0.6407,
+        "discussion_board": 0.9982,
+        "application_essay": 0.5156
+      }
+    }
+  ]
+}

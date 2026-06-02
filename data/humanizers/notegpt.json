@@ -1,0 +1,25 @@
+{
+  "slug": "notegpt",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 45.34,
+      "bypass_rate": 0.0002,
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 0.0017,
+        "zerogpt": 0.3814,
+        "copyleaks": 0.0349,
+        "originality": 0
+      },
+      "category_breakdown": {
+        "blog_post": 0.0004,
+        "news_article": 0.0007,
+        "academic_essay": 0.0002,
+        "marketing_copy": 0,
+        "discussion_board": 0,
+        "application_essay": 0
+      }
+    }
+  ]
+}

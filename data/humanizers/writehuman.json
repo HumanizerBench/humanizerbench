@@ -1,0 +1,25 @@
+{
+  "slug": "writehuman",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 83.59,
+      "bypass_rate": 0.8449,
+      "detector_breakdown": {
+        "gptzero": 0.7816,
+        "winston": 0.8455,
+        "zerogpt": 0.7427,
+        "copyleaks": 0.6869,
+        "originality": 0.4634
+      },
+      "category_breakdown": {
+        "blog_post": 0.8759,
+        "news_article": 0.9299,
+        "academic_essay": 0.8763,
+        "marketing_copy": 0.7574,
+        "discussion_board": 0.9739,
+        "application_essay": 0.763
+      }
+    }
+  ]
+}

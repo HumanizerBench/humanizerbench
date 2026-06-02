@@ -1,0 +1,25 @@
+{
+  "slug": "super-humanizer",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 64.75,
+      "bypass_rate": 0.475,
+      "detector_breakdown": {
+        "gptzero": 0.3686,
+        "winston": 0.446,
+        "zerogpt": 0.522,
+        "copyleaks": 0.5333,
+        "originality": 0.4744
+      },
+      "category_breakdown": {
+        "blog_post": 0.7344,
+        "news_article": 0.0005,
+        "academic_essay": 0.805,
+        "marketing_copy": 0.3625,
+        "discussion_board": 0.6788,
+        "application_essay": 0.1337
+      }
+    }
+  ]
+}

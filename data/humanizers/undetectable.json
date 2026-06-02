@@ -1,0 +1,25 @@
+{
+  "slug": "undetectable",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 80.09,
+      "bypass_rate": 0.9407,
+      "detector_breakdown": {
+        "gptzero": 0.9513,
+        "winston": 0.9673,
+        "zerogpt": 0.7832,
+        "copyleaks": 0.7458,
+        "originality": 0.6632
+      },
+      "category_breakdown": {
+        "blog_post": 0.9217,
+        "news_article": 0.9787,
+        "academic_essay": 0.9969,
+        "marketing_copy": 0.8705,
+        "discussion_board": 1,
+        "application_essay": 0.9249
+      }
+    }
+  ]
+}

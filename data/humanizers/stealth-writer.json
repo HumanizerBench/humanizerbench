@@ -1,0 +1,25 @@
+{
+  "slug": "stealth-writer",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 84.47,
+      "bypass_rate": 0.895,
+      "detector_breakdown": {
+        "gptzero": 0.4865,
+        "winston": 0.994,
+        "zerogpt": 0.8673,
+        "copyleaks": 0.8667,
+        "originality": 0.5091
+      },
+      "category_breakdown": {
+        "blog_post": 0.8499,
+        "news_article": 0.971,
+        "academic_essay": 0.9258,
+        "marketing_copy": 0.934,
+        "discussion_board": 0.978,
+        "application_essay": 0.7906
+      }
+    }
+  ]
+}

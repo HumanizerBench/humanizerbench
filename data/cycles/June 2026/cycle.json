@@ -1,0 +1,22 @@
+{
+  "cycle": "June 2026",
+  "counts": {
+    "samples": 30,
+    "tests": 390,
+    "detector_scores": 1950,
+    "humanizers": 13,
+    "detectors": 6
+  },
+  "files": {
+    "leaderboard.json": "1d09c25ae770d2560677dd02a13e57130ccf1fb1d0a66614ec9c21b565492158",
+    "nonce.txt": "2c55a947a02a84d476c3aeacdc0041a5c7b8328b025e96ac1f5c07c538d32244",
+    "prompts.json": "d33c463c08036ca0729f52280441db03fa74bc8a6fffd159fbcf53d1cbdf3828",
+    "templates.json": "d2b8e291793e1070cdf426f9769380c8e9083ce7bd254fa1cf1626ab11499e96",
+    "banks.json": "d519e94db3f7f1e57a75780990046140aca36289648ff22237bdb8fa16962fa4",
+    "select-placeholders.js": "f8bae5461a7c6c1a7315c2a17e4eb85eabeddbe9d0c17502dc5e4a04d9c9d80f",
+    "samples.json": "e82594be6251062ea88632cb58d0336ee235b91b1e18d4a6790377196a368d5f",
+    "tests.json": "72a0dcd2184458dae8718c96ef2880a76717b2712db6fbc798595226e3b5c1d7",
+    "detector-scores.json": "1dd3c93b43e1c67f9c682a4944d099834e40267ef52c8c0972fc24323e608ba7",
+    "scoring.js": "e0f3a898129ec37d09b74ca6fcf6ac165bdf53937f434a1ec613c91e7f2211da"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "hix-bypass",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 83.52,
+      "bypass_rate": 0.8521,
+      "detector_breakdown": {
+        "gptzero": 0.2064,
+        "winston": 0.9678,
+        "zerogpt": 0.8875,
+        "copyleaks": 0.8138,
+        "originality": 0.3993
+      },
+      "category_breakdown": {
+        "blog_post": 0.902,
+        "news_article": 0.7373,
+        "academic_essay": 0.8156,
+        "marketing_copy": 0.8501,
+        "discussion_board": 0.98,
+        "application_essay": 0.8342
+      }
+    }
+  ]
+}

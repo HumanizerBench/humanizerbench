@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# editor
+.idea/
+.vscode/
+
+# Agent rules + harness state (stays local; not for public surface)
+CLAUDE.md
+.claude/

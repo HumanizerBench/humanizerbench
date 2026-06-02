@@ -1,0 +1,25 @@
+{
+  "slug": "humanize-ai-pro",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 68.05,
+      "bypass_rate": 0.546,
+      "detector_breakdown": {
+        "gptzero": 0.7192,
+        "winston": 0.646,
+        "zerogpt": 0.6417,
+        "copyleaks": 0.384,
+        "originality": 0.3274
+      },
+      "category_breakdown": {
+        "blog_post": 0.4866,
+        "news_article": 0.3107,
+        "academic_essay": 0.8856,
+        "marketing_copy": 0.1711,
+        "discussion_board": 0.9996,
+        "application_essay": 0.5317
+      }
+    }
+  ]
+}

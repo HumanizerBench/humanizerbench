@@ -1,0 +1,25 @@
+{
+  "slug": "humbot",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 80.28,
+      "bypass_rate": 0.7688,
+      "detector_breakdown": {
+        "gptzero": 0.2571,
+        "winston": 0.9095,
+        "zerogpt": 0.8073,
+        "copyleaks": 0.8479,
+        "originality": 0.474
+      },
+      "category_breakdown": {
+        "blog_post": 0.8006,
+        "news_article": 0.8631,
+        "academic_essay": 0.8342,
+        "marketing_copy": 0.9078,
+        "discussion_board": 0.9237,
+        "application_essay": 0.4079
+      }
+    }
+  ]
+}

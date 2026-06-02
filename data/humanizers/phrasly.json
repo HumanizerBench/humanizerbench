@@ -1,0 +1,25 @@
+{
+  "slug": "phrasly",
+  "points": [
+    {
+      "cycle": "June 2026",
+      "composite": 71.1,
+      "bypass_rate": 0.769,
+      "detector_breakdown": {
+        "gptzero": 0.8825,
+        "winston": 0.6741,
+        "zerogpt": 0.6185,
+        "copyleaks": 0.7333,
+        "originality": 0.7083
+      },
+      "category_breakdown": {
+        "blog_post": 0.8488,
+        "news_article": 0.943,
+        "academic_essay": 0.9486,
+        "marketing_copy": 0.5707,
+        "discussion_board": 0.7433,
+        "application_essay": 0.6336
+      }
+    }
+  ]
+}
