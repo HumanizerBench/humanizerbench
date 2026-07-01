@@ -2,6 +2,27 @@
   "slug": "ai-humanize-io",
   "points": [
     {
+      "cycle": "July 2026",
+      "composite": 59.66,
+      "bypass_rate": 0.7599,
+      "detector_breakdown": {
+        "gptzero": 0.6581,
+        "winston": 0.7715,
+        "zerogpt": 0.8279,
+        "copyleaks": 0.7267,
+        "originality": 0.5302
+      },
+      "category_breakdown": {
+        "blog_post": 0.8774,
+        "news_article": 1,
+        "academic_essay": 0.9392,
+        "business_email": 0.0094,
+        "marketing_copy": 0.7868,
+        "discussion_board": 0.9761,
+        "application_essay": 0.5834
+      }
+    },
+    {
       "cycle": "June 2026",
       "composite": 72.95,
       "bypass_rate": 0.7921,
