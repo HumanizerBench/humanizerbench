@@ -2,6 +2,27 @@
   "slug": "stealth-writer",
   "points": [
     {
+      "cycle": "July 2026",
+      "composite": 68.07,
+      "bypass_rate": 0.8124,
+      "detector_breakdown": {
+        "gptzero": 0.365,
+        "winston": 0.8938,
+        "zerogpt": 0.8954,
+        "copyleaks": 0.8182,
+        "originality": 0.4595
+      },
+      "category_breakdown": {
+        "blog_post": 0.961,
+        "news_article": 1,
+        "academic_essay": 0.7946,
+        "business_email": 0.417,
+        "marketing_copy": 0.8592,
+        "discussion_board": 0.9703,
+        "application_essay": 0.66
+      }
+    },
+    {
       "cycle": "June 2026",
       "composite": 84.47,
       "bypass_rate": 0.895,
