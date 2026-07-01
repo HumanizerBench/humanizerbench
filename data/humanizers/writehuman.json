@@ -2,6 +2,27 @@
   "slug": "writehuman",
   "points": [
     {
+      "cycle": "July 2026",
+      "composite": 73.07,
+      "bypass_rate": 0.816,
+      "detector_breakdown": {
+        "gptzero": 0.6077,
+        "winston": 0.8617,
+        "zerogpt": 0.8865,
+        "copyleaks": 0.6099,
+        "originality": 0.5355
+      },
+      "category_breakdown": {
+        "blog_post": 0.8937,
+        "news_article": 0.8245,
+        "academic_essay": 0.8679,
+        "business_email": 0.2291,
+        "marketing_copy": 0.8851,
+        "discussion_board": 0.9823,
+        "application_essay": 0.8233
+      }
+    },
+    {
       "cycle": "June 2026",
       "composite": 83.59,
       "bypass_rate": 0.8449,
