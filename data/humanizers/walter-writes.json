@@ -2,6 +2,27 @@
   "slug": "walter-writes",
   "points": [
     {
+      "cycle": "July 2026",
+      "composite": 62.84,
+      "bypass_rate": 0.8059,
+      "detector_breakdown": {
+        "gptzero": 0.8247,
+        "winston": 0.7542,
+        "zerogpt": 0.8428,
+        "copyleaks": 0.5868,
+        "originality": 0.5094
+      },
+      "category_breakdown": {
+        "blog_post": 0.9595,
+        "news_article": 0.9758,
+        "academic_essay": 0.7804,
+        "business_email": 0.0021,
+        "marketing_copy": 0.9448,
+        "discussion_board": 0.9991,
+        "application_essay": 0.7592
+      }
+    },
+    {
       "cycle": "June 2026",
       "composite": 67.24,
       "bypass_rate": 0.73,
