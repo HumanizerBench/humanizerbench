@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "template": "Write a 400-word argumentative essay arguing that [TOPIC].",
+    "resolved": "Write a 400-word argumentative essay arguing that the four-day work week as a productivity strategy.",
+    "placeholders": {
+      "TOPIC": "the four-day work week as a productivity strategy"
+    }
+  },
+  {
+    "slug": "business_email",
+    "category": "business_email",
+    "template": "Write a 250-word email to my team announcing [POLICY].",
+    "resolved": "Write a 250-word email to my team announcing shifting our annual review cycle from December to April.",
+    "placeholders": {
+      "POLICY": "shifting our annual review cycle from December to April"
+    }
+  },
+  {
+    "slug": "cover_letter",
+    "category": "application_essay",
+    "template": "Write a 400-word cover letter for a [ROLE] position.",
+    "resolved": "Write a 400-word cover letter for a mid-career data scientist position.",
+    "placeholders": {
+      "ROLE": "mid-career data scientist"
+    }
+  },
+  {
+    "slug": "discussion_post",
+    "category": "discussion_board",
+    "template": "Write a 250-word response to this prompt: [PROMPT].",
+    "resolved": "Write a 250-word response to this prompt: How should communities balance public art funding with infrastructure needs?.",
+    "placeholders": {
+      "PROMPT": "How should communities balance public art funding with infrastructure needs?"
+    }
+  },
+  {
+    "slug": "howto_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word guide on how to [TASK].",
+    "resolved": "Write a 400-word guide on how to host a five-course dinner party for eight people.",
+    "placeholders": {
+      "TASK": "host a five-course dinner party for eight people"
+    }
+  },
+  {
+    "slug": "landing_copy",
+    "category": "marketing_copy",
+    "template": "Write 300 words of landing page copy for a SaaS product that does [THING].",
+    "resolved": "Write 300 words of landing page copy for a SaaS product that does managing a tight monthly budget.",
+    "placeholders": {
+      "THING": "managing a tight monthly budget"
+    }
+  },
+  {
+    "slug": "listicle_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word blog post titled '10 Tips for [THING]' in a casual tone.",
+    "resolved": "Write a 400-word blog post titled '10 Tips for running your first 10k race' in a casual tone.",
+    "placeholders": {
+      "THING": "running your first 10k race"
+    }
+  },
+  {
+    "slug": "lit_review",
+    "category": "academic_essay",
+    "template": "Write a 400-word literature review introduction on [TOPIC].",
+    "resolved": "Write a 400-word literature review introduction on the impact of generative AI on knowledge work.",
+    "placeholders": {
+      "TOPIC": "the impact of generative AI on knowledge work"
+    }
+  },
+  {
+    "slug": "news_article",
+    "category": "news_article",
+    "template": "Write a 400-word news article about [TOPIC].",
+    "resolved": "Write a 400-word news article about the trade-offs of universal basic income pilots.",
+    "placeholders": {
+      "TOPIC": "the trade-offs of universal basic income pilots"
+    }
+  },
+  {
+    "slug": "personal_statement",
+    "category": "application_essay",
+    "template": "Write a 350-word personal statement explaining why I want to study [FIELD].",
+    "resolved": "Write a 350-word personal statement explaining why I want to study computational neuroscience.",
+    "placeholders": {
+      "FIELD": "computational neuroscience"
+    }
+  },
+  {
+    "slug": "product_desc",
+    "category": "marketing_copy",
+    "template": "Write a 200-word product description for [ITEM].",
+    "resolved": "Write a 200-word product description for a heat-treated leather toiletry pouch.",
+    "placeholders": {
+      "ITEM": "a heat-treated leather toiletry pouch"
+    }
+  }
+]
