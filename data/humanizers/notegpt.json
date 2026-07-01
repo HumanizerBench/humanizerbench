@@ -2,6 +2,27 @@
   "slug": "notegpt",
   "points": [
     {
+      "cycle": "July 2026",
+      "composite": 44.04,
+      "bypass_rate": 0.0001,
+      "detector_breakdown": {
+        "gptzero": 0,
+        "winston": 0.0016,
+        "zerogpt": 0.6457,
+        "copyleaks": 0,
+        "originality": 0.0005
+      },
+      "category_breakdown": {
+        "blog_post": 0.0001,
+        "news_article": 0.0007,
+        "academic_essay": 0,
+        "business_email": 0,
+        "marketing_copy": 0,
+        "discussion_board": 0,
+        "application_essay": 0
+      }
+    },
+    {
       "cycle": "June 2026",
       "composite": 45.34,
       "bypass_rate": 0.0002,
