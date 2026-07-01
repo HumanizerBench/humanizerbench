@@ -2,6 +2,27 @@
   "slug": "humbot",
   "points": [
     {
+      "cycle": "July 2026",
+      "composite": 66.42,
+      "bypass_rate": 0.7069,
+      "detector_breakdown": {
+        "gptzero": 0.1212,
+        "winston": 0.8125,
+        "zerogpt": 0.8582,
+        "copyleaks": 0.7879,
+        "originality": 0.3675
+      },
+      "category_breakdown": {
+        "blog_post": 0.8551,
+        "news_article": 0.9763,
+        "academic_essay": 0.6143,
+        "business_email": 0.0264,
+        "marketing_copy": 0.9361,
+        "discussion_board": 0.916,
+        "application_essay": 0.5229
+      }
+    },
+    {
       "cycle": "June 2026",
       "composite": 80.28,
       "bypass_rate": 0.7688,
