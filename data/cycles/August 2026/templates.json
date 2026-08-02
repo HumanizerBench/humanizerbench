@@ -1,0 +1,68 @@
+[
+  {
+    "id": "119183b4-12fb-4feb-ab64-82ef35e911ad",
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "prompt_text": "Write a 400-word argumentative essay arguing that [TOPIC]."
+  },
+  {
+    "id": "54586dcf-5eb3-4189-8b07-1bdd5456b84d",
+    "slug": "business_email",
+    "category": "business_email",
+    "prompt_text": "Write a 250-word email to my team announcing [POLICY]."
+  },
+  {
+    "id": "94430ad3-a42e-4387-bbfb-e469b1b3cf73",
+    "slug": "cover_letter",
+    "category": "application_essay",
+    "prompt_text": "Write a 400-word cover letter for a [ROLE] position."
+  },
+  {
+    "id": "9fc7ef0e-67cd-4de5-91a6-495e756d158a",
+    "slug": "discussion_post",
+    "category": "discussion_board",
+    "prompt_text": "Write a 250-word response to this prompt: [PROMPT]."
+  },
+  {
+    "id": "f5cda662-36f7-4198-a698-361efb0815ce",
+    "slug": "howto_blog",
+    "category": "blog_post",
+    "prompt_text": "Write a 400-word guide on how to [TASK]."
+  },
+  {
+    "id": "8c236c54-25f2-4c79-bcfb-b141f38c0bc4",
+    "slug": "landing_copy",
+    "category": "marketing_copy",
+    "prompt_text": "Write 300 words of landing page copy for a SaaS product that does [THING]."
+  },
+  {
+    "id": "cc8ac8d4-3474-4519-a8a9-3d27e14fd3e0",
+    "slug": "listicle_blog",
+    "category": "blog_post",
+    "prompt_text": "Write a 400-word blog post titled '10 Tips for [THING]' in a casual tone."
+  },
+  {
+    "id": "b54fd33b-3623-42e2-8893-75ca83ab65aa",
+    "slug": "lit_review",
+    "category": "academic_essay",
+    "prompt_text": "Write a 400-word literature review introduction on [TOPIC]."
+  },
+  {
+    "id": "d81babb2-682b-41b4-b2d0-ae7cb819ed19",
+    "slug": "news_article",
+    "category": "news_article",
+    "prompt_text": "Write a 400-word news article about [TOPIC]."
+  },
+  {
+    "id": "4e0bcc3c-74f1-467a-a24e-ac82074482d9",
+    "slug": "personal_statement",
+    "category": "application_essay",
+    "prompt_text": "Write a 350-word personal statement explaining why I want to study [FIELD]."
+  },
+  {
+    "id": "afd4763c-345f-41fb-8f9e-1bd3aac9fa19",
+    "slug": "product_desc",
+    "category": "marketing_copy",
+    "prompt_text": "Write a 200-word product description for [ITEM]."
+  }
+]
