@@ -2,6 +2,27 @@
   "slug": "phrasly",
   "points": [
     {
+      "cycle": "August 2026",
+      "composite": 63.3,
+      "bypass_rate": 0.7644,
+      "detector_breakdown": {
+        "gptzero": 0.8365,
+        "winston": 0.5664,
+        "zerogpt": 0.6637,
+        "copyleaks": 0.8182,
+        "originality": 0.6964
+      },
+      "category_breakdown": {
+        "blog_post": 0.9071,
+        "news_article": 0.9763,
+        "academic_essay": 0.8133,
+        "business_email": 0.4927,
+        "marketing_copy": 0.6461,
+        "discussion_board": 0.8475,
+        "application_essay": 0.6793
+      }
+    },
+    {
       "cycle": "July 2026",
       "composite": 61.47,
       "bypass_rate": 0.7336,
