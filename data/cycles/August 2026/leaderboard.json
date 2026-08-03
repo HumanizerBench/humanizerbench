@@ -1,6 +1,6 @@
 {
   "cycle": "August 2026",
-  "generated_at": "2026-08-02T00:45:39.673Z",
+  "generated_at": "2026-08-03T01:13:58.784Z",
   "methodology_version": "1.2.0",
   "scoring_version": "1.3.0",
   "prompt_set_version": "1.0.0",
@@ -52,8 +52,10 @@
       "started_at": "2026-08-01T21:22:45.897254+00:00",
       "ended_at": "2026-08-01T21:34:44.884+00:00",
       "total_duration_ms": 716161,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/writehuman/9cf4ee32-ced5-4eb6-9859-68427f1bf209/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC93cml0ZWh1bWFuLzljZjRlZTMyLWNlZDUtNGViNi05ODU5LTY4NDI3ZjFiZjIwOS9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU3MTk2MzUsImV4cCI6MTgxNzI1NTYzNX0.i6w71z1yw0Do92w7OMo65jifVmJI36BgZlaylk41FTI"
+      ],
       "test_markers": [
         {
           "test_id": "02f41002-43f9-4925-a13c-b5cfd5c9d6bb",
@@ -294,8 +296,10 @@
       "started_at": "2026-08-01T21:46:49.303856+00:00",
       "ended_at": "2026-08-01T21:55:49.732+00:00",
       "total_duration_ms": 539710,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/stealth-writer/5e77ba4f-d45a-4ed1-a602-0f5973073551/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9zdGVhbHRoLXdyaXRlci81ZTc3YmE0Zi1kNDVhLTRlZDEtYTYwMi0wZjU5NzMwNzM1NTEvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NzE5NjM1LCJleHAiOjE4MTcyNTU2MzV9.liX3v3FhKYcXm98KF2TwMF9L6JtGTbWNKE6Ewl_WqR8"
+      ],
       "test_markers": [
         {
           "test_id": "07e7320e-a3bd-4b1e-aac8-ba18f2d4215e",
@@ -536,8 +540,10 @@
       "started_at": "2026-08-01T21:57:41.440948+00:00",
       "ended_at": "2026-08-01T22:07:02.376+00:00",
       "total_duration_ms": 560644,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/hix-bypass/e8bfe145-b3d3-4223-ad00-3e1a2983c2f5/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9oaXgtYnlwYXNzL2U4YmZlMTQ1LWIzZDMtNDIyMy1hZDAwLTNlMWEyOTgzYzJmNS9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU3MTk2MzUsImV4cCI6MTgxNzI1NTYzNX0.wronsjUyafDkfNdh6ykYEIe98FWo2Rixhzzrr3eQxEk"
+      ],
       "test_markers": [
         {
           "test_id": "00dee948-d561-4026-8717-3ed5d6449c18",
@@ -778,8 +784,10 @@
       "started_at": "2026-08-01T22:26:23.545449+00:00",
       "ended_at": "2026-08-01T22:41:10.327+00:00",
       "total_duration_ms": 885699,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/undetectable/6e3f0086-8fa4-47be-8add-5a1a941df30f/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC91bmRldGVjdGFibGUvNmUzZjAwODYtOGZhNC00N2JlLThhZGQtNWExYTk0MWRmMzBmL3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTcxOTYzNSwiZXhwIjoxODE3MjU1NjM1fQ.PeG9t70hDE6qLWtXKDyWx0amGEpRLhhR9iCljG8AE-Q"
+      ],
       "test_markers": [
         {
           "test_id": "0abf042e-29e0-4435-a255-6384be006e1b",
@@ -1020,8 +1028,10 @@
       "started_at": "2026-08-01T22:47:12.380637+00:00",
       "ended_at": "2026-08-01T23:03:37.082+00:00",
       "total_duration_ms": 984287,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/stealthgpt/076f849b-5ead-434c-95d6-0e670021a19b/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9zdGVhbHRoZ3B0LzA3NmY4NDliLTVlYWQtNDM0Yy05NWQ2LTBlNjcwMDIxYTE5Yi9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU3MTk2MzYsImV4cCI6MTgxNzI1NTYzNn0.fXMuDVrQHgPJCZtm0OYy09p8J-V6U6_UGSaWAret6CQ"
+      ],
       "test_markers": [
         {
           "test_id": "09389ee8-5db4-4171-b588-7dd6d5865dfd",
@@ -1262,8 +1272,10 @@
       "started_at": "2026-08-01T23:05:52.684416+00:00",
       "ended_at": "2026-08-01T23:23:01.09+00:00",
       "total_duration_ms": 1027619,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/phrasly/b835c64a-d9ed-4cee-9676-49c86e1339e4/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9waHJhc2x5L2I4MzVjNjRhLWQ5ZWQtNGNlZS05Njc2LTQ5Yzg2ZTEzMzllNC9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU3MTk2MzYsImV4cCI6MTgxNzI1NTYzNn0.F9GsF3hmpEP24JXSAK7YM_9pzX83T-s1ttS0kHkdRDU"
+      ],
       "test_markers": [
         {
           "test_id": "039a69e1-a1f1-44b1-8dcf-37fbe6bbc7c1",
@@ -1504,8 +1516,10 @@
       "started_at": "2026-08-01T23:23:42.442122+00:00",
       "ended_at": "2026-08-01T23:36:17.466+00:00",
       "total_duration_ms": 753864,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/humbot/b91e4449-3c88-451d-9a8e-7b6643a6c76a/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9odW1ib3QvYjkxZTQ0NDktM2M4OC00NTFkLTlhOGUtN2I2NjQzYTZjNzZhL3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTcxOTYzNiwiZXhwIjoxODE3MjU1NjM2fQ.PQidue9nGL2xQtfvF9bp-1Cb43rrizMIOGzCJC3Ygy8"
+      ],
       "test_markers": [
         {
           "test_id": "0231165e-ceb7-464f-8901-7ab659c521f6",
@@ -1746,8 +1760,10 @@
       "started_at": "2026-08-01T23:37:12.680714+00:00",
       "ended_at": "2026-08-01T23:53:03.424+00:00",
       "total_duration_ms": 948492,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/walter-writes/228f43d6-35c0-4fac-8e0d-ce0d8196a7bd/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC93YWx0ZXItd3JpdGVzLzIyOGY0M2Q2LTM1YzAtNGZhYy04ZTBkLWNlMGQ4MTk2YTdiZC9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU3MTk2MzcsImV4cCI6MTgxNzI1NTYzN30.SI2w-IgmqM381V_WU0DxHtWSLNoG-xrBMo7n_Dwk974"
+      ],
       "test_markers": [
         {
           "test_id": "05aa0d5d-2374-4d67-9e31-62850097d9eb",
@@ -1988,8 +2004,10 @@
       "started_at": "2026-08-01T23:55:06.934557+00:00",
       "ended_at": "2026-08-02T00:08:07.676+00:00",
       "total_duration_ms": 777224,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/ai-humanize-io/d5969a18-f1a0-43fa-a03b-38c67ffb7579/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9haS1odW1hbml6ZS1pby9kNTk2OWExOC1mMWEwLTQzZmEtYTAzYi0zOGM2N2ZmYjc1NzkvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NzE5NjM3LCJleHAiOjE4MTcyNTU2Mzd9.AJltL4IQxHttlplQRMmCMMZJwXnwGy6IuuaPp_x_Ssc"
+      ],
       "test_markers": [
         {
           "test_id": "0f099a65-9eff-4d45-90ee-f8b632576e95",
@@ -2230,8 +2248,10 @@
       "started_at": "2026-08-02T00:09:16.274075+00:00",
       "ended_at": "2026-08-02T00:19:56.454+00:00",
       "total_duration_ms": 639420,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/grammarly/f4efe366-ae66-4491-8f5d-dd9375d5e857/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9ncmFtbWFybHkvZjRlZmUzNjYtYWU2Ni00NDkxLThmNWQtZGQ5Mzc1ZDVlODU3L3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTcxOTYzNywiZXhwIjoxODE3MjU1NjM3fQ.Yp9dmNoaLgM9DrkTOlkmvNjIPZzII5gY7COyTtWEY1Y"
+      ],
       "test_markers": [
         {
           "test_id": "023510e8-15ff-46dc-bdb6-4616c558feb9",
@@ -2472,8 +2492,10 @@
       "started_at": "2026-08-02T00:20:40.383581+00:00",
       "ended_at": "2026-08-02T00:31:38.916+00:00",
       "total_duration_ms": 657651,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/humanize-ai-pro/2efb2cfe-6096-428e-92d6-e9f87bf1c545/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9odW1hbml6ZS1haS1wcm8vMmVmYjJjZmUtNjA5Ni00MjhlLTkyZDYtZTlmODdiZjFjNTQ1L3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTcxOTYzNywiZXhwIjoxODE3MjU1NjM3fQ.eUnXYViJuVSfiRAww5auxBWWq06kPlZgtnZHrobFaf4"
+      ],
       "test_markers": [
         {
           "test_id": "0d406c02-e2ee-4f33-bd72-61bc5054d9f1",
@@ -2714,8 +2736,10 @@
       "started_at": "2026-08-02T00:32:24.016033+00:00",
       "ended_at": "2026-08-02T00:34:03.875+00:00",
       "total_duration_ms": 99588,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/notegpt/0d12fae3-fbd0-4fcf-9729-adabb760690d/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9ub3RlZ3B0LzBkMTJmYWUzLWZiZDAtNGZjZi05NzI5LWFkYWJiNzYwNjkwZC9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU3MTk2MzgsImV4cCI6MTgxNzI1NTYzOH0.t3AGIEhr2f2v_8lJB7dTfeVqQqMs-JXbqNZrChGTx7g"
+      ],
       "test_markers": [
         {
           "test_id": "02b37a59-acb7-4655-bd1f-e71adac6fc18",
@@ -2949,8 +2973,10 @@
       "started_at": "2026-08-02T00:34:25.327795+00:00",
       "ended_at": "2026-08-02T00:35:11.106+00:00",
       "total_duration_ms": 44701,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/super-humanizer/0cccf411-c27d-4c13-9248-7f230772682f/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9zdXBlci1odW1hbml6ZXIvMGNjY2Y0MTEtYzI3ZC00YzEzLTkyNDgtN2YyMzA3NzI2ODJmL3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTcxOTYzOCwiZXhwIjoxODE3MjU1NjM4fQ.EPpVdSOA1GzgZQkPhhlN1QKiqoZS-Bvv6wHKByq7T-E"
+      ],
       "test_markers": [
         {
           "test_id": "04191e1f-c8fb-4270-b224-e6e815b2d1e8",
@@ -2967,8 +2993,10 @@
       "started_at": "2026-08-02T00:35:19.622141+00:00",
       "ended_at": "2026-08-02T00:35:25.967+00:00",
       "total_duration_ms": 6061,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/notegpt/56ce0c94-d3da-4f46-b671-06d5beb8743e/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9ub3RlZ3B0LzU2Y2UwYzk0LWQzZGEtNGY0Ni1iNjcxLTA2ZDViZWI4NzQzZS9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU3MTk2MzgsImV4cCI6MTgxNzI1NTYzOH0.AtQlqgdRJmMMcTVi5VhK8P94LoSM0OEjUrOqCxa-phg"
+      ],
       "test_markers": [
         {
           "test_id": "ff287d1c-71d1-45bb-906e-30045a1e441d",
@@ -2985,8 +3013,10 @@
       "started_at": "2026-08-02T00:35:27.165694+00:00",
       "ended_at": "2026-08-02T00:44:26.612+00:00",
       "total_duration_ms": 537563,
-      "segment_count": 0,
-      "segment_urls": [],
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/August%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/super-humanizer/281c0101-7890-46c0-8749-713ed747feee/recording.webm?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL0F1Z3VzdCAyMDI2LzNhMjg4ZmYxLTdkYmYtNGZlYy05YjY5LTMxMGY5NDBiNmQ1OC9zdXBlci1odW1hbml6ZXIvMjgxYzAxMDEtNzg5MC00NmMwLTg3NDktNzEzZWQ3NDdmZWVlL3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTcxOTYzOCwiZXhwIjoxODE3MjU1NjM4fQ._NOcWN8MT2F4OSe4Ijzn19vEWB4QaE9NTo1XRtcfecY"
+      ],
       "test_markers": [
         {
           "test_id": "05874e69-22b2-44d5-ba3f-4e7278926ab8",
@@ -3222,10 +3252,10 @@
       "rank_change": 0,
       "last_tested_at": "2026-08-01T21:34:39.081+00:00",
       "scores": {
-        "composite": 83.45,
+        "composite": 76.69,
         "bypass_rate": 0.8914,
         "meaning_preservation": 0.7165,
-        "readability": 1,
+        "readability": 0.5776,
         "consistency_across_categories": 0.8079
       },
       "score_intervals": {
@@ -3274,10 +3304,10 @@
       "rank_change": 1,
       "last_tested_at": "2026-08-02T00:31:08.282+00:00",
       "scores": {
-        "composite": 79.03,
+        "composite": 71.4,
         "bypass_rate": 0.8354,
         "meaning_preservation": 0.6712,
-        "readability": 1,
+        "readability": 0.5233,
         "consistency_across_categories": 0.6461
       },
       "score_intervals": {
@@ -3320,10 +3350,10 @@
       "rank_change": 1,
       "last_tested_at": "2026-08-01T21:55:45.351+00:00",
       "scores": {
-        "composite": 78.09,
+        "composite": 69.83,
         "bypass_rate": 0.7966,
         "meaning_preservation": 0.7198,
-        "readability": 0.9529,
+        "readability": 0.437,
         "consistency_across_categories": 0.7353
       },
       "score_intervals": {
@@ -3372,10 +3402,10 @@
       "rank_change": 2,
       "last_tested_at": "2026-08-01T22:06:59.361+00:00",
       "scores": {
-        "composite": 77.2,
+        "composite": 67.93,
         "bypass_rate": 0.7524,
         "meaning_preservation": 0.7667,
-        "readability": 0.9625,
+        "readability": 0.3833,
         "consistency_across_categories": 0.6663
       },
       "score_intervals": {
@@ -3424,10 +3454,10 @@
       "rank_change": 0,
       "last_tested_at": "2026-08-01T23:36:13.774+00:00",
       "scores": {
-        "composite": 75.79,
+        "composite": 66.95,
         "bypass_rate": 0.7169,
         "meaning_preservation": 0.7545,
-        "readability": 0.9857,
+        "readability": 0.4333,
         "consistency_across_categories": 0.6757
       },
       "score_intervals": {
@@ -3476,10 +3506,10 @@
       "rank_change": 4,
       "last_tested_at": "2026-08-02T00:08:01.84+00:00",
       "scores": {
-        "composite": 71.83,
+        "composite": 64.57,
         "bypass_rate": 0.7083,
         "meaning_preservation": 0.644,
-        "readability": 1,
+        "readability": 0.5464,
         "consistency_across_categories": 0.7472
       },
       "score_intervals": {
@@ -3523,72 +3553,15 @@
       "flagged_test_count": 0
     },
     {
-      "slug": "undetectable",
-      "rank": 7,
-      "rank_change": -5,
-      "last_tested_at": "2026-08-01T22:41:00.699+00:00",
-      "scores": {
-        "composite": 68.65,
-        "bypass_rate": 0.8596,
-        "meaning_preservation": 0.721,
-        "readability": 1,
-        "consistency_across_categories": 0.647
-      },
-      "score_intervals": {
-        "bypass_rate_ci_95": [
-          0.7587,
-          0.9477
-        ],
-        "meaning_preservation_ci_95": [
-          0.6464,
-          0.7797
-        ]
-      },
-      "penalties_applied": [
-        {
-          "code": "severe_meaning_drift",
-          "count": 3,
-          "score_delta": -3
-        },
-        {
-          "code": "length_inflation",
-          "count": 24,
-          "score_delta": -10
-        }
-      ],
-      "confidence": "medium",
-      "detector_breakdown": {
-        "gptzero": 0.8661,
-        "winston": 0.875,
-        "zerogpt": 0.8983,
-        "copyleaks": 0.6527,
-        "originality": 0.661
-      },
-      "category_breakdown": {
-        "blog_post": 0.8861,
-        "news_article": 0.864,
-        "academic_essay": 0.9331,
-        "business_email": 0.0182,
-        "marketing_copy": 0.9971,
-        "discussion_board": 0.9993,
-        "application_essay": 0.9709
-      },
-      "plan_tier_used": "20K words/month",
-      "settings_used": null,
-      "sample_count": 33,
-      "successful_test_count": 33,
-      "flagged_test_count": 0
-    },
-    {
       "slug": "phrasly",
-      "rank": 8,
-      "rank_change": 1,
+      "rank": 7,
+      "rank_change": 2,
       "last_tested_at": "2026-08-01T23:22:56.721+00:00",
       "scores": {
-        "composite": 68.55,
+        "composite": 63.3,
         "bypass_rate": 0.7644,
         "meaning_preservation": 0.6289,
-        "readability": 1,
+        "readability": 0.6718,
         "consistency_across_categories": 0.8319
       },
       "score_intervals": {
@@ -3637,15 +3610,72 @@
       "flagged_test_count": 0
     },
     {
+      "slug": "undetectable",
+      "rank": 8,
+      "rank_change": -6,
+      "last_tested_at": "2026-08-01T22:41:00.699+00:00",
+      "scores": {
+        "composite": 61.49,
+        "bypass_rate": 0.8596,
+        "meaning_preservation": 0.721,
+        "readability": 0.5524,
+        "consistency_across_categories": 0.647
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.7587,
+          0.9477
+        ],
+        "meaning_preservation_ci_95": [
+          0.6464,
+          0.7797
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_meaning_drift",
+          "count": 3,
+          "score_delta": -3
+        },
+        {
+          "code": "length_inflation",
+          "count": 24,
+          "score_delta": -10
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.8661,
+        "winston": 0.875,
+        "zerogpt": 0.8983,
+        "copyleaks": 0.6527,
+        "originality": 0.661
+      },
+      "category_breakdown": {
+        "blog_post": 0.8861,
+        "news_article": 0.864,
+        "academic_essay": 0.9331,
+        "business_email": 0.0182,
+        "marketing_copy": 0.9971,
+        "discussion_board": 0.9993,
+        "application_essay": 0.9709
+      },
+      "plan_tier_used": "20K words/month",
+      "settings_used": null,
+      "sample_count": 33,
+      "successful_test_count": 33,
+      "flagged_test_count": 0
+    },
+    {
       "slug": "walter-writes",
       "rank": 9,
       "rank_change": -2,
       "last_tested_at": "2026-08-01T23:52:58.726+00:00",
       "scores": {
-        "composite": 66.15,
+        "composite": 60.83,
         "bypass_rate": 0.6796,
         "meaning_preservation": 0.685,
-        "readability": 0.9853,
+        "readability": 0.6527,
         "consistency_across_categories": 0.7922
       },
       "score_intervals": {
@@ -3699,10 +3729,10 @@
       "rank_change": 1,
       "last_tested_at": "2026-08-02T00:44:21.409+00:00",
       "scores": {
-        "composite": 62.29,
+        "composite": 55.86,
         "bypass_rate": 0.4154,
         "meaning_preservation": 0.7311,
-        "readability": 0.9842,
+        "readability": 0.5824,
         "consistency_across_categories": 0.6702
       },
       "score_intervals": {
@@ -3751,10 +3781,10 @@
       "rank_change": 1,
       "last_tested_at": "2026-08-02T00:19:52.111+00:00",
       "scores": {
-        "composite": 56.19,
+        "composite": 52.91,
         "bypass_rate": 0,
         "meaning_preservation": 0.9435,
-        "readability": 1,
+        "readability": 0.7948,
         "consistency_across_categories": 1
       },
       "score_intervals": {
@@ -3797,10 +3827,10 @@
       "rank_change": -4,
       "last_tested_at": "2026-08-01T23:03:34.906+00:00",
       "scores": {
-        "composite": 49.85,
+        "composite": 45.55,
         "bypass_rate": 0.2753,
         "meaning_preservation": 0.6289,
-        "readability": 0.9776,
+        "readability": 0.7085,
         "consistency_across_categories": 0.7524
       },
       "score_intervals": {
