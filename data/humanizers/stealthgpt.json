@@ -2,6 +2,27 @@
   "slug": "stealthgpt",
   "points": [
     {
+      "cycle": "August 2026",
+      "composite": 45.55,
+      "bypass_rate": 0.2753,
+      "detector_breakdown": {
+        "gptzero": 0.5258,
+        "winston": 0.2517,
+        "zerogpt": 0.4601,
+        "copyleaks": 0.2424,
+        "originality": 0.2016
+      },
+      "category_breakdown": {
+        "blog_post": 0.4937,
+        "news_article": 0.0539,
+        "academic_essay": 0.3647,
+        "business_email": 0.0562,
+        "marketing_copy": 0.5854,
+        "discussion_board": 0.0299,
+        "application_essay": 0.0005
+      }
+    },
+    {
       "cycle": "July 2026",
       "composite": 61.52,
       "bypass_rate": 0.816,
