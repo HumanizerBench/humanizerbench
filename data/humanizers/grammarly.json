@@ -2,6 +2,27 @@
   "slug": "grammarly",
   "points": [
     {
+      "cycle": "August 2026",
+      "composite": 52.91,
+      "bypass_rate": 0,
+      "detector_breakdown": {
+        "gptzero": 0.0193,
+        "winston": 0.0013,
+        "zerogpt": 0.1373,
+        "copyleaks": 0,
+        "originality": 0
+      },
+      "category_breakdown": {
+        "blog_post": 0,
+        "news_article": 0,
+        "academic_essay": 0,
+        "business_email": 0,
+        "marketing_copy": 0,
+        "discussion_board": 0,
+        "application_essay": 0
+      }
+    },
+    {
       "cycle": "July 2026",
       "composite": 53.38,
       "bypass_rate": 0.0001,
