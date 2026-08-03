@@ -2,6 +2,27 @@
   "slug": "super-humanizer",
   "points": [
     {
+      "cycle": "August 2026",
+      "composite": 55.86,
+      "bypass_rate": 0.4154,
+      "detector_breakdown": {
+        "gptzero": 0.2704,
+        "winston": 0.3421,
+        "zerogpt": 0.6865,
+        "copyleaks": 0.4242,
+        "originality": 0.4658
+      },
+      "category_breakdown": {
+        "blog_post": 0.1017,
+        "news_article": 0.6667,
+        "academic_essay": 0.8331,
+        "business_email": 0,
+        "marketing_copy": 0.5062,
+        "discussion_board": 0.6881,
+        "application_essay": 0.1666
+      }
+    },
+    {
       "cycle": "July 2026",
       "composite": 54.13,
       "bypass_rate": 0.4234,
