@@ -2,6 +2,27 @@
   "slug": "undetectable",
   "points": [
     {
+      "cycle": "August 2026",
+      "composite": 61.49,
+      "bypass_rate": 0.8596,
+      "detector_breakdown": {
+        "gptzero": 0.8661,
+        "winston": 0.875,
+        "zerogpt": 0.8983,
+        "copyleaks": 0.6527,
+        "originality": 0.661
+      },
+      "category_breakdown": {
+        "blog_post": 0.8861,
+        "news_article": 0.864,
+        "academic_essay": 0.9331,
+        "business_email": 0.0182,
+        "marketing_copy": 0.9971,
+        "discussion_board": 0.9993,
+        "application_essay": 0.9709
+      }
+    },
+    {
       "cycle": "July 2026",
       "composite": 72.17,
       "bypass_rate": 0.9569,
