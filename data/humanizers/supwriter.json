@@ -1,0 +1,26 @@
+{
+  "slug": "supwriter",
+  "points": [
+    {
+      "cycle": "September 2026",
+      "composite": 72.8,
+      "bypass_rate": 0.8029,
+      "detector_breakdown": {
+        "gptzero": 0.2097,
+        "winston": 0.8154,
+        "zerogpt": 0.7786,
+        "copyleaks": 0.8528,
+        "originality": 0.785
+      },
+      "category_breakdown": {
+        "blog_post": 0.888,
+        "news_article": 0.9684,
+        "academic_essay": 0.9326,
+        "business_email": 0.0052,
+        "marketing_copy": 0.9955,
+        "discussion_board": 0.914,
+        "application_essay": 0.6563
+      }
+    }
+  ]
+}
