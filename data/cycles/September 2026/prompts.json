@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "template": "Write a 400-word argumentative essay arguing that [TOPIC].",
+    "resolved": "Write a 400-word argumentative essay arguing that the rise of long-form podcasts as a primary news source.",
+    "placeholders": {
+      "TOPIC": "the rise of long-form podcasts as a primary news source"
+    }
+  },
+  {
+    "slug": "business_email",
+    "category": "business_email",
+    "template": "Write a 250-word email to my team announcing [POLICY].",
+    "resolved": "Write a 250-word email to my team announcing expanding parental leave to twenty weeks for all employees.",
+    "placeholders": {
+      "POLICY": "expanding parental leave to twenty weeks for all employees"
+    }
+  },
+  {
+    "slug": "cover_letter",
+    "category": "application_essay",
+    "template": "Write a 400-word cover letter for a [ROLE] position.",
+    "resolved": "Write a 400-word cover letter for a policy analyst at a city government position.",
+    "placeholders": {
+      "ROLE": "policy analyst at a city government"
+    }
+  },
+  {
+    "slug": "discussion_post",
+    "category": "discussion_board",
+    "template": "Write a 250-word response to this prompt: [PROMPT].",
+    "resolved": "Write a 250-word response to this prompt: Why has the productivity of meetings become a cultural complaint?.",
+    "placeholders": {
+      "PROMPT": "Why has the productivity of meetings become a cultural complaint?"
+    }
+  },
+  {
+    "slug": "howto_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word guide on how to [TASK].",
+    "resolved": "Write a 400-word guide on how to renovate a small bathroom over a weekend.",
+    "placeholders": {
+      "TASK": "renovate a small bathroom over a weekend"
+    }
+  },
+  {
+    "slug": "landing_copy",
+    "category": "marketing_copy",
+    "template": "Write 300 words of landing page copy for a SaaS product that does [THING].",
+    "resolved": "Write 300 words of landing page copy for a SaaS product that does running your first 10k race.",
+    "placeholders": {
+      "THING": "running your first 10k race"
+    }
+  },
+  {
+    "slug": "listicle_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word blog post titled '10 Tips for [THING]' in a casual tone.",
+    "resolved": "Write a 400-word blog post titled '10 Tips for houseplants for low-light apartments' in a casual tone.",
+    "placeholders": {
+      "THING": "houseplants for low-light apartments"
+    }
+  },
+  {
+    "slug": "lit_review",
+    "category": "academic_essay",
+    "template": "Write a 400-word literature review introduction on [TOPIC].",
+    "resolved": "Write a 400-word literature review introduction on urban housing affordability.",
+    "placeholders": {
+      "TOPIC": "urban housing affordability"
+    }
+  },
+  {
+    "slug": "news_article",
+    "category": "news_article",
+    "template": "Write a 400-word news article about [TOPIC].",
+    "resolved": "Write a 400-word news article about youth screen-time and adolescent mental health.",
+    "placeholders": {
+      "TOPIC": "youth screen-time and adolescent mental health"
+    }
+  },
+  {
+    "slug": "personal_statement",
+    "category": "application_essay",
+    "template": "Write a 350-word personal statement explaining why I want to study [FIELD].",
+    "resolved": "Write a 350-word personal statement explaining why I want to study industrial design.",
+    "placeholders": {
+      "FIELD": "industrial design"
+    }
+  },
+  {
+    "slug": "product_desc",
+    "category": "marketing_copy",
+    "template": "Write a 200-word product description for [ITEM].",
+    "resolved": "Write a 200-word product description for an indoor herb-garden starter kit.",
+    "placeholders": {
+      "ITEM": "an indoor herb-garden starter kit"
+    }
+  }
+]
