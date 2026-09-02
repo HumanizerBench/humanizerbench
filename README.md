@@ -3,22 +3,24 @@
 **The best AI humanizers, ranked by a monthly benchmark.** HumanizerBench measures how well each AI humanizer bypasses the major AI detectors (GPTZero, Originality.ai, Copyleaks, Winston AI, and ZeroGPT) while preserving the original meaning and readability. We pay for every tool ourselves and run each one by hand on the most undetectable setting it advertises; there are no affiliate deals and no vendor-supplied numbers. Every input, every humanized output, every detector verdict, and the scoring code itself is published in this repository, so anyone can reproduce the rankings from scratch.
 
 <!-- RANKINGS:START -->
-## 🏆 Best AI humanizers: August 2026
+## 🏆 Best AI humanizers: September 2026
 
 | # | AI humanizer | Score / 100 | Bypass | Meaning | Readability | Consistency | Penalty |
 |--:|--------------|:-----------:|:------:|:-------:|:-----------:|:-----------:|:-------:|
-| 1 | [WriteHuman](https://humanizerbench.com/humanizers/writehuman) | 76.69 | 89% | 72% | 58% | 81% | -1.0 |
-| 2 | [Humanize AI Pro](https://humanizerbench.com/humanizers/humanize-ai-pro) | 71.40 | 84% | 67% | 52% | 65% | 0 |
-| 3 | [Stealth Writer](https://humanizerbench.com/humanizers/stealth-writer) | 69.83 | 80% | 72% | 44% | 74% | -1.0 |
-| 4 | [HIX Bypass](https://humanizerbench.com/humanizers/hix-bypass) | 67.93 | 75% | 77% | 38% | 67% | -1.0 |
-| 5 | [Humbot](https://humanizerbench.com/humanizers/humbot) | 66.95 | 72% | 75% | 43% | 68% | -1.0 |
-| 6 | [AI Humanize io](https://humanizerbench.com/humanizers/ai-humanize-io) | 64.57 | 71% | 64% | 55% | 75% | -2.0 |
-| 7 | [Phrasly](https://humanizerbench.com/humanizers/phrasly) | 63.30 | 76% | 63% | 67% | 83% | -8.0 |
-| 8 | [Undetectable.ai](https://humanizerbench.com/humanizers/undetectable) | 61.49 | 86% | 72% | 55% | 65% | -13.0 |
-| 9 | [Walter Writes](https://humanizerbench.com/humanizers/walter-writes) | 60.83 | 68% | 69% | 65% | 79% | -8.0 |
-| 10 | [Super Humanizer](https://humanizerbench.com/humanizers/super-humanizer) | 55.86 | 42% | 73% | 58% | 67% | -1.0 |
-| 11 | [Grammarly](https://humanizerbench.com/humanizers/grammarly) | 52.91 | 0% | 94% | 79% | 100% | 0 |
-| 12 | [StealthGPT](https://humanizerbench.com/humanizers/stealthgpt) | 45.55 | 28% | 63% | 71% | 75% | -5.0 |
+| 1 | [WriteHuman](https://humanizerbench.com/humanizers/writehuman) | 78.29 | 90% | 72% | 57% | 82% | 0 |
+| 2 | [Stealth Writer](https://humanizerbench.com/humanizers/stealth-writer) | 75.39 | 86% | 76% | 47% | 81% | -1.0 |
+| 3 | [HIX Bypass](https://humanizerbench.com/humanizers/hix-bypass) | 73.97 | 86% | 77% | 35% | 75% | 0 |
+| 4 | [AI Humanize io](https://humanizerbench.com/humanizers/ai-humanize-io) | 72.94 | 82% | 73% | 58% | 69% | -1.0 |
+| 5 | [SupWriter](https://humanizerbench.com/humanizers/supwriter) | 72.80 | 80% | 79% | 46% | 65% | 0 |
+| 6 | [Undetectable.ai](https://humanizerbench.com/humanizers/undetectable) | 71.75 | 82% | 82% | 62% | 71% | -6.0 |
+| 7 | [Humanize AI Pro](https://humanizerbench.com/humanizers/humanize-ai-pro) | 70.07 | 71% | 75% | 62% | 65% | 0 |
+| 8 | [Phrasly](https://humanizerbench.com/humanizers/phrasly) | 67.58 | 82% | 66% | 65% | 75% | -6.0 |
+| 9 | [StealthGPT](https://humanizerbench.com/humanizers/stealthgpt) | 65.10 | 80% | 59% | 71% | 63% | -5.0 |
+| 10 | [Walter Writes](https://humanizerbench.com/humanizers/walter-writes) | 61.70 | 84% | 67% | 60% | 75% | -12.0 |
+| 11 | [Super Humanizer](https://humanizerbench.com/humanizers/super-humanizer) | 60.97 | 64% | 74% | 52% | 69% | -5.0 |
+| 12 | [Grammarly](https://humanizerbench.com/humanizers/grammarly) | 60.35 | 41% | 86% | 66% | 79% | -3.0 |
+| 13 | [Stealth Bypass](https://humanizerbench.com/humanizers/stealthbypass) | 39.38 | 79% | 39% | 54% | 81% | -23.0 |
+| 14 | [Penlify](https://humanizerbench.com/humanizers/penlify) | 36.57 | 0% | 63% | 72% | 100% | -5.0 |
 
 _The composite (out of 100) weights detector bypass (42%), meaning preservation (32%), readability (16%), and consistency across writing categories (10%); the Bypass, Meaning, Readability, and Consistency columns are those sub-scores. Penalty is the total points deducted for quality failures (meaning drift, length inflation or deflation, refusals, or output returned unchanged) — already reflected in the score. We pay for every tool ourselves and run each one by hand on its most undetectable advertised setting. Scored against 5 AI detectors; every score is reproducible from the data in this repo. See the full leaderboard with per-detector breakdowns and 12-month trends at [humanizerbench.com/leaderboard](https://humanizerbench.com/leaderboard)._
 <!-- RANKINGS:END -->
