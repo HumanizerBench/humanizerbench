@@ -1,0 +1,26 @@
+{
+  "slug": "stealthbypass",
+  "points": [
+    {
+      "cycle": "September 2026",
+      "composite": 39.38,
+      "bypass_rate": 0.7864,
+      "detector_breakdown": {
+        "gptzero": 0.6926,
+        "winston": 0.5634,
+        "zerogpt": 0.8438,
+        "copyleaks": 0.6508,
+        "originality": 0.5852
+      },
+      "category_breakdown": {
+        "blog_post": 0.9876,
+        "news_article": 0.8508,
+        "academic_essay": 0.8592,
+        "business_email": 0.6606,
+        "marketing_copy": 0.7696,
+        "discussion_board": 1,
+        "application_essay": 0.4505
+      }
+    }
+  ]
+}
