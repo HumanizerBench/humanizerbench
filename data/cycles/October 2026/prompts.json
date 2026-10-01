@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "template": "Write a 400-word argumentative essay arguing that [TOPIC].",
+    "resolved": "Write a 400-word argumentative essay arguing that the impact of generative AI on knowledge work.",
+    "placeholders": {
+      "TOPIC": "the impact of generative AI on knowledge work"
+    }
+  },
+  {
+    "slug": "cover_letter",
+    "category": "application_essay",
+    "template": "Write a 400-word cover letter for a [ROLE] position.",
+    "resolved": "Write a 400-word cover letter for a freelance documentary editor position.",
+    "placeholders": {
+      "ROLE": "freelance documentary editor"
+    }
+  },
+  {
+    "slug": "discussion_post",
+    "category": "discussion_board",
+    "template": "Write a 250-word response to this prompt: [PROMPT].",
+    "resolved": "Write a 250-word response to this prompt: How should communities balance public art funding with infrastructure needs?.",
+    "placeholders": {
+      "PROMPT": "How should communities balance public art funding with infrastructure needs?"
+    }
+  },
+  {
+    "slug": "howto_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word guide on how to [TASK].",
+    "resolved": "Write a 400-word guide on how to publish a self-illustrated picture book.",
+    "placeholders": {
+      "TASK": "publish a self-illustrated picture book"
+    }
+  },
+  {
+    "slug": "landing_copy",
+    "category": "marketing_copy",
+    "template": "Write 300 words of landing page copy for a SaaS product that does [THING].",
+    "resolved": "Write 300 words of landing page copy for a SaaS product that does starting a small backyard vegetable garden.",
+    "placeholders": {
+      "THING": "starting a small backyard vegetable garden"
+    }
+  },
+  {
+    "slug": "listicle_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word blog post titled '10 Tips for [THING]' in a casual tone.",
+    "resolved": "Write a 400-word blog post titled '10 Tips for mechanical keyboards for typists' in a casual tone.",
+    "placeholders": {
+      "THING": "mechanical keyboards for typists"
+    }
+  },
+  {
+    "slug": "lit_review",
+    "category": "academic_essay",
+    "template": "Write a 400-word literature review introduction on [TOPIC].",
+    "resolved": "Write a 400-word literature review introduction on small-scale regenerative agriculture.",
+    "placeholders": {
+      "TOPIC": "small-scale regenerative agriculture"
+    }
+  },
+  {
+    "slug": "news_article",
+    "category": "news_article",
+    "template": "Write a 400-word news article about [TOPIC].",
+    "resolved": "Write a 400-word news article about the limits of digital privacy law.",
+    "placeholders": {
+      "TOPIC": "the limits of digital privacy law"
+    }
+  },
+  {
+    "slug": "personal_statement",
+    "category": "application_essay",
+    "template": "Write a 350-word personal statement explaining why I want to study [FIELD].",
+    "resolved": "Write a 350-word personal statement explaining why I want to study human-computer interaction.",
+    "placeholders": {
+      "FIELD": "human-computer interaction"
+    }
+  },
+  {
+    "slug": "product_desc",
+    "category": "marketing_copy",
+    "template": "Write a 200-word product description for [ITEM].",
+    "resolved": "Write a 200-word product description for a precision-milled stainless-steel ruler.",
+    "placeholders": {
+      "ITEM": "a precision-milled stainless-steel ruler"
+    }
+  }
+]
