@@ -64,6 +64,27 @@
       }
     },
     {
+      "cycle": "October 2026",
+      "composite": 68.87,
+      "bypass_rate": 0.6341,
+      "detector_breakdown": {
+        "gptzero": 0.5461,
+        "pangram": 0.0027,
+        "winston": 0.961,
+        "zerogpt": 0.7321,
+        "copyleaks": 0.7054,
+        "originality": 0.8572
+      },
+      "category_breakdown": {
+        "blog_post": 0.5901,
+        "news_article": 0.7205,
+        "academic_essay": 0.5912,
+        "marketing_copy": 0.5966,
+        "discussion_board": 0.7498,
+        "application_essay": 0.6574
+      }
+    },
+    {
       "cycle": "September 2026",
       "composite": 70.07,
       "bypass_rate": 0.7083,
