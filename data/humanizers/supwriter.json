@@ -2,6 +2,27 @@
   "slug": "supwriter",
   "points": [
     {
+      "cycle": "October 2026",
+      "composite": 62.75,
+      "bypass_rate": 0.4999,
+      "detector_breakdown": {
+        "gptzero": 0.0893,
+        "pangram": 0,
+        "winston": 0.8347,
+        "zerogpt": 0.7392,
+        "copyleaks": 0.7818,
+        "originality": 0.5545
+      },
+      "category_breakdown": {
+        "blog_post": 0.5293,
+        "news_article": 0.6564,
+        "academic_essay": 0.4852,
+        "marketing_copy": 0.5067,
+        "discussion_board": 0.3765,
+        "application_essay": 0.462
+      }
+    },
+    {
       "cycle": "September 2026",
       "composite": 72.8,
       "bypass_rate": 0.8029,
