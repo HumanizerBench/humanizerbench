@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "argumentative_essay",
+    "category": "academic_essay",
+    "template": "Write a 400-word argumentative essay arguing that [TOPIC].",
+    "resolved": "Write a 400-word argumentative essay arguing that youth screen-time and adolescent mental health.",
+    "placeholders": {
+      "TOPIC": "youth screen-time and adolescent mental health"
+    }
+  },
+  {
+    "slug": "cover_letter",
+    "category": "application_essay",
+    "template": "Write a 400-word cover letter for a [ROLE] position.",
+    "resolved": "Write a 400-word cover letter for a policy analyst at a city government position.",
+    "placeholders": {
+      "ROLE": "policy analyst at a city government"
+    }
+  },
+  {
+    "slug": "discussion_post",
+    "category": "discussion_board",
+    "template": "Write a 250-word response to this prompt: [PROMPT].",
+    "resolved": "Write a 250-word response to this prompt: In what ways has streaming changed the economics of independent music?.",
+    "placeholders": {
+      "PROMPT": "In what ways has streaming changed the economics of independent music?"
+    }
+  },
+  {
+    "slug": "howto_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word guide on how to [TASK].",
+    "resolved": "Write a 400-word guide on how to introduce solid foods to an infant.",
+    "placeholders": {
+      "TASK": "introduce solid foods to an infant"
+    }
+  },
+  {
+    "slug": "landing_copy",
+    "category": "marketing_copy",
+    "template": "Write 300 words of landing page copy for a SaaS product that does [THING].",
+    "resolved": "Write 300 words of landing page copy for a SaaS product that does mechanical keyboards for typists.",
+    "placeholders": {
+      "THING": "mechanical keyboards for typists"
+    }
+  },
+  {
+    "slug": "listicle_blog",
+    "category": "blog_post",
+    "template": "Write a 400-word blog post titled '10 Tips for [THING]' in a casual tone.",
+    "resolved": "Write a 400-word blog post titled '10 Tips for starting a small backyard vegetable garden' in a casual tone.",
+    "placeholders": {
+      "THING": "starting a small backyard vegetable garden"
+    }
+  },
+  {
+    "slug": "lit_review",
+    "category": "academic_essay",
+    "template": "Write a 400-word literature review introduction on [TOPIC].",
+    "resolved": "Write a 400-word literature review introduction on the rise of long-form podcasts as a primary news source.",
+    "placeholders": {
+      "TOPIC": "the rise of long-form podcasts as a primary news source"
+    }
+  },
+  {
+    "slug": "news_article",
+    "category": "news_article",
+    "template": "Write a 400-word news article about [TOPIC].",
+    "resolved": "Write a 400-word news article about the role of independent journalism in the social-media era.",
+    "placeholders": {
+      "TOPIC": "the role of independent journalism in the social-media era"
+    }
+  },
+  {
+    "slug": "personal_statement",
+    "category": "application_essay",
+    "template": "Write a 350-word personal statement explaining why I want to study [FIELD].",
+    "resolved": "Write a 350-word personal statement explaining why I want to study behavioral economics.",
+    "placeholders": {
+      "FIELD": "behavioral economics"
+    }
+  },
+  {
+    "slug": "product_desc",
+    "category": "marketing_copy",
+    "template": "Write a 200-word product description for [ITEM].",
+    "resolved": "Write a 200-word product description for a refurbished mid-range ergonomic office chair.",
+    "placeholders": {
+      "ITEM": "a refurbished mid-range ergonomic office chair"
+    }
+  }
+]

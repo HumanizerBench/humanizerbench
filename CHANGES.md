@@ -6,6 +6,18 @@ with the rationale from the admin-side change log.
 
 ---
 
+## November 2026 (published 2026-11-01)
+
+No methodology, scoring, or prompt-set changes since the previous cycle.
+
+- Current version stamps:
+  - `methodology_version`: 1.3.0
+  - `scoring_version`: 1.4.0
+  - `prompt_set_version`: 1.0.0
+📦 [Transparency bundle](data/cycles/November 2026/)
+
+---
+
 ## October 2026 (published 2026-10-01)
 
 **Changed since previous cycle:**

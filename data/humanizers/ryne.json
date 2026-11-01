@@ -1,0 +1,26 @@
+{
+  "slug": "ryne",
+  "points": [
+    {
+      "cycle": "November 2026",
+      "composite": 61.24,
+      "bypass_rate": 0.4592,
+      "detector_breakdown": {
+        "gptzero": 0.106,
+        "pangram": 0,
+        "winston": 0.9664,
+        "zerogpt": 0.7594,
+        "copyleaks": 0.8302,
+        "originality": 0.0933
+      },
+      "category_breakdown": {
+        "blog_post": 0.4433,
+        "news_article": 0.4394,
+        "academic_essay": 0.4621,
+        "marketing_copy": 0.4987,
+        "discussion_board": 0.4881,
+        "application_essay": 0.4283
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "rephrasy",
+  "points": [
+    {
+      "cycle": "November 2026",
+      "composite": 52.5,
+      "bypass_rate": 0.7388,
+      "detector_breakdown": {
+        "gptzero": 0.9617,
+        "pangram": 0.4839,
+        "winston": 0.9525,
+        "zerogpt": 0.7583,
+        "copyleaks": 0.9667,
+        "originality": 0.31
+      },
+      "category_breakdown": {
+        "blog_post": 0.6794,
+        "news_article": 0.7404,
+        "academic_essay": 0.7673,
+        "marketing_copy": 0.7562,
+        "discussion_board": 0.7602,
+        "application_essay": 0.741
+      }
+    }
+  ]
+}

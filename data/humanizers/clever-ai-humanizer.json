@@ -2,6 +2,27 @@
   "slug": "clever-ai-humanizer",
   "points": [
     {
+      "cycle": "November 2026",
+      "composite": 68.48,
+      "bypass_rate": 0.6672,
+      "detector_breakdown": {
+        "gptzero": 0.9555,
+        "pangram": 0.0274,
+        "winston": 0.9677,
+        "zerogpt": 0.8459,
+        "copyleaks": 0.9667,
+        "originality": 0.24
+      },
+      "category_breakdown": {
+        "blog_post": 0.6737,
+        "news_article": 0.6905,
+        "academic_essay": 0.6935,
+        "marketing_copy": 0.6029,
+        "discussion_board": 0.6986,
+        "application_essay": 0.6713
+      }
+    },
+    {
       "cycle": "October 2026",
       "composite": 69.02,
       "bypass_rate": 0.8007,

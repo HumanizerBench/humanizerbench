@@ -1,0 +1,4440 @@
+{
+  "cycle": "November 2026",
+  "generated_at": "2026-11-01T17:39:55.197Z",
+  "methodology_version": "1.3.0",
+  "scoring_version": "1.4.0",
+  "prompt_set_version": "1.0.0",
+  "source_model_versions": {
+    "google": "gemini-3.8-flash",
+    "openai": "gpt-6-sol",
+    "anthropic": "claude-sonnet-5-5"
+  },
+  "placeholders_used": {
+    "howto_blog": {
+      "TASK": "introduce solid foods to an infant"
+    },
+    "lit_review": {
+      "TOPIC": "the rise of long-form podcasts as a primary news source"
+    },
+    "cover_letter": {
+      "ROLE": "policy analyst at a city government"
+    },
+    "landing_copy": {
+      "THING": "mechanical keyboards for typists"
+    },
+    "news_article": {
+      "TOPIC": "the role of independent journalism in the social-media era"
+    },
+    "product_desc": {
+      "ITEM": "a refurbished mid-range ergonomic office chair"
+    },
+    "listicle_blog": {
+      "THING": "starting a small backyard vegetable garden"
+    },
+    "discussion_post": {
+      "PROMPT": "In what ways has streaming changed the economics of independent music?"
+    },
+    "personal_statement": {
+      "FIELD": "behavioral economics"
+    },
+    "argumentative_essay": {
+      "TOPIC": "youth screen-time and adolescent mental health"
+    }
+  },
+  "cycle_sample_count": 30,
+  "recording_sessions": [
+    {
+      "id": "9b065425-c9e9-482e-94f4-2d8ffd246fe1",
+      "humanizer_slug": "stealth-writer",
+      "started_at": "2026-10-30T17:40:55.606727+00:00",
+      "ended_at": "2026-10-30T17:47:51.569+00:00",
+      "total_duration_ms": 415058,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/stealth-writer/9b065425-c9e9-482e-94f4-2d8ffd246fe1/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L3N0ZWFsdGgtd3JpdGVyLzliMDY1NDI1LWM5ZTktNDgyZS05NGY0LTJkOGZmZDI0NmZlMS9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3OTM1NTQ3OTIsImV4cCI6MTgyNTA5MDc5Mn0.1HHQOeHPHSK0oTYD6JmSmZsRT5Iuaa8EyuB4IR-qpdU"
+      ],
+      "test_markers": [
+        {
+          "test_id": "0679a9cb-617d-4ff0-a455-859312f5dae6",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 25707
+        },
+        {
+          "test_id": "08e2d16d-9293-4f30-b726-d0953a8db919",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 43962
+        },
+        {
+          "test_id": "148cec1f-fb79-4be8-afb9-a92aad7cdc19",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 57804
+        },
+        {
+          "test_id": "1882772e-b4b1-4733-8e05-f074f5a4c5f6",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 68866
+        },
+        {
+          "test_id": "1d30b948-0f7c-4b61-806b-b80236462c6f",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 84179
+        },
+        {
+          "test_id": "1f482fcd-3738-4fa8-8a9e-966809dd5025",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 99790
+        },
+        {
+          "test_id": "22220edd-34c0-4369-9a33-e592bc6ca5be",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 111090
+        },
+        {
+          "test_id": "283d8115-2437-4969-8e5c-a847a5137449",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 121412
+        },
+        {
+          "test_id": "34abf7d6-1a20-47e5-bb9b-75e5429c0baf",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 133805
+        },
+        {
+          "test_id": "350483dd-51d3-49d3-8fc8-cc83028aeb9d",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 146613
+        },
+        {
+          "test_id": "41d9ea96-8b06-41d1-a39d-99add8ba4404",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 160420
+        },
+        {
+          "test_id": "472ae6e0-718b-4298-b870-449751e5e6e4",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 172671
+        },
+        {
+          "test_id": "5873b2fd-a359-466f-bad6-7b9d905886e3",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 185421
+        },
+        {
+          "test_id": "6c84a2df-7675-4728-bfe7-1e9cf7fcf774",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 199223
+        },
+        {
+          "test_id": "756b58de-34e4-4ff2-beeb-44e69c108085",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 211937
+        },
+        {
+          "test_id": "75a245c2-7610-44b1-b2e7-bb8d0e152cef",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 224803
+        },
+        {
+          "test_id": "7630c53b-b17b-4ef6-9487-579292fc61b1",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 239248
+        },
+        {
+          "test_id": "953c964d-52fd-4cad-bd46-692b2febb400",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 251818
+        },
+        {
+          "test_id": "9748d59a-e146-4779-872c-cf86838e6afa",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 265156
+        },
+        {
+          "test_id": "ad98e87c-d129-4b0b-8ae7-7b1d624a5e9c",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 276114
+        },
+        {
+          "test_id": "af29e782-939e-4a25-9531-e0a23fff4079",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 287994
+        },
+        {
+          "test_id": "b422dc6d-ea36-4c84-9461-2ec6ddb14966",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 298035
+        },
+        {
+          "test_id": "b8ede087-c259-413e-bc9d-5fca203d53fb",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 316136
+        },
+        {
+          "test_id": "c0cf9719-06dc-40b8-8a72-21d010cb5bb4",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 329987
+        },
+        {
+          "test_id": "c2fdca34-b7c8-48f5-89cc-64a37cf31f74",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 344485
+        },
+        {
+          "test_id": "ccd70eff-a499-4a32-b882-9b5626f9421e",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 354885
+        },
+        {
+          "test_id": "d7a8dc96-0fe5-4a49-bf8c-832dece5ba79",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 373707
+        },
+        {
+          "test_id": "dfb8301d-0846-4a18-b2f7-61a3c4ea80e2",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 387914
+        },
+        {
+          "test_id": "f98f05a8-0a73-41f7-97fd-007f5b73ca62",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 401218
+        },
+        {
+          "test_id": "fad3412d-510c-427c-a907-25f6219ddd80",
+          "humanizer_slug": "stealth-writer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 414191
+        }
+      ]
+    },
+    {
+      "id": "24e26d87-2e05-4e4d-9e7b-8f26226a992b",
+      "humanizer_slug": "grammarly",
+      "started_at": "2026-10-30T17:42:15.750888+00:00",
+      "ended_at": "2026-10-30T17:49:03.54+00:00",
+      "total_duration_ms": 405492,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/71185791-c8d8-49f1-9798-c32043485287/grammarly/24e26d87-2e05-4e4d-9e7b-8f26226a992b/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNzExODU3OTEtYzhkOC00OWYxLTk3OTgtYzMyMDQzNDg1Mjg3L2dyYW1tYXJseS8yNGUyNmQ4Ny0yZTA1LTRlNGQtOWU3Yi04ZjI2MjI2YTk5MmIvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkzNTU0NzkzLCJleHAiOjE4MjUwOTA3OTN9.88VA3iEdWgH820P2mp2ugvrtXEUzdofQ_1MXLkrqmJg"
+      ],
+      "test_markers": [
+        {
+          "test_id": "06f5e655-2aa4-4629-97d7-3ca84d48dd06",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 14651
+        },
+        {
+          "test_id": "076c50ec-82fb-4a6d-af22-d419cd92c79a",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 31532
+        },
+        {
+          "test_id": "116ab12d-47d9-4fa2-9847-5fc41811f468",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 46848
+        },
+        {
+          "test_id": "1b340022-3526-41f0-8f01-35abb778d272",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 63148
+        },
+        {
+          "test_id": "1d49dab9-6929-44b9-b9eb-8b4242938fe4",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 76933
+        },
+        {
+          "test_id": "1efad139-1c10-4ea2-888d-c3e94343ec30",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 93133
+        },
+        {
+          "test_id": "1fc20a86-4875-44b1-8389-84b650e6b197",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 111830
+        },
+        {
+          "test_id": "33aea293-1003-493a-a4f0-7c4e23da609b",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 131530
+        },
+        {
+          "test_id": "3be32609-50fd-42b5-ae12-f94d4cf3b796",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 144199
+        },
+        {
+          "test_id": "5170609c-2e4b-4715-9bed-9645f97b607d",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 157852
+        },
+        {
+          "test_id": "557f4163-bd87-46e5-a24c-e1b7cd8844d2",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 169769
+        },
+        {
+          "test_id": "6edd88d2-b1ad-48fb-a604-95569417c40e",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 182269
+        },
+        {
+          "test_id": "7cab25f6-063e-4081-9d64-160b655940c6",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 196452
+        },
+        {
+          "test_id": "8158c56b-802b-4dcf-ac0f-f306204640df",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 209237
+        },
+        {
+          "test_id": "862b784a-0bdd-43f9-a509-2f9a33ee1171",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 221285
+        },
+        {
+          "test_id": "88c9357b-815a-48dd-bf86-9e4e488ab785",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 233222
+        },
+        {
+          "test_id": "892017c1-dca0-4944-a76d-2d1909d73f27",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 245087
+        },
+        {
+          "test_id": "9404ee6f-fad6-4f1b-97c7-c6b827266152",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 256736
+        },
+        {
+          "test_id": "9f6df588-650f-45a3-a096-ab44e13f0214",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 267502
+        },
+        {
+          "test_id": "ad72f1e0-3e69-4f31-a2b1-bea5e6a7b1ee",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 279535
+        },
+        {
+          "test_id": "af79163f-2d0e-4176-a76c-9b0ec3bb206a",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 292469
+        },
+        {
+          "test_id": "bd7e783c-ded9-4da4-b916-677d63f35d31",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 304469
+        },
+        {
+          "test_id": "c65b947e-322a-42a9-95bc-afe01efd1fe1",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 315801
+        },
+        {
+          "test_id": "c92eb7ef-eec9-4d32-a295-6ba4191d35b8",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 327552
+        },
+        {
+          "test_id": "d8d71b5c-8fd4-45ba-8a02-95964ae3b237",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 339452
+        },
+        {
+          "test_id": "d9c91232-b604-43c6-9f31-4026c3547254",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 351835
+        },
+        {
+          "test_id": "e6f167e1-aa95-4357-8a3b-0558c64e4f05",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 364837
+        },
+        {
+          "test_id": "e7c774c9-8674-4249-a52a-b99c19d14b1d",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 378070
+        },
+        {
+          "test_id": "e821fbde-c494-4345-924b-1f8b35e7b01e",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 392570
+        },
+        {
+          "test_id": "ed39d8f4-ffd1-49ec-8e15-3c3fd520c725",
+          "humanizer_slug": "grammarly",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 404635
+        }
+      ]
+    },
+    {
+      "id": "aadc29fc-0132-4e8a-82b4-9a9f24af1ae9",
+      "humanizer_slug": "hix-bypass",
+      "started_at": "2026-10-30T17:48:58.654179+00:00",
+      "ended_at": "2026-10-30T18:04:03.905+00:00",
+      "total_duration_ms": 904216,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/hix-bypass/aadc29fc-0132-4e8a-82b4-9a9f24af1ae9/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L2hpeC1ieXBhc3MvYWFkYzI5ZmMtMDEzMi00ZThhLTgyYjQtOWE5ZjI0YWYxYWU5L3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzU1NDc5MywiZXhwIjoxODI1MDkwNzkzfQ.fb1h-LkA6AVoCLyb-KNUiuHNJg77O66BsebIaSr2avg"
+      ],
+      "test_markers": [
+        {
+          "test_id": "02d8d593-405d-4e0f-a377-03bc3921afd7",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 28874
+        },
+        {
+          "test_id": "140461c3-68c9-4d66-b8c8-7daee38e8090",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 52182
+        },
+        {
+          "test_id": "189f6dc8-657a-4ad4-a910-879219672969",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 95706
+        },
+        {
+          "test_id": "1b9167fb-1442-4c52-9e49-df3a33db8c8c",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 147049
+        },
+        {
+          "test_id": "1cbc051c-1872-4698-b72d-b6445dfd4173",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 173438
+        },
+        {
+          "test_id": "1dbf6b37-825f-426a-b55a-bed0d8a487cc",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 204038
+        },
+        {
+          "test_id": "208a8eda-1d8b-4ddd-98b4-473eea866d22",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 233693
+        },
+        {
+          "test_id": "2295e7c6-7fb7-4944-a912-d13ccc4d81c2",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 266645
+        },
+        {
+          "test_id": "3cd180e0-ff3a-4c77-80e6-14973da1f75f",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 294934
+        },
+        {
+          "test_id": "3e021ee1-d53f-49b4-89bc-a92c309db21c",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 317688
+        },
+        {
+          "test_id": "4aff92cc-61de-44f5-a79f-d0bf97cea52f",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 337917
+        },
+        {
+          "test_id": "4b4314f2-df69-4203-9393-56cb6fb0d2c0",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 371335
+        },
+        {
+          "test_id": "510d8b44-7083-4080-a350-fbf606ebf3bc",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 401250
+        },
+        {
+          "test_id": "5f79e3bc-d9bd-4ddd-b8aa-21daa0726f16",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 423143
+        },
+        {
+          "test_id": "619d58c4-aea1-4ee8-a4c2-5b518b474604",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 451268
+        },
+        {
+          "test_id": "6670ab6a-a176-4f1e-9602-679b9d0e1f01",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 477854
+        },
+        {
+          "test_id": "722516f8-a51e-4215-ac23-ce6b379ba68e",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 499343
+        },
+        {
+          "test_id": "7ab6b2d0-8e10-4fc9-b8a2-82ff69839a10",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 519768
+        },
+        {
+          "test_id": "80af60e1-7563-4d74-b6f4-11e9c8542219",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 539506
+        },
+        {
+          "test_id": "8354a901-7c6b-4a14-93bd-6d740a0d24b2",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 560452
+        },
+        {
+          "test_id": "940721ff-bb76-442e-9986-639146516d46",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 581107
+        },
+        {
+          "test_id": "aafde0f2-8aa1-4647-9bdd-ad2fee9b5dc1",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 601315
+        },
+        {
+          "test_id": "b09ea82f-5ee7-4184-8f5c-0c3257e0696e",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 622343
+        },
+        {
+          "test_id": "c0a9af80-4326-473f-b26a-9d4c5bc87d5f",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 651186
+        },
+        {
+          "test_id": "d29ccbe2-3e56-426b-88d8-af743b42be1b",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 671554
+        },
+        {
+          "test_id": "e688bfb4-2acf-4468-9fd5-3d434159fb32",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 692698
+        },
+        {
+          "test_id": "f513cb90-34af-4323-86c8-343669a007c2",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 713515
+        },
+        {
+          "test_id": "f961028c-b49e-4a84-8380-b829ad014929",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 735355
+        },
+        {
+          "test_id": "faf61528-4f25-4859-a183-96963509ebd0",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 785024
+        },
+        {
+          "test_id": "fe4b65a3-26a8-4e93-88a2-6f9cd647b1ec",
+          "humanizer_slug": "hix-bypass",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 813620
+        }
+      ]
+    },
+    {
+      "id": "795e9f0a-88f3-4c41-a2c4-6777af89a305",
+      "humanizer_slug": "humanize-ai-pro",
+      "started_at": "2026-10-30T17:49:19.766281+00:00",
+      "ended_at": "2026-10-30T17:58:47.121+00:00",
+      "total_duration_ms": 566490,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/71185791-c8d8-49f1-9798-c32043485287/humanize-ai-pro/795e9f0a-88f3-4c41-a2c4-6777af89a305/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNzExODU3OTEtYzhkOC00OWYxLTk3OTgtYzMyMDQzNDg1Mjg3L2h1bWFuaXplLWFpLXByby83OTVlOWYwYS04OGYzLTRjNDEtYTJjNC02Nzc3YWY4OWEzMDUvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkzNTU0NzkzLCJleHAiOjE4MjUwOTA3OTN9.jfibOkE11WzJjoe9NGF6wUY7MdDl3YppmuJ8xEkNrSM"
+      ],
+      "test_markers": [
+        {
+          "test_id": "1750c877-c11e-45e2-a997-a58217fd3ba0",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 19070
+        },
+        {
+          "test_id": "1b7275b5-4cca-4e45-8aa8-d3d1bde409eb",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 37203
+        },
+        {
+          "test_id": "1eb2de7d-5d10-4623-b7a3-b2b79a00c41a",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 59372
+        },
+        {
+          "test_id": "2fe05eb5-49ca-427a-aa71-4ac02c8584e3",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 78688
+        },
+        {
+          "test_id": "30af3dcb-c386-4eee-85aa-964f155eb11d",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 97277
+        },
+        {
+          "test_id": "37f431e0-df8a-49dd-b255-311737728720",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 116275
+        },
+        {
+          "test_id": "4173bce2-30ca-47d2-b341-faf7ef953f4a",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 136321
+        },
+        {
+          "test_id": "4284a5c5-10ac-4cc8-aeff-3fd109841716",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 154187
+        },
+        {
+          "test_id": "4ab10065-02ed-4d40-a299-6e112f05c3b8",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 176953
+        },
+        {
+          "test_id": "4c9c81f1-2b7c-45b1-ade0-16d9ab1559fc",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 195654
+        },
+        {
+          "test_id": "5fb38bb9-e195-452c-af93-4233a1e10ae0",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 214653
+        },
+        {
+          "test_id": "6475c8f9-400d-4221-a549-715250d86214",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 234304
+        },
+        {
+          "test_id": "7ba919f0-a4cb-4d99-9561-3f8ee45e8b68",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 252187
+        },
+        {
+          "test_id": "8404af23-ef31-4503-a9b5-2016880ff289",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 269203
+        },
+        {
+          "test_id": "92141785-f5af-4b4a-b4d5-3128397a85cb",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 286437
+        },
+        {
+          "test_id": "9b440af8-c588-44a5-b99e-e85734dd32ef",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 304303
+        },
+        {
+          "test_id": "9dba85c5-23b2-4475-806a-31a4fcfe0198",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 321119
+        },
+        {
+          "test_id": "a4afbfe8-17e7-438f-965a-11fbba564f3d",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 338272
+        },
+        {
+          "test_id": "b1fead94-4cef-4e1e-b3f9-15a095fb26b5",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 357753
+        },
+        {
+          "test_id": "b242a3ad-3c75-4ba0-b35b-dcb4058665c4",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 377055
+        },
+        {
+          "test_id": "bb7f2a66-cbab-4f5a-a5e8-1108f7f9f482",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 393104
+        },
+        {
+          "test_id": "c0e2a6d1-6088-48cf-98dd-0f9d0aadc9a2",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 412021
+        },
+        {
+          "test_id": "c45de66c-e041-46ec-ae30-0c7689f159e5",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 432288
+        },
+        {
+          "test_id": "d033b506-b04b-45ec-a117-6206fd7c5f56",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 451019
+        },
+        {
+          "test_id": "d1c06235-dfe3-493e-9c36-0e56fffa0a16",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 469136
+        },
+        {
+          "test_id": "d326fd16-def8-455e-a4d2-95694c8ea60c",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 488754
+        },
+        {
+          "test_id": "e56d61e4-e900-4d4c-ad74-6d5010981e50",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 507336
+        },
+        {
+          "test_id": "e792419c-1dc6-4cf8-b85f-1f1ff3edcdc3",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 526387
+        },
+        {
+          "test_id": "f6569cee-7b44-427a-9ad0-273370a1dfc8",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 547620
+        },
+        {
+          "test_id": "f7507020-5885-49f2-9743-18cd04fd8309",
+          "humanizer_slug": "humanize-ai-pro",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 565752
+        }
+      ]
+    },
+    {
+      "id": "04310cae-c3a6-4f63-aa7c-4b7292d22acd",
+      "humanizer_slug": "super-humanizer",
+      "started_at": "2026-10-30T17:58:56.760865+00:00",
+      "ended_at": "2026-10-30T18:07:37.557+00:00",
+      "total_duration_ms": 518881,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/71185791-c8d8-49f1-9798-c32043485287/super-humanizer/04310cae-c3a6-4f63-aa7c-4b7292d22acd/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNzExODU3OTEtYzhkOC00OWYxLTk3OTgtYzMyMDQzNDg1Mjg3L3N1cGVyLWh1bWFuaXplci8wNDMxMGNhZS1jM2E2LTRmNjMtYWE3Yy00YjcyOTJkMjJhY2QvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkzNTU0NzkzLCJleHAiOjE4MjUwOTA3OTN9.sMm3Mii-9kpPaiMdDPKCs9LHtP0o2yuqUmoaoRekEv0"
+      ],
+      "test_markers": [
+        {
+          "test_id": "00a12ced-feb4-41a0-951f-1432253736b3",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 14218
+        },
+        {
+          "test_id": "02d1269f-7f52-49a8-aa1d-db77ad15fa55",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 36418
+        },
+        {
+          "test_id": "03834845-a6bb-449d-ae53-4e5123b27e7a",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 49751
+        },
+        {
+          "test_id": "1dfeee2d-5f35-4f13-8272-cdd27f1be052",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 72803
+        },
+        {
+          "test_id": "1f1ed027-262a-4e48-9717-5d7275fb676b",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 88518
+        },
+        {
+          "test_id": "245954da-b5c7-49d0-98fb-768172cbb194",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 106301
+        },
+        {
+          "test_id": "37a3f4b9-c9f3-49f9-95ec-46f237fbd6d6",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 121453
+        },
+        {
+          "test_id": "40cebe79-9732-4041-b7e1-8acfa71533a2",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 140802
+        },
+        {
+          "test_id": "4c72ebee-de36-482b-89f7-8ba2da7f9992",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 164272
+        },
+        {
+          "test_id": "51c3a291-76e7-4b04-9a19-2b7889878e53",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 178219
+        },
+        {
+          "test_id": "592f92d5-f343-49f4-ab07-5df68de49175",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 193750
+        },
+        {
+          "test_id": "7143549e-0630-40c8-a304-d4daa46286a1",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 208652
+        },
+        {
+          "test_id": "839fdf23-b94a-475a-8109-2651cfdcdf0c",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 223952
+        },
+        {
+          "test_id": "862dd6b3-dfd1-4633-af58-124e2addba57",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 240102
+        },
+        {
+          "test_id": "8f2851db-1388-47e8-a006-48e57bfd64d9",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 254750
+        },
+        {
+          "test_id": "95f36b3d-9011-44ef-92c2-0d7a149934b4",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 275635
+        },
+        {
+          "test_id": "a0048a07-6288-41ef-bcd8-469f04b44e35",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 297868
+        },
+        {
+          "test_id": "a26e5272-5e2c-4752-972e-4809fd0e5392",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 312684
+        },
+        {
+          "test_id": "abccfe82-fa7c-49ee-be5e-da7651a52869",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 325268
+        },
+        {
+          "test_id": "abf51113-d46f-4101-938f-46df276324a3",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 340634
+        },
+        {
+          "test_id": "ace190b8-1b8d-4ac3-8053-0bf23df5232d",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 360367
+        },
+        {
+          "test_id": "b2623917-9535-4ec9-a2f2-d3bd0daddb7e",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 381767
+        },
+        {
+          "test_id": "b2aae4c5-96e3-47d5-afbb-8caef2b10724",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 396968
+        },
+        {
+          "test_id": "b8a22abb-6160-4bab-8719-3a7038e3840c",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 411151
+        },
+        {
+          "test_id": "bb4250ae-f6e8-478b-a776-3adbf878fc8c",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 425501
+        },
+        {
+          "test_id": "bc00a61f-326c-4965-af70-f2489c4271be",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 441518
+        },
+        {
+          "test_id": "c1f2dbf8-522e-497a-aa6d-c32d73a0b624",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 464767
+        },
+        {
+          "test_id": "c26dfb3a-5988-4b8b-906c-5d0445411249",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 486585
+        },
+        {
+          "test_id": "c98ba459-37e6-430a-a22d-b0fc58128490",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 501501
+        },
+        {
+          "test_id": "e25b314b-4d3e-4218-90f4-0a4f6a1e5885",
+          "humanizer_slug": "super-humanizer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 518152
+        }
+      ]
+    },
+    {
+      "id": "1cb3ee76-23b6-442b-a2ed-4dfb2ba2b609",
+      "humanizer_slug": "undetectable",
+      "started_at": "2026-10-30T18:05:12.013489+00:00",
+      "ended_at": "2026-10-30T18:20:21.377+00:00",
+      "total_duration_ms": 907962,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/undetectable/1cb3ee76-23b6-442b-a2ed-4dfb2ba2b609/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L3VuZGV0ZWN0YWJsZS8xY2IzZWU3Ni0yM2I2LTQ0MmItYTJlZC00ZGZiMmJhMmI2MDkvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkzNTU0NzkzLCJleHAiOjE4MjUwOTA3OTN9.cFG7-CqTOJaretyupN7kHwGEA7tX6B1a9xVCtrBFeiM"
+      ],
+      "test_markers": [
+        {
+          "test_id": "06885938-5106-4e56-9ae9-eb22048dfcc5",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 419686
+        },
+        {
+          "test_id": "08914a4f-aa0d-4530-83b0-3365b293eab9",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 442647
+        },
+        {
+          "test_id": "0d65cc3c-f395-4830-befa-536f5224ce64",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 456772
+        },
+        {
+          "test_id": "2585618c-5c94-40bc-b3ce-2ea4995b7f36",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 475694
+        },
+        {
+          "test_id": "30b7332a-d8ae-497d-92f1-358c8368801a",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 490886
+        },
+        {
+          "test_id": "3ae210fe-5107-42e7-a2d0-cbc7dd352d0d",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 506752
+        },
+        {
+          "test_id": "3b77f82f-b804-49cc-a0fb-48df583e7260",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 520559
+        },
+        {
+          "test_id": "449b0710-31f5-4cc7-ac0d-3013093985e0",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 533651
+        },
+        {
+          "test_id": "47a8ef40-2d3d-438e-a714-cc330480717f",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 545818
+        },
+        {
+          "test_id": "503783d6-24d9-4ae4-be8f-45a62582566d",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 565784
+        },
+        {
+          "test_id": "64688b05-e3fb-46da-9a88-da53d57d2ee0",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 579009
+        },
+        {
+          "test_id": "6ff2b35c-de26-4336-9c48-59de1bb14184",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 596275
+        },
+        {
+          "test_id": "7b28b105-41d2-4b23-98f4-4f744517c2fa",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 610442
+        },
+        {
+          "test_id": "839cba62-fb10-4d5c-9ae3-e5976374ce5c",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 624391
+        },
+        {
+          "test_id": "86af1b9f-f7e6-4845-b434-8b393cdcf902",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 638086
+        },
+        {
+          "test_id": "8b2d89f1-5c34-4edf-8de9-b3b76033fe29",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 650536
+        },
+        {
+          "test_id": "8d890020-1979-462f-a804-ec50548129ce",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 662927
+        },
+        {
+          "test_id": "99821d66-29f1-42a1-8c5c-c33e9dea9b67",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 675375
+        },
+        {
+          "test_id": "9f1f0cd8-4b7c-4141-905f-62e764a8fe4c",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 687874
+        },
+        {
+          "test_id": "a21af986-2c07-4b21-8ba5-a899cf3a6663",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 728333
+        },
+        {
+          "test_id": "a44e5529-676d-479f-aab0-387aabfd1635",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 744398
+        },
+        {
+          "test_id": "ab8bca69-6e0d-43c1-8abb-0858d91171d8",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 764398
+        },
+        {
+          "test_id": "b07346e2-bd82-4330-8217-de3c71137bc0",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 780506
+        },
+        {
+          "test_id": "b717b545-20d7-4705-8e3d-bff6a751dd3f",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 795315
+        },
+        {
+          "test_id": "bf44c909-3fbd-4768-a69e-faa76d278067",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 812897
+        },
+        {
+          "test_id": "c1d0f592-dd2f-4c6d-a92e-7cb946cdbfe0",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 826356
+        },
+        {
+          "test_id": "c20807a5-7c09-414c-b65b-5b003eeb3440",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 846447
+        },
+        {
+          "test_id": "cd72cdc7-eedd-4007-be91-f72c31e0d544",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 858580
+        },
+        {
+          "test_id": "e60e5d51-2f86-4486-a726-571e9b7c474c",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 873881
+        },
+        {
+          "test_id": "fd9a6df7-f7d8-4692-9921-6972b7f4acd4",
+          "humanizer_slug": "undetectable",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 889537
+        }
+      ]
+    },
+    {
+      "id": "0619aca0-44be-4d5d-8120-5e3dd14145f8",
+      "humanizer_slug": "clever-ai-humanizer",
+      "started_at": "2026-10-30T18:07:41.639648+00:00",
+      "ended_at": "2026-10-30T18:24:39.495+00:00",
+      "total_duration_ms": 1016947,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/71185791-c8d8-49f1-9798-c32043485287/clever-ai-humanizer/0619aca0-44be-4d5d-8120-5e3dd14145f8/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNzExODU3OTEtYzhkOC00OWYxLTk3OTgtYzMyMDQzNDg1Mjg3L2NsZXZlci1haS1odW1hbml6ZXIvMDYxOWFjYTAtNDRiZS00ZDVkLTgxMjAtNWUzZGQxNDE0NWY4L3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzU1NDc5MywiZXhwIjoxODI1MDkwNzkzfQ.pNubrK7GKPiS58QFnbcEAwby4jsyW35rDS1ODx8-BHA"
+      ],
+      "test_markers": [
+        {
+          "test_id": "0443fafd-dbef-4ee9-9043-d552ce04597c",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 42684
+        },
+        {
+          "test_id": "09bb492f-c5d8-4647-9550-8c7df081a5ec",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 73601
+        },
+        {
+          "test_id": "1819c31e-f878-439e-b80a-60e87742f882",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 102736
+        },
+        {
+          "test_id": "21f9861c-f497-43a3-a7a8-7a20e52dae46",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 129235
+        },
+        {
+          "test_id": "2515077b-43fe-4fbd-bbc8-ad60c5558984",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 158369
+        },
+        {
+          "test_id": "34f1b3dd-e1f5-4cf0-9329-7166a8456aab",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 186720
+        },
+        {
+          "test_id": "3d23e5bb-d214-4f8a-870f-39f805b8c547",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 225502
+        },
+        {
+          "test_id": "4d2e77d6-f0ac-4193-9213-aedfc951f4e8",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 254569
+        },
+        {
+          "test_id": "5222dcb0-dcbc-4604-b39b-fa718b8af93a",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 281334
+        },
+        {
+          "test_id": "55c24c8a-7a9d-44cf-a88f-609500c13ea4",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 314302
+        },
+        {
+          "test_id": "6c80876b-71ca-4f69-98e7-670688e22bc0",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 396965
+        },
+        {
+          "test_id": "72298ac7-e8a7-4732-900f-631da736a34c",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 432314
+        },
+        {
+          "test_id": "73bd1af5-62e9-4165-85f9-a053e58a5100",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 457049
+        },
+        {
+          "test_id": "7aea0254-1264-48d3-aeea-fac49084169a",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 481683
+        },
+        {
+          "test_id": "8c21c68e-6cd3-457a-8655-7a05db8af5ec",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 526514
+        },
+        {
+          "test_id": "93c6c291-5004-40a7-8392-90c724ad332d",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 556815
+        },
+        {
+          "test_id": "976d1a23-ef89-4aac-b203-4c6d6fa78f55",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 614897
+        },
+        {
+          "test_id": "a1634fba-6f4a-42fa-89a5-81f6caa1c9b8",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 638130
+        },
+        {
+          "test_id": "a6920e5a-4bff-425e-b1fb-31c07dfb24b0",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 663914
+        },
+        {
+          "test_id": "bc35283d-447f-4c5b-bfed-ec5b1e38d5ad",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 696546
+        },
+        {
+          "test_id": "c12ddf6e-3ad2-463f-8202-0d759009f832",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 717679
+        },
+        {
+          "test_id": "c167d129-ddd3-4355-a8e1-cd2f9770f255",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 750781
+        },
+        {
+          "test_id": "c33344c2-a9b8-421a-82b6-24c50038987a",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 823262
+        },
+        {
+          "test_id": "c762ce0c-213a-460f-b380-923578685c2b",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 849328
+        },
+        {
+          "test_id": "c80f1c01-6106-4ff1-aba6-7cebb7d9d8d7",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 879595
+        },
+        {
+          "test_id": "e6994bd3-6ccb-4210-9a8e-072dc262a2a5",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 904561
+        },
+        {
+          "test_id": "e83e5e6b-4d72-44ba-a90d-4c882bcd131c",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 933479
+        },
+        {
+          "test_id": "e9dbcc0d-ec42-4abe-a4ac-b47ab53a0d9c",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 959528
+        },
+        {
+          "test_id": "eba4828d-cc82-410f-bc91-97ca23d42a29",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 988694
+        },
+        {
+          "test_id": "ed98bf74-3a19-46a3-a3fe-2d7e54c2bfd2",
+          "humanizer_slug": "clever-ai-humanizer",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 1016096
+        }
+      ]
+    },
+    {
+      "id": "f1515f73-a140-4d49-b77a-3965f1f8f16f",
+      "humanizer_slug": "writehuman",
+      "started_at": "2026-10-30T18:19:53.420804+00:00",
+      "ended_at": "2026-10-30T18:28:20.424+00:00",
+      "total_duration_ms": 505440,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/3a288ff1-7dbf-4fec-9b69-310f940b6d58/writehuman/f1515f73-a140-4d49-b77a-3965f1f8f16f/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvM2EyODhmZjEtN2RiZi00ZmVjLTliNjktMzEwZjk0MGI2ZDU4L3dyaXRlaHVtYW4vZjE1MTVmNzMtYTE0MC00ZDQ5LWI3N2EtMzk2NWYxZjhmMTZmL3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzU1NDc5MywiZXhwIjoxODI1MDkwNzkzfQ.URKBnCBEni6eP7JwTniBQDGhnRe7uUo7hx1siTeL4ic"
+      ],
+      "test_markers": [
+        {
+          "test_id": "07e8accf-4a9a-4430-aa27-7835a10c7920",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 18373
+        },
+        {
+          "test_id": "124365ea-c798-49f1-adfd-be765144e291",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 35006
+        },
+        {
+          "test_id": "1910096b-5a5e-4045-b602-b96752814304",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 52606
+        },
+        {
+          "test_id": "1a27df57-750e-45b6-9147-ecefb39ecd5f",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 80125
+        },
+        {
+          "test_id": "1e3594cc-f4c8-45bd-8ec5-33b42340ba33",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 97742
+        },
+        {
+          "test_id": "25d1906f-addb-4ffd-8062-1c4c1b99ae98",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 112850
+        },
+        {
+          "test_id": "264991a3-6148-4c99-aa04-30c5137d26aa",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 131049
+        },
+        {
+          "test_id": "351a6e70-106f-473d-83e9-c689d9a83cb2",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 149526
+        },
+        {
+          "test_id": "3a21b318-c0bd-4c92-b12e-e889719624d1",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 165112
+        },
+        {
+          "test_id": "4d869d36-a357-4f38-bcea-1b2186ee560b",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 180886
+        },
+        {
+          "test_id": "4fa10765-b6e7-400e-97cc-7ab339482c5e",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 195569
+        },
+        {
+          "test_id": "503e7e21-c8ab-4123-a54f-7d6e84650f3a",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 209884
+        },
+        {
+          "test_id": "72017808-0bcd-45a3-a559-3b17a343f11e",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 225166
+        },
+        {
+          "test_id": "75badb9e-fac0-4649-9e9a-50439e4ef361",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 240132
+        },
+        {
+          "test_id": "7aaf1fe8-7c12-4116-8f65-078bc6635225",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 257735
+        },
+        {
+          "test_id": "7e0246d0-d05b-4933-a92c-0526913376b3",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 272224
+        },
+        {
+          "test_id": "8303695a-cbee-4b78-87e9-e830e7deaf10",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 293035
+        },
+        {
+          "test_id": "87c25ab4-1d24-4cbd-8233-296973400a1b",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 308102
+        },
+        {
+          "test_id": "919b2e6a-681f-4a9d-8270-54d93a892dd4",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 329934
+        },
+        {
+          "test_id": "94e72584-8716-4626-8def-97392521ae8f",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 343659
+        },
+        {
+          "test_id": "955e25f8-2e58-4544-b4bb-51777fda8f51",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 359079
+        },
+        {
+          "test_id": "9720e65f-2b77-4bee-a734-6e5f30027175",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 388236
+        },
+        {
+          "test_id": "a61c27ca-5dda-4d04-92a8-d460250394e0",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 404455
+        },
+        {
+          "test_id": "af676a1b-c17d-4298-ad0b-e242fdb524c0",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 419271
+        },
+        {
+          "test_id": "b5cba07a-498b-499a-a13d-71d671dbd138",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 433010
+        },
+        {
+          "test_id": "c28c11ab-88d9-4ca0-a023-b90f8b893194",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 448556
+        },
+        {
+          "test_id": "cfe52581-6d0c-4b29-8cc5-e92786e76fd8",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 465142
+        },
+        {
+          "test_id": "d780f008-9fc4-43ec-9750-69ecb660d4a1",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 479724
+        },
+        {
+          "test_id": "e82cb8fb-9477-4208-83b4-caacb3a1fa63",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 491726
+        },
+        {
+          "test_id": "fb9d9e5c-e912-44b8-a741-902efa2055f9",
+          "humanizer_slug": "writehuman",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 504825
+        }
+      ]
+    },
+    {
+      "id": "b36b97e8-3fac-49b4-9a60-7d01ecee85a6",
+      "humanizer_slug": "stealthgpt",
+      "started_at": "2026-10-30T18:21:10.039107+00:00",
+      "ended_at": "2026-10-30T18:43:39.354+00:00",
+      "total_duration_ms": 1348684,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/stealthgpt/b36b97e8-3fac-49b4-9a60-7d01ecee85a6/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L3N0ZWFsdGhncHQvYjM2Yjk3ZTgtM2ZhYy00OWI0LTlhNjAtN2QwMWVjZWU4NWE2L3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzU1NDc5NCwiZXhwIjoxODI1MDkwNzk0fQ.gc3M74ipK1gE__xNnMgzjCbGV6V3G6cptuPEgIxyGRg"
+      ],
+      "test_markers": [
+        {
+          "test_id": "0d9a7d36-119e-48c8-85d8-229a5c9d127e",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 58789
+        },
+        {
+          "test_id": "0f5aac3f-e19b-41fe-b6ce-23f0c373b5e7",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 91553
+        },
+        {
+          "test_id": "2352ecc4-3577-4436-8a5f-cc52a6ee5ec2",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 125796
+        },
+        {
+          "test_id": "28a22458-5f3b-4f6e-9a1c-285bc9d46e19",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 173088
+        },
+        {
+          "test_id": "45ac3800-cfe4-4d06-a3cd-758c18c3c75c",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 241062
+        },
+        {
+          "test_id": "48fd55f1-069a-444a-9efb-d9f14a4fd88e",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 298601
+        },
+        {
+          "test_id": "4e7e0c2b-7bca-4bcb-9fd6-2187b1d72475",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 338208
+        },
+        {
+          "test_id": "53cc568b-3865-4bb0-a038-807339437217",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 379965
+        },
+        {
+          "test_id": "625f610f-e0c4-476b-9690-2b5bc542afb1",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 422275
+        },
+        {
+          "test_id": "6381ca51-50bc-4200-9d3a-dd31d12881f8",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 448193
+        },
+        {
+          "test_id": "7106b0bd-6df5-44ad-8934-dd4f39f31e32",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 492644
+        },
+        {
+          "test_id": "727807b9-f957-4c02-b913-4da7315f8bc9",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 547622
+        },
+        {
+          "test_id": "7c2be543-1ec1-44e9-8761-7cd89a9b2548",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 583386
+        },
+        {
+          "test_id": "8288c69c-e753-4a44-be79-9bc7617cabe6",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 613199
+        },
+        {
+          "test_id": "89eac8cf-7af8-4aea-a4b4-48dcaaf57317",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 657736
+        },
+        {
+          "test_id": "8c13ebb8-ed2b-4eec-96a7-395d0268ce34",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 698586
+        },
+        {
+          "test_id": "8c54d5df-39fe-4cb1-b840-1f92aca34c72",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 742635
+        },
+        {
+          "test_id": "96604fb6-75c3-4bd5-a439-f6b5f9b41414",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 781421
+        },
+        {
+          "test_id": "978af8d0-2c97-4cf4-a496-2e2a6b8e1286",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 828851
+        },
+        {
+          "test_id": "a7b0b08a-0995-44f7-aab7-74f4f7943ca8",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 865238
+        },
+        {
+          "test_id": "b0457a09-e3c7-4f10-a9ec-2a47a0d980a6",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 909016
+        },
+        {
+          "test_id": "b3d47e64-43b5-4517-aac6-63e5ada82c26",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 951125
+        },
+        {
+          "test_id": "c36733df-dd49-4d02-bdde-4e13a4ca2fa5",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 992807
+        },
+        {
+          "test_id": "cae9e83f-1b98-4a63-87f8-5b49ed0c618c",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 1052355
+        },
+        {
+          "test_id": "e3f25bfa-ce6f-4bd0-bd7b-b4d0cd40ab99",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 1088014
+        },
+        {
+          "test_id": "e96cea20-3f4b-4c6f-9973-fe899e5283c8",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 1123357
+        },
+        {
+          "test_id": "f03cad30-e845-4ba9-a46d-983e56245215",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 1161737
+        },
+        {
+          "test_id": "f818409e-59df-41ca-a8dd-a5e8fa5dcf12",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 1226178
+        },
+        {
+          "test_id": "f83b79bb-d351-41b1-8f42-744c99b7f72f",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 1263902
+        },
+        {
+          "test_id": "fd1d4880-0179-44fe-b428-e5a4437f2d44",
+          "humanizer_slug": "stealthgpt",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 1302500
+        }
+      ]
+    },
+    {
+      "id": "654834ab-aff8-446b-9ba2-4462b7974566",
+      "humanizer_slug": "ryne",
+      "started_at": "2026-10-30T18:24:50.548955+00:00",
+      "ended_at": "2026-10-30T18:37:53.71+00:00",
+      "total_duration_ms": 779401,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/71185791-c8d8-49f1-9798-c32043485287/ryne/654834ab-aff8-446b-9ba2-4462b7974566/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNzExODU3OTEtYzhkOC00OWYxLTk3OTgtYzMyMDQzNDg1Mjg3L3J5bmUvNjU0ODM0YWItYWZmOC00NDZiLTliYTItNDQ2MmI3OTc0NTY2L3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzU1NDc5NCwiZXhwIjoxODI1MDkwNzk0fQ.vlGjn6uW-DCehp4F8G3upn62xZm7kWlmPQQ8ry4dS9E"
+      ],
+      "test_markers": [
+        {
+          "test_id": "1c8feafb-9ffd-497c-aa5e-d6ea32222671",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 30507
+        },
+        {
+          "test_id": "20932ad8-19d3-4b79-9eab-486ba7a2f827",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 53071
+        },
+        {
+          "test_id": "35a51c63-43a3-47a2-9649-c11dfa1e25d9",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 84474
+        },
+        {
+          "test_id": "3996ef58-019d-4329-9735-2bf9eec90cb6",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 101454
+        },
+        {
+          "test_id": "3bddba99-bcb2-4c44-a704-0faf9c5e5f22",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 117037
+        },
+        {
+          "test_id": "3c8bf8d6-f652-487b-ab52-52e966bc3875",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 133170
+        },
+        {
+          "test_id": "3d68f0d5-c011-43ab-8488-619eea678702",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 178170
+        },
+        {
+          "test_id": "456a00a8-1685-440f-bafb-ff463a1dae39",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 192170
+        },
+        {
+          "test_id": "549a3774-ba12-4ec5-a925-0c5ab427abc3",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 205920
+        },
+        {
+          "test_id": "5b3b903d-ae14-4472-b851-0179595c5e49",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 240170
+        },
+        {
+          "test_id": "633c87f9-c286-447e-a9ba-1dc07e336ba5",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 255920
+        },
+        {
+          "test_id": "65021a76-a35b-4c6b-8787-51ffe43558f4",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 284487
+        },
+        {
+          "test_id": "680aa93a-3e87-4395-8944-0fdf531cd5fe",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 304787
+        },
+        {
+          "test_id": "695241aa-9914-4c9f-bf4a-d4b969ddd501",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 319238
+        },
+        {
+          "test_id": "70ba79b7-a788-4ebd-9314-91e38b00af2c",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 334669
+        },
+        {
+          "test_id": "74bd5eb0-5355-483c-82d1-123409f822f0",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 349552
+        },
+        {
+          "test_id": "7594ee87-b8ff-4742-bbab-79afacfdf5c1",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 366735
+        },
+        {
+          "test_id": "779cb02e-2baa-4aef-9599-6fb4ca51ce09",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 473952
+        },
+        {
+          "test_id": "779cc8e9-3111-48af-9ac3-7b525370c50a",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 579502
+        },
+        {
+          "test_id": "7851a36f-fcb2-4c81-9ae1-f865fbb55139",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 636467
+        },
+        {
+          "test_id": "792fedcd-7833-4722-a95c-490f00111d06",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 650317
+        },
+        {
+          "test_id": "7bcc8252-71db-4be5-b24a-f8b84ea21419",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 664550
+        },
+        {
+          "test_id": "81dc6ac4-cb62-47bf-8220-8780b190765b",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 679584
+        },
+        {
+          "test_id": "ab0ce426-62d6-44d0-a221-1fa015cf38c5",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 693517
+        },
+        {
+          "test_id": "accbb209-755d-4402-a405-3289d7b49bf8",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 707633
+        },
+        {
+          "test_id": "b36239ae-7426-438e-b430-4bd992a7ea26",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 722383
+        },
+        {
+          "test_id": "bbab8ff3-df98-4ea9-ab18-cdcfaad93904",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 735433
+        },
+        {
+          "test_id": "c7f68fb0-7d83-45e2-b1e1-601d2920a4d7",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 748016
+        },
+        {
+          "test_id": "cbb2e0a6-0a3b-4447-9ae4-1517fd88dbd3",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 762483
+        },
+        {
+          "test_id": "e00742a6-53d3-47bd-8fdc-75d634423898",
+          "humanizer_slug": "ryne",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 778466
+        }
+      ]
+    },
+    {
+      "id": "e73baa36-af11-4b11-97e8-242a98ed5225",
+      "humanizer_slug": "rephrasy",
+      "started_at": "2026-10-30T18:38:05.223888+00:00",
+      "ended_at": "2026-10-30T19:11:54.609+00:00",
+      "total_duration_ms": 2027070,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/71185791-c8d8-49f1-9798-c32043485287/rephrasy/e73baa36-af11-4b11-97e8-242a98ed5225/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNzExODU3OTEtYzhkOC00OWYxLTk3OTgtYzMyMDQzNDg1Mjg3L3JlcGhyYXN5L2U3M2JhYTM2LWFmMTEtNGIxMS05N2U4LTI0MmE5OGVkNTIyNS9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3OTM1NTQ3OTQsImV4cCI6MTgyNTA5MDc5NH0.qPw5wGzzUid_3tG-NMF7n3T__Kor1uO2NggtvzM8xeo"
+      ],
+      "test_markers": [
+        {
+          "test_id": "016f1785-04da-4fb1-acd9-40330aa33020",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 78203
+        },
+        {
+          "test_id": "20f2669d-1d41-464a-94f7-5801359b53c7",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 148535
+        },
+        {
+          "test_id": "2272322f-813d-4e9e-8912-2bcef79429a2",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 220636
+        },
+        {
+          "test_id": "3c7a230c-1ce1-4598-bdf9-58acb48bc3c6",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 267702
+        },
+        {
+          "test_id": "46d18d94-6ea4-4416-aaf7-d2225018af41",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 337586
+        },
+        {
+          "test_id": "53ea9464-a1c8-4197-bc18-1fc88540b631",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 423271
+        },
+        {
+          "test_id": "622ddfe5-34ea-4e70-8ebc-3f008272e94a",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 477755
+        },
+        {
+          "test_id": "6472e66f-30e9-4c58-b538-a7ef3ba57da4",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 528287
+        },
+        {
+          "test_id": "6e929664-3829-4e50-8e73-45041fe3d4f7",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 581670
+        },
+        {
+          "test_id": "6ed2e576-defd-47bc-8730-d827584e1eff",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 660223
+        },
+        {
+          "test_id": "7857a529-f8d8-4aa2-a33b-fdbfe05b97b1",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 734705
+        },
+        {
+          "test_id": "7a06b3e7-cd21-4c8d-a364-98b8b6d289aa",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 786571
+        },
+        {
+          "test_id": "7ba801ec-1b14-4370-9ac1-82914932a99d",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 841720
+        },
+        {
+          "test_id": "8261ca11-e744-4e9c-b312-3363548d9d28",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 924773
+        },
+        {
+          "test_id": "82dd9c0d-7c4d-4725-b299-e1ac0405af86",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 995071
+        },
+        {
+          "test_id": "851d5174-7d7a-4b87-808c-59ab022ca648",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 1062688
+        },
+        {
+          "test_id": "8a0fcc79-bb13-47ae-b857-b3155a97412e",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 1138022
+        },
+        {
+          "test_id": "97034ece-1cde-495e-9e4e-668968ab218b",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 1204488
+        },
+        {
+          "test_id": "b1d8a670-bb1f-42b5-881d-628c3fed0bdb",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 1261042
+        },
+        {
+          "test_id": "b56896fc-49c3-49c2-bcd5-a51a39a35c4e",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 1333423
+        },
+        {
+          "test_id": "c0e7dc7e-c787-44d2-8aca-16295bfa9ac2",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 1402309
+        },
+        {
+          "test_id": "cc5e2a5f-2c71-4510-8b9b-cd8a1bb429f8",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 1472389
+        },
+        {
+          "test_id": "d4e3b8fb-2169-4dc4-85a2-ae7411226f94",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 1548058
+        },
+        {
+          "test_id": "d8fe8017-f63d-4d36-bb38-cd18eb961a5c",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 1615240
+        },
+        {
+          "test_id": "dc379f57-679f-4716-981a-d817f782e6e7",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 1675792
+        },
+        {
+          "test_id": "e9a87aee-11d7-4466-8ccd-c91f71b6fc0d",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 1747891
+        },
+        {
+          "test_id": "effb548d-698d-42d3-96f5-ce632182c518",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 1830309
+        },
+        {
+          "test_id": "f6f81f72-4902-4fdf-a91a-8482f86f5564",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 1895341
+        },
+        {
+          "test_id": "fb1c72d9-9d7d-4f1c-8cf6-6c93cdc33606",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 1961492
+        },
+        {
+          "test_id": "fe9973af-6e1d-49e0-979e-21c283f38d2e",
+          "humanizer_slug": "rephrasy",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 2026242
+        }
+      ]
+    },
+    {
+      "id": "565dfb90-81e5-47eb-993f-4a44ef674b37",
+      "humanizer_slug": "phrasly",
+      "started_at": "2026-10-30T18:45:24.014547+00:00",
+      "ended_at": "2026-10-30T18:57:08.823+00:00",
+      "total_duration_ms": 702781,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/phrasly/565dfb90-81e5-47eb-993f-4a44ef674b37/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L3BocmFzbHkvNTY1ZGZiOTAtODFlNS00N2ViLTk5M2YtNGE0NGVmNjc0YjM3L3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzU1NDc5NCwiZXhwIjoxODI1MDkwNzk0fQ.v6JCb4SKbQ2ZajrKaB8Rq6s_FXThHtEOJJq3i6C_MeE"
+      ],
+      "test_markers": [
+        {
+          "test_id": "0119cf8c-8dbd-4fa9-94eb-3b115251f6a5",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 33266
+        },
+        {
+          "test_id": "091e78e3-3c46-4935-b766-80cd1f88cbf3",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 59874
+        },
+        {
+          "test_id": "100cdaca-f8bd-41ae-9694-b6734e244fd6",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 79407
+        },
+        {
+          "test_id": "1a790dfc-d721-49cb-b75e-cf19b3bf5c9f",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 117899
+        },
+        {
+          "test_id": "30c2b9b8-7ed4-4350-b90f-657b7ce09cf5",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 136901
+        },
+        {
+          "test_id": "3e66d76b-a1a0-4293-bd22-df92b65bf65a",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 161918
+        },
+        {
+          "test_id": "46e2106c-3761-49dc-a738-d619a9287e67",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 186663
+        },
+        {
+          "test_id": "47e7e270-188f-4ec0-94ed-c9e69b88754d",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 207956
+        },
+        {
+          "test_id": "4eed84cf-0bf6-4d34-88ca-963bd7f48c2a",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 233706
+        },
+        {
+          "test_id": "57ad5a00-c0e2-4d1f-a541-fec8ca2568d6",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 249606
+        },
+        {
+          "test_id": "5df5ad1e-0927-451e-9888-12338b04bdf5",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 263490
+        },
+        {
+          "test_id": "64515971-9699-4202-9c5f-af701fdd9d9b",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 286579
+        },
+        {
+          "test_id": "65c55a10-94cf-4a86-9eca-826e8b2323a7",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 326453
+        },
+        {
+          "test_id": "6653f397-b5c2-4807-ae13-c27d5a11633d",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 352887
+        },
+        {
+          "test_id": "6edc195d-d63b-4b17-9912-523e2935514a",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 369814
+        },
+        {
+          "test_id": "88e190ee-038b-4043-b261-c97e77818f28",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 405233
+        },
+        {
+          "test_id": "8affba57-c93f-441e-a263-6fcb6fe4a35a",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 428002
+        },
+        {
+          "test_id": "8f5edb2b-c020-4582-ba6a-f20611ad64e1",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 444503
+        },
+        {
+          "test_id": "906a3b3a-1810-4e0b-aaef-810af7954e7c",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 462777
+        },
+        {
+          "test_id": "907bcfda-9660-480b-b37b-b6df69199f71",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 501478
+        },
+        {
+          "test_id": "95ea2a22-218a-4a34-a44e-c090a1ab0658",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 519285
+        },
+        {
+          "test_id": "98106d56-61f1-44ee-8540-34262fcbbf7a",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 536110
+        },
+        {
+          "test_id": "a02f63b6-c6d8-455c-b0b9-0bca95e70bf9",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 558551
+        },
+        {
+          "test_id": "b76d953a-29bf-4752-8c10-c5adc6a3cc94",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 578692
+        },
+        {
+          "test_id": "b9849199-86ee-4010-9ad1-b00079f8ec6e",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 600478
+        },
+        {
+          "test_id": "c65e4732-f7aa-4086-9f76-b294272d3305",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 620916
+        },
+        {
+          "test_id": "d5941e30-e475-49c8-9adb-4954274c129d",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 644303
+        },
+        {
+          "test_id": "e6f03311-6f97-4e02-993e-299c0c09d493",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 663569
+        },
+        {
+          "test_id": "ed627bde-c534-46eb-b908-370dc90c000f",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 676558
+        },
+        {
+          "test_id": "f25d05b8-2466-400b-bb3a-c18a0ed486f9",
+          "humanizer_slug": "phrasly",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 701861
+        }
+      ]
+    },
+    {
+      "id": "011fed3b-1288-40ef-86cb-eadf52631e77",
+      "humanizer_slug": "humbot",
+      "started_at": "2026-10-30T18:58:37.965669+00:00",
+      "ended_at": "2026-10-30T19:16:39.087+00:00",
+      "total_duration_ms": 1080541,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/humbot/011fed3b-1288-40ef-86cb-eadf52631e77/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L2h1bWJvdC8wMTFmZWQzYi0xMjg4LTQwZWYtODZjYi1lYWRmNTI2MzFlNzcvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkzNTU0Nzk0LCJleHAiOjE4MjUwOTA3OTR9.aBrYRo7x57Nn1BlXh2RtHPGAip3dj9sK0TBYKMad3vA"
+      ],
+      "test_markers": [
+        {
+          "test_id": "063994b4-33ad-412b-8815-a2757462bbe2",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 49278
+        },
+        {
+          "test_id": "0753fd1f-f06f-4186-8e16-90e1e33d075f",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 86992
+        },
+        {
+          "test_id": "12d0c5b8-209f-49de-a104-010090870a00",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 119250
+        },
+        {
+          "test_id": "154ad16a-89ab-4994-ac3d-386af75a085e",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 151780
+        },
+        {
+          "test_id": "19ac9ef3-16e1-41e8-904d-ed9a72426b4a",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 186763
+        },
+        {
+          "test_id": "20264bbc-cba3-48d4-a273-c77fc53e59dc",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 222987
+        },
+        {
+          "test_id": "20352e11-7682-4a3e-9801-e27bc617ac55",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 260345
+        },
+        {
+          "test_id": "22e318cb-2bf8-4af9-85b7-ee1e85d9078f",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 292499
+        },
+        {
+          "test_id": "2787033b-7cdc-4ef8-9747-473e4ee872e3",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 323737
+        },
+        {
+          "test_id": "37e4b892-31db-4280-ba9e-15407ec7b7d8",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 366302
+        },
+        {
+          "test_id": "453c2e8b-3bb3-4ce1-bada-efee4dc13a73",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 404577
+        },
+        {
+          "test_id": "4f5501dd-5bfc-4341-af90-bb88702a9821",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 436130
+        },
+        {
+          "test_id": "4f7c44fb-f7d6-4d51-b5b4-58d908eea18a",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 466455
+        },
+        {
+          "test_id": "6436f063-f9c2-4506-952d-38fba9b9baa7",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 503633
+        },
+        {
+          "test_id": "679b171d-4755-48a9-9d44-26dbbb610cd8",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 535808
+        },
+        {
+          "test_id": "6d81eb7e-bd8f-4142-823b-db47f677a50d",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 569026
+        },
+        {
+          "test_id": "723a69ac-3fef-4fbc-8bda-bba25764e767",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 594999
+        },
+        {
+          "test_id": "7cf6b917-d9a9-41fa-a74a-0bc63458bc30",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 625374
+        },
+        {
+          "test_id": "848c0fda-807e-42f6-89d2-c99362857389",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 651416
+        },
+        {
+          "test_id": "89bfc494-c4fb-43cc-bfba-a21928ca9dcd",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 684549
+        },
+        {
+          "test_id": "8b0d0989-ccd1-42a0-9e4c-fdb873cfbf38",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 709149
+        },
+        {
+          "test_id": "94d392a7-d6f8-4f6a-86f2-a41f2e8594fd",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 736264
+        },
+        {
+          "test_id": "9e6f51b5-7689-4de3-985f-40e925d32aad",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 763813
+        },
+        {
+          "test_id": "a402da0d-0a17-4790-90bb-80ea76502d94",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 789739
+        },
+        {
+          "test_id": "a599f6a7-0b6b-46a5-b527-0310727db078",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 829744
+        },
+        {
+          "test_id": "bda16983-e355-41b7-b3ce-2c318a62fdb8",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 863848
+        },
+        {
+          "test_id": "d4daa851-1195-44ba-9f26-5cd21b75dd5a",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 886181
+        },
+        {
+          "test_id": "e3209ab9-1e81-49b0-8f91-15233ca56d1f",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 923023
+        },
+        {
+          "test_id": "f4980902-a3bd-4e4c-bb37-d485bd1c443c",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 955834
+        },
+        {
+          "test_id": "fa6fbb60-1d72-4361-9239-47f6fbe0fc2e",
+          "humanizer_slug": "humbot",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 982546
+        }
+      ]
+    },
+    {
+      "id": "e4fa61ea-b1aa-44fa-b301-0de20a195dd0",
+      "humanizer_slug": "supwriter",
+      "started_at": "2026-10-30T19:12:02.94484+00:00",
+      "ended_at": "2026-10-30T19:27:12.934+00:00",
+      "total_duration_ms": 909463,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/71185791-c8d8-49f1-9798-c32043485287/supwriter/e4fa61ea-b1aa-44fa-b301-0de20a195dd0/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNzExODU3OTEtYzhkOC00OWYxLTk3OTgtYzMyMDQzNDg1Mjg3L3N1cHdyaXRlci9lNGZhNjFlYS1iMWFhLTQ0ZmEtYjMwMS0wZGUyMGExOTVkZDAvcmVjb3JkaW5nLndlYm0iLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkzNTU0Nzk0LCJleHAiOjE4MjUwOTA3OTR9.HiGtwIRQtSzVj4kIcCm3Efw4fZqiTGXosTpT4fNIkHI"
+      ],
+      "test_markers": [
+        {
+          "test_id": "155a12d3-ab14-4353-b7e2-c9fdc87e2c90",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 26256
+        },
+        {
+          "test_id": "1f19516c-706d-4426-9cfd-2aba174fc11d",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 44806
+        },
+        {
+          "test_id": "2009ce46-4ff2-448d-9bda-a693e3a803ac",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 75739
+        },
+        {
+          "test_id": "25904bd0-961d-427b-910d-73f31e65f545",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 92873
+        },
+        {
+          "test_id": "2c1729d1-f4ba-4b34-9924-401bdefd7551",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 189393
+        },
+        {
+          "test_id": "2cc2ce8b-0f6a-43aa-b4da-ef0d709ba57d",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 218208
+        },
+        {
+          "test_id": "3657356e-983e-4a0c-a062-0a0e114f31bc",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 340443
+        },
+        {
+          "test_id": "3c708e1d-9c74-4ec2-9e81-442ab1dc153a",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 458275
+        },
+        {
+          "test_id": "3e6aa740-0a6a-43e7-97c1-5318394b8abc",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 473807
+        },
+        {
+          "test_id": "40f97b9c-4e99-4dd0-a0c5-3baed2335aa2",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 501726
+        },
+        {
+          "test_id": "47ef7504-7aab-4e2d-9d72-7e8629adde72",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 529992
+        },
+        {
+          "test_id": "4aedd8ab-bd79-40f9-967f-35d87d84dae2",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 542292
+        },
+        {
+          "test_id": "4b08ade7-13ff-462a-8c36-68b44a9a7c16",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 557027
+        },
+        {
+          "test_id": "509472e3-9333-418e-a744-dcc9d19aa55d",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 574276
+        },
+        {
+          "test_id": "51b0f0c8-e12e-4e67-9606-31bc340e486b",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 587976
+        },
+        {
+          "test_id": "549b66c7-c265-4829-b256-a0076c8b4741",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 618491
+        },
+        {
+          "test_id": "5a11ee71-0364-472b-acba-71367aae611a",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 631658
+        },
+        {
+          "test_id": "5c511b4a-0fe7-482d-b9ea-64226685f9f0",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 644093
+        },
+        {
+          "test_id": "6cc2a913-3ff6-4705-8498-6c3edc646cc4",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 672808
+        },
+        {
+          "test_id": "6e9ff22a-71d9-47fc-8bc9-7b4682098a2f",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 718825
+        },
+        {
+          "test_id": "710dba54-786c-4919-8fc7-69f0803d5d3b",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 746080
+        },
+        {
+          "test_id": "899ec7f0-dbf6-4e25-a779-9ebe706fd173",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 761892
+        },
+        {
+          "test_id": "a9e762ce-44f0-4993-a803-c75951d0f81e",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 781108
+        },
+        {
+          "test_id": "b8d1d126-8c1f-49df-a5b1-01d590290f24",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 797475
+        },
+        {
+          "test_id": "c62ffc35-bf85-4ba8-a81c-9aa40b97dfea",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 814625
+        },
+        {
+          "test_id": "e19bfc01-2dc3-4838-a03f-62b3701d0758",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 833342
+        },
+        {
+          "test_id": "e407c85d-9ff1-4c71-b7a8-048667abcde9",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 850642
+        },
+        {
+          "test_id": "e57073eb-d604-4915-8e08-dd387e9e27aa",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 866159
+        },
+        {
+          "test_id": "ea4bf54e-0665-4a2b-90a5-54b4a883b044",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 894209
+        },
+        {
+          "test_id": "f12ef322-9494-451a-911b-2e174abb2599",
+          "humanizer_slug": "supwriter",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 908527
+        }
+      ]
+    },
+    {
+      "id": "ece2baca-c346-4a19-90d6-eac56906264c",
+      "humanizer_slug": "walter-writes",
+      "started_at": "2026-10-30T19:17:12.381955+00:00",
+      "ended_at": "2026-10-30T19:32:11.131+00:00",
+      "total_duration_ms": 897291,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/walter-writes/ece2baca-c346-4a19-90d6-eac56906264c/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L3dhbHRlci13cml0ZXMvZWNlMmJhY2EtYzM0Ni00YTE5LTkwZDYtZWFjNTY5MDYyNjRjL3JlY29yZGluZy53ZWJtIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MzU1NDc5NSwiZXhwIjoxODI1MDkwNzk1fQ.3GhlaDZ-MEiT-S_0ocwMGSw0tq1_oVGfzCYcr0vvjnw"
+      ],
+      "test_markers": [
+        {
+          "test_id": "017b6bea-e079-489e-a1dc-c8a2978f7b3a",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 29845
+        },
+        {
+          "test_id": "0733a3df-acbd-48df-ae37-635d1625be14",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 64173
+        },
+        {
+          "test_id": "0ba792fc-ee5c-485e-abae-86939cd1ee11",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 101771
+        },
+        {
+          "test_id": "11ea7e9c-b50f-4236-85dd-2b096339e077",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 131288
+        },
+        {
+          "test_id": "168efdee-1397-4685-8ab9-f2e5a8ac2d5b",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 163032
+        },
+        {
+          "test_id": "16fdf0d1-0539-40c2-b7d0-e61daf272317",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 199621
+        },
+        {
+          "test_id": "1acd403b-7736-423e-b9a7-2a44025604af",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 231510
+        },
+        {
+          "test_id": "1e24d5f6-d936-42c1-b8e7-d87c1bcdcae9",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 252831
+        },
+        {
+          "test_id": "22efedb7-6c24-4a6a-9736-d050e67f0e84",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 278693
+        },
+        {
+          "test_id": "3294d9a9-2ffe-4f8a-a21d-46a226c7d6f4",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 304615
+        },
+        {
+          "test_id": "4f668dbb-7253-4a1f-be0f-e6e1975f912a",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 336084
+        },
+        {
+          "test_id": "581056ce-7f4b-4ba4-9964-d60a3187a9a4",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 365047
+        },
+        {
+          "test_id": "5e3d578b-0f29-497b-9b37-3d9a1ae45073",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 382631
+        },
+        {
+          "test_id": "7794a7aa-a9de-42e9-a77d-1f5f542f4756",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 407950
+        },
+        {
+          "test_id": "77ad8a41-7962-4d2d-b6fd-bb26492ce3b3",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 436784
+        },
+        {
+          "test_id": "81302536-b57e-4872-bd9e-2e4814bedf1d",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 471522
+        },
+        {
+          "test_id": "913be2ea-7893-40ec-b960-fbd5c98a6fb9",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 511524
+        },
+        {
+          "test_id": "9188e29e-ed8d-41b1-9808-576c84699a21",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 537157
+        },
+        {
+          "test_id": "91f9e38d-1889-4e3a-9380-068a3dfbdaaa",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 561281
+        },
+        {
+          "test_id": "96602896-40bc-413c-aa1c-841a3c936eec",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 584247
+        },
+        {
+          "test_id": "9e80498b-ccf4-47d6-8387-b82a4e1d7a77",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 629331
+        },
+        {
+          "test_id": "a3fe6957-d83f-4b2d-83d9-1b089298894d",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 664213
+        },
+        {
+          "test_id": "ac76fd7a-23f8-4f18-a342-ea0c01dc01f3",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 706285
+        },
+        {
+          "test_id": "b8183300-6cdd-4a32-945d-b9708cf0802e",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 734080
+        },
+        {
+          "test_id": "bc63598f-f6e2-4316-958c-a872835dc03a",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 764897
+        },
+        {
+          "test_id": "ccff8fb3-7c28-46bd-bd71-26ecafb910a5",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 787128
+        },
+        {
+          "test_id": "d7970e8f-14f4-4ea8-8fd2-430ec0fd4766",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 811429
+        },
+        {
+          "test_id": "edae45a8-14c5-4cb2-9b76-63cab733d469",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 837215
+        },
+        {
+          "test_id": "f1632395-30c8-478e-b912-5cf8a7c5d59e",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 868329
+        },
+        {
+          "test_id": "f4d0588d-a68b-4140-9b4e-d7f919aaa730",
+          "humanizer_slug": "walter-writes",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 896176
+        }
+      ]
+    },
+    {
+      "id": "d486a76e-f422-4ecf-9ca4-f596e1544cdf",
+      "humanizer_slug": "ai-humanize-io",
+      "started_at": "2026-10-30T19:33:01.668601+00:00",
+      "ended_at": "2026-10-30T19:40:56.273+00:00",
+      "total_duration_ms": 473096,
+      "segment_count": 1,
+      "segment_urls": [
+        "https://jdcvoktccshfzbydibaa.supabase.co/storage/v1/object/sign/recordings/November%202026/557d66b8-9a0a-4a65-be18-a3a76bd3fcf4/ai-humanize-io/d486a76e-f422-4ecf-9ca4-f596e1544cdf/recording.webm?token=eyJraWQiOiI3YjNjMWRlOC04YjRiLTRjNGMtYTNmMS0xNGYyMjM5NDAzYjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyZWNvcmRpbmdzL05vdmVtYmVyIDIwMjYvNTU3ZDY2YjgtOWEwYS00YTY1LWJlMTgtYTNhNzZiZDNmY2Y0L2FpLWh1bWFuaXplLWlvL2Q0ODZhNzZlLWY0MjItNGVjZi05Y2E0LWY1OTZlMTU0NGNkZi9yZWNvcmRpbmcud2VibSIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3OTM1NTQ3OTUsImV4cCI6MTgyNTA5MDc5NX0.YQDq_j5BRIfB2SbWtPbvyKxI8J9ghsEM3YjVH3_EvzE"
+      ],
+      "test_markers": [
+        {
+          "test_id": "0a4f078f-f72e-46ff-aaf1-1e9cfa5158f8",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 21316
+        },
+        {
+          "test_id": "0c7b6867-6617-4a20-af3e-c8c1c04b338a",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 34271
+        },
+        {
+          "test_id": "17d8a6a3-5cba-4d61-aba6-3870cc41e8ae",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 47101
+        },
+        {
+          "test_id": "1c61771a-ec6c-40df-9a37-31994dab5a0f",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 58838
+        },
+        {
+          "test_id": "204ecfd9-f5bd-4fbc-8471-3e59ced980ed",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 77521
+        },
+        {
+          "test_id": "29584cfa-0961-480b-89f6-b3a2e1018161",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 93085
+        },
+        {
+          "test_id": "305a6b9f-bc78-4952-8aeb-a3f0c8a7fbb4",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 105613
+        },
+        {
+          "test_id": "328b83e7-0162-4bcd-9da1-8f8b62684df1",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 119296
+        },
+        {
+          "test_id": "39d38915-fc3a-476b-82c7-2ddbb4ee3b5f",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 132979
+        },
+        {
+          "test_id": "3f99f656-28f4-4fea-98e6-819977de7a76",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 146095
+        },
+        {
+          "test_id": "43108678-4615-48e2-92ea-a23b384cb665",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "news_article",
+          "category": "news_article",
+          "offset_ms": 156878
+        },
+        {
+          "test_id": "46a1ac57-a6e5-4b9e-8698-ca8bb7d48ccd",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 172515
+        },
+        {
+          "test_id": "492a4ca5-e7ff-4e93-a414-29629545e177",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 184803
+        },
+        {
+          "test_id": "518caa90-622a-4d54-a560-cf84f22d310d",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 196162
+        },
+        {
+          "test_id": "6a838209-7ce5-454e-88e7-fadbee1c9892",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 207736
+        },
+        {
+          "test_id": "6c9add37-627c-41e6-98ae-2dc3127d72f4",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 223463
+        },
+        {
+          "test_id": "6e490f08-ab36-4ef7-82d2-ef4335501de0",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "lit_review",
+          "category": "academic_essay",
+          "offset_ms": 233040
+        },
+        {
+          "test_id": "757c9ae5-7d75-4b17-b067-cfeac60b2aef",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "cover_letter",
+          "category": "application_essay",
+          "offset_ms": 244312
+        },
+        {
+          "test_id": "8fd9efc0-7920-44e4-863d-0568f5b4ab23",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "argumentative_essay",
+          "category": "academic_essay",
+          "offset_ms": 254385
+        },
+        {
+          "test_id": "9a53b53c-3085-4bb4-b31f-fa9708443d38",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 269444
+        },
+        {
+          "test_id": "9d1f7dc8-7e6d-43a1-8c1e-1a2f1990610e",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 280977
+        },
+        {
+          "test_id": "a05adf35-d233-4532-bfb0-456d28a7bd0a",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 292363
+        },
+        {
+          "test_id": "a3fdf138-ea52-457b-9fff-86f84f29372a",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 302268
+        },
+        {
+          "test_id": "dc6bcde6-4b23-4398-8630-e2e4ab53db6d",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "discussion_post",
+          "category": "discussion_board",
+          "offset_ms": 322987
+        },
+        {
+          "test_id": "e1c5acbf-dfb7-4d70-9246-c93728f1215e",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "landing_copy",
+          "category": "marketing_copy",
+          "offset_ms": 332443
+        },
+        {
+          "test_id": "e25bd69a-a609-40c3-a050-c61b127620a9",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "howto_blog",
+          "category": "blog_post",
+          "offset_ms": 343545
+        },
+        {
+          "test_id": "e2c4e18d-fc85-4002-83ea-b7fefe6253dc",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 352409
+        },
+        {
+          "test_id": "e2e63d3c-3a9b-4c52-be4f-e8a3cd960e57",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "product_desc",
+          "category": "marketing_copy",
+          "offset_ms": 447976
+        },
+        {
+          "test_id": "f4f33b88-8dcc-4723-ba68-df7d8c07207f",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "personal_statement",
+          "category": "application_essay",
+          "offset_ms": 460144
+        },
+        {
+          "test_id": "fe3115b3-708f-4ea2-af8c-88d6632d4185",
+          "humanizer_slug": "ai-humanize-io",
+          "prompt_slug": "listicle_blog",
+          "category": "blog_post",
+          "offset_ms": 472243
+        }
+      ]
+    }
+  ],
+  "humanizers": [
+    {
+      "slug": "writehuman",
+      "rank": 1,
+      "rank_change": 0,
+      "last_tested_at": "2026-10-30T18:28:18.536+00:00",
+      "scores": {
+        "composite": 70.11,
+        "bypass_rate": 0.8108,
+        "meaning_preservation": 0.5924,
+        "readability": 0.554,
+        "consistency_across_categories": 0.9239
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.7668,
+          0.8536
+        ],
+        "meaning_preservation_ci_95": [
+          0.5428,
+          0.6339
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_meaning_drift",
+          "count": 1,
+          "score_delta": -1
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.999,
+        "pangram": 0.6889,
+        "winston": 0.9723,
+        "zerogpt": 0.8726,
+        "copyleaks": 0.9667,
+        "originality": 0.3653
+      },
+      "category_breakdown": {
+        "blog_post": 0.7748,
+        "news_article": 0.6767,
+        "academic_essay": 0.7951,
+        "marketing_copy": 0.8336,
+        "discussion_board": 0.8858,
+        "application_essay": 0.8692
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "stealthgpt",
+      "rank": 2,
+      "rank_change": 0,
+      "last_tested_at": "2026-10-30T18:43:38.232+00:00",
+      "scores": {
+        "composite": 69.47,
+        "bypass_rate": 0.6596,
+        "meaning_preservation": 0.673,
+        "readability": 0.777,
+        "consistency_across_categories": 0.88
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.564,
+          0.7476
+        ],
+        "meaning_preservation_ci_95": [
+          0.637,
+          0.7087
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_deflation",
+          "count": 1,
+          "score_delta": -1
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.7139,
+        "pangram": 0.6088,
+        "winston": 0.811,
+        "zerogpt": 0.636,
+        "copyleaks": 0.9,
+        "originality": 0.2877
+      },
+      "category_breakdown": {
+        "blog_post": 0.7988,
+        "news_article": 0.6138,
+        "academic_essay": 0.7187,
+        "marketing_copy": 0.651,
+        "discussion_board": 0.7333,
+        "application_essay": 0.4558
+      },
+      "plan_tier_used": "Essential",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "clever-ai-humanizer",
+      "rank": 3,
+      "rank_change": 1,
+      "last_tested_at": "2026-10-30T18:24:38.083+00:00",
+      "scores": {
+        "composite": 68.48,
+        "bypass_rate": 0.6672,
+        "meaning_preservation": 0.6582,
+        "readability": 0.6093,
+        "consistency_across_categories": 0.9645
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.621,
+          0.6951
+        ],
+        "meaning_preservation_ci_95": [
+          0.6264,
+          0.6925
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.9555,
+        "pangram": 0.0274,
+        "winston": 0.9677,
+        "zerogpt": 0.8459,
+        "copyleaks": 0.9667,
+        "originality": 0.24
+      },
+      "category_breakdown": {
+        "blog_post": 0.6737,
+        "news_article": 0.6905,
+        "academic_essay": 0.6935,
+        "marketing_copy": 0.6029,
+        "discussion_board": 0.6986,
+        "application_essay": 0.6713
+      },
+      "plan_tier_used": "Free",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "humanize-ai-pro",
+      "rank": 4,
+      "rank_change": 1,
+      "last_tested_at": "2026-10-30T17:58:45.821+00:00",
+      "scores": {
+        "composite": 65.18,
+        "bypass_rate": 0.57,
+        "meaning_preservation": 0.7182,
+        "readability": 0.5487,
+        "consistency_across_categories": 0.9477
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.5247,
+          0.6186
+        ],
+        "meaning_preservation_ci_95": [
+          0.6878,
+          0.7526
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.6384,
+        "pangram": 0.0821,
+        "winston": 0.9432,
+        "zerogpt": 0.8282,
+        "copyleaks": 0.8037,
+        "originality": 0.1247
+      },
+      "category_breakdown": {
+        "blog_post": 0.624,
+        "news_article": 0.4659,
+        "academic_essay": 0.5687,
+        "marketing_copy": 0.5793,
+        "discussion_board": 0.577,
+        "application_essay": 0.5567
+      },
+      "plan_tier_used": "Lite",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "phrasly",
+      "rank": 5,
+      "rank_change": 7,
+      "last_tested_at": "2026-10-30T18:57:06.182+00:00",
+      "scores": {
+        "composite": 64.35,
+        "bypass_rate": 0.9133,
+        "meaning_preservation": 0.5201,
+        "readability": 0.425,
+        "consistency_across_categories": 0.955
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.8805,
+          0.945
+        ],
+        "meaning_preservation_ci_95": [
+          0.4629,
+          0.5755
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_meaning_drift",
+          "count": 7,
+          "score_delta": -7
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.9997,
+        "pangram": 0.8305,
+        "winston": 0.9982,
+        "zerogpt": 0.8847,
+        "copyleaks": 0.9667,
+        "originality": 0.8
+      },
+      "category_breakdown": {
+        "blog_post": 0.8517,
+        "news_article": 0.9452,
+        "academic_essay": 0.8745,
+        "marketing_copy": 0.9298,
+        "discussion_board": 0.9412,
+        "application_essay": 0.9673
+      },
+      "plan_tier_used": null,
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "undetectable",
+      "rank": 6,
+      "rank_change": -3,
+      "last_tested_at": "2026-10-30T18:20:19.495+00:00",
+      "scores": {
+        "composite": 64.24,
+        "bypass_rate": 0.6451,
+        "meaning_preservation": 0.7808,
+        "readability": 0.617,
+        "consistency_across_categories": 0.9289
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.5922,
+          0.6967
+        ],
+        "meaning_preservation_ci_95": [
+          0.7313,
+          0.8201
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_meaning_drift",
+          "count": 1,
+          "score_delta": -1
+        },
+        {
+          "code": "length_inflation",
+          "count": 6,
+          "score_delta": -6
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.8057,
+        "pangram": 0.1051,
+        "winston": 0.9652,
+        "zerogpt": 0.8185,
+        "copyleaks": 0.9267,
+        "originality": 0.2497
+      },
+      "category_breakdown": {
+        "blog_post": 0.6103,
+        "news_article": 0.6443,
+        "academic_essay": 0.6568,
+        "marketing_copy": 0.6247,
+        "discussion_board": 0.7981,
+        "application_essay": 0.6127
+      },
+      "plan_tier_used": "20K words/month",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "stealth-writer",
+      "rank": 7,
+      "rank_change": 1,
+      "last_tested_at": "2026-10-30T17:47:50.161+00:00",
+      "scores": {
+        "composite": 62.2,
+        "bypass_rate": 0.5219,
+        "meaning_preservation": 0.7531,
+        "readability": 0.3993,
+        "consistency_across_categories": 0.9794
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.5056,
+          0.5383
+        ],
+        "meaning_preservation_ci_95": [
+          0.7248,
+          0.7826
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.2004,
+        "pangram": 0,
+        "winston": 0.9967,
+        "zerogpt": 0.8641,
+        "copyleaks": 1,
+        "originality": 0.0703
+      },
+      "category_breakdown": {
+        "blog_post": 0.5402,
+        "news_article": 0.4938,
+        "academic_essay": 0.5028,
+        "marketing_copy": 0.5249,
+        "discussion_board": 0.547,
+        "application_essay": 0.5213
+      },
+      "plan_tier_used": "Starter",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "ryne",
+      "rank": 8,
+      "rank_change": null,
+      "last_tested_at": "2026-10-30T18:37:49.451+00:00",
+      "scores": {
+        "composite": 61.24,
+        "bypass_rate": 0.4592,
+        "meaning_preservation": 0.7707,
+        "readability": 0.473,
+        "consistency_across_categories": 0.9717
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4251,
+          0.4939
+        ],
+        "meaning_preservation_ci_95": [
+          0.7365,
+          0.8002
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.106,
+        "pangram": 0,
+        "winston": 0.9664,
+        "zerogpt": 0.7594,
+        "copyleaks": 0.8302,
+        "originality": 0.0933
+      },
+      "category_breakdown": {
+        "blog_post": 0.4433,
+        "news_article": 0.4394,
+        "academic_essay": 0.4621,
+        "marketing_copy": 0.4987,
+        "discussion_board": 0.4881,
+        "application_essay": 0.4283
+      },
+      "plan_tier_used": "Sapphire",
+      "settings_used": {
+        "mode": "Aggressive",
+        "tone": "default",
+        "purpose": "default",
+        "beast_mode": "on",
+        "writing_dna": "off",
+        "advanced_settings": "default"
+      },
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "supwriter",
+      "rank": 9,
+      "rank_change": 2,
+      "last_tested_at": "2026-10-30T19:27:11.85+00:00",
+      "scores": {
+        "composite": 61.05,
+        "bypass_rate": 0.462,
+        "meaning_preservation": 0.7749,
+        "readability": 0.4857,
+        "consistency_across_categories": 0.9081
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4243,
+          0.5001
+        ],
+        "meaning_preservation_ci_95": [
+          0.7424,
+          0.8058
+        ]
+      },
+      "penalties_applied": [],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.2109,
+        "pangram": 0,
+        "winston": 0.903,
+        "zerogpt": 0.7613,
+        "copyleaks": 0.8176,
+        "originality": 0.0793
+      },
+      "category_breakdown": {
+        "blog_post": 0.5149,
+        "news_article": 0.3614,
+        "academic_essay": 0.4007,
+        "marketing_copy": 0.4927,
+        "discussion_board": 0.6119,
+        "application_essay": 0.415
+      },
+      "plan_tier_used": null,
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "ai-humanize-io",
+      "rank": 10,
+      "rank_change": -4,
+      "last_tested_at": "2026-10-30T19:40:54.359+00:00",
+      "scores": {
+        "composite": 60.62,
+        "bypass_rate": 0.473,
+        "meaning_preservation": 0.7272,
+        "readability": 0.5817,
+        "consistency_across_categories": 0.9179
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4268,
+          0.5177
+        ],
+        "meaning_preservation_ci_95": [
+          0.6768,
+          0.7697
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_meaning_drift",
+          "count": 1,
+          "score_delta": -1
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.3922,
+        "pangram": 0,
+        "winston": 0.9081,
+        "zerogpt": 0.6967,
+        "copyleaks": 0.7709,
+        "originality": 0.0703
+      },
+      "category_breakdown": {
+        "blog_post": 0.4297,
+        "news_article": 0.4036,
+        "academic_essay": 0.4802,
+        "marketing_copy": 0.5442,
+        "discussion_board": 0.6056,
+        "application_essay": 0.4064
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "super-humanizer",
+      "rank": 11,
+      "rank_change": -4,
+      "last_tested_at": "2026-10-30T18:07:35.28+00:00",
+      "scores": {
+        "composite": 59.57,
+        "bypass_rate": 0.4147,
+        "meaning_preservation": 0.7286,
+        "readability": 0.7257,
+        "consistency_across_categories": 0.9232
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.3322,
+          0.4889
+        ],
+        "meaning_preservation_ci_95": [
+          0.6931,
+          0.7609
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 2,
+          "score_delta": -2
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.4164,
+        "pangram": 0.0766,
+        "winston": 0.6301,
+        "zerogpt": 0.6044,
+        "copyleaks": 0.6926,
+        "originality": 0.068
+      },
+      "category_breakdown": {
+        "blog_post": 0.5136,
+        "news_article": 0.3584,
+        "academic_essay": 0.3785,
+        "marketing_copy": 0.4907,
+        "discussion_board": 0.3566,
+        "application_essay": 0.3331
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "grammarly",
+      "rank": 12,
+      "rank_change": 2,
+      "last_tested_at": "2026-10-30T17:49:00.738+00:00",
+      "scores": {
+        "composite": 58.95,
+        "bypass_rate": 0.3099,
+        "meaning_preservation": 0.8658,
+        "readability": 0.6743,
+        "consistency_across_categories": 0.9433
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.2732,
+          0.346
+        ],
+        "meaning_preservation_ci_95": [
+          0.8494,
+          0.8822
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 2,
+          "score_delta": -2
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0,
+        "pangram": 0,
+        "winston": 0.7873,
+        "zerogpt": 0.4466,
+        "copyleaks": 0.5878,
+        "originality": 0.0377
+      },
+      "category_breakdown": {
+        "blog_post": 0.3169,
+        "news_article": 0.3256,
+        "academic_essay": 0.2359,
+        "marketing_copy": 0.2901,
+        "discussion_board": 0.4075,
+        "application_essay": 0.3401
+      },
+      "plan_tier_used": "Pro",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "humbot",
+      "rank": 13,
+      "rank_change": 0,
+      "last_tested_at": "2026-10-30T19:16:37.989+00:00",
+      "scores": {
+        "composite": 58.38,
+        "bypass_rate": 0.552,
+        "meaning_preservation": 0.7749,
+        "readability": 0.6933,
+        "consistency_across_categories": 0.9304
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.5132,
+          0.5851
+        ],
+        "meaning_preservation_ci_95": [
+          0.746,
+          0.8034
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 13,
+          "score_delta": -10
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.6341,
+        "pangram": 0,
+        "winston": 0.9813,
+        "zerogpt": 0.7278,
+        "copyleaks": 0.9182,
+        "originality": 0.0503
+      },
+      "category_breakdown": {
+        "blog_post": 0.5847,
+        "news_article": 0.453,
+        "academic_essay": 0.5475,
+        "marketing_copy": 0.556,
+        "discussion_board": 0.6611,
+        "application_essay": 0.5146
+      },
+      "plan_tier_used": "Basic",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "hix-bypass",
+      "rank": 14,
+      "rank_change": -5,
+      "last_tested_at": "2026-10-30T18:04:02.48+00:00",
+      "scores": {
+        "composite": 57.47,
+        "bypass_rate": 0.5337,
+        "meaning_preservation": 0.7712,
+        "readability": 0.6807,
+        "consistency_across_categories": 0.949
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.498,
+          0.5653
+        ],
+        "meaning_preservation_ci_95": [
+          0.7466,
+          0.7974
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 13,
+          "score_delta": -10
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.5685,
+        "pangram": 0,
+        "winston": 0.9468,
+        "zerogpt": 0.7198,
+        "copyleaks": 0.9176,
+        "originality": 0.0497
+      },
+      "category_breakdown": {
+        "blog_post": 0.591,
+        "news_article": 0.4906,
+        "academic_essay": 0.5098,
+        "marketing_copy": 0.5699,
+        "discussion_board": 0.5721,
+        "application_essay": 0.4665
+      },
+      "plan_tier_used": "Standard",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "walter-writes",
+      "rank": 15,
+      "rank_change": -5,
+      "last_tested_at": "2026-10-30T19:32:08.911+00:00",
+      "scores": {
+        "composite": 54.95,
+        "bypass_rate": 0.5442,
+        "meaning_preservation": 0.7073,
+        "readability": 0.6377,
+        "consistency_across_categories": 0.9261
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.4906,
+          0.589
+        ],
+        "meaning_preservation_ci_95": [
+          0.6591,
+          0.7494
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "length_inflation",
+          "count": 10,
+          "score_delta": -10
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.6925,
+        "pangram": 0,
+        "winston": 0.9249,
+        "zerogpt": 0.7104,
+        "copyleaks": 0.8426,
+        "originality": 0.0947
+      },
+      "category_breakdown": {
+        "blog_post": 0.4776,
+        "news_article": 0.4867,
+        "academic_essay": 0.5738,
+        "marketing_copy": 0.5188,
+        "discussion_board": 0.6771,
+        "application_essay": 0.5687
+      },
+      "plan_tier_used": "Starter",
+      "settings_used": null,
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    },
+    {
+      "slug": "rephrasy",
+      "rank": 16,
+      "rank_change": null,
+      "last_tested_at": "2026-10-30T19:11:51.773+00:00",
+      "scores": {
+        "composite": 52.5,
+        "bypass_rate": 0.7388,
+        "meaning_preservation": 0.4487,
+        "readability": 0.5267,
+        "consistency_across_categories": 0.9681
+      },
+      "score_intervals": {
+        "bypass_rate_ci_95": [
+          0.7014,
+          0.7762
+        ],
+        "meaning_preservation_ci_95": [
+          0.4023,
+          0.4977
+        ]
+      },
+      "penalties_applied": [
+        {
+          "code": "severe_meaning_drift",
+          "count": 10,
+          "score_delta": -10
+        },
+        {
+          "code": "length_inflation",
+          "count": 1,
+          "score_delta": -1
+        }
+      ],
+      "confidence": "medium",
+      "detector_breakdown": {
+        "gptzero": 0.9617,
+        "pangram": 0.4839,
+        "winston": 0.9525,
+        "zerogpt": 0.7583,
+        "copyleaks": 0.9667,
+        "originality": 0.31
+      },
+      "category_breakdown": {
+        "blog_post": 0.6794,
+        "news_article": 0.7404,
+        "academic_essay": 0.7673,
+        "marketing_copy": 0.7562,
+        "discussion_board": 0.7602,
+        "application_essay": 0.741
+      },
+      "plan_tier_used": "Growth",
+      "settings_used": {
+        "model": "Superstealth",
+        "custom_writing_style": "none"
+      },
+      "sample_count": 30,
+      "successful_test_count": 30,
+      "flagged_test_count": 0
+    }
+  ],
+  "unavailable_humanizers": []
+}
